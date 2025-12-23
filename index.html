@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
@@ -6,290 +6,319 @@
     <title>森語誓約｜溫馨清新系電子喜帖</title>
     <meta
       name="description"
-      content="以 GitHub Pages 佈署的溫馨清新電子喜帖，包含新人介紹、地點資訊、飲食問卷與儀式感喜帖。"
+      content="以 GitHub Pages 佈署的溫暖森林系電子喜帖，包含新人介紹、地點資訊、飲食問卷與儀式感邀請。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Quicksand:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              moss: "#5f6f52",
+              pine: "#1f2a1f",
+              fern: "#8da280",
+              mist: "#e7eddc",
+              parchment: "#f8f4ee",
+            },
+            fontFamily: {
+              display: ['"Noto Serif TC"', 'serif'],
+              body: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
+            },
+            boxShadow: {
+              card: "0 30px 60px rgba(33, 48, 33, 0.18)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%),
+          radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%),
+          linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc);
+        color: #1f2a1f;
+      }
+
+      .grain::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 200 200'%3E%3Cpath stroke='rgba(90,110,90,0.15)' stroke-width='0.5' d='M0 200 200 0'/%3E%3C/svg%3E");
+        opacity: 0.4;
+        pointer-events: none;
+        mix-blend-mode: soft-light;
+      }
+    </style>
   </head>
-  <body>
-    <header class="hero" id="top">
-      <nav class="nav">
-        <div class="logo">森語誓約</div>
-        <div class="nav-links">
-          <a href="#couple">新人介紹</a>
-          <a href="#location">地點交通</a>
-          <a href="#survey">飲食問卷</a>
-          <a href="#invitation">喜帖</a>
+  <body class="bg-parchment text-pine">
+    <!-- Hero section with forest background and soft overlay -->
+    <header id="top" class="relative isolate min-h-[80vh] overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="img/forest-hero.jpg"
+          alt="陽光灑落的森林背景"
+          class="h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-pine/80 via-pine/60 to-parchment/95"></div>
+      </div>
+      <nav class="relative z-10 flex flex-wrap items-center justify-between px-6 py-6 text-white sm:px-10 lg:px-16">
+        <div class="font-display text-xl tracking-[0.3em] uppercase">森語誓約</div>
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="#couple" class="uppercase tracking-[0.3em] text-white/80 hover:text-white">新人介紹</a>
+          <a href="#location" class="uppercase tracking-[0.3em] text-white/80 hover:text-white">地點交通</a>
+          <a href="#survey" class="uppercase tracking-[0.3em] text-white/80 hover:text-white">飲食問卷</a>
+          <a href="#invitation" class="uppercase tracking-[0.3em] text-white/80 hover:text-white">喜帖</a>
         </div>
       </nav>
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">Warm &amp; Fresh Wedding</p>
-          <h1>昊然 &amp; 予晴</h1>
-          <p class="subtitle">
-            我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。
-            邀請你一起走進這場溫馨清新的森林儀式。
-          </p>
-          <p class="hero-motivation">
-            2025 年 10 月 18 日（六）・15:30
-            <br />森光花園宴會廳｜台北市信義區林蔭路 88 號
-          </p>
-          <div class="hero-badges">
-            <span>戶外草地證婚</span>
-            <span>清新溫柔風</span>
-            <span>歡迎小小孩</span>
-          </div>
-          <div class="hero-actions">
-            <a class="button" href="#invitation">查看喜帖</a>
-            <a class="button ghost" href="#survey">填寫問卷</a>
-          </div>
+      <div class="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-10 text-center text-white sm:px-10">
+        <p class="text-xs uppercase tracking-[0.5em] text-fern/80">Warm &amp; Fresh Wedding</p>
+        <h1 class="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl">昊然 &amp; 予晴</h1>
+        <p class="mt-6 text-base leading-relaxed text-white/85 sm:text-lg">
+          我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。
+          邀請你一起走進這場溫馨清新的森林儀式。
+        </p>
+        <p class="mt-6 text-sm uppercase tracking-[0.4em] text-white/70">
+          2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區林蔭路 88 號
+        </p>
+        <div class="mt-8 flex flex-col gap-3 text-sm sm:flex-row">
+          <span class="rounded-full border border-white/40 px-6 py-2">戶外草地證婚</span>
+          <span class="rounded-full border border-white/40 px-6 py-2">清新溫柔風</span>
+          <span class="rounded-full border border-white/40 px-6 py-2">歡迎小小孩</span>
         </div>
-        <div class="hero-art">
-          <div class="blob">
-            <img src="img/forest-hero.jpg" alt="陽光森林中的婚禮場景" />
-          </div>
-          <div class="critters">
-            <div class="critter">
-              <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-                <path
-                  d="M32 52c-6-10-4-22 6-30 8-7 20-6 26 3"
-                  stroke="#6d7aa6"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M88 52c6-10 4-22-6-30-8-7-20-6-26 3"
-                  stroke="#6d7aa6"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <ellipse cx="60" cy="70" rx="34" ry="28" fill="#f8fbff" />
-                <ellipse cx="48" cy="68" rx="4" ry="6" fill="#6d7aa6" />
-                <ellipse cx="72" cy="68" rx="4" ry="6" fill="#6d7aa6" />
-                <path d="M56 78c4 4 8 4 12 0" stroke="#6d7aa6" stroke-width="3" />
-              </svg>
-              森林小兔
-            </div>
-            <div class="critter">
-              <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-                <path
-                  d="M30 80c0-20 12-40 30-40s30 20 30 40"
-                  stroke="#6d7aa6"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M40 76c6 10 16 16 20 16s14-6 20-16"
-                  stroke="#6d7aa6"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <circle cx="50" cy="64" r="4" fill="#6d7aa6" />
-                <circle cx="70" cy="64" r="4" fill="#6d7aa6" />
-                <path d="M56 70c4 4 8 4 12 0" stroke="#6d7aa6" stroke-width="3" />
-                <path
-                  d="M28 58c-6-6-8-18-2-26"
-                  stroke="#6d7aa6"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M92 58c6-6 8-18 2-26"
-                  stroke="#6d7aa6"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                />
-              </svg>
-              小狐狸守護
-            </div>
-          </div>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="#invitation"
+            class="rounded-full bg-white/90 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-pine transition hover:bg-white"
+            >查看喜帖</a
+          >
+          <a
+            href="#survey"
+            class="rounded-full border border-white/60 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-white/15"
+            >填寫問卷</a
+          >
         </div>
       </div>
     </header>
 
-    <section class="section" id="couple">
-      <div class="section-header" data-reveal>
-        <p class="section-title">新人介紹</p>
-        <h2>把生活寫成一首溫柔的歌</h2>
-        <p>
-          我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。
-          期待你們在這裡感受到清新又溫暖的氛圍。
-        </p>
-      </div>
-      <div class="card-grid">
-        <article class="card" data-reveal>
-          <h3>新郎｜昊然</h3>
-          <p>
-            喜歡煮手沖咖啡、畫小插畫，遇見予晴後，開始學會把日常變成儀式。
-          </p>
-          <ul>
-            <li>最愛的季節：初秋</li>
-            <li>最常說的一句話：沒關係，我們一起慢慢來</li>
-          </ul>
-        </article>
-        <article class="card" data-reveal>
-          <h3>新娘｜予晴</h3>
-          <p>
-            喜歡植物、喜歡旅行，也喜歡把家佈置成柔軟的小宇宙。
-            她說婚禮像是一次把心意好好收藏的旅程。
-          </p>
-          <ul>
-            <li>最愛的動物：松鼠與貓咪</li>
-            <li>最常收集的小物：旅行貼紙</li>
-          </ul>
-        </article>
-        <article class="card" data-reveal>
-          <h3>我們的故事</h3>
-          <p>
-            在一次雨後散步的午後，我們決定把未來寫進彼此的名字。
-            婚禮當天，會有滿滿的綠意、手寫卡片，還有專為你準備的祝福角落。
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section accent" id="location">
-      <div class="section-header" data-reveal>
-        <p class="section-title">餐廳地點</p>
-        <h2>森林與光，剛剛好的距離</h2>
-        <p>我們選了一個交通方便又有自然氣息的場地，歡迎提早到附近散散步。</p>
-      </div>
-      <div class="location-grid">
-        <div class="map-card" data-reveal>
-          <div class="map-placeholder">
-            森光花園宴會廳
-            <span>台北市信義區林蔭路 88 號</span>
-          </div>
-          <div class="map-actions">
-            <a class="button" href="https://maps.google.com" target="_blank" rel="noreferrer">
-              開啟地圖
-            </a>
-            <a class="button ghost" href="#survey">填寫出席</a>
-          </div>
-        </div>
-        <div class="route-info" data-reveal>
-          <h3>交通方式</h3>
-          <ul>
-            <li>捷運：搭乘信義線至「松山站」，步行約 6 分鐘。</li>
-            <li>公車：搭乘 88、208、藍 10 於「林蔭路口」下車。</li>
-            <li>開車：場地下方設有停車場，可直達宴會廳。</li>
-          </ul>
-          <div class="route-note">
-            若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="survey">
-      <div class="section-header" data-reveal>
-        <p class="section-title">簡單問券</p>
-        <h2>你的喜好，我們想好好照顧</h2>
-        <p>此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。</p>
-      </div>
-      <form class="survey-form" id="survey-form" data-reveal>
-        <label>
-          你的名字
-          <input type="text" name="name" placeholder="請輸入姓名" required />
-        </label>
-        <label>
-          出席人數
-          <select name="guests" required>
-            <option value="1">1 人</option>
-            <option value="2">2 人</option>
-            <option value="3">3 人</option>
-            <option value="4">4 人以上</option>
-          </select>
-        </label>
-        <label>
-          飲食偏好
-          <select name="diet" required>
-            <option value="normal">一般餐</option>
-            <option value="vegetarian">蛋奶素</option>
-            <option value="vegan">全素</option>
-            <option value="no-seafood">不吃海鮮</option>
-          </select>
-        </label>
-        <label>
-          想對我們說的話
-          <textarea name="message" rows="4" placeholder="寫下你的祝福或提醒"></textarea>
-        </label>
-        <button class="button" type="submit">送出回覆</button>
-      </form>
-      <p class="form-note">表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。</p>
-    </section>
-
-    <section class="section invitation" id="invitation">
-      <div class="section-header" data-reveal>
-        <p class="section-title">喜帖</p>
-        <h2>願這場儀式感，與你共享</h2>
-        <p>用一封溫柔的喜帖，把我們的祝福親手遞給你。</p>
-      </div>
-      <div class="invitation-card" data-reveal>
-        <div class="invitation-text">
-          <p class="handwriting">Dear You,</p>
-          <h3>我們誠摯邀請你，見證這份森林裡的承諾。</h3>
-          <p>
-            在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。
-            期待和你一起留下最溫暖的合照。
-          </p>
-          <div class="details">
-            <div>
-              <span>日期</span>
-              2025 / 10 / 18（六）
+    <main class="relative z-10 -mt-16 px-4 pb-16 sm:px-6 lg:px-8">
+      <div class="mx-auto flex max-w-5xl flex-col gap-10">
+        <!-- New couple introduction card -->
+        <section id="couple" class="grain relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <div class="relative">
+            <div class="text-center">
+              <img src="img/leaf.svg" alt="小葉片裝飾" class="mx-auto h-12 w-12 opacity-80" loading="lazy" />
+              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-moss/70">新人介紹</p>
+              <h2 class="mt-3 font-display text-3xl text-moss sm:text-4xl">把生活寫成一首溫柔的歌</h2>
+              <p class="mt-4 text-base leading-relaxed text-pine/80">
+                我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。
+                期待你們在這裡感受到清新又溫暖的氛圍。
+              </p>
             </div>
-            <div>
-              <span>時間</span>
-              15:30 證婚 ・ 18:00 宴客
-            </div>
-            <div>
-              <span>地點</span>
-              森光花園宴會廳
+            <div class="mt-10 grid gap-6 md:grid-cols-3">
+              <article class="rounded-3xl bg-mist/60 p-6">
+                <p class="font-display text-xl text-moss">新郎｜昊然</p>
+                <p class="mt-3 text-sm leading-relaxed text-pine/80">
+                  喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。
+                </p>
+                <ul class="mt-4 space-y-2 text-sm text-pine/80">
+                  <li>婚禮口頭禪：慢慢來，會更美。</li>
+                  <li>最常說的話：別忘了抬頭看天空。</li>
+                </ul>
+              </article>
+              <article class="rounded-3xl bg-mist/60 p-6">
+                <p class="font-display text-xl text-moss">新娘｜予晴</p>
+                <p class="mt-3 text-sm leading-relaxed text-pine/80">
+                  熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。
+                </p>
+                <ul class="mt-4 space-y-2 text-sm text-pine/80">
+                  <li>療癒小夥伴：松鼠與貓咪。</li>
+                  <li>最愛收集：旅行貼紙與古董紙膠帶。</li>
+                </ul>
+              </article>
+              <article class="rounded-3xl bg-white/80 p-6 shadow-inner">
+                <p class="font-display text-xl text-moss">我們的故事</p>
+                <p class="mt-3 text-sm leading-relaxed text-pine/80">
+                  第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。
+                </p>
+              </article>
             </div>
           </div>
-          <a class="button" href="#top">回到頂端</a>
-        </div>
-        <div class="invitation-art">
-          <img src="img/leaf.svg" alt="手繪葉片" width="120" height="120" />
-          <div class="handwriting">願你今天也被溫柔包圍</div>
-          <div class="critter">
-            <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-              <path
-                d="M40 90c0-20 10-36 20-36s20 16 20 36"
-                stroke="#6d7aa6"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
-              <circle cx="50" cy="62" r="4" fill="#6d7aa6" />
-              <circle cx="70" cy="62" r="4" fill="#6d7aa6" />
-              <path d="M54 70c4 4 8 4 12 0" stroke="#6d7aa6" stroke-width="3" />
-              <path
-                d="M32 64c-10 4-14 18-8 28"
-                stroke="#6d7aa6"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
-              <path
-                d="M88 64c10 4 14 18 8 28"
-                stroke="#6d7aa6"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
-            </svg>
-            小鹿祝福
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <footer class="footer">
-      這是一個可直接部署於 GitHub Pages 的單頁喜帖網站，謝謝你的祝福。
+        <!-- Location and transportation details -->
+        <section id="location" class="rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <div class="text-center">
+            <p class="text-sm uppercase tracking-[0.4em] text-moss/70">餐廳地點</p>
+            <h2 class="mt-2 font-display text-3xl text-moss">森光花園，等你來散步</h2>
+            <p class="mt-4 text-base leading-relaxed text-pine/80">
+              我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
+            </p>
+          </div>
+          <div class="mt-10 grid gap-8 md:grid-cols-2">
+            <div class="rounded-3xl bg-[url('img/forest-path.jpg')] bg-cover bg-center p-6 text-white">
+              <div class="rounded-3xl border border-white/40 bg-pine/60 p-6">
+                <p class="text-lg font-semibold">森光花園宴會廳</p>
+                <p class="mt-2 text-sm">台北市信義區林蔭路 88 號</p>
+                <div class="mt-6 flex flex-col gap-3 text-sm">
+                  <a
+                    class="rounded-full bg-white/90 px-5 py-2 text-center text-pine transition hover:bg-white"
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    >開啟地圖</a
+                  >
+                  <a
+                    class="rounded-full border border-white/60 px-5 py-2 text-center text-white transition hover:bg-white/10"
+                    href="#survey"
+                    >填寫出席</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="rounded-3xl bg-mist/70 p-6 text-sm leading-relaxed text-pine/80">
+              <h3 class="font-display text-2xl text-moss">交通方式</h3>
+              <ul class="mt-4 space-y-3">
+                <li>捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
+                <li>公車｜88、208、藍 10 於「林蔭路口」下車。</li>
+                <li>開車｜場地下方設有停車場，可直達宴會廳。</li>
+              </ul>
+              <p class="mt-6 rounded-2xl bg-white/70 p-4 text-xs text-pine/70">
+                若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- RSVP / survey section -->
+        <section id="survey" class="rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <div class="text-center">
+            <p class="text-sm uppercase tracking-[0.4em] text-moss/70">簡單問卷</p>
+            <h2 class="mt-2 font-display text-3xl text-moss">你的喜好，我們想好好照顧</h2>
+            <p class="mt-4 text-base leading-relaxed text-pine/80">
+              此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
+            </p>
+          </div>
+          <form class="mx-auto mt-8 max-w-3xl space-y-6 text-sm">
+            <label class="block">
+              <span class="text-pine/70">你的名字</span>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="請輸入姓名"
+                class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
+              />
+            </label>
+            <div class="grid gap-6 md:grid-cols-2">
+              <label class="block">
+                <span class="text-pine/70">出席人數</span>
+                <select
+                  name="guests"
+                  required
+                  class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
+                >
+                  <option value="">請選擇</option>
+                  <option value="1">1 人</option>
+                  <option value="2">2 人</option>
+                  <option value="3">3 人</option>
+                  <option value="4">4 人以上</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="text-pine/70">飲食偏好</span>
+                <select
+                  name="diet"
+                  required
+                  class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
+                >
+                  <option value="">請選擇</option>
+                  <option value="normal">一般餐</option>
+                  <option value="vegetarian">蛋奶素</option>
+                  <option value="vegan">全素</option>
+                  <option value="no-seafood">不吃海鮮</option>
+                </select>
+              </label>
+            </div>
+            <label class="block">
+              <span class="text-pine/70">想對我們說的話</span>
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="寫下你的祝福或提醒"
+                class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
+              ></textarea>
+            </label>
+            <button
+              type="submit"
+              class="w-full rounded-full bg-moss px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-moss/90"
+            >
+              送出回覆
+            </button>
+          </form>
+          <p class="mt-4 text-center text-xs text-pine/70">
+            表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
+          </p>
+        </section>
+
+        <!-- Invitation card -->
+        <section id="invitation" class="rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <div class="text-center">
+            <p class="text-sm uppercase tracking-[0.4em] text-moss/70">喜帖</p>
+            <h2 class="mt-2 font-display text-3xl text-moss">願這場儀式感，與你共享</h2>
+            <p class="mt-4 text-base leading-relaxed text-pine/80">
+              用一封溫柔的喜帖，把我們的祝福親手遞給你。
+            </p>
+          </div>
+          <div class="mt-10 grid gap-8 md:grid-cols-2">
+            <div class="rounded-3xl bg-mist/60 p-6 text-sm leading-relaxed text-pine/80">
+              <p class="font-display text-xl text-moss">Dear You,</p>
+              <p class="mt-4">
+                我們誠摯邀請你，見證這份森林裡的承諾。
+                在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。
+                期待和你一起留下最溫暖的合照。
+              </p>
+              <dl class="mt-6 space-y-4 text-sm">
+                <div>
+                  <dt class="text-pine/60">日期</dt>
+                  <dd class="font-display text-lg text-moss">2025 / 10 / 18（六）</dd>
+                </div>
+                <div>
+                  <dt class="text-pine/60">時間</dt>
+                  <dd class="font-display text-lg text-moss">15:30 證婚 ・ 18:00 宴客</dd>
+                </div>
+                <div>
+                  <dt class="text-pine/60">地點</dt>
+                  <dd class="font-display text-lg text-moss">森光花園宴會廳</dd>
+                </div>
+              </dl>
+              <a
+                href="#top"
+                class="mt-8 inline-flex rounded-full bg-pine px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-pine/90"
+                >回到頂端</a
+              >
+            </div>
+            <div class="rounded-3xl border border-mist bg-white/70 p-6 text-center shadow-inner">
+              <img src="img/leaf.svg" alt="森林小插圖" class="mx-auto h-20 w-20" loading="lazy" />
+              <p class="mt-4 font-display text-xl text-moss">願你今天也被溫柔包圍</p>
+              <p class="mt-4 text-sm leading-relaxed text-pine/80">
+                我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-pine/60">
+      可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
     </footer>
   </body>
 </html>
