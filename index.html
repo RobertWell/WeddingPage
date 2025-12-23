@@ -1,276 +1,228 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ryan & Lillian｜可愛現代風喜帖</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="hero" id="top">
-    <nav class="nav">
-      <div class="logo">Ryan & Lillian</div>
-      <div class="nav-links">
-        <a href="#experience">風格展示</a>
-        <a href="#moments">婚禮亮點</a>
-        <a href="#about">新人介紹</a>
-        <a href="#location">地點路線</a>
-        <a href="#survey">飲食問券</a>
-        <a href="#invitation">喜帖</a>
-      </div>
-    </nav>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forest Promise �P Wedding Invitation</title>
+    <meta
+      name="description"
+      content="A warm forest wedding invitation for Hayden & Mira �X calm, gentle, and ready for GitHub Pages."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Source+Sans+3:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              moss: "#56624a",
+              pine: "#1c2a1d",
+              sage: "#aab79c",
+              parchment: "#f5f1ea",
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', "serif"],
+              sans: ['"Source Sans 3"', "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        color: #2f332c;
+      }
 
-    <div class="hero-content">
-      <div class="hero-text">
-        <p class="eyebrow">Modern Cute Wedding Invitation</p>
-        <h1>Ryan & Lillian</h1>
-        <p class="subtitle">以清新線條與柔霧色調打造婚禮，簡潔卻不失俏皮溫度。</p>
-        <p class="hero-motivation">我們把這一天做成輕盈的作品，俐落又有趣，像一張小小設計展卡。</p>
-        <div class="hero-badges">
-          <span>2025 · 10 · 18</span>
-          <span>台北幸福路 101 號</span>
-          <span>午後 15:00</span>
-        </div>
-        <div class="hero-actions">
-          <a class="button" href="#invitation">查看喜帖</a>
-          <a class="button ghost" href="#survey">填寫問券</a>
-        </div>
-      </div>
-      <div class="hero-art">
-        <div class="blob">
-          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 240'><rect width='300' height='240' fill='%23eef2ff'/><path d='M30 200 C60 130 120 120 150 130 C180 140 220 110 260 60' stroke='%237aa7ff' stroke-width='6' fill='none' stroke-linecap='round'/><circle cx='90' cy='90' r='40' fill='%23dfe7ff'/><circle cx='210' cy='80' r='30' fill='%23e9f5ff'/><text x='150' y='210' font-family='Quicksand, sans-serif' font-size='18' fill='%232f354a' text-anchor='middle'>AI placeholder photo</text></svg>" alt="AI 生成照片佔位圖" />
-        </div>
-        <div class="critters">
-          <div class="critter">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <circle cx="60" cy="60" r="38" fill="#f5f7ff" stroke="#7aa7ff" stroke-width="3" />
-              <circle cx="45" cy="55" r="6" fill="#2f354a" />
-              <circle cx="75" cy="55" r="6" fill="#2f354a" />
-              <path d="M50 75 Q60 85 70 75" stroke="#2f354a" stroke-width="3" fill="none" stroke-linecap="round" />
-              <ellipse cx="35" cy="28" rx="12" ry="20" fill="#dfe7ff" stroke="#7aa7ff" stroke-width="3" />
-              <ellipse cx="85" cy="28" rx="12" ry="20" fill="#dfe7ff" stroke="#7aa7ff" stroke-width="3" />
-            </svg>
-            <span>手繪兔兔</span>
-          </div>
-          <div class="critter">
-            <svg viewBox="0 0 120 120" aria-hidden="true">
-              <circle cx="60" cy="60" r="38" fill="#f0fbf7" stroke="#6dd6c8" stroke-width="3" />
-              <circle cx="45" cy="55" r="6" fill="#2f354a" />
-              <circle cx="75" cy="55" r="6" fill="#2f354a" />
-              <path d="M52 75 Q60 82 68 75" stroke="#2f354a" stroke-width="3" fill="none" stroke-linecap="round" />
-              <circle cx="30" cy="35" r="10" fill="#d7f6ee" stroke="#6dd6c8" stroke-width="3" />
-              <circle cx="90" cy="35" r="10" fill="#d7f6ee" stroke="#6dd6c8" stroke-width="3" />
-            </svg>
-            <span>森林小熊</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+      * {
+        scroll-behavior: smooth;
+      }
 
-  <main>
-    <section class="section showcase" id="experience" data-reveal>
-      <div class="section-header">
-        <p class="section-title">風格展示</p>
-        <h2>像 Apple 展示頁的俐落節奏</h2>
-        <p>大版面、留白與柔霧色塊，讓每一段敘事都有呼吸感。</p>
-      </div>
-      <div class="showcase-grid">
-        <article class="showcase-panel" data-reveal>
-          <div>
-            <p class="panel-eyebrow">Concept 01</p>
-            <h3>簡潔與俏皮的平衡</h3>
-            <p>以大片背景與圓角卡片交錯，視覺更有節奏感。</p>
-          </div>
-          <span class="panel-tag">Modern Cute</span>
-        </article>
-        <article class="showcase-panel alt" data-reveal>
-          <div>
-            <p class="panel-eyebrow">Concept 02</p>
-            <h3>柔霧色調的空間感</h3>
-            <p>使用霧藍、薄荷綠搭配柔和陰影，營造輕盈層次。</p>
-          </div>
-          <span class="panel-tag">Soft Pastel</span>
-        </article>
-      </div>
-    </section>
+      body {
+        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background-color: #f5f1ea;
+        background-image: radial-gradient(circle at 10% 10%, #ffffff40 0, transparent 50%),
+          radial-gradient(circle at 90% 20%, #f3efe7 0, transparent 45%),
+          radial-gradient(circle at 20% 80%, #f9f3e8 0, transparent 55%);
+        color: #2f332c;
+      }
 
-    <section class="section panorama" id="moments" data-reveal>
-      <div class="section-header">
-        <p class="section-title">婚禮亮點</p>
-        <h2>大型視覺場景（placeholder）</h2>
-        <p>未來可替換為你們的照片或婚禮主視覺。</p>
+      .text-glow {
+        text-shadow: 0 10px 35px rgba(12, 24, 20, 0.55);
+      }
+
+      .card-shadow {
+        box-shadow: 0 30px 60px rgba(23, 40, 31, 0.18);
+      }
+
+      .grain-overlay::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'%3E%3Cpath d='M0 120L120 0' stroke='rgba(255,255,255,0.08)'/%3E%3C/svg%3E");
+        opacity: 0.35;
+        pointer-events: none;
+        mix-blend-mode: soft-light;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Hero section with forest background -->
+    <header class="relative isolate min-h-[75vh] flex items-end" id="top">
+      <div class="absolute inset-0">
+        <img
+          src="img/forest-hero.jpg"
+          alt="Soft light pouring through a tranquil forest"
+          class="h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-pine/80 via-pine/70 to-parchment/95"></div>
       </div>
-      <div class="panorama-display" data-reveal>
-        <div class="panorama-content">
-          <h3>Story Frame</h3>
-          <p>像產品展示頁一樣聚焦主題，讓情感更集中。</p>
-          <div class="panorama-tags">
-            <span>AI Placeholder</span>
-            <span>Photo Slot</span>
-            <span>Hero Visual</span>
-          </div>
+      <div class="relative z-10 w-full px-6 py-20 text-center text-white sm:px-10 lg:px-16">
+        <p class="uppercase tracking-[0.3em] text-xs text-sage/80">Forest Promise</p>
+        <h1 class="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl text-glow">
+          Hayden &amp; Mira
+        </h1>
+        <p class="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-white/80">
+          Among cedar, fern, and gentle mist, we gather to celebrate a quiet love story.
+          Your presence will make the clearing warmer.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 text-sm text-white/90 sm:flex-row sm:items-center sm:justify-center">
+          <span class="rounded-full border border-white/40 px-5 py-2">October 18 �P 2025</span>
+          <span class="rounded-full border border-white/40 px-5 py-2">3:00 PM �P Willow Glade</span>
+          <span class="rounded-full border border-white/40 px-5 py-2">Formal garden attire</span>
         </div>
-        <div class="panorama-image">Large Visual</div>
-      </div>
-    </section>
-
-    <section class="section" id="about" data-reveal>
-      <div class="section-header">
-        <p class="section-title">新人介紹</p>
-        <h2>我們的故事</h2>
-        <p>從一起喝咖啡、到一起看日落，我們想把每一個溫柔時刻留在這一天。</p>
-      </div>
-      <div class="card-grid">
-        <article class="card" data-reveal>
-          <h3>Ryan</h3>
-          <p>熱愛音樂與旅行，擅長把平凡日常變成小小冒險。</p>
-          <ul>
-            <li>最愛：清晨咖啡香</li>
-            <li>個性：溫柔又可靠</li>
-            <li>願望：陪伴到老</li>
-          </ul>
-        </article>
-        <article class="card" data-reveal>
-          <h3>Lillian</h3>
-          <p>喜歡花藝與甜點，擅長用手作把幸福變成具體的模樣。</p>
-          <ul>
-            <li>最愛：午後陽光</li>
-            <li>個性：溫暖細膩</li>
-            <li>願望：收藏每段笑聲</li>
-          </ul>
-        </article>
-      </div>
-      <div class="ai-strip" data-reveal>
-        <p>AI 生成照片佔位區（後續可替換為你們的婚紗照）</p>
-        <div class="strip-images">
-          <div class="ai-photo" data-reveal>AI Photo 01</div>
-          <div class="ai-photo" data-reveal>AI Photo 02</div>
-          <div class="ai-photo" data-reveal>AI Photo 03</div>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <a
+            href="#invitation"
+            class="rounded-full bg-white/90 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-pine transition hover:bg-white"
+          >
+            View Invitation
+          </a>
+          <a
+            href="#rsvp"
+            class="rounded-full border border-white/60 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-white/15"
+          >
+            RSVP Details
+          </a>
         </div>
       </div>
-    </section>
+    </header>
 
-    <section class="section accent" id="location" data-reveal>
-      <div class="section-header">
-        <p class="section-title">地點路線</p>
-        <h2>清新聚會地點</h2>
-        <p>台北市幸福路 101 號｜午後 3:00 入席</p>
-      </div>
-      <div class="location-grid">
-        <div class="map-card" data-reveal>
-          <div class="map-placeholder">
-            <p>手繪地圖佔位圖</p>
-            <span>AI placeholder map</span>
+    <main class="-mt-16 px-4 pb-16 sm:px-6 lg:px-8">
+      <!-- Main content card with translucent backdrop -->
+      <section
+        class="relative mx-auto max-w-4xl rounded-[2.5rem] border border-white/60 bg-white/80 p-8 shadow-2xl backdrop-blur-sm card-shadow sm:p-12"
+        id="invitation"
+      >
+        <div class="grain-overlay pointer-events-none absolute inset-0 rounded-[2.5rem]"></div>
+        <div class="relative">
+          <div class="flex flex-col items-center text-center">
+            <img
+              src="img/leaf.svg"
+              alt="Botanical accent"
+              class="h-12 w-12 opacity-80"
+              loading="lazy"
+            />
+            <p class="mt-4 text-sm uppercase tracking-[0.4em] text-moss/70">With Quiet Joy</p>
+            <h2 class="mt-3 font-serif text-3xl text-moss sm:text-4xl">We Invite You Into The Clearing</h2>
+            <p class="mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
+              We found each other in the hush between morning light and birdsong.
+              We promise to keep building that sanctuary, one gentle sunrise at a time.
+              Please join us for vows wrapped in cedar air, soft laughter, and stories shared
+              by lantern glow.
+            </p>
           </div>
-          <div class="map-actions">
-            <a class="button" href="https://maps.google.com" target="_blank" rel="noreferrer">開啟 Google Maps</a>
-            <a class="button ghost" href="#survey">回報交通方式</a>
-          </div>
-        </div>
-        <div class="route-info" data-reveal>
-          <h3>交通小提醒</h3>
-          <ul>
-            <li>捷運幸福站 2 號出口，步行 6 分鐘。</li>
-            <li>自駕可停放於「幸福停車場」，備有代客停車。</li>
-            <li>若需無障礙服務，請提前告知我們。</li>
-          </ul>
-          <div class="route-note">
-            <strong>集合時間：</strong> 14:30 迎賓茶點
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="survey" data-reveal>
-      <div class="section-header">
-        <p class="section-title">飲食問券</p>
-        <h2>幫我們準備最剛好的心意</h2>
-        <p>之後將串接 Google Sheets。現在先留下你的偏好。</p>
-      </div>
-      <form class="survey-form" id="survey-form">
-        <label>
-          姓名
-          <input type="text" name="name" placeholder="請輸入姓名" required />
-        </label>
-        <label>
-          出席狀態
-          <select name="attendance" required>
-            <option value="">請選擇</option>
-            <option value="yes">會出席</option>
-            <option value="maybe">可能出席</option>
-            <option value="no">無法出席</option>
-          </select>
-        </label>
-        <label>
-          餐點偏好
-          <select name="meal" required>
-            <option value="">請選擇</option>
-            <option value="standard">一般</option>
-            <option value="vegetarian">素食</option>
-            <option value="halal">清真</option>
-            <option value="no-seafood">不吃海鮮</option>
-          </select>
-        </label>
-        <label>
-          想對我們說的話
-          <textarea name="message" rows="4" placeholder="留下祝福或備註"></textarea>
-        </label>
-        <button class="button" type="submit">送出問券</button>
-      </form>
-      <p class="form-note">提交後僅顯示提示訊息，日後可替換為 Google 表單連結。</p>
-    </section>
-
-    <section class="section invitation" id="invitation" data-reveal>
-      <div class="section-header">
-        <p class="section-title">喜帖</p>
-        <h2>誠摯邀請</h2>
-        <p>我們想邀請你，一起見證這份溫柔的承諾。</p>
-      </div>
-      <div class="invitation-card" data-reveal>
-        <div class="invitation-text">
-          <p class="handwriting">With joy in our hearts,</p>
-          <h3>Ryan & Lillian</h3>
-          <p>誠摯邀請您蒞臨我們的婚禮，分享幸福與祝福。</p>
-          <div class="details">
-            <div>
-              <span>日期</span>
-              <strong>2025.10.18 (Sat)</strong>
+          <!-- Poetic body copy -->
+          <div class="mt-10 grid gap-8 md:grid-cols-2">
+            <div class="rounded-3xl bg-parchment/80 p-6 text-sm leading-relaxed text-stone-700">
+              <p class="font-serif text-lg text-moss">In the Forest</p>
+              <p class="mt-3">
+                Every trail we walked taught us patience. Every ring of the birch reminded us that
+                love grows when tended slowly. Together we choose kindness, shared breaths, and
+                open hands.
+              </p>
             </div>
-            <div>
-              <span>時間</span>
-              <strong>15:00 Ceremony</strong>
-            </div>
-            <div>
-              <span>地點</span>
-              <strong>台北市幸福路 101 號</strong>
+            <div class="rounded-3xl bg-parchment/80 p-6 text-sm leading-relaxed text-stone-700">
+              <p class="font-serif text-lg text-moss">Our Promise</p>
+              <p class="mt-3">
+                May our home feel like moss under bare feet, candlelight against dusk, and music that
+                lingers. Your blessing will forever live in the canopy of stories above us.
+              </p>
             </div>
           </div>
-          <a class="button" href="#top">回到頂部</a>
-        </div>
-        <div class="invitation-art">
-          <svg viewBox="0 0 240 280" role="img" aria-label="喜帖插畫">
-            <rect x="20" y="20" width="200" height="240" rx="30" fill="#f5f7ff" stroke="#7aa7ff" stroke-width="4" />
-            <path d="M70 190 C90 150 120 150 140 190" stroke="#6dd6c8" stroke-width="5" fill="none" stroke-linecap="round" />
-            <circle cx="120" cy="110" r="40" fill="#e1f4ff" stroke="#7aa7ff" stroke-width="4" />
-            <path d="M105 115 Q120 130 135 115" stroke="#2f354a" stroke-width="4" fill="none" stroke-linecap="round" />
-            <circle cx="105" cy="100" r="6" fill="#2f354a" />
-            <circle cx="135" cy="100" r="6" fill="#2f354a" />
-            <text x="120" y="235" font-family="Quicksand, sans-serif" font-size="18" text-anchor="middle" fill="#2f354a">Modern cute</text>
-          </svg>
-          <p>清新俏皮的小插畫</p>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <p>Ryan & Lillian · Thanks for being part of our story.</p>
-  </footer>
+          <!-- Details block -->
+          <div class="mt-12 rounded-3xl bg-white/70 p-6 text-center text-sm text-stone-700 sm:p-8">
+            <p class="font-serif text-xl text-moss">Gathering Details</p>
+            <div
+              class="mt-6 grid gap-6 text-base text-stone-800 md:grid-cols-3 md:text-left"
+            >
+              <div>
+                <p class="uppercase tracking-[0.2em] text-xs text-sage">Date</p>
+                <p class="mt-1 font-serif text-lg text-moss">Saturday, Oct 18</p>
+              </div>
+              <div>
+                <p class="uppercase tracking-[0.2em] text-xs text-sage">Moment</p>
+                <p class="mt-1 font-serif text-lg text-moss">3:00 PM Ceremony</p>
+              </div>
+              <div>
+                <p class="uppercase tracking-[0.2em] text-xs text-sage">Location</p>
+                <p class="mt-1 font-serif text-lg text-moss">
+                  Willow Glade Conservatory �P Evergreen Valley
+                </p>
+              </div>
+            </div>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-full bg-moss px-6 py-3 text-white transition hover:bg-moss/90"
+              >
+                Open Map
+              </a>
+              <a
+                href="#rsvp"
+                class="rounded-full border border-moss/50 px-6 py-3 text-moss transition hover:bg-moss/10"
+              >
+                See RSVP Notes
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <script src="script.js"></script>
-</body>
+      <!-- RSVP / contact block -->
+      <section
+        id="rsvp"
+        class="mx-auto mt-12 max-w-3xl rounded-[2rem] border border-white/50 bg-white/70 p-8 text-center shadow-lg sm:p-10"
+      >
+        <p class="font-serif text-2xl text-moss">RSVP &amp; Warm Notes</p>
+        <p class="mt-4 text-base leading-relaxed text-stone-700">
+          Please message us via LINE or email by September 5 so we can prepare a seat with your
+          name on the table runner. Let us know your favorite tea or any wishes you have for the
+          evening�Xwe would love to weave them into the celebration.
+        </p>
+        <div class="mt-8 flex flex-col gap-4 text-sm text-stone-600 sm:flex-row sm:justify-center">
+          <div class="rounded-full bg-parchment px-6 py-3">
+            LINE �P @haydenandmira
+          </div>
+          <div class="rounded-full bg-parchment px-6 py-3">
+            Email �P forestpromise@mail.com
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-moss/70">
+      Rooted in love �P Hayden &amp; Mira �P 2025
+    </footer>
+  </body>
 </html>
