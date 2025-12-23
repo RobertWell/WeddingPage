@@ -66,7 +66,7 @@
       }
     </style>
   </head>
-  <body class="bg-parchment text-pine" data-config-src="config.csv" data-default-lang="zh">
+  <body class="bg-parchment text-pine" data-config-src="config.csv" data-default-lang="zh" data-rsvp-endpoint="">
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="relative isolate min-h-[80vh] overflow-hidden">
       <div class="absolute inset-0">
@@ -246,7 +246,7 @@
               此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
             </p>
           </div>
-          <form class="mx-auto mt-8 max-w-3xl space-y-6 text-sm">
+          <form class="mx-auto mt-8 max-w-3xl space-y-6 text-sm" data-rsvp-form>
               <label class="block">
               <span class="text-pine/70" data-config="survey.label.name">你的名字</span>
               <input
@@ -307,6 +307,7 @@
             >
               送出回覆
             </button>
+            <p class="mt-4 text-center text-sm text-pine/70 hidden" data-rsvp-status role="status"></p>
           </form>
           <p class="mt-4 text-center text-xs text-pine/70" data-config="survey.note">
             表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
@@ -368,7 +369,9 @@
       (function () {
         const bodyEl = document.body;
         const CONFIG_SOURCE_URL =
-          (bodyEl && bodyEl.dataset.configSrc) || window.CONFIG_SOURCE_URL || "config.csv";
+          (bodyEl && bodyEl.dataset.configSrc) ||
+          (typeof window !== "undefined" && window.CONFIG_SOURCE_URL) ||
+          "config.csv";
         const DEFAULT_LANG = (bodyEl && bodyEl.dataset.defaultLang) || "zh";
         const STORAGE_KEY = "forest-wedding-lang";
         const state = {
@@ -376,6 +379,11 @@
           data: {},
           currentLang: DEFAULT_LANG,
         };
+
+        const getRSVPEndpoint = () =>
+          (bodyEl && bodyEl.dataset.rsvpEndpoint) ||
+          (typeof window !== "undefined" && window.RSVP_ENDPOINT) ||
+          "";
 
         function parseCSVLine(line) {
           const cells = [];
@@ -426,7 +434,7 @@
               data[lang][key] = value;
             });
           });
-          const languages = langHeaders.filter((lang, idx) => lang && langHeaders.indexOf(lang) === idx);
+          const languages = Array.from(new Set(langHeaders.filter(Boolean)));
           return { languages, data };
         }
 
@@ -450,19 +458,27 @@
           document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
         }
 
+        function getValueForKey(key, fallback = "", lang = state.currentLang) {
+          const order = [];
+          const enqueue = (code) => {
+            if (code && !order.includes(code)) order.push(code);
+          };
+          enqueue(lang);
+          enqueue(DEFAULT_LANG);
+          state.languages.forEach(enqueue);
+          enqueue("value");
+          for (const code of order) {
+            const bucket = state.data[code];
+            if (bucket && bucket[key]) return bucket[key];
+          }
+          return fallback;
+        }
+
         function applyLanguage(lang) {
-          const order = [lang, ...state.languages.filter((code) => code !== lang)];
           document.querySelectorAll("[data-config]").forEach((el) => {
             const key = el.dataset.config;
             if (!key) return;
-            let value = "";
-            for (const code of order) {
-              const entry = state.data[code];
-              if (entry && entry[key]) {
-                value = entry[key];
-                break;
-              }
-            }
+            const value = getValueForKey(key, "", lang);
             if (!value) return;
             const attr = el.dataset.configAttr;
             if (attr) {
@@ -524,10 +540,87 @@
           }
         }
 
+        function showRSVPStatus(type, fallback = "") {
+          const statusEl = document.querySelector("[data-rsvp-status]");
+          if (!statusEl) return;
+          const message = getValueForKey(`survey.message.${type}`, fallback) || fallback;
+          if (!message) {
+            statusEl.classList.add("hidden");
+            return;
+          }
+          statusEl.textContent = message;
+          statusEl.dataset.status = type;
+          statusEl.classList.remove("hidden");
+        }
+
+        function setupRSVPForm() {
+          const form = document.querySelector("[data-rsvp-form]");
+          if (!form) return;
+          const submitBtn = form.querySelector("[type='submit']");
+          form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            if (!navigator.onLine) {
+              showRSVPStatus("offline");
+              return;
+            }
+            const endpoint = getRSVPEndpoint();
+            if (!endpoint) {
+              showRSVPStatus("offline", "RSVP endpoint is not configured.");
+              return;
+            }
+            const formData = new FormData(form);
+            const payload = {
+              name: formData.get("name")?.trim() || "",
+              guests: formData.get("guests") || "",
+              diet: formData.get("diet") || "",
+              message: formData.get("message")?.trim() || "",
+              locale: state.currentLang,
+              timestamp: new Date().toISOString(),
+            };
+            if (!payload.name || !payload.guests || !payload.diet) {
+              form.reportValidity();
+              return;
+            }
+            if (submitBtn) {
+              submitBtn.disabled = true;
+              submitBtn.classList.add("opacity-60");
+            }
+            showRSVPStatus("sending");
+            try {
+              const response = await fetch(endpoint, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+              });
+              if (!response.ok) throw new Error("Network");
+              const result = await response.json().catch(() => ({}));
+              const ok =
+                result.status === "success" ||
+                result.status === "ok" ||
+                result.result === "success" ||
+                !Object.keys(result).length;
+              if (!ok) throw new Error(result.message || "Form submission failed");
+              showRSVPStatus("success");
+              form.reset();
+            } catch (err) {
+              console.error("RSVP submission failed", err);
+              showRSVPStatus("error");
+            } finally {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove("opacity-60");
+              }
+            }
+          });
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
           document.querySelectorAll("[data-lang-button]").forEach((btn) => {
             btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
           });
+          setupRSVPForm();
           loadConfig();
         });
       })();
