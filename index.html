@@ -254,8 +254,6 @@
           <form
             class="mx-auto mt-8 max-w-3xl space-y-6 text-sm"
             data-rsvp-form
-            method="post"
-            target="rsvp-target"
           >
             <label class="block">
               <span class="text-pine/70" data-config="survey.label.name">你的名字</span>
@@ -320,7 +318,6 @@
               送出回覆
             </button>
             <p class="mt-4 text-center text-sm text-pine/70 hidden" data-rsvp-status role="status"></p>
-            <iframe name="rsvp-target" hidden></iframe>
           </form>
           <p class="mt-4 text-center text-xs text-pine/70" data-config="survey.note">
             表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
@@ -579,22 +576,49 @@
           const form = document.querySelector("[data-rsvp-form]");
           if (!form) return;
           const endpoint = getRSVPEndpoint();
-          if (endpoint) {
-            form.action = endpoint;
-          }
-          form.addEventListener("submit", () => {
+
+          form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            if (!endpoint) {
+              showRSVPStatus("error", "RSVP endpoint not configured");
+              return;
+            }
+
             showRSVPStatus("sending");
-            setTimeout(() => {
-              showRSVPStatus("success");
-            }, 400);
+
+            const formData = new FormData(form);
+            const data = {
+              name: formData.get("name"),
+              guests: formData.get("guests"),
+              diet: formData.get("diet"),
+              message: formData.get("message"),
+              locale: formData.get("locale"),
+              source: formData.get("source")
+            };
+
+            try {
+              const response = await fetch(endpoint, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+              });
+
+              const result = await response.json();
+
+              if (result.status === "success") {
+                showRSVPStatus("success");
+                form.reset();
+              } else {
+                showRSVPStatus("error", result.message || "提交失敗，請稍後再試");
+              }
+            } catch (error) {
+              console.error("RSVP submission error:", error);
+              showRSVPStatus("error", "提交失敗，請稍後再試");
+            }
           });
-          const iframe = document.querySelector("iframe[name='rsvp-target']");
-          if (iframe) {
-            iframe.addEventListener("load", () => {
-              showRSVPStatus("success");
-              form.reset();
-            });
-          }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
