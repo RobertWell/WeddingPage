@@ -588,25 +588,27 @@
             showRSVPStatus("sending");
 
             const formData = new FormData(form);
-            const data = {
-              name: formData.get("name"),
-              guests: formData.get("guests"),
-              diet: formData.get("diet"),
-              message: formData.get("message"),
-              locale: formData.get("locale"),
-              source: formData.get("source")
-            };
+            const data = new URLSearchParams({
+              name: formData.get("name") || "",
+              guests: formData.get("guests") || "",
+              diet: formData.get("diet") || "",
+              message: formData.get("message") || "",
+              locale: formData.get("locale") || "",
+              source: formData.get("source") || ""
+            });
 
             try {
               const response = await fetch(endpoint, {
                 method: "POST",
-                headers: {
-                  "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
+                body: data
               });
 
-              const result = await response.json();
+              let result = {};
+              try {
+                result = await response.json();
+              } catch (err) {
+                result = { status: response.ok ? "success" : "error" };
+              }
 
               if (result.status === "success") {
                 showRSVPStatus("success");
