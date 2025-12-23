@@ -22,6 +22,15 @@ This project keeps presentation content in `config.csv` and pushes RSVP submissi
 ```gs
 const CONFIG_SHEET = 'config';
 const RSVP_SHEET = 'rsvp';
+// Replace with your spreadsheet ID when using a standalone Apps Script project.
+const SPREADSHEET_ID = '';
+
+function getSpreadsheet_() {
+  if (SPREADSHEET_ID) {
+    return SpreadsheetApp.openById(SPREADSHEET_ID);
+  }
+  return SpreadsheetApp.getActive();
+}
 
 function doGet(e) {
   if (e && e.parameter && e.parameter.resource === 'config') {
@@ -35,7 +44,9 @@ function doPost(e) {
     return jsonResponse_({ status: 'error', message: 'Missing payload' }, 400);
   }
   const payload = JSON.parse(e.postData.contents);
-  const sheet = SpreadsheetApp.getActive().getSheetByName(RSVP_SHEET);
+  const spreadsheet = getSpreadsheet_();
+  if (!spreadsheet) return jsonResponse_({ status: 'error', message: 'Spreadsheet not found' }, 500);
+  const sheet = spreadsheet.getSheetByName(RSVP_SHEET);
   if (!sheet) return jsonResponse_({ status: 'error', message: 'RSVP sheet missing' }, 500);
 
   const timestamp = new Date();
@@ -53,7 +64,9 @@ function doPost(e) {
 }
 
 function getConfigCsv_() {
-  const sheet = SpreadsheetApp.getActive().getSheetByName(CONFIG_SHEET);
+  const spreadsheet = getSpreadsheet_();
+  if (!spreadsheet) throw new Error('Spreadsheet not found');
+  const sheet = spreadsheet.getSheetByName(CONFIG_SHEET);
   if (!sheet) throw new Error('Config sheet not found');
   const values = sheet.getDataRange().getDisplayValues();
   return values.map((row) => row.map((cell) => `"${cell.replace(/"/g, '""')}"`).join(',')).join('\n');
