@@ -8,6 +8,15 @@ function doGet(e) {
   return jsonResponse_({ status: 'ready' });
 }
 
+function doOptions(e) {
+  return ContentService.createTextOutput('')
+    .setMimeType(ContentService.MimeType.TEXT)
+    .setHeader('Access-Control-Allow-Origin', '*')
+    .setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+    .setHeader('Access-Control-Allow-Headers', 'Content-Type')
+    .setHeader('Access-Control-Max-Age', '3600');
+}
+
 function doPost(e) {
   const params = (e && e.parameter) || {};
   let payload = {};
@@ -66,9 +75,13 @@ function getConfigCsv_() {
 }
 
 function buildCsvResponse_(csv) {
-  return ContentService.createTextOutput(csv).setMimeType(ContentService.MimeType.CSV);
+  return ContentService.createTextOutput(csv)
+    .setMimeType(ContentService.MimeType.CSV)
+    .setHeader('Access-Control-Allow-Origin', '*');
 }
 
 function jsonResponse_(obj) {
-  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+  return ContentService.createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeader('Access-Control-Allow-Origin', '*');
 }
