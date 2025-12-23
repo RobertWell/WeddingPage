@@ -9,22 +9,50 @@ function doGet(e) {
 }
 
 function doPost(e) {
-  if (!e || !e.postData || !e.postData.contents) {
-    return jsonResponse_({ status: 'error', message: 'Missing payload' }, 400);
+  const params = (e && e.parameter) || {};
+  let payload = {};
+  if (e && e.postData && e.postData.contents && e.postData.type === 'application/json') {
+    try {
+      payload = JSON.parse(e.postData.contents);
+    } catch (err) {
+      payload = {};
+    }
   }
-  const payload = JSON.parse(e.postData.contents);
+  const getField = (key) => {
+    if (payload[key] !== undefined && payload[key] !== null) {
+      const val = payload[key];
+      return typeof val === 'string' ? val.trim() : val;
+    }
+    if (params[key] !== undefined && params[key] !== null) {
+      const val = params[key];
+      return typeof val === 'string' ? val.trim() : val;
+    }
+    return '';
+  };
+
+  const name = getField('name');
+  const guests = getField('guests');
+  const diet = getField('diet');
+  const message = getField('message');
+  const locale = getField('locale') || 'zh';
+  const source = getField('source') || 'web';
+
+  if (!name || !guests || !diet) {
+    return jsonResponse_({ status: 'error', message: 'Missing required fields' });
+  }
+
   const sheet = SpreadsheetApp.getActive().getSheetByName(RSVP_SHEET);
-  if (!sheet) return jsonResponse_({ status: 'error', message: 'RSVP sheet missing' }, 500);
+  if (!sheet) return jsonResponse_({ status: 'error', message: 'RSVP sheet missing' });
 
   const timestamp = new Date();
   sheet.appendRow([
     timestamp,
-    payload.name || '',
-    payload.guests || '',
-    payload.diet || '',
-    payload.message || '',
-    payload.locale || '',
-    payload.source || 'web',
+    name,
+    guests,
+    diet,
+    message,
+    locale,
+    source,
   ]);
 
   return jsonResponse_({ status: 'success' });

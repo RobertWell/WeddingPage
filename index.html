@@ -256,9 +256,8 @@
             data-rsvp-form
             method="post"
             target="rsvp-target"
-            enctype="application/x-www-form-urlencoded"
           >
-              <label class="block">
+            <label class="block">
               <span class="text-pine/70" data-config="survey.label.name">你的名字</span>
               <input
                 type="text"
@@ -311,6 +310,8 @@
                 class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
               ></textarea>
             </label>
+            <input type="hidden" name="locale" value="zh" data-rsvp-locale />
+            <input type="hidden" name="source" value="web" />
             <button
               type="submit"
               class="w-full rounded-full bg-moss px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-moss/90"
@@ -527,6 +528,7 @@
           refreshLangButtons();
           updateDocumentLang(lang);
           storeLang(lang);
+          updateLocaleField();
         }
 
         async function loadConfig() {
@@ -547,8 +549,16 @@
             refreshLangButtons();
             updateDocumentLang(state.currentLang);
             storeLang(state.currentLang);
+            updateLocaleField();
           } catch (err) {
             console.error("Unable to load config", err);
+          }
+        }
+
+        function updateLocaleField() {
+          const input = document.querySelector("[data-rsvp-locale]");
+          if (input) {
+            input.value = state.currentLang || DEFAULT_LANG;
           }
         }
 
