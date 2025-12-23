@@ -8,6 +8,11 @@ function doGet(e) {
   return jsonResponse_({ status: 'ready' });
 }
 
+function doOptions(e) {
+  // CORS is handled by the deployment configuration
+  return ContentService.createTextOutput('').setMimeType(ContentService.MimeType.TEXT);
+}
+
 function doPost(e) {
   const params = (e && e.parameter) || {};
   let payload = {};
