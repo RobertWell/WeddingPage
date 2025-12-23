@@ -1,0 +1,62 @@
+key,value
+nav.brand,森語&誓約
+nav.link.couple,新人介紹
+nav.link.location,地點交通
+nav.link.survey,飲食問卷
+nav.link.invitation,喜帖
+hero.tagline,Warm & Fresh Wedding
+hero.names,昊然 & 予晴
+hero.description,我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
+hero.datetime,2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區林蔭路 88 號
+hero.badge1,戶外草地證婚
+hero.badge2,清新溫柔風
+hero.badge3,歡迎小小孩
+hero.ctaPrimary,查看喜帖
+hero.ctaSecondary,填寫問卷
+couple.section.heading,把生活寫成一首溫柔的歌
+couple.section.description,我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
+groom.title,新郎｜昊然
+groom.description,喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。
+groom.detail1,婚禮口頭禪：慢慢來，會更美。
+groom.detail2,最常說的話：別忘了抬頭看天空。
+bride.title,新娘｜予晴
+bride.description,熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。
+bride.detail1,療癒小夥伴：松鼠與貓咪。
+bride.detail2,最愛收集：旅行貼紙與古董紙膠帶。
+story.title,我們的故事
+story.description,第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。
+location.section.heading,餐廳地點
+location.section.title,森光花園，等你來散步
+location.section.description,我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
+venue.name,森光花園宴會廳
+venue.address,台北市信義區林蔭路 188 號
+map.url,https://maps.google.com
+transport.title,交通方式
+transport.item1,捷運｜搭乘信義線至「松山站」，步行約 16 分鐘。
+transport.item2,公車｜88、208、藍 1s0 於「林蔭路口」下車。
+transport.item3,開車｜場地下方設有停車場，可直達宴會廳。
+transport.note,若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
+survey.section.heading,簡單問卷
+survey.section.subtitle,你的喜好，我們想好好照顧
+survey.section.description,此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
+survey.label.name,你的名字
+survey.label.guests,出席人數
+survey.label.diet,飲食偏好
+survey.label.message,想對我們說的話
+survey.button,送出回覆
+survey.note,表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
+invitation.section.title,喜帖
+invitation.section.heading,願這場儀式感，與你共享
+invitation.section.description,用一封溫柔的喜帖，把我們的祝福親手遞給你。
+invitation.letter.salutation,Dear You,
+invitation.letter.body,我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
+invitation.date.label,日期
+invitation.date.value,2025 / 12 / 18（六）
+invitation.time.label,時間
+invitation.time.value,10:30 證婚 ・ 18:00 宴客
+invitation.location.label,地點
+invitation.location.value,森光花宴會廳
+invitation.button,回到頂端
+invitation.card.message,願你今天也被溫柔包圍
+invitation.card.note,我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
+footer.text,可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
