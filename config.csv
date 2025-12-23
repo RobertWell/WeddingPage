@@ -1,62 +1,79 @@
-key,value
-nav.brand,森語&誓約
-nav.link.couple,新人介紹
-nav.link.location,地點交通
-nav.link.survey,飲食問卷
-nav.link.invitation,喜帖
-hero.tagline,Warm & Fresh Wedding
-hero.names,昊然 & 予晴
-hero.description,我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
-hero.datetime,2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區林蔭路 88 號
-hero.badge1,戶外草地證婚
-hero.badge2,清新溫柔風
-hero.badge3,歡迎小小孩
-hero.ctaPrimary,查看喜帖
-hero.ctaSecondary,填寫問卷
-couple.section.heading,把生活寫成一首溫柔的歌
-couple.section.description,我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
-groom.title,新郎｜昊然
-groom.description,喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。
-groom.detail1,婚禮口頭禪：慢慢來，會更美。
-groom.detail2,最常說的話：別忘了抬頭看天空。
-bride.title,新娘｜予晴
-bride.description,熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。
-bride.detail1,療癒小夥伴：松鼠與貓咪。
-bride.detail2,最愛收集：旅行貼紙與古董紙膠帶。
-story.title,我們的故事
-story.description,第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。
-location.section.heading,餐廳地點
-location.section.title,森光花園，等你來散步
-location.section.description,我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
-venue.name,森光花園宴會廳
-venue.address,台北市信義區林蔭路 188 號
-map.url,https://maps.google.com
-transport.title,交通方式
-transport.item1,捷運｜搭乘信義線至「松山站」，步行約 16 分鐘。
-transport.item2,公車｜88、208、藍 1s0 於「林蔭路口」下車。
-transport.item3,開車｜場地下方設有停車場，可直達宴會廳。
-transport.note,若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
-survey.section.heading,簡單問卷
-survey.section.subtitle,你的喜好，我們想好好照顧
-survey.section.description,此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
-survey.label.name,你的名字
-survey.label.guests,出席人數
-survey.label.diet,飲食偏好
-survey.label.message,想對我們說的話
-survey.button,送出回覆
-survey.note,表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
-invitation.section.title,喜帖
-invitation.section.heading,願這場儀式感，與你共享
-invitation.section.description,用一封溫柔的喜帖，把我們的祝福親手遞給你。
-invitation.letter.salutation,Dear You,
-invitation.letter.body,我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
-invitation.date.label,日期
-invitation.date.value,2025 / 12 / 18（六）
-invitation.time.label,時間
-invitation.time.value,10:30 證婚 ・ 18:00 宴客
-invitation.location.label,地點
-invitation.location.value,森光花宴會廳
-invitation.button,回到頂端
-invitation.card.message,願你今天也被溫柔包圍
-invitation.card.note,我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
-footer.text,可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
+key,zh,en
+nav.brand,森語誓約,Forest Promise
+nav.link.couple,新人介紹,Couple
+nav.link.location,地點交通,Location
+nav.link.survey,飲食問卷,RSVP
+nav.link.invitation,喜帖,Invitation
+hero.tagline,Warm & Fresh Wedding,Warm & Fresh Wedding
+hero.names,昊然 & 予晴,Haoran & Yu-Ching
+hero.description,"我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。","We chose a garden afternoon with breeze and laughter to place our vows inside each other's names. Join us in this gentle forest ceremony."
+hero.datetime,2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區林蔭路 88 號,"Oct 18, 2025 · 3:30 PM · Forestlight Conservatory · 88 Linyin Rd, Taipei"
+hero.badge1,戶外草地證婚,"Outdoor meadow vows"
+hero.badge2,清新溫柔風,"Soft forest styling"
+hero.badge3,歡迎小小孩,"Little guests welcome"
+hero.ctaPrimary,查看喜帖,"View Invitation"
+hero.ctaSecondary,填寫問卷,"RSVP Form"
+couple.section.label,新人介紹,"Couple"
+couple.section.heading,把生活寫成一首溫柔的歌,"Turning daily life into a gentle song"
+couple.section.description,"我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。","We like to walk slowly, sketching each day like a postcard. We hope you feel the same soft, fresh warmth here."
+groom.title,新郎｜昊然,Groom · Haoran
+groom.description,"喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。","Enjoys pour-over coffee, sketching doodles, and editing photos with Yu-Ching while honoring little rituals."
+groom.detail1,婚禮口頭禪：慢慢來，會更美。,"Wedding mantra: Slow down and it becomes beautiful."
+groom.detail2,最常說的話：別忘了抬頭看天空。,"Often says: remember to look up at the sky."
+bride.title,新娘｜予晴,Bride · Yu-Ching
+bride.description,"熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。","Loves plants, travel, and decorating cozy corners with family. She says the wedding is for collecting their first promises."
+bride.detail1,療癒小夥伴：松鼠與貓咪。,"Comfort companions: squirrels and cats."
+bride.detail2,最愛收集：旅行貼紙與古董紙膠帶。,"Favorite collectibles: travel stickers and vintage washi."
+story.title,我們的故事,"Our Story"
+story.description,"第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。","After a rain-washed walk we decided to write one another into the future. For the wedding we prepared greenery, handwritten cards, and a corner to keep your blessings."
+location.section.heading,餐廳地點,"Venue"
+location.section.title,森光花園，等你來散步,"Forestlight Garden · Come wander with us"
+location.section.description,"我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。","We chose a convenient venue wrapped in nature—feel free to stroll the neighborhood beforehand."
+venue.name,森光花園宴會廳,"Forestlight Conservatory"
+venue.address,台北市信義區林蔭路 88 號,"88 Linyin Rd, Xinyi District, Taipei"
+map.url,https://maps.google.com,"https://maps.google.com"
+location.button.map,開啟地圖,"Open map"
+location.button.rsvp,填寫出席,"RSVP here"
+transport.title,交通方式,"How to get there"
+transport.item1,捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。,"Metro · Xinyi Line to Songshan Station, 6 min walk."
+transport.item2,公車｜88、208、藍 10 於「林蔭路口」下車。,"Bus · 88/208/Blue 10 to Linyin Rd stop."
+transport.item3,開車｜場地下方設有停車場，可直達宴會廳。,"Driving · Underground parking leads straight to the hall."
+transport.note,"若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。","Need a shuttle or assistance? Leave a note in the RSVP and we'll have a helper contact you."
+survey.section.heading,簡單問卷,"RSVP Form"
+survey.section.subtitle,你的喜好，我們想好好照顧,"We want to take good care of you"
+survey.section.description,"此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。","We'll later connect this form to Google Sheets; for now it gathers your needs simply."
+survey.label.name,你的名字,"Your name"
+survey.placeholder.name,請輸入姓名,"Please enter your name"
+survey.label.guests,出席人數,"Number of guests"
+survey.label.diet,飲食偏好,"Dietary preference"
+survey.label.message,想對我們說的話,"Message for us"
+survey.placeholder.message,寫下你的祝福或提醒,"Write your wishes or reminders"
+survey.option.guests.placeholder,請選擇,"Select"
+survey.option.guests.1,1 人,"1 guest"
+survey.option.guests.2,2 人,"2 guests"
+survey.option.guests.3,3 人,"3 guests"
+survey.option.guests.4plus,4 人以上,"4+ guests"
+survey.option.diet.placeholder,請選擇,"Select"
+survey.option.diet.standard,一般餐,"Standard meal"
+survey.option.diet.vegetarian,蛋奶素,"Lacto-ovo vegetarian"
+survey.option.diet.vegan,全素,"Vegan"
+survey.option.diet.noSeafood,不吃海鮮,"No seafood"
+survey.button,送出回覆,"Send RSVP"
+survey.note,表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。,"You'll see a thank-you message after sending; we'll update you when Google Sheets integration is live."
+invitation.section.title,喜帖,"Invitation"
+invitation.section.heading,願這場儀式感，與你共享,"May this ceremony be shared with you"
+invitation.section.description,用一封溫柔的喜帖，把我們的祝福親手遞給你。,"A gentle card to hand our blessings to you."
+invitation.letter.salutation,Dear You,"Dear You"
+invitation.letter.body,"我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。","We warmly invite you to witness this forest promise. We'll trade vows, light candles, and prepare gifts for every friend who travels to us. Let's capture a heartfelt photo together."
+invitation.date.label,日期,"Date"
+invitation.date.value,2025 / 10 / 18（六）,"Oct 18, 2025 (Sat)"
+invitation.time.label,時間,"Time"
+invitation.time.value,15:30 證婚 ・ 18:00 宴客,"3:30 PM Ceremony · 6:00 PM Dinner"
+invitation.location.label,地點,"Venue"
+invitation.location.value,森光花園宴會廳,"Forestlight Conservatory"
+invitation.button,回到頂端,"Back to top"
+invitation.card.message,願你今天也被溫柔包圍,"May today wrap you in gentleness"
+invitation.card.note,"我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。","We hid little phrases in every place card and light, waiting for you to find them. Can't wait to toast with you under the trees."
+footer.text,可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福,"Single-page invite ready for GitHub Pages · Thank you for your love"
+lang.zhLabel,中文,"中文"
+lang.enLabel,English,"English"

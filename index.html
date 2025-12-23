@@ -55,9 +55,18 @@
         pointer-events: none;
         mix-blend-mode: soft-light;
       }
+
+      .lang-switch button {
+        border-radius: 999px;
+      }
+
+      .lang-switch button.is-active {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #1f2a1f;
+      }
     </style>
   </head>
-  <body class="bg-parchment text-pine">
+  <body class="bg-parchment text-pine" data-config-src="config.csv" data-default-lang="zh">
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="relative isolate min-h-[80vh] overflow-hidden">
       <div class="absolute inset-0">
@@ -69,13 +78,40 @@
         />
         <div class="absolute inset-0 bg-gradient-to-b from-pine/80 via-pine/60 to-parchment/95"></div>
       </div>
-      <nav class="relative z-10 flex flex-wrap items-center justify-between px-6 py-6 text-white sm:px-10 lg:px-16">
+      <nav
+        class="relative z-10 flex flex-col gap-4 px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16"
+      >
         <div class="font-display text-xl tracking-[0.3em] uppercase" data-config="nav.brand">森語誓約</div>
-        <div class="flex flex-wrap gap-4 text-sm">
-          <a href="#couple" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.couple">新人介紹</a>
-          <a href="#location" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.location">地點交通</a>
-          <a href="#survey" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.survey">飲食問卷</a>
-          <a href="#invitation" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.invitation">喜帖</a>
+        <div class="flex flex-col items-start gap-4 text-sm sm:flex-row sm:items-center">
+          <div class="flex flex-wrap gap-4">
+            <a href="#couple" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.couple">新人介紹</a>
+            <a href="#location" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.location">地點交通</a>
+            <a href="#survey" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.survey">飲食問卷</a>
+            <a href="#invitation" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.invitation">喜帖</a>
+          </div>
+          <div
+            class="lang-switch inline-flex rounded-full border border-white/40 bg-white/10 text-xs uppercase tracking-[0.4em]"
+            data-lang-switch
+          >
+            <button
+              type="button"
+              class="px-3 py-1 text-white/80 transition"
+              data-lang-button="zh"
+              data-config="lang.zhLabel"
+              aria-pressed="true"
+            >
+              中文
+            </button>
+            <button
+              type="button"
+              class="px-3 py-1 text-white/80 transition"
+              data-lang-button="en"
+              data-config="lang.enLabel"
+              aria-pressed="false"
+            >
+              English
+            </button>
+          </div>
         </div>
       </nav>
       <div class="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-10 text-center text-white sm:px-10">
@@ -116,7 +152,7 @@
           <div class="relative">
             <div class="text-center">
               <img src="img/leaf.svg" alt="小葉片裝飾" class="mx-auto h-12 w-12 opacity-80" loading="lazy" />
-              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-moss/70">新人介紹</p>
+              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-moss/70" data-config="couple.section.label">新人介紹</p>
               <h2 class="mt-3 font-display text-3xl text-moss sm:text-4xl" data-config="couple.section.heading">把生活寫成一首溫柔的歌</h2>
               <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="couple.section.description">
                 我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
@@ -175,11 +211,13 @@
                     data-config-attr="href"
                     target="_blank"
                     rel="noreferrer"
-                    >開啟地圖</a
                   >
+                    <span data-config="location.button.map">開啟地圖</span>
+                  </a>
                   <a
                     class="rounded-full border border-white/60 px-5 py-2 text-center text-white transition hover:bg-white/10"
                     href="#survey"
+                    data-config="location.button.rsvp"
                     >填寫出席</a
                   >
                 </div>
@@ -209,13 +247,15 @@
             </p>
           </div>
           <form class="mx-auto mt-8 max-w-3xl space-y-6 text-sm">
-            <label class="block">
+              <label class="block">
               <span class="text-pine/70" data-config="survey.label.name">你的名字</span>
               <input
                 type="text"
                 name="name"
                 required
                 placeholder="請輸入姓名"
+                data-config="survey.placeholder.name"
+                data-config-attr="placeholder"
                 class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
               />
             </label>
@@ -227,11 +267,11 @@
                   required
                   class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
                 >
-                  <option value="">請選擇</option>
-                  <option value="1">1 人</option>
-                  <option value="2">2 人</option>
-                  <option value="3">3 人</option>
-                  <option value="4">4 人以上</option>
+                  <option value="" data-config="survey.option.guests.placeholder">請選擇</option>
+                  <option value="1" data-config="survey.option.guests.1">1 人</option>
+                  <option value="2" data-config="survey.option.guests.2">2 人</option>
+                  <option value="3" data-config="survey.option.guests.3">3 人</option>
+                  <option value="4" data-config="survey.option.guests.4plus">4 人以上</option>
                 </select>
               </label>
               <label class="block">
@@ -241,11 +281,11 @@
                   required
                   class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
                 >
-                  <option value="">請選擇</option>
-                  <option value="normal">一般餐</option>
-                  <option value="vegetarian">蛋奶素</option>
-                  <option value="vegan">全素</option>
-                  <option value="no-seafood">不吃海鮮</option>
+                  <option value="" data-config="survey.option.diet.placeholder">請選擇</option>
+                  <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
+                  <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素</option>
+                  <option value="vegan" data-config="survey.option.diet.vegan">全素</option>
+                  <option value="no-seafood" data-config="survey.option.diet.noSeafood">不吃海鮮</option>
                 </select>
               </label>
             </div>
@@ -255,6 +295,8 @@
                 name="message"
                 rows="4"
                 placeholder="寫下你的祝福或提醒"
+                data-config="survey.placeholder.message"
+                data-config-attr="placeholder"
                 class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
               ></textarea>
             </label>
@@ -324,6 +366,17 @@
     </footer>
     <script>
       (function () {
+        const bodyEl = document.body;
+        const CONFIG_SOURCE_URL =
+          (bodyEl && bodyEl.dataset.configSrc) || window.CONFIG_SOURCE_URL || "config.csv";
+        const DEFAULT_LANG = (bodyEl && bodyEl.dataset.defaultLang) || "zh";
+        const STORAGE_KEY = "forest-wedding-lang";
+        const state = {
+          languages: [],
+          data: {},
+          currentLang: DEFAULT_LANG,
+        };
+
         function parseCSVLine(line) {
           const cells = [];
           let current = "";
@@ -348,47 +401,135 @@
           return cells;
         }
 
-        function applyConfig(config) {
+        function parseConfig(text) {
+          const cleaned = text.replace(/^\uFEFF/, "");
+          const lines = cleaned.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+          if (!lines.length) {
+            return { languages: [], data: {} };
+          }
+          const headerCells = parseCSVLine(lines.shift());
+          const langHeaders = headerCells.slice(1).map((cell) => cell.trim() || "value");
+          if (!langHeaders.length) {
+            langHeaders.push("value");
+          }
+          const data = {};
+          langHeaders.forEach((lang) => {
+            data[lang] = {};
+          });
+          lines.forEach((line) => {
+            const cells = parseCSVLine(line);
+            const key = (cells[0] || "").trim();
+            if (!key) return;
+            langHeaders.forEach((lang, idx) => {
+              const value = (cells[idx + 1] || "").trim();
+              if (!data[lang]) data[lang] = {};
+              data[lang][key] = value;
+            });
+          });
+          const languages = langHeaders.filter((lang, idx) => lang && langHeaders.indexOf(lang) === idx);
+          return { languages, data };
+        }
+
+        function getStoredLang() {
+          try {
+            return window.localStorage.getItem(STORAGE_KEY);
+          } catch (err) {
+            return null;
+          }
+        }
+
+        function storeLang(lang) {
+          try {
+            window.localStorage.setItem(STORAGE_KEY, lang);
+          } catch (err) {
+            /* ignore */
+          }
+        }
+
+        function updateDocumentLang(lang) {
+          document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
+        }
+
+        function applyLanguage(lang) {
+          const order = [lang, ...state.languages.filter((code) => code !== lang)];
           document.querySelectorAll("[data-config]").forEach((el) => {
             const key = el.dataset.config;
-            if (!key || !(key in config)) return;
-            const value = config[key];
+            if (!key) return;
+            let value = "";
+            for (const code of order) {
+              const entry = state.data[code];
+              if (entry && entry[key]) {
+                value = entry[key];
+                break;
+              }
+            }
+            if (!value) return;
             const attr = el.dataset.configAttr;
             if (attr) {
               el.setAttribute(attr, value);
-            } else if (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.tagName === "SELECT") {
-              el.value = value;
             } else {
               el.textContent = value;
             }
           });
         }
 
-        async function loadConfig() {
-          try {
-            const res = await fetch("config.csv", { cache: "no-store" });
-            if (!res.ok) return;
-            const raw = await res.text();
-            const text = raw.replace(/^\uFEFF/, "");
-            const lines = text.split(/\r?\n/).filter((line) => line.trim().length > 0);
-            if (!lines.length) return;
-            if (lines[0].toLowerCase().startsWith("key")) {
-              lines.shift();
-            }
-            const config = {};
-            lines.forEach((line) => {
-              const [keyCell = "", valueCell = ""] = parseCSVLine(line);
-              const key = keyCell.trim();
-              if (!key) return;
-              config[key] = valueCell.trim();
-            });
-            applyConfig(config);
-          } catch (err) {
-            console.error("Unable to load config.csv", err);
+        function refreshLangButtons() {
+          const available = new Set(state.languages);
+          const buttons = document.querySelectorAll("[data-lang-button]");
+          buttons.forEach((btn) => {
+            const lang = btn.dataset.langButton;
+            const isActive = lang === state.currentLang;
+            const isAvailable = available.has(lang);
+            btn.classList.toggle("is-active", isActive);
+            btn.setAttribute("aria-pressed", String(isActive));
+            btn.disabled = !isAvailable;
+            btn.classList.toggle("opacity-40", !isAvailable);
+          });
+          const switcher = document.querySelector("[data-lang-switch]");
+          if (switcher) {
+            switcher.classList.toggle("hidden", available.size <= 1);
           }
         }
 
-        document.addEventListener("DOMContentLoaded", loadConfig);
+        function setLanguage(lang) {
+          if (!state.languages.includes(lang)) return;
+          if (lang === state.currentLang) return;
+          state.currentLang = lang;
+          applyLanguage(lang);
+          refreshLangButtons();
+          updateDocumentLang(lang);
+          storeLang(lang);
+        }
+
+        async function loadConfig() {
+          try {
+            const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
+            if (!res.ok) throw new Error("Failed to load config");
+            const raw = await res.text();
+            const { languages, data } = parseConfig(raw);
+            if (!languages.length) return;
+            state.languages = languages;
+            state.data = data;
+            const storedLang = getStoredLang();
+            const preferred = [storedLang, DEFAULT_LANG].find(
+              (code) => code && state.languages.includes(code)
+            );
+            state.currentLang = preferred || state.languages[0];
+            applyLanguage(state.currentLang);
+            refreshLangButtons();
+            updateDocumentLang(state.currentLang);
+            storeLang(state.currentLang);
+          } catch (err) {
+            console.error("Unable to load config", err);
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll("[data-lang-button]").forEach((btn) => {
+            btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
+          });
+          loadConfig();
+        });
       })();
     </script>
   </body>
