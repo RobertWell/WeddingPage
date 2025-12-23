@@ -251,7 +251,13 @@
               此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
             </p>
           </div>
-          <form class="mx-auto mt-8 max-w-3xl space-y-6 text-sm" data-rsvp-form>
+          <form
+            class="mx-auto mt-8 max-w-3xl space-y-6 text-sm"
+            data-rsvp-form
+            method="post"
+            target="rsvp-target"
+            enctype="application/x-www-form-urlencoded"
+          >
               <label class="block">
               <span class="text-pine/70" data-config="survey.label.name">你的名字</span>
               <input
@@ -313,6 +319,7 @@
               送出回覆
             </button>
             <p class="mt-4 text-center text-sm text-pine/70 hidden" data-rsvp-status role="status"></p>
+            <iframe name="rsvp-target" hidden></iframe>
           </form>
           <p class="mt-4 text-center text-xs text-pine/70" data-config="survey.note">
             表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
@@ -561,64 +568,23 @@
         function setupRSVPForm() {
           const form = document.querySelector("[data-rsvp-form]");
           if (!form) return;
-          const submitBtn = form.querySelector("[type='submit']");
-          form.addEventListener("submit", async (event) => {
-            event.preventDefault();
-            if (!navigator.onLine) {
-              showRSVPStatus("offline");
-              return;
-            }
-            const endpoint = getRSVPEndpoint();
-            if (!endpoint) {
-              showRSVPStatus("offline", "RSVP endpoint is not configured.");
-              return;
-            }
-            const formData = new FormData(form);
-            const payload = {
-              name: formData.get("name")?.trim() || "",
-              guests: formData.get("guests") || "",
-              diet: formData.get("diet") || "",
-              message: formData.get("message")?.trim() || "",
-              locale: state.currentLang,
-              timestamp: new Date().toISOString(),
-            };
-            if (!payload.name || !payload.guests || !payload.diet) {
-              form.reportValidity();
-              return;
-            }
-            if (submitBtn) {
-              submitBtn.disabled = true;
-              submitBtn.classList.add("opacity-60");
-            }
+          const endpoint = getRSVPEndpoint();
+          if (endpoint) {
+            form.action = endpoint;
+          }
+          form.addEventListener("submit", () => {
             showRSVPStatus("sending");
-            try {
-              const response = await fetch(endpoint, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(payload),
-              });
-              if (!response.ok) throw new Error("Network");
-              const result = await response.json().catch(() => ({}));
-              const ok =
-                result.status === "success" ||
-                result.status === "ok" ||
-                result.result === "success" ||
-                !Object.keys(result).length;
-              if (!ok) throw new Error(result.message || "Form submission failed");
+            setTimeout(() => {
+              showRSVPStatus("success");
+            }, 400);
+          });
+          const iframe = document.querySelector("iframe[name='rsvp-target']");
+          if (iframe) {
+            iframe.addEventListener("load", () => {
               showRSVPStatus("success");
               form.reset();
-            } catch (err) {
-              console.error("RSVP submission failed", err);
-              showRSVPStatus("error");
-            } finally {
-              if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.classList.remove("opacity-60");
-              }
-            }
-          });
+            });
+          }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
