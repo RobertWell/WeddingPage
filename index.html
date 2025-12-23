@@ -1,228 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Forest Promise �P Wedding Invitation</title>
+    <title>森語誓約｜溫馨清新系電子喜帖</title>
     <meta
       name="description"
-      content="A warm forest wedding invitation for Hayden & Mira �X calm, gentle, and ready for GitHub Pages."
+      content="以 GitHub Pages 佈署的溫馨清新電子喜帖，包含新人介紹、地點資訊、飲食問卷與儀式感喜帖。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Source+Sans+3:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Quicksand:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              moss: "#56624a",
-              pine: "#1c2a1d",
-              sage: "#aab79c",
-              parchment: "#f5f1ea",
-            },
-            fontFamily: {
-              serif: ['"Cormorant Garamond"', "serif"],
-              sans: ['"Source Sans 3"', "system-ui", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      :root {
-        color: #2f332c;
-      }
-
-      * {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        background-color: #f5f1ea;
-        background-image: radial-gradient(circle at 10% 10%, #ffffff40 0, transparent 50%),
-          radial-gradient(circle at 90% 20%, #f3efe7 0, transparent 45%),
-          radial-gradient(circle at 20% 80%, #f9f3e8 0, transparent 55%);
-        color: #2f332c;
-      }
-
-      .text-glow {
-        text-shadow: 0 10px 35px rgba(12, 24, 20, 0.55);
-      }
-
-      .card-shadow {
-        box-shadow: 0 30px 60px rgba(23, 40, 31, 0.18);
-      }
-
-      .grain-overlay::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120' fill='none'%3E%3Cpath d='M0 120L120 0' stroke='rgba(255,255,255,0.08)'/%3E%3C/svg%3E");
-        opacity: 0.35;
-        pointer-events: none;
-        mix-blend-mode: soft-light;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
   </head>
-  <body class="antialiased">
-    <!-- Hero section with forest background -->
-    <header class="relative isolate min-h-[75vh] flex items-end" id="top">
-      <div class="absolute inset-0">
-        <img
-          src="img/forest-hero.jpg"
-          alt="Soft light pouring through a tranquil forest"
-          class="h-full w-full object-cover"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-pine/80 via-pine/70 to-parchment/95"></div>
-      </div>
-      <div class="relative z-10 w-full px-6 py-20 text-center text-white sm:px-10 lg:px-16">
-        <p class="uppercase tracking-[0.3em] text-xs text-sage/80">Forest Promise</p>
-        <h1 class="mt-6 font-serif text-4xl sm:text-5xl lg:text-6xl text-glow">
-          Hayden &amp; Mira
-        </h1>
-        <p class="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-white/80">
-          Among cedar, fern, and gentle mist, we gather to celebrate a quiet love story.
-          Your presence will make the clearing warmer.
-        </p>
-        <div class="mt-8 flex flex-col gap-3 text-sm text-white/90 sm:flex-row sm:items-center sm:justify-center">
-          <span class="rounded-full border border-white/40 px-5 py-2">October 18 �P 2025</span>
-          <span class="rounded-full border border-white/40 px-5 py-2">3:00 PM �P Willow Glade</span>
-          <span class="rounded-full border border-white/40 px-5 py-2">Formal garden attire</span>
+  <body>
+    <header class="hero" id="top">
+      <nav class="nav">
+        <div class="logo">森語誓約</div>
+        <div class="nav-links">
+          <a href="#couple">新人介紹</a>
+          <a href="#location">地點交通</a>
+          <a href="#survey">飲食問卷</a>
+          <a href="#invitation">喜帖</a>
         </div>
-        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <a
-            href="#invitation"
-            class="rounded-full bg-white/90 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-pine transition hover:bg-white"
-          >
-            View Invitation
-          </a>
-          <a
-            href="#rsvp"
-            class="rounded-full border border-white/60 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-white/15"
-          >
-            RSVP Details
-          </a>
+      </nav>
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">Warm &amp; Fresh Wedding</p>
+          <h1>昊然 &amp; 予晴</h1>
+          <p class="subtitle">
+            我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。
+            邀請你一起走進這場溫馨清新的森林儀式。
+          </p>
+          <p class="hero-motivation">
+            2025 年 10 月 18 日（六）・15:30
+            <br />森光花園宴會廳｜台北市信義區林蔭路 88 號
+          </p>
+          <div class="hero-badges">
+            <span>戶外草地證婚</span>
+            <span>清新溫柔風</span>
+            <span>歡迎小小孩</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button" href="#invitation">查看喜帖</a>
+            <a class="button ghost" href="#survey">填寫問卷</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="blob">
+            <img src="img/forest-hero.jpg" alt="陽光森林中的婚禮場景" />
+          </div>
+          <div class="critters">
+            <div class="critter">
+              <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+                <path
+                  d="M32 52c-6-10-4-22 6-30 8-7 20-6 26 3"
+                  stroke="#6d7aa6"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M88 52c6-10 4-22-6-30-8-7-20-6-26 3"
+                  stroke="#6d7aa6"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <ellipse cx="60" cy="70" rx="34" ry="28" fill="#f8fbff" />
+                <ellipse cx="48" cy="68" rx="4" ry="6" fill="#6d7aa6" />
+                <ellipse cx="72" cy="68" rx="4" ry="6" fill="#6d7aa6" />
+                <path d="M56 78c4 4 8 4 12 0" stroke="#6d7aa6" stroke-width="3" />
+              </svg>
+              森林小兔
+            </div>
+            <div class="critter">
+              <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+                <path
+                  d="M30 80c0-20 12-40 30-40s30 20 30 40"
+                  stroke="#6d7aa6"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M40 76c6 10 16 16 20 16s14-6 20-16"
+                  stroke="#6d7aa6"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <circle cx="50" cy="64" r="4" fill="#6d7aa6" />
+                <circle cx="70" cy="64" r="4" fill="#6d7aa6" />
+                <path d="M56 70c4 4 8 4 12 0" stroke="#6d7aa6" stroke-width="3" />
+                <path
+                  d="M28 58c-6-6-8-18-2-26"
+                  stroke="#6d7aa6"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M92 58c6-6 8-18 2-26"
+                  stroke="#6d7aa6"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </svg>
+              小狐狸守護
+            </div>
+          </div>
         </div>
       </div>
     </header>
 
-    <main class="-mt-16 px-4 pb-16 sm:px-6 lg:px-8">
-      <!-- Main content card with translucent backdrop -->
-      <section
-        class="relative mx-auto max-w-4xl rounded-[2.5rem] border border-white/60 bg-white/80 p-8 shadow-2xl backdrop-blur-sm card-shadow sm:p-12"
-        id="invitation"
-      >
-        <div class="grain-overlay pointer-events-none absolute inset-0 rounded-[2.5rem]"></div>
-        <div class="relative">
-          <div class="flex flex-col items-center text-center">
-            <img
-              src="img/leaf.svg"
-              alt="Botanical accent"
-              class="h-12 w-12 opacity-80"
-              loading="lazy"
-            />
-            <p class="mt-4 text-sm uppercase tracking-[0.4em] text-moss/70">With Quiet Joy</p>
-            <h2 class="mt-3 font-serif text-3xl text-moss sm:text-4xl">We Invite You Into The Clearing</h2>
-            <p class="mt-6 max-w-2xl text-base leading-relaxed text-stone-600">
-              We found each other in the hush between morning light and birdsong.
-              We promise to keep building that sanctuary, one gentle sunrise at a time.
-              Please join us for vows wrapped in cedar air, soft laughter, and stories shared
-              by lantern glow.
-            </p>
-          </div>
-
-          <!-- Poetic body copy -->
-          <div class="mt-10 grid gap-8 md:grid-cols-2">
-            <div class="rounded-3xl bg-parchment/80 p-6 text-sm leading-relaxed text-stone-700">
-              <p class="font-serif text-lg text-moss">In the Forest</p>
-              <p class="mt-3">
-                Every trail we walked taught us patience. Every ring of the birch reminded us that
-                love grows when tended slowly. Together we choose kindness, shared breaths, and
-                open hands.
-              </p>
-            </div>
-            <div class="rounded-3xl bg-parchment/80 p-6 text-sm leading-relaxed text-stone-700">
-              <p class="font-serif text-lg text-moss">Our Promise</p>
-              <p class="mt-3">
-                May our home feel like moss under bare feet, candlelight against dusk, and music that
-                lingers. Your blessing will forever live in the canopy of stories above us.
-              </p>
-            </div>
-          </div>
-
-          <!-- Details block -->
-          <div class="mt-12 rounded-3xl bg-white/70 p-6 text-center text-sm text-stone-700 sm:p-8">
-            <p class="font-serif text-xl text-moss">Gathering Details</p>
-            <div
-              class="mt-6 grid gap-6 text-base text-stone-800 md:grid-cols-3 md:text-left"
-            >
-              <div>
-                <p class="uppercase tracking-[0.2em] text-xs text-sage">Date</p>
-                <p class="mt-1 font-serif text-lg text-moss">Saturday, Oct 18</p>
-              </div>
-              <div>
-                <p class="uppercase tracking-[0.2em] text-xs text-sage">Moment</p>
-                <p class="mt-1 font-serif text-lg text-moss">3:00 PM Ceremony</p>
-              </div>
-              <div>
-                <p class="uppercase tracking-[0.2em] text-xs text-sage">Location</p>
-                <p class="mt-1 font-serif text-lg text-moss">
-                  Willow Glade Conservatory �P Evergreen Valley
-                </p>
-              </div>
-            </div>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-              <a
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noreferrer"
-                class="rounded-full bg-moss px-6 py-3 text-white transition hover:bg-moss/90"
-              >
-                Open Map
-              </a>
-              <a
-                href="#rsvp"
-                class="rounded-full border border-moss/50 px-6 py-3 text-moss transition hover:bg-moss/10"
-              >
-                See RSVP Notes
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- RSVP / contact block -->
-      <section
-        id="rsvp"
-        class="mx-auto mt-12 max-w-3xl rounded-[2rem] border border-white/50 bg-white/70 p-8 text-center shadow-lg sm:p-10"
-      >
-        <p class="font-serif text-2xl text-moss">RSVP &amp; Warm Notes</p>
-        <p class="mt-4 text-base leading-relaxed text-stone-700">
-          Please message us via LINE or email by September 5 so we can prepare a seat with your
-          name on the table runner. Let us know your favorite tea or any wishes you have for the
-          evening�Xwe would love to weave them into the celebration.
+    <section class="section" id="couple">
+      <div class="section-header" data-reveal>
+        <p class="section-title">新人介紹</p>
+        <h2>把生活寫成一首溫柔的歌</h2>
+        <p>
+          我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。
+          期待你們在這裡感受到清新又溫暖的氛圍。
         </p>
-        <div class="mt-8 flex flex-col gap-4 text-sm text-stone-600 sm:flex-row sm:justify-center">
-          <div class="rounded-full bg-parchment px-6 py-3">
-            LINE �P @haydenandmira
+      </div>
+      <div class="card-grid">
+        <article class="card" data-reveal>
+          <h3>新郎｜昊然</h3>
+          <p>
+            喜歡煮手沖咖啡、畫小插畫，遇見予晴後，開始學會把日常變成儀式。
+          </p>
+          <ul>
+            <li>最愛的季節：初秋</li>
+            <li>最常說的一句話：沒關係，我們一起慢慢來</li>
+          </ul>
+        </article>
+        <article class="card" data-reveal>
+          <h3>新娘｜予晴</h3>
+          <p>
+            喜歡植物、喜歡旅行，也喜歡把家佈置成柔軟的小宇宙。
+            她說婚禮像是一次把心意好好收藏的旅程。
+          </p>
+          <ul>
+            <li>最愛的動物：松鼠與貓咪</li>
+            <li>最常收集的小物：旅行貼紙</li>
+          </ul>
+        </article>
+        <article class="card" data-reveal>
+          <h3>我們的故事</h3>
+          <p>
+            在一次雨後散步的午後，我們決定把未來寫進彼此的名字。
+            婚禮當天，會有滿滿的綠意、手寫卡片，還有專為你準備的祝福角落。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section accent" id="location">
+      <div class="section-header" data-reveal>
+        <p class="section-title">餐廳地點</p>
+        <h2>森林與光，剛剛好的距離</h2>
+        <p>我們選了一個交通方便又有自然氣息的場地，歡迎提早到附近散散步。</p>
+      </div>
+      <div class="location-grid">
+        <div class="map-card" data-reveal>
+          <div class="map-placeholder">
+            森光花園宴會廳
+            <span>台北市信義區林蔭路 88 號</span>
           </div>
-          <div class="rounded-full bg-parchment px-6 py-3">
-            Email �P forestpromise@mail.com
+          <div class="map-actions">
+            <a class="button" href="https://maps.google.com" target="_blank" rel="noreferrer">
+              開啟地圖
+            </a>
+            <a class="button ghost" href="#survey">填寫出席</a>
           </div>
         </div>
-      </section>
-    </main>
+        <div class="route-info" data-reveal>
+          <h3>交通方式</h3>
+          <ul>
+            <li>捷運：搭乘信義線至「松山站」，步行約 6 分鐘。</li>
+            <li>公車：搭乘 88、208、藍 10 於「林蔭路口」下車。</li>
+            <li>開車：場地下方設有停車場，可直達宴會廳。</li>
+          </ul>
+          <div class="route-note">
+            若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-moss/70">
-      Rooted in love �P Hayden &amp; Mira �P 2025
+    <section class="section" id="survey">
+      <div class="section-header" data-reveal>
+        <p class="section-title">簡單問券</p>
+        <h2>你的喜好，我們想好好照顧</h2>
+        <p>此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。</p>
+      </div>
+      <form class="survey-form" id="survey-form" data-reveal>
+        <label>
+          你的名字
+          <input type="text" name="name" placeholder="請輸入姓名" required />
+        </label>
+        <label>
+          出席人數
+          <select name="guests" required>
+            <option value="1">1 人</option>
+            <option value="2">2 人</option>
+            <option value="3">3 人</option>
+            <option value="4">4 人以上</option>
+          </select>
+        </label>
+        <label>
+          飲食偏好
+          <select name="diet" required>
+            <option value="normal">一般餐</option>
+            <option value="vegetarian">蛋奶素</option>
+            <option value="vegan">全素</option>
+            <option value="no-seafood">不吃海鮮</option>
+          </select>
+        </label>
+        <label>
+          想對我們說的話
+          <textarea name="message" rows="4" placeholder="寫下你的祝福或提醒"></textarea>
+        </label>
+        <button class="button" type="submit">送出回覆</button>
+      </form>
+      <p class="form-note">表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。</p>
+    </section>
+
+    <section class="section invitation" id="invitation">
+      <div class="section-header" data-reveal>
+        <p class="section-title">喜帖</p>
+        <h2>願這場儀式感，與你共享</h2>
+        <p>用一封溫柔的喜帖，把我們的祝福親手遞給你。</p>
+      </div>
+      <div class="invitation-card" data-reveal>
+        <div class="invitation-text">
+          <p class="handwriting">Dear You,</p>
+          <h3>我們誠摯邀請你，見證這份森林裡的承諾。</h3>
+          <p>
+            在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。
+            期待和你一起留下最溫暖的合照。
+          </p>
+          <div class="details">
+            <div>
+              <span>日期</span>
+              2025 / 10 / 18（六）
+            </div>
+            <div>
+              <span>時間</span>
+              15:30 證婚 ・ 18:00 宴客
+            </div>
+            <div>
+              <span>地點</span>
+              森光花園宴會廳
+            </div>
+          </div>
+          <a class="button" href="#top">回到頂端</a>
+        </div>
+        <div class="invitation-art">
+          <img src="img/leaf.svg" alt="手繪葉片" width="120" height="120" />
+          <div class="handwriting">願你今天也被溫柔包圍</div>
+          <div class="critter">
+            <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+              <path
+                d="M40 90c0-20 10-36 20-36s20 16 20 36"
+                stroke="#6d7aa6"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <circle cx="50" cy="62" r="4" fill="#6d7aa6" />
+              <circle cx="70" cy="62" r="4" fill="#6d7aa6" />
+              <path d="M54 70c4 4 8 4 12 0" stroke="#6d7aa6" stroke-width="3" />
+              <path
+                d="M32 64c-10 4-14 18-8 28"
+                stroke="#6d7aa6"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path
+                d="M88 64c10 4 14 18 8 28"
+                stroke="#6d7aa6"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+            </svg>
+            小鹿祝福
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      這是一個可直接部署於 GitHub Pages 的單頁喜帖網站，謝謝你的祝福。
     </footer>
   </body>
 </html>
