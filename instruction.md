@@ -92,9 +92,9 @@ function jsonResponse_(obj, status = 200) {
 ```html
 <body
   class="bg-parchment text-pine"
-  data-config-src="https://script.google.com/macros/s/XXXXX/exec?resource=config"
+  data-config-src="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec?resource=config"
   data-default-lang="zh"
-  data-rsvp-endpoint="https://script.google.com/macros/s/XXXXX/exec"
+  data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec"
 >
 ```
 
