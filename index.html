@@ -319,6 +319,7 @@
             </button>
             <p class="mt-4 text-center text-sm text-pine/70 hidden" data-rsvp-status role="status"></p>
           </form>
+          <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
           <p class="mt-4 text-center text-xs text-pine/70" data-config="survey.note">
             表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
           </p>
@@ -576,6 +577,22 @@
           const form = document.querySelector("[data-rsvp-form]");
           if (!form) return;
           const endpoint = getRSVPEndpoint();
+          const frame = document.querySelector("[data-rsvp-frame]");
+          let isSubmitting = false;
+
+          if (frame && !frame.name) {
+            frame.name = "rsvp-frame";
+          }
+
+          if (frame) {
+            frame.addEventListener("load", () => {
+              if (!isSubmitting) return;
+              isSubmitting = false;
+              showRSVPStatus("success");
+              form.reset();
+              updateLocaleField();
+            });
+          }
 
           form.addEventListener("submit", async (event) => {
             event.preventDefault();
@@ -586,36 +603,25 @@
             }
 
             showRSVPStatus("sending");
+            form.action = endpoint;
+            form.method = "POST";
 
-            const formData = new FormData(form);
-            const data = new URLSearchParams({
-              name: formData.get("name") || "",
-              guests: formData.get("guests") || "",
-              diet: formData.get("diet") || "",
-              message: formData.get("message") || "",
-              locale: formData.get("locale") || "",
-              source: formData.get("source") || ""
-            });
+            if (frame) {
+              form.target = frame.name;
+              isSubmitting = true;
+              form.submit();
+              return;
+            }
 
             try {
               const response = await fetch(endpoint, {
                 method: "POST",
-                body: data
+                body: new FormData(form)
               });
-
-              let result = {};
-              try {
-                result = await response.json();
-              } catch (err) {
-                result = { status: response.ok ? "success" : "error" };
-              }
-
-              if (result.status === "success") {
-                showRSVPStatus("success");
-                form.reset();
-              } else {
-                showRSVPStatus("error", result.message || "提交失敗，請稍後再試");
-              }
+              if (!response.ok) throw new Error("Request failed");
+              showRSVPStatus("success");
+              form.reset();
+              updateLocaleField();
             } catch (error) {
               console.error("RSVP submission error:", error);
               showRSVPStatus("error", "提交失敗，請稍後再試");
