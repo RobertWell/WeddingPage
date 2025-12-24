@@ -105,6 +105,7 @@
       .leaf-pattern {
         position: relative;
         overflow: hidden;
+        isolation: isolate;
       }
 
       .leaf-pattern::before {
@@ -117,6 +118,7 @@
         opacity: 0.25;
         pointer-events: none;
         mix-blend-mode: multiply;
+        z-index: 0;
       }
 
       /* Hero styling */
@@ -264,6 +266,15 @@
         animation-delay: -3s;
       }
 
+      .decorative-svg {
+        z-index: 0;
+      }
+
+      .content-layer {
+        position: relative;
+        z-index: 1;
+      }
+
       /* Respect reduced motion preferences */
       @media (prefers-reduced-motion: reduce) {
         *,
@@ -390,14 +401,14 @@
         <!-- New couple introduction card -->
         <section id="couple" class="grain leaf-pattern relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Botanical corner decorations -->
-          <svg class="svg-float absolute top-0 left-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+          <svg class="decorative-svg svg-float absolute top-0 left-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
             <path d="M10 10 Q30 40, 15 70 Q8 50, 10 10Z" fill="#6E7F63"/>
             <path d="M15 15 Q45 25, 65 18 Q40 12, 15 15Z" fill="#A8B7A6"/>
             <circle cx="20" cy="25" r="2.5" fill="#C9A25D"/>
             <circle cx="35" cy="18" r="2" fill="#C9A25D" opacity="0.7"/>
             <circle cx="28" cy="32" r="1.5" fill="#C9A25D" opacity="0.5"/>
           </svg>
-          <svg class="svg-float absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+          <svg class="decorative-svg svg-float absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
             <path d="M110 10 Q90 40, 105 70 Q112 50, 110 10Z" fill="#6E7F63"/>
             <path d="M105 15 Q75 25, 55 18 Q80 12, 105 15Z" fill="#A8B7A6"/>
             <circle cx="100" cy="25" r="2.5" fill="#C9A25D"/>
@@ -405,7 +416,7 @@
           </svg>
 
           <!-- Gold accent arcs -->
-          <svg class="svg-drift absolute bottom-8 right-8 w-32 h-32 pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <svg class="decorative-svg svg-drift absolute bottom-8 right-8 w-32 h-32 pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path d="M20 80 Q50 50, 80 80" stroke="#C9A25D" stroke-width="1.5" fill="none" opacity="0.6"/>
             <path d="M30 85 Q50 65, 70 85" stroke="#C9A25D" stroke-width="1" fill="none" opacity="0.8"/>
             <circle cx="50" cy="60" r="3" fill="#C9A25D" opacity="0.5"/>
@@ -413,7 +424,7 @@
             <circle cx="35" cy="75" r="2" fill="#C9A25D" opacity="0.4"/>
           </svg>
 
-          <div class="relative">
+          <div class="content-layer">
             <div class="text-center">
               <img src="img/leaf.svg" alt="小葉片裝飾" class="mx-auto h-12 w-12 opacity-80" loading="lazy" />
               <p class="mt-4 text-sm uppercase tracking-[0.4em] text-moss/70" data-config="couple.section.label">新人介紹</p>
@@ -456,7 +467,7 @@
         <!-- Location and transportation details -->
         <section id="location" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Watercolor wash accents -->
-          <svg class="svg-pulse absolute top-0 right-0 w-80 h-80 pointer-events-none opacity-18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <svg class="decorative-svg svg-pulse absolute top-0 right-0 w-80 h-80 pointer-events-none opacity-18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
             <defs>
               <filter id="wash-blur">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="20"/>
@@ -467,7 +478,7 @@
           </svg>
 
           <!-- Botanical garland -->
-          <svg class="svg-sway absolute -left-6 top-10 w-44 h-44 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+          <svg class="decorative-svg svg-sway absolute -left-6 top-10 w-44 h-44 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
             <path d="M15 120 Q40 80 30 40 Q55 65 70 55 Q60 95 85 110 Q55 105 40 120 Z" fill="#A8B7A6"/>
             <path d="M60 130 Q85 105 120 110 Q95 120 110 145 Q85 135 60 130 Z" fill="#6E7F63" opacity="0.8"/>
             <circle cx="45" cy="78" r="3" fill="#C9A25D" opacity="0.7"/>
@@ -476,24 +487,25 @@
           </svg>
 
           <!-- Golden breeze strokes -->
-          <svg class="svg-drift absolute -right-4 bottom-6 w-36 h-36 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+          <svg class="decorative-svg svg-drift absolute -right-4 bottom-6 w-36 h-36 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
             <path d="M10 70 Q45 40 90 60" stroke="#C9A25D" stroke-width="1.5" fill="none" opacity="0.6"/>
             <path d="M20 85 Q60 60 110 78" stroke="#C9A25D" stroke-width="1" fill="none" opacity="0.5"/>
             <circle cx="50" cy="58" r="3" fill="#C9A25D" opacity="0.5"/>
             <circle cx="85" cy="72" r="2.2" fill="#C9A25D" opacity="0.4"/>
           </svg>
 
-          <div class="text-center">
-            <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="location.section.heading">餐廳地點</p>
-            <h2 class="mt-2 font-display text-3xl text-moss" data-config="location.section.title">森光花園，等你來散步</h2>
-            <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="location.section.description">
-              我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
-            </p>
-          </div>
-          <div class="mt-10 grid gap-8 md:grid-cols-2">
-            <div class="rounded-3xl bg-[url('img/forest-path.jpg')] bg-cover bg-center p-6 text-white">
-              <div class="rounded-3xl border border-white/40 bg-pine/60 p-6">
-                <p class="text-lg font-semibold" data-config="venue.name">森光花園宴會廳</p>
+          <div class="content-layer">
+            <div class="text-center">
+              <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="location.section.heading">餐廳地點</p>
+              <h2 class="mt-2 font-display text-3xl text-moss" data-config="location.section.title">森光花園，等你來散步</h2>
+              <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="location.section.description">
+                我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
+              </p>
+            </div>
+            <div class="mt-10 grid gap-8 md:grid-cols-2">
+              <div class="rounded-3xl bg-[url('img/forest-path.jpg')] bg-cover bg-center p-6 text-white">
+                <div class="rounded-3xl border border-white/40 bg-pine/60 p-6">
+                  <p class="text-lg font-semibold" data-config="venue.name">森光花園宴會廳</p>
                 <p class="mt-2 text-sm" data-config="venue.address">台北市信義區林蔭路 88 號</p>
                 <div class="mt-6 flex flex-col gap-3 text-sm">
                   <a
@@ -526,13 +538,14 @@
                 若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
               </p>
             </div>
+            </div>
           </div>
         </section>
 
         <!-- RSVP / survey section -->
         <section id="survey" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Botanical elements in corners -->
-          <svg class="svg-float absolute bottom-0 left-0 w-48 h-48 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+          <svg class="decorative-svg svg-float absolute bottom-0 left-0 w-48 h-48 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
             <path d="M10 140 Q35 110, 25 80 Q15 100, 10 140Z" fill="#A8B7A6"/>
             <path d="M20 135 Q50 120, 75 130 Q45 128, 20 135Z" fill="#6E7F63" opacity="0.8"/>
             <circle cx="30" cy="120" r="3" fill="#C9A25D"/>
@@ -541,7 +554,7 @@
           </svg>
 
           <!-- Gold decorative dots -->
-          <svg class="svg-drift absolute top-12 right-12 w-28 h-28 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+          <svg class="decorative-svg svg-drift absolute top-12 right-12 w-28 h-28 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
             <circle cx="20" cy="20" r="3.5" fill="#C9A25D" opacity="0.7"/>
             <circle cx="50" cy="30" r="2.5" fill="#C9A25D" opacity="0.6"/>
             <circle cx="60" cy="50" r="3" fill="#C9A25D" opacity="0.5"/>
@@ -549,17 +562,18 @@
             <path d="M25 25 Q40 35, 55 28" stroke="#C9A25D" stroke-width="1" fill="none" opacity="0.5"/>
           </svg>
 
-          <div class="text-center">
-            <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="survey.section.heading">簡單問卷</p>
-            <h2 class="mt-2 font-display text-3xl text-moss" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
-            <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="survey.section.description">
-              此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
-            </p>
-          </div>
-          <form
-            class="mx-auto mt-8 max-w-3xl space-y-6 text-sm"
-            data-rsvp-form
-          >
+          <div class="content-layer">
+            <div class="text-center">
+              <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="survey.section.heading">簡單問卷</p>
+              <h2 class="mt-2 font-display text-3xl text-moss" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
+              <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="survey.section.description">
+                此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
+              </p>
+            </div>
+            <form
+              class="mx-auto mt-8 max-w-3xl space-y-6 text-sm"
+              data-rsvp-form
+            >
             <label class="block">
               <span class="text-pine/70" data-config="survey.label.name">你的名字</span>
               <input
@@ -623,17 +637,18 @@
               送出回覆
             </button>
             <p class="mt-4 text-center text-sm text-pine/70 hidden" data-rsvp-status role="status"></p>
-          </form>
-          <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
-          <p class="mt-4 text-center text-xs text-pine/70" data-config="survey.note">
-            表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
-          </p>
+            </form>
+            <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
+            <p class="mt-4 text-center text-xs text-pine/70" data-config="survey.note">
+              表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
+            </p>
+          </div>
         </section>
 
         <!-- Invitation card -->
         <section id="invitation" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Watercolor background layer -->
-          <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
             <defs>
               <filter id="invitation-wash">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
@@ -645,67 +660,69 @@
           </svg>
 
           <!-- Gold accent frame -->
-          <svg class="absolute top-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+          <svg class="decorative-svg absolute top-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <path d="M5 5 L25 5" stroke="#C9A25D" stroke-width="2" fill="none"/>
             <path d="M5 5 L5 25" stroke="#C9A25D" stroke-width="2" fill="none"/>
             <circle cx="5" cy="5" r="2.5" fill="#C9A25D"/>
           </svg>
-          <svg class="absolute top-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+          <svg class="decorative-svg absolute top-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <path d="M55 5 L35 5" stroke="#C9A25D" stroke-width="2" fill="none"/>
             <path d="M55 5 L55 25" stroke="#C9A25D" stroke-width="2" fill="none"/>
             <circle cx="55" cy="5" r="2.5" fill="#C9A25D"/>
           </svg>
-          <svg class="absolute bottom-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+          <svg class="decorative-svg absolute bottom-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <path d="M5 55 L25 55" stroke="#C9A25D" stroke-width="2" fill="none"/>
             <path d="M5 55 L5 35" stroke="#C9A25D" stroke-width="2" fill="none"/>
             <circle cx="5" cy="55" r="2.5" fill="#C9A25D"/>
           </svg>
-          <svg class="absolute bottom-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+          <svg class="decorative-svg absolute bottom-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
             <path d="M55 55 L35 55" stroke="#C9A25D" stroke-width="2" fill="none"/>
             <path d="M55 55 L55 35" stroke="#C9A25D" stroke-width="2" fill="none"/>
             <circle cx="55" cy="55" r="2.5" fill="#C9A25D"/>
           </svg>
 
-          <div class="text-center">
-            <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="invitation.section.title">喜帖</p>
-            <h2 class="mt-2 font-display text-3xl text-moss" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
-            <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="invitation.section.description">
-              用一封溫柔的喜帖，把我們的祝福親手遞給你。
-            </p>
-          </div>
-          <div class="mt-10 grid gap-8 md:grid-cols-2">
-            <div class="rounded-3xl bg-mist/60 p-6 text-sm leading-relaxed text-pine/80">
-              <p class="font-display text-xl text-moss" data-config="invitation.letter.salutation">Dear You,</p>
-              <p class="mt-4" data-config="invitation.letter.body">
-                我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
+          <div class="content-layer">
+            <div class="text-center">
+              <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="invitation.section.title">喜帖</p>
+              <h2 class="mt-2 font-display text-3xl text-moss" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
+              <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="invitation.section.description">
+                用一封溫柔的喜帖，把我們的祝福親手遞給你。
               </p>
-              <dl class="mt-6 space-y-4 text-sm">
-                <div>
-                  <dt class="text-pine/60" data-config="invitation.date.label">日期</dt>
-                  <dd class="font-display text-lg text-moss" data-config="invitation.date.value">2025 / 10 / 18（六）</dd>
-                </div>
-                <div>
-                  <dt class="text-pine/60" data-config="invitation.time.label">時間</dt>
-                  <dd class="font-display text-lg text-moss" data-config="invitation.time.value">15:30 證婚 ・ 18:00 宴客</dd>
-                </div>
-                <div>
-                  <dt class="text-pine/60" data-config="invitation.location.label">地點</dt>
-                  <dd class="font-display text-lg text-moss" data-config="invitation.location.value">森光花園宴會廳</dd>
-                </div>
-              </dl>
-              <a
-                href="#top"
-                class="mt-8 inline-flex rounded-full bg-pine px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-pine/90"
-                data-config="invitation.button"
-                >回到頂端</a
-              >
             </div>
-            <div class="rounded-3xl border border-mist bg-white/70 p-6 text-center shadow-inner">
-              <img src="img/leaf.svg" alt="森林小插圖" class="mx-auto h-20 w-20" loading="lazy" />
-              <p class="mt-4 font-display text-xl text-moss" data-config="invitation.card.message">願你今天也被溫柔包圍</p>
-              <p class="mt-4 text-sm leading-relaxed text-pine/80" data-config="invitation.card.note">
-                我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
-              </p>
+            <div class="mt-10 grid gap-8 md:grid-cols-2">
+              <div class="rounded-3xl bg-mist/60 p-6 text-sm leading-relaxed text-pine/80">
+                <p class="font-display text-xl text-moss" data-config="invitation.letter.salutation">Dear You,</p>
+                <p class="mt-4" data-config="invitation.letter.body">
+                  我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
+                </p>
+                <dl class="mt-6 space-y-4 text-sm">
+                  <div>
+                    <dt class="text-pine/60" data-config="invitation.date.label">日期</dt>
+                    <dd class="font-display text-lg text-moss" data-config="invitation.date.value">2025 / 10 / 18（六）</dd>
+                  </div>
+                  <div>
+                    <dt class="text-pine/60" data-config="invitation.time.label">時間</dt>
+                    <dd class="font-display text-lg text-moss" data-config="invitation.time.value">15:30 證婚 ・ 18:00 宴客</dd>
+                  </div>
+                  <div>
+                    <dt class="text-pine/60" data-config="invitation.location.label">地點</dt>
+                    <dd class="font-display text-lg text-moss" data-config="invitation.location.value">森光花園宴會廳</dd>
+                  </div>
+                </dl>
+                <a
+                  href="#top"
+                  class="mt-8 inline-flex rounded-full bg-pine px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-pine/90"
+                  data-config="invitation.button"
+                  >回到頂端</a
+                >
+              </div>
+              <div class="rounded-3xl border border-mist bg-white/70 p-6 text-center shadow-inner">
+                <img src="img/leaf.svg" alt="森林小插圖" class="mx-auto h-20 w-20" loading="lazy" />
+                <p class="mt-4 font-display text-xl text-moss" data-config="invitation.card.message">願你今天也被溫柔包圍</p>
+                <p class="mt-4 text-sm leading-relaxed text-pine/80" data-config="invitation.card.note">
+                  我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
+                </p>
+              </div>
             </div>
           </div>
         </section>
