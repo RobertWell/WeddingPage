@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Switcher Test</title>
+  <style>
+    /* Default theme (Spring) */
+    :root {
+      --color-spring-blue: #7DB8FF;
+      --page-background: radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.98) 0%, transparent 50%),
+        radial-gradient(circle at 85% 10%, #F0F7FF 0%, transparent 45%),
+        linear-gradient(135deg, #F0F7FF, #FFFFFE 40%, #F5EDFF 80%, #FFE9F3);
+    }
+
+    /* Khaki Theme */
+    html.theme-khaki {
+      --color-spring-blue: #4EC590;
+      --page-background: radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.95) 0%, transparent 50%),
+        radial-gradient(circle at 85% 10%, #E8F5F0 0%, transparent 45%),
+        linear-gradient(135deg, #FFF9F0, #FFFEF8 60%, #EEE9E0);
+    }
+
+    /* Breeze Theme */
+    html.theme-breeze {
+      --color-spring-blue: #38BDF8;
+      --page-background: radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 1) 0%, transparent 50%),
+        radial-gradient(circle at 85% 10%, #E6F7FF 0%, transparent 45%),
+        linear-gradient(135deg, #F0F9FF, #FFFFFF 40%, #E0F2FF 70%, #FFF0F6);
+    }
+
+    body {
+      font-family: sans-serif;
+      background: var(--page-background);
+      background-attachment: fixed;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px;
+      transition: background 0.3s ease;
+    }
+
+    .controls {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: 2px solid var(--color-spring-blue);
+      background: white;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button.is-active {
+      background: var(--color-spring-blue);
+      color: white;
+    }
+
+    .demo-box {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: var(--color-spring-blue);
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button data-theme-button="khaki">卡其 (Khaki)</button>
+    <button data-theme-button="spring" class="is-active">春日 (Spring)</button>
+    <button data-theme-button="breeze">清風 (Breeze)</button>
+  </div>
+
+  <div class="demo-box">
+    <h1>Theme Switcher Test</h1>
+    <p>Click the buttons above to switch between themes.</p>
+    <p>You should see the background gradient and accent colors change.</p>
+    <p id="current-theme">Current theme: <strong>spring</strong></p>
+  </div>
+
+  <script>
+    function applyTheme(themeName) {
+      if (!themeName) return;
+
+      const htmlEl = document.documentElement;
+
+      // Remove all theme classes
+      htmlEl.classList.remove("theme-khaki", "theme-spring", "theme-breeze");
+
+      // Add the new theme class (spring is default, no class needed)
+      if (themeName !== "spring") {
+        htmlEl.classList.add("theme-" + themeName);
+      }
+
+      // Update active button state
+      document.querySelectorAll("[data-theme-button]").forEach(btn => {
+        const isActive = btn.dataset.themeButton === themeName;
+        btn.classList.toggle("is-active", isActive);
+      });
+
+      // Update display
+      document.getElementById("current-theme").innerHTML = `Current theme: <strong>${themeName}</strong>`;
+
+      console.log("Theme applied:", themeName);
+      console.log("HTML classes:", htmlEl.className);
+    }
+
+    // Attach event listeners
+    document.querySelectorAll("[data-theme-button]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        console.log("Button clicked:", btn.dataset.themeButton);
+        applyTheme(btn.dataset.themeButton);
+      });
+    });
+
+    console.log("Theme switcher initialized");
+  </script>
+</body>
+</html>
