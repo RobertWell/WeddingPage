@@ -589,7 +589,10 @@
           enqueue("value");
           for (const code of order) {
             const bucket = state.data[code];
-            if (bucket && Object.prototype.hasOwnProperty.call(bucket, key)) return bucket[key];
+            if (bucket && Object.prototype.hasOwnProperty.call(bucket, key)) {
+              const value = bucket[key];
+              if (value !== "") return value;
+            }
           }
           return fallback;
         }
