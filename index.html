@@ -14,7 +14,680 @@
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        --color-ivory: #f6f1ea;
+        --color-wash: #eef3f0;
+        --color-sage: #a8b7a6;
+        --color-moss: #6e7f63;
+        --color-charcoal: #2e2f33;
+        --color-champagne: #c9a25d;
+        --page-background: radial-gradient(circle at 10% 10%, #ffffff 0, transparent 45%),
+          radial-gradient(circle at 80% 0%, #eef3f0 0, transparent 40%),
+          linear-gradient(160deg, #f6f1ea 0%, #f5f0e7 40%, #eef3f0 100%);
+        --color-paper: rgba(255, 255, 255, 0.78);
+        --color-paper-strong: rgba(255, 255, 255, 0.92);
+        --shadow-soft: 0 30px 80px rgba(88, 100, 86, 0.2);
+        --shadow-card: 0 20px 50px rgba(86, 94, 82, 0.18);
+        --radius-xl: 32px;
+        --radius-lg: 26px;
+        --radius-md: 20px;
+        --font-body: "Noto Sans TC", system-ui, -apple-system, sans-serif;
+        --font-display: "Noto Serif TC", serif;
+        --font-script: "Great Vibes", "Noto Serif TC", serif;
+        --letter-wide: 0.32em;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        color: var(--color-charcoal);
+        background: var(--page-background, var(--color-ivory));
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .opacity-40 {
+        opacity: 0.4;
+      }
+
+      .page-content {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .svg-defs {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+
+      .loading-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        background: linear-gradient(135deg, rgba(246, 241, 234, 0.97), rgba(238, 243, 240, 0.95));
+        color: var(--color-charcoal);
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+
+      .loading-spinner {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 999px;
+        border: 4px solid rgba(110, 127, 99, 0.2);
+        border-top-color: var(--color-moss);
+        animation: spin 1s linear infinite;
+      }
+
+      body.is-loading {
+        overflow: hidden;
+      }
+
+      body.is-loading .page-content {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      body:not(.is-loading) .loading-screen {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .hero {
+        position: relative;
+        padding: 2.5rem 1.5rem 5.5rem;
+        background: linear-gradient(180deg, rgba(246, 241, 234, 0.9), rgba(246, 241, 234, 0.72));
+        overflow: hidden;
+      }
+
+      .decor-layer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .watercolor-wash {
+        position: absolute;
+        width: 130%;
+        height: auto;
+        top: -20%;
+        left: -15%;
+        opacity: 0.75;
+      }
+
+      .watercolor-wash.secondary {
+        width: 120%;
+        top: 30%;
+        left: -10%;
+        opacity: 0.55;
+      }
+
+      .botanical-corner {
+        position: absolute;
+        width: 220px;
+        height: auto;
+        opacity: 0.55;
+      }
+
+      .botanical-corner.top-right {
+        top: 2rem;
+        right: -2rem;
+        transform: rotate(12deg);
+      }
+
+      .botanical-corner.bottom-left {
+        bottom: -1rem;
+        left: -2rem;
+        transform: rotate(-8deg);
+      }
+
+      .gold-speckles {
+        position: absolute;
+        width: 160px;
+        height: auto;
+        opacity: 0.7;
+      }
+
+      .gold-speckles.top-left {
+        top: 4rem;
+        left: 1.5rem;
+      }
+
+      .gold-speckles.bottom-right {
+        bottom: 2rem;
+        right: 1rem;
+      }
+
+      .float-slow {
+        animation: float 14s ease-in-out infinite;
+      }
+
+      .float-slower {
+        animation: float 18s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .site-nav {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto 3rem;
+      }
+
+      .site-brand {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: var(--letter-wide);
+      }
+
+      .nav-links a {
+        color: rgba(46, 47, 51, 0.7);
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--color-charcoal);
+      }
+
+      .lang-switch {
+        display: inline-flex;
+        border-radius: 999px;
+        border: 1px solid rgba(46, 47, 51, 0.2);
+        background: rgba(255, 255, 255, 0.6);
+        font-size: 0.7rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+      }
+
+      .lang-switch button {
+        border: 0;
+        background: transparent;
+        padding: 0.35rem 0.9rem;
+        border-radius: 999px;
+        color: rgba(46, 47, 51, 0.7);
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+
+      .lang-switch button.is-active {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--color-charcoal);
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        gap: 2.5rem;
+      }
+
+      .hero-card {
+        background: var(--color-paper);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: var(--radius-xl);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-soft);
+        backdrop-filter: blur(14px);
+      }
+
+      .hero-tagline {
+        font-size: 0.7rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--color-moss);
+      }
+
+      .hero-names {
+        margin: 1rem 0 0;
+        font-family: var(--font-script);
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 400;
+        color: var(--color-charcoal);
+      }
+
+      .hero-description {
+        margin: 1.5rem 0 0;
+        font-size: 1rem;
+        color: rgba(46, 47, 51, 0.8);
+      }
+
+      .hero-details {
+        margin: 1.5rem 0 0;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: rgba(46, 47, 51, 0.65);
+      }
+
+      .hero-badges {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .hero-badges span {
+        border-radius: 999px;
+        border: 1px solid rgba(110, 127, 99, 0.25);
+        padding: 0.4rem 1.2rem;
+        font-size: 0.75rem;
+        color: rgba(46, 47, 51, 0.7);
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      .hero-actions {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 0.85rem 2.4rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .btn-primary {
+        background: var(--color-moss);
+        color: white;
+        box-shadow: 0 20px 45px rgba(110, 127, 99, 0.35);
+      }
+
+      .btn-secondary {
+        border: 1px solid rgba(110, 127, 99, 0.4);
+        color: var(--color-moss);
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .btn-primary:hover,
+      .btn-secondary:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-visual {
+        position: relative;
+        border-radius: var(--radius-xl);
+        padding: 2.5rem;
+        background: linear-gradient(135deg, rgba(238, 243, 240, 0.8), rgba(255, 255, 255, 0.9));
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        box-shadow: var(--shadow-card);
+        min-height: 320px;
+        overflow: hidden;
+      }
+
+      .hero-visual .rhythm-lines {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+          to right,
+          rgba(201, 162, 93, 0.12) 1px,
+          transparent 1px
+        );
+        background-size: 80px 100%;
+        opacity: 0.4;
+      }
+
+      .hero-visual-card {
+        position: relative;
+        z-index: 1;
+        background: var(--color-paper-strong);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem 1.8rem;
+        border: 1px solid rgba(110, 127, 99, 0.2);
+      }
+
+      .hero-visual-card h3 {
+        margin: 0 0 0.5rem;
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        color: var(--color-moss);
+      }
+
+      .hero-visual-card p {
+        margin: 0.3rem 0;
+        font-size: 0.9rem;
+        color: rgba(46, 47, 51, 0.75);
+      }
+
+      .hero-visual .botanical-corner {
+        opacity: 0.45;
+      }
+
+      .main-content {
+        position: relative;
+        margin-top: -3rem;
+        padding: 0 1.5rem 5rem;
+      }
+
+      .section-stack {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      .section-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        border-radius: var(--radius-xl);
+        padding: 2.5rem;
+        box-shadow: var(--shadow-card);
+        backdrop-filter: blur(12px);
+        overflow: hidden;
+      }
+
+      .section-card .section-header {
+        text-align: center;
+      }
+
+      .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: var(--color-moss);
+      }
+
+      .section-title {
+        margin: 0.6rem 0 0;
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 3vw, 2.6rem);
+        color: var(--color-charcoal);
+      }
+
+      .section-description {
+        margin: 0.8rem auto 0;
+        max-width: 540px;
+        color: rgba(46, 47, 51, 0.72);
+      }
+
+      .card-grid {
+        margin-top: 2.5rem;
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .soft-card {
+        background: rgba(238, 243, 240, 0.65);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        border: 1px solid rgba(110, 127, 99, 0.15);
+      }
+
+      .soft-card h3 {
+        margin-top: 0;
+        font-family: var(--font-display);
+        color: var(--color-moss);
+      }
+
+      .soft-card p,
+      .soft-card li {
+        color: rgba(46, 47, 51, 0.75);
+      }
+
+      .soft-card ul {
+        margin: 0.8rem 0 0;
+        padding-left: 1.2rem;
+      }
+
+      .soft-card dl {
+        margin: 1.2rem 0 0;
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .soft-card dt {
+        font-size: 0.75rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: rgba(46, 47, 51, 0.55);
+      }
+
+      .soft-card dd {
+        margin: 0.35rem 0 0;
+        font-family: var(--font-display);
+        color: var(--color-moss);
+      }
+
+      .detail-grid {
+        margin-top: 2.5rem;
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .detail-card {
+        background: var(--color-paper-strong);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(110, 127, 99, 0.18);
+        padding: 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .detail-card::after {
+        content: "";
+        position: absolute;
+        top: 0.7rem;
+        right: 1rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 162, 93, 0.35);
+        opacity: 0.5;
+      }
+
+      .detail-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        color: rgba(46, 47, 51, 0.6);
+      }
+
+      .detail-value {
+        margin: 0.5rem 0 0;
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        color: var(--color-moss);
+      }
+
+      .detail-note {
+        margin-top: 0.5rem;
+        color: rgba(46, 47, 51, 0.7);
+      }
+
+      .form-grid {
+        margin-top: 2rem;
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .form-grid label {
+        display: block;
+        font-size: 0.9rem;
+        color: rgba(46, 47, 51, 0.75);
+      }
+
+      .form-grid input,
+      .form-grid select,
+      .form-grid textarea {
+        width: 100%;
+        margin-top: 0.6rem;
+        border-radius: 18px;
+        border: 1px solid rgba(110, 127, 99, 0.2);
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+        background: rgba(255, 255, 255, 0.7);
+        color: var(--color-charcoal);
+      }
+
+      .form-grid input:focus,
+      .form-grid select:focus,
+      .form-grid textarea:focus {
+        outline: 2px solid rgba(110, 127, 99, 0.25);
+      }
+
+      .form-submit {
+        width: 100%;
+        border: none;
+        border-radius: 999px;
+        padding: 0.9rem;
+        background: var(--color-moss);
+        color: white;
+        font-size: 0.75rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 2rem 1.5rem 3rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: rgba(46, 47, 51, 0.55);
+      }
+
+      .section-decor {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .section-decor .watercolor-wash {
+        top: -30%;
+        left: -20%;
+        opacity: 0.4;
+      }
+
+      .section-decor .gold-speckles {
+        opacity: 0.5;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.9s ease, transform 0.9s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (min-width: 768px) {
+        .hero {
+          padding: 3.5rem 2.5rem 6rem;
+        }
+
+        .hero-inner {
+          grid-template-columns: 1.1fr 0.9fr;
+          gap: 3rem;
+        }
+
+        .card-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .detail-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .form-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .form-grid .full-width {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .float-slow,
+        .float-slower {
+          animation: none;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+    </style>
   </head>
   <body
     class="is-loading"
@@ -22,20 +695,21 @@
     data-default-lang="zh"
     data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec"
   >
-    <!-- Loading Screen -->
     <div class="loading-screen" role="status" aria-live="polite" aria-label="Loading">
       <div class="loading-spinner" aria-hidden="true"></div>
-      <div class="loading-text">
-        <p class="loading-title">資料載入中</p>
-        <p class="loading-subtitle">正在準備喜帖內容，請稍候片刻。</p>
+      <div class="text-center">
+        <p style="font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(110, 127, 99, 0.8);">
+          資料載入中
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: rgba(46, 47, 51, 0.6);">
+          正在準備喜帖內容，請稍候片刻。
+        </p>
       </div>
     </div>
 
     <div class="page-content">
-      <!-- SVG Definitions -->
       <svg class="svg-defs" aria-hidden="true" focusable="false">
         <defs>
-          <!-- Watercolor Wash -->
           <symbol id="watercolor-wash" viewBox="0 0 600 500">
             <path
               d="M92 110c48-54 140-74 224-58 74 14 148 60 176 130 34 82-22 186-106 234-92 52-202 50-286-12-68-50-92-172-8-294z"
@@ -53,8 +727,6 @@
               opacity="0.75"
             />
           </symbol>
-
-          <!-- Botanical Corner -->
           <symbol id="botanical-corner" viewBox="0 0 200 200">
             <path
               d="M36 140c40-40 80-60 130-70-18 20-36 44-50 74-20 10-52 10-80-4z"
@@ -71,27 +743,21 @@
               fill="#A8B7A6"
               opacity="0.45"
             />
-            <ellipse cx="80" cy="100" rx="24" ry="36" fill="#A8B7A6" opacity="0.25" />
           </symbol>
-
-          <!-- Gold Speckles -->
           <symbol id="gold-speckles" viewBox="0 0 160 160">
-            <circle cx="20" cy="30" r="3" fill="#C9A25D" opacity="0.9" />
+            <circle cx="20" cy="30" r="3" fill="#C9A25D" />
             <circle cx="60" cy="20" r="2" fill="#C9A25D" opacity="0.8" />
             <circle cx="120" cy="40" r="2.5" fill="#C9A25D" opacity="0.7" />
             <circle cx="90" cy="80" r="3" fill="#C9A25D" opacity="0.6" />
-            <circle cx="140" cy="140" r="2.5" fill="#C9A25D" opacity="0.75" />
-            <path d="M40 90c8-10 18-16 28-18" stroke="#C9A25D" stroke-width="1.2" fill="none" opacity="0.7" />
-            <path d="M110 110c10-6 20-8 32-8" stroke="#C9A25D" stroke-width="1" fill="none" opacity="0.6" />
-            <circle cx="30" cy="130" r="1.5" fill="#C9A25D" opacity="0.8" />
+            <path d="M40 90c8-10 18-16 28-18" stroke="#C9A25D" stroke-width="1.2" fill="none" />
+            <path d="M110 110c10-6 20-8 32-8" stroke="#C9A25D" stroke-width="1" fill="none" />
           </symbol>
         </defs>
       </svg>
 
-      <!-- Hero Section -->
       <header id="top" class="hero">
         <div class="decor-layer">
-          <svg class="watercolor-wash primary" aria-hidden="true"><use href="#watercolor-wash" /></svg>
+          <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
           <svg class="watercolor-wash secondary" aria-hidden="true"><use href="#watercolor-wash" /></svg>
           <svg class="botanical-corner top-right float-slower" aria-hidden="true">
             <use href="#botanical-corner" />
@@ -133,7 +799,7 @@
               我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
             </p>
             <p class="hero-details" data-config="hero.datetime">
-              2025.10.18 · 15:30 · 森光花園宴會廳
+              2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區林蔭路 88 號
             </p>
             <div class="hero-badges">
               <span data-config="hero.badge1">戶外草地證婚</span>
@@ -163,10 +829,8 @@
         </div>
       </header>
 
-      <!-- Main Content -->
       <main class="main-content">
         <div class="section-stack">
-          <!-- Couple Section -->
           <section id="couple" class="section-card reveal">
             <div class="section-decor">
               <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
@@ -209,7 +873,6 @@
             </div>
           </section>
 
-          <!-- Location Section -->
           <section id="location" class="section-card reveal">
             <div class="section-decor">
               <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
@@ -239,11 +902,11 @@
                 <p class="detail-note" data-config="event.dress.detail">推薦亞麻或柔和布料，與花園色調相呼應。</p>
               </article>
             </div>
-            <div class="card-grid location-cards">
+            <div class="card-grid" style="margin-top: 2rem;">
               <article class="soft-card">
                 <h3 data-config="venue.name">森光花園宴會廳</h3>
                 <p data-config="venue.address">台北市信義區林蔭路 88 號</p>
-                <div class="button-group">
+                <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.8rem;">
                   <a
                     class="btn-primary"
                     href="https://maps.google.com"
@@ -264,14 +927,13 @@
                   <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
                   <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
                 </ul>
-                <p class="note" data-config="transport.note">
+                <p data-config="transport.note" style="margin-top: 1rem; font-size: 0.8rem; color: rgba(46,47,51,0.6);">
                   若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
                 </p>
               </article>
             </div>
           </section>
 
-          <!-- Survey Section -->
           <section id="survey" class="section-card reveal">
             <div class="section-decor">
               <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
@@ -329,15 +991,14 @@
               <input type="hidden" name="locale" value="zh" data-rsvp-locale />
               <input type="hidden" name="source" value="web" />
               <button type="submit" class="form-submit" data-config="survey.button">送出回覆</button>
-              <p class="full-width form-status" data-rsvp-status role="status"></p>
+              <p class="full-width" data-rsvp-status role="status" style="text-align:center; display:none;"></p>
             </form>
             <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
-            <p class="form-note" data-config="survey.note">
+            <p class="section-description" data-config="survey.note" style="margin-top: 1rem;">
               表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
             </p>
           </section>
 
-          <!-- Invitation Section -->
           <section id="invitation" class="section-card reveal">
             <div class="section-decor">
               <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
@@ -351,7 +1012,7 @@
               </p>
             </div>
             <div class="card-grid">
-              <article class="soft-card invitation-letter">
+              <article class="soft-card">
                 <h3 data-config="invitation.letter.salutation">Dear You,</h3>
                 <p data-config="invitation.letter.body">
                   我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
@@ -372,7 +1033,7 @@
                 </dl>
                 <a href="#top" class="btn-primary" data-config="invitation.button">回到頂端</a>
               </article>
-              <article class="soft-card invitation-message">
+              <article class="soft-card">
                 <h3 data-config="invitation.card.message">願你今天也被溫柔包圍</h3>
                 <p data-config="invitation.card.note">
                   我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
@@ -383,12 +1044,369 @@
         </div>
       </main>
 
-      <!-- Footer -->
       <footer class="footer" data-config="footer.text">
         可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+      (function () {
+        const bodyEl = document.body;
+        const CONFIG_SOURCE_URL =
+          (bodyEl && bodyEl.dataset.configSrc) ||
+          (typeof window !== "undefined" && window.CONFIG_SOURCE_URL) ||
+          "config.csv";
+        const FALLBACK_CONFIG_URL =
+          (typeof window !== "undefined" && window.CONFIG_FALLBACK_URL) ||
+          "config.csv";
+        const DEFAULT_LANG = (bodyEl && bodyEl.dataset.defaultLang) || "zh";
+        const STORAGE_KEY = "forest-wedding-lang";
+        const state = {
+          languages: [],
+          data: {},
+          currentLang: DEFAULT_LANG,
+        };
+        const rootStyle = document.documentElement.style;
+        const visualDefaults = {
+          heroImage: "",
+          heroPosition: "",
+          heroOverlayOpacity: "",
+        };
+        const resetScrollPosition = () => {
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        };
+
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = "manual";
+        }
+
+        window.addEventListener("pageshow", (event) => {
+          if (event.persisted) {
+            resetScrollPosition();
+          }
+        });
+
+        const getRSVPEndpoint = () =>
+          (bodyEl && bodyEl.dataset.rsvpEndpoint) ||
+          (typeof window !== "undefined" && window.RSVP_ENDPOINT) ||
+          "";
+
+        function parseCSVLine(line) {
+          const cells = [];
+          let current = "";
+          let inQuotes = false;
+          for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+            if (char === '"') {
+              if (inQuotes && line[i + 1] === '"') {
+                current += '"';
+                i++;
+              } else {
+                inQuotes = !inQuotes;
+              }
+            } else if (char === "," && !inQuotes) {
+              cells.push(current);
+              current = "";
+            } else {
+              current += char;
+            }
+          }
+          cells.push(current);
+          return cells;
+        }
+
+        function parseConfig(text) {
+          const cleaned = text.replace(/^\uFEFF/, "");
+          const lines = cleaned.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+          if (!lines.length) {
+            return { languages: [], data: {} };
+          }
+          const headerCells = parseCSVLine(lines.shift());
+          const langHeaders = headerCells.slice(1).map((cell) => cell.trim() || "value");
+          if (!langHeaders.length) {
+            langHeaders.push("value");
+          }
+          const data = {};
+          langHeaders.forEach((lang) => {
+            data[lang] = {};
+          });
+          lines.forEach((line) => {
+            const cells = parseCSVLine(line);
+            const key = (cells[0] || "").trim();
+            if (!key) return;
+            langHeaders.forEach((lang, idx) => {
+              const value = (cells[idx + 1] || "").trim();
+              if (!data[lang]) data[lang] = {};
+              data[lang][key] = value;
+            });
+          });
+          const languages = Array.from(new Set(langHeaders.filter(Boolean)));
+          return { languages, data };
+        }
+
+        function mergeConfig(primary, fallback) {
+          if (!fallback.languages.length) return primary;
+          const languages = Array.from(new Set([...primary.languages, ...fallback.languages]));
+          const data = {};
+          languages.forEach((lang) => {
+            const primaryBucket = primary.data[lang] || {};
+            const fallbackBucket = fallback.data[lang] || {};
+            const merged = { ...fallbackBucket, ...primaryBucket };
+            Object.keys(merged).forEach((key) => {
+              if (primaryBucket[key] === "" && fallbackBucket[key]) {
+                merged[key] = fallbackBucket[key];
+              }
+            });
+            data[lang] = merged;
+          });
+          return { languages, data };
+        }
+
+        function getStoredLang() {
+          try {
+            return window.localStorage.getItem(STORAGE_KEY);
+          } catch (err) {
+            return null;
+          }
+        }
+
+        function storeLang(lang) {
+          try {
+            window.localStorage.setItem(STORAGE_KEY, lang);
+          } catch (err) {
+            /* ignore */
+          }
+        }
+
+        function updateDocumentLang(lang) {
+          document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
+        }
+
+        function getValueForKey(key, fallback = "", lang = state.currentLang) {
+          const order = [];
+          const enqueue = (code) => {
+            if (code && !order.includes(code)) order.push(code);
+          };
+          enqueue(lang);
+          enqueue(DEFAULT_LANG);
+          state.languages.forEach(enqueue);
+          enqueue("value");
+          for (const code of order) {
+            const bucket = state.data[code];
+            if (bucket && Object.prototype.hasOwnProperty.call(bucket, key)) {
+              const value = bucket[key];
+              if (value !== "") return value;
+            }
+          }
+          return fallback;
+        }
+
+        function applyLanguage(lang) {
+          document.querySelectorAll("[data-config]").forEach((el) => {
+            const key = el.dataset.config;
+            if (!key) return;
+            const value = getValueForKey(key, "", lang);
+            if (value === "") return;
+            const attr = el.dataset.configAttr;
+            if (attr) {
+              el.setAttribute(attr, value);
+            } else {
+              el.textContent = value;
+            }
+          });
+        }
+
+        function applyVisualConfig(lang = state.currentLang) {
+          const bodyBackground = getValueForKey("body.background", "", lang);
+
+          if (bodyBackground) {
+            rootStyle.setProperty("--page-background", bodyBackground);
+          } else {
+            rootStyle.removeProperty("--page-background");
+          }
+        }
+
+        function refreshLangButtons() {
+          const available = new Set(state.languages);
+          const buttons = document.querySelectorAll("[data-lang-button]");
+          buttons.forEach((btn) => {
+            const lang = btn.dataset.langButton;
+            const isActive = lang === state.currentLang;
+            const isAvailable = available.has(lang);
+            btn.classList.toggle("is-active", isActive);
+            btn.setAttribute("aria-pressed", String(isActive));
+            btn.disabled = !isAvailable;
+            btn.classList.toggle("opacity-40", !isAvailable);
+          });
+          const switcher = document.querySelector("[data-lang-switch]");
+          if (switcher) {
+            switcher.classList.toggle("hidden", available.size <= 1);
+          }
+        }
+
+        function setLanguage(lang) {
+          if (!state.languages.includes(lang)) return;
+          if (lang === state.currentLang) return;
+          state.currentLang = lang;
+          applyLanguage(lang);
+          applyVisualConfig(lang);
+          refreshLangButtons();
+          updateDocumentLang(lang);
+          storeLang(lang);
+          updateLocaleField();
+        }
+
+        function setLoading(isLoading) {
+          if (!bodyEl) return;
+          bodyEl.classList.toggle("is-loading", isLoading);
+        }
+
+        async function loadConfig() {
+          try {
+            const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
+            if (!res.ok) throw new Error("Failed to load config");
+            const raw = await res.text();
+            let parsed = parseConfig(raw);
+            if (!parsed.languages.length) return;
+            if (FALLBACK_CONFIG_URL && FALLBACK_CONFIG_URL !== CONFIG_SOURCE_URL) {
+              try {
+                const fallbackRes = await fetch(FALLBACK_CONFIG_URL, { cache: "no-store" });
+                if (fallbackRes.ok) {
+                  const fallbackRaw = await fallbackRes.text();
+                  const fallbackParsed = parseConfig(fallbackRaw);
+                  parsed = mergeConfig(parsed, fallbackParsed);
+                }
+              } catch (err) {
+                console.warn("Unable to load fallback config", err);
+              }
+            }
+            state.languages = parsed.languages;
+            state.data = parsed.data;
+            const storedLang = getStoredLang();
+            const preferred = [storedLang, DEFAULT_LANG].find(
+              (code) => code && state.languages.includes(code)
+            );
+            state.currentLang = preferred || state.languages[0];
+            applyLanguage(state.currentLang);
+            applyVisualConfig(state.currentLang);
+            refreshLangButtons();
+            updateDocumentLang(state.currentLang);
+            storeLang(state.currentLang);
+            updateLocaleField();
+          } catch (err) {
+            console.error("Unable to load config", err);
+          }
+        }
+
+        function updateLocaleField() {
+          const input = document.querySelector("[data-rsvp-locale]");
+          if (input) {
+            input.value = state.currentLang || DEFAULT_LANG;
+          }
+        }
+
+        function showRSVPStatus(type, fallback = "") {
+          const statusEl = document.querySelector("[data-rsvp-status]");
+          if (!statusEl) return;
+          const message = getValueForKey(`survey.message.${type}`, fallback) || fallback;
+          if (!message) {
+            statusEl.style.display = "none";
+            return;
+          }
+          statusEl.textContent = message;
+          statusEl.dataset.status = type;
+          statusEl.style.display = "block";
+        }
+
+        function setupRSVPForm() {
+          const form = document.querySelector("[data-rsvp-form]");
+          if (!form) return;
+          const endpoint = getRSVPEndpoint();
+          const frame = document.querySelector("[data-rsvp-frame]");
+          let isSubmitting = false;
+
+          if (frame && !frame.name) {
+            frame.name = "rsvp-frame";
+          }
+
+          if (frame) {
+            frame.addEventListener("load", () => {
+              if (!isSubmitting) return;
+              isSubmitting = false;
+              showRSVPStatus("success");
+              form.reset();
+              updateLocaleField();
+            });
+          }
+
+          form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            if (!endpoint) {
+              showRSVPStatus("error", "RSVP endpoint not configured");
+              return;
+            }
+
+            showRSVPStatus("sending");
+            form.action = endpoint;
+            form.method = "POST";
+
+            if (frame) {
+              form.target = frame.name;
+              isSubmitting = true;
+              form.submit();
+              return;
+            }
+
+            try {
+              const response = await fetch(endpoint, {
+                method: "POST",
+                body: new FormData(form),
+              });
+              if (!response.ok) throw new Error("Request failed");
+              showRSVPStatus("success");
+              form.reset();
+              updateLocaleField();
+            } catch (error) {
+              console.error("RSVP submission error:", error);
+              showRSVPStatus("error", "提交失敗，請稍後再試");
+            }
+          });
+        }
+
+        function setupReveal() {
+          const items = document.querySelectorAll(".reveal");
+          if (!items.length) return;
+          if (!("IntersectionObserver" in window)) {
+            items.forEach((item) => item.classList.add("is-visible"));
+            return;
+          }
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.2 }
+          );
+          items.forEach((item) => observer.observe(item));
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          resetScrollPosition();
+          document.querySelectorAll("[data-lang-button]").forEach((btn) => {
+            btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
+          });
+          setupRSVPForm();
+          setupReveal();
+          loadConfig().finally(() => setLoading(false));
+        });
+
+        window.addEventListener("load", resetScrollPosition);
+      })();
+    </script>
   </body>
 </html>
