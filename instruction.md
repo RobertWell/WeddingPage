@@ -125,3 +125,65 @@ function jsonResponse_(obj, status = 200) {
 - **Resending / testing**: Use the dev tools console to call `window.RSVP_ENDPOINT` with `fetch` manually, or fill the form on the page.
 
 Now both the display content and RSVP data flow through Google Sheets while the static site remains GitHub-Pages friendly.
+
+---
+
+## 5. Enhancement: Config-Driven Backgrounds (No UI)
+
+This enhancement lets you change the hero image and overall background purely via the `config` sheet. There is no in-page UI, which keeps the page simple and avoids client-side security concerns.
+
+### 5.1. Background Configuration Keys
+
+Add the following keys to the `config` sheet:
+
+| key | zh | en | purpose |
+| --- | --- | --- | --- |
+| `hero.imageUrl` | `https://storage.googleapis.com/<bucket>/hero-forest.jpg` | same as `zh` | Hero background image URL. |
+| `hero.imagePosition` | `50% 30%` | same as `zh` | Image focal point (maps to `object-position` or CSS background-position). |
+| `hero.overlayOpacity` | `0.7` | same as `zh` | Opacity for the hero gradient overlay. |
+| `body.background` | `radial-gradient(...), linear-gradient(...)` | same as `zh` | Optional page background. Leave empty to keep defaults. |
+
+**Why this works:** the image URL and its position live together in the config, so there is no extra “mapping file.” Changing the sheet updates the display at page load.
+
+### 5.2. Host Images on Google Cloud Storage (GCS)
+
+1. **Create a bucket**
+   - In Google Cloud Console → **Storage** → **Buckets** → **Create**.
+   - Example name: `wedding-backgrounds`.
+2. **Upload images**
+   - Upload your hero images to the bucket (e.g., `hero-forest.jpg`, `hero-sunset.jpg`).
+3. **Make the images public**
+   - Select uploaded objects → **Permissions** → grant **allUsers** the **Storage Object Viewer** role.
+   - Alternatively, set bucket-level public access if appropriate for your use case.
+4. **Copy the image URL**
+   - Use the public URL format:
+     `https://storage.googleapis.com/<bucket>/<file>`
+   - Paste this URL into `hero.imageUrl` in the `config` sheet.
+
+### 5.3. Choose the Image Focal Point
+
+To keep the important part of the image visible, set `hero.imagePosition` in the sheet:
+
+- Center: `50% 50%`
+- Top: `50% 20%`
+- Off-center left: `35% 40%`
+
+If a face or couple is in the image, adjust the percentages so the subject stays centered on mobile.
+
+### 5.4. Optional Body Background Control
+
+To override the page background, set `body.background` to a valid CSS background string:
+
+```
+radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%),
+radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%),
+linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)
+```
+
+Leave the cell empty to use the default design.
+
+### 5.5. Implementation Notes (for future code work)
+
+- The hero image currently uses an `<img>` in `index.html`. You can continue to use it and apply `object-position` using `hero.imagePosition`.
+- Alternatively, convert the hero to a CSS background layer and apply `hero.imageUrl` and `hero.imagePosition` as CSS variables.
+- Apply `hero.overlayOpacity` to the hero overlay’s opacity so text contrast remains legible across different images.
