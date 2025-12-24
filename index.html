@@ -26,6 +26,13 @@
             boxShadow: {
               card: "0 30px 60px rgba(33, 48, 33, 0.18)",
             },
+            colors: {
+              primary: "rgb(var(--color-primary) / <alpha-value>)",
+              accent: "rgb(var(--color-accent) / <alpha-value>)",
+              ink: "rgb(var(--color-ink) / <alpha-value>)",
+              muted: "rgb(var(--color-muted) / <alpha-value>)",
+              border: "rgb(var(--color-border) / <alpha-value>)",
+            },
           },
         },
       };
@@ -43,11 +50,90 @@
         --letter-spacing-wide: 0.3em;
         --letter-spacing-wider: 0.4em;
 
+        /* Core palette (spring) */
+        --color-primary: 34 139 92;
+        --color-accent: 214 180 138;
+        --color-ink: 68 74 60;
+        --color-muted: 120 130 110;
+        --color-border: 207 222 208;
+        --color-deco-1: 120 196 140;
+        --color-deco-2: 196 219 184;
+        --color-deco-3: 214 180 138;
+        --color-wash-1: 230 246 231;
+        --color-wash-2: 242 226 200;
+        --color-wash-3: 207 238 213;
+        --color-wash-4: 232 244 221;
+        --color-page-radial-1: 255 255 255;
+        --color-page-radial-2: 227 248 230;
+        --color-page-gradient-1: 234 248 233;
+        --color-page-gradient-2: 255 255 254;
+        --color-page-gradient-3: 245 235 221;
+        --color-page-gradient-4: 216 242 214;
+        --color-loading-1: 232 248 233;
+        --color-loading-2: 245 235 221;
+        --color-invite-1: 230 246 231;
+        --color-invite-2: 243 228 204;
+        --color-invite-3: 207 235 200;
+
         /* Misc */
         --hero-image-position: 50% 50%;
         --hero-overlay-opacity: 1;
         --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' fill='none'%3E%3Cpath d='M52 96c20-32 58-38 86-16-32 14-54 34-64 66-20-19-30-36-22-50z' fill='rgba(168,211,255,0.08)'/%3E%3Cpath d='M172 52c16 20 20 50-2 76-12-22-32-32-56-38 16-20 36-32 58-38z' fill='rgba(232,212,255,0.07)'/%3E%3Cpath d='M120 152c10-24 32-38 56-40-12 30-32 48-52 62-6-6-10-14-4-22z' fill='rgba(255,214,232,0.06)'/%3E%3Cpath d='M200 180c-8 16-28 20-44 12 8-18 22-28 38-32 4 6 7 13 6 20z' fill='rgba(194,224,255,0.07)'/%3E%3C/svg%3E");
+        --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' fill='none'%3E%3Cpath d='M52 96c20-32 58-38 86-16-32 14-54 34-64 66-20-19-30-36-22-50z' fill='rgba(124,200,140,0.12)'/%3E%3Cpath d='M172 52c16 20 20 50-2 76-12-22-32-32-56-38 16-20 36-32 58-38z' fill='rgba(182,232,182,0.1)'/%3E%3Cpath d='M120 152c10-24 32-38 56-40-12 30-32 48-52 62-6-6-10-14-4-22z' fill='rgba(214,180,140,0.08)'/%3E%3Cpath d='M200 180c-8 16-28 20-44 12 8-18 22-28 38-32 4 6 7 13 6 20z' fill='rgba(140,210,150,0.12)'/%3E%3C/svg%3E");
+      }
+
+      .theme-khaki {
+        --color-primary: 126 88 48;
+        --color-accent: 146 186 150;
+        --color-ink: 93 66 38;
+        --color-muted: 140 112 82;
+        --color-border: 214 198 170;
+        --color-deco-1: 154 116 80;
+        --color-deco-2: 200 168 128;
+        --color-deco-3: 150 190 150;
+        --color-wash-1: 242 224 198;
+        --color-wash-2: 230 209 178;
+        --color-wash-3: 220 196 163;
+        --color-wash-4: 233 220 196;
+        --color-page-radial-1: 255 255 255;
+        --color-page-radial-2: 231 240 226;
+        --color-page-gradient-1: 247 235 221;
+        --color-page-gradient-2: 244 227 207;
+        --color-page-gradient-3: 230 210 187;
+        --color-page-gradient-4: 220 198 172;
+        --color-loading-1: 247 235 221;
+        --color-loading-2: 230 210 187;
+        --color-invite-1: 234 216 193;
+        --color-invite-2: 223 198 165;
+        --color-invite-3: 203 178 142;
+        --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' fill='none'%3E%3Cpath d='M52 96c20-32 58-38 86-16-32 14-54 34-64 66-20-19-30-36-22-50z' fill='rgba(196,163,120,0.18)'/%3E%3Cpath d='M172 52c16 20 20 50-2 76-12-22-32-32-56-38 16-20 36-32 58-38z' fill='rgba(178,142,104,0.12)'/%3E%3Cpath d='M120 152c10-24 32-38 56-40-12 30-32 48-52 62-6-6-10-14-4-22z' fill='rgba(142,190,148,0.09)'/%3E%3Cpath d='M200 180c-8 16-28 20-44 12 8-18 22-28 38-32 4 6 7 13 6 20z' fill='rgba(212,180,140,0.14)'/%3E%3C/svg%3E");
+      }
+
+      .theme-breeze {
+        --color-primary: 56 132 255;
+        --color-accent: 236 72 153;
+        --color-ink: 71 85 105;
+        --color-muted: 100 116 139;
+        --color-border: 186 215 255;
+        --color-deco-1: 168 211 255;
+        --color-deco-2: 232 212 255;
+        --color-deco-3: 255 214 232;
+        --color-wash-1: 230 247 255;
+        --color-wash-2: 255 240 246;
+        --color-wash-3: 186 230 255;
+        --color-wash-4: 224 242 255;
+        --color-page-radial-1: 255 255 255;
+        --color-page-radial-2: 230 247 255;
+        --color-page-gradient-1: 240 249 255;
+        --color-page-gradient-2: 255 255 255;
+        --color-page-gradient-3: 224 242 255;
+        --color-page-gradient-4: 255 240 246;
+        --color-loading-1: 240 249 255;
+        --color-loading-2: 255 240 246;
+        --color-invite-1: 230 247 255;
+        --color-invite-2: 255 240 246;
+        --color-invite-3: 224 242 255;
+        --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' fill='none'%3E%3Cpath d='M52 96c20-32 58-38 86-16-32 14-54 34-64 66-20-19-30-36-22-50z' fill='rgba(168,211,255,0.1)'/%3E%3Cpath d='M172 52c16 20 20 50-2 76-12-22-32-32-56-38 16-20 36-32 58-38z' fill='rgba(232,212,255,0.09)'/%3E%3Cpath d='M120 152c10-24 32-38 56-40-12 30-32 48-52 62-6-6-10-14-4-22z' fill='rgba(255,214,232,0.08)'/%3E%3Cpath d='M200 180c-8 16-28 20-44 12 8-18 22-28 38-32 4 6 7 13 6 20z' fill='rgba(194,224,255,0.08)'/%3E%3C/svg%3E");
       }
 
       * {
@@ -116,6 +202,10 @@
       .theme-switch button {
         border-radius: 999px;
         transition: var(--transition-smooth);
+      }
+
+      .theme-switch .is-active {
+        color: rgb(var(--color-ink));
       }
 
       /* Loading states */
@@ -254,59 +344,33 @@
     </style>
   </head>
   <body
-    class="is-loading bg-[radial-gradient(circle_at_15%_25%,rgba(255,255,255,0.98)_0%,transparent_50%),radial-gradient(circle_at_85%_10%,#F0F7FF_0%,transparent_45%),linear-gradient(135deg,#F0F7FF,#FFFFFE_40%,#F5EDFF_80%,#FFE9F3)] text-slate-600 [.theme-khaki_&]:bg-[radial-gradient(circle_at_15%_25%,rgba(255,255,255,0.95)_0%,transparent_50%),radial-gradient(circle_at_85%_10%,#E8F5F0_0%,transparent_45%),linear-gradient(135deg,#FFF9F0,#FFFEF8_60%,#EEE9E0)] [.theme-khaki_&]:text-slate-700 [.theme-breeze_&]:bg-[radial-gradient(circle_at_15%_25%,rgba(255,255,255,1)_0%,transparent_50%),radial-gradient(circle_at_85%_10%,#E6F7FF_0%,transparent_45%),linear-gradient(135deg,#F0F9FF,#FFFFFF_40%,#E0F2FF_70%,#FFF0F6)]"
+    class="is-loading bg-[radial-gradient(circle_at_15%_25%,rgb(var(--color-page-radial-1)_/_0.98)_0%,transparent_50%),radial-gradient(circle_at_85%_10%,rgb(var(--color-page-radial-2)_/_0.9)_0%,transparent_45%),linear-gradient(135deg,rgb(var(--color-page-gradient-1)),rgb(var(--color-page-gradient-2))_40%,rgb(var(--color-page-gradient-3))_75%,rgb(var(--color-page-gradient-4)))] text-ink"
     data-config-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIAtQlScbidP76R5pzR3xuO81EN6D1LCTNA9S7pk2W85MVFhJUMao0CH2bkPFe7yMObWw1roH8Hlp1/pub?output=csv"
     data-default-lang="zh"
     data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec"
   >
-    <div class="loading-screen bg-[linear-gradient(135deg,rgba(240,247,255,0.98),rgba(255,233,243,0.98))] text-slate-600 [.theme-khaki_&]:bg-[linear-gradient(135deg,rgba(248,250,244,0.98),rgba(255,244,232,0.98))] [.theme-khaki_&]:text-slate-700 [.theme-breeze_&]:bg-[linear-gradient(135deg,rgba(240,249,255,0.98),rgba(255,240,246,0.98))]" role="status" aria-live="polite" aria-label="Loading">
-      <div class="loading-spinner border-sky-200 border-t-rose-200 [.theme-khaki_&]:border-emerald-200 [.theme-khaki_&]:border-t-amber-200 [.theme-breeze_&]:border-sky-200 [.theme-breeze_&]:border-t-pink-200" aria-hidden="true"></div>
+    <div class="loading-screen bg-[linear-gradient(135deg,rgb(var(--color-loading-1)_/_0.98),rgb(var(--color-loading-2)_/_0.98))] text-ink" role="status" aria-live="polite" aria-label="Loading">
+      <div class="loading-spinner border-primary/30 border-t-accent/60" aria-hidden="true"></div>
       <div class="text-center">
-        <p class="text-sm uppercase tracking-[0.4em] text-sky-500/80 [.theme-khaki_&]:text-emerald-600/80 [.theme-breeze_&]:text-sky-600/80">資料載入中</p>
-        <p class="mt-2 text-xs text-slate-500/70 [.theme-khaki_&]:text-slate-600/70 [.theme-breeze_&]:text-slate-500/70">正在準備喜帖內容，請稍候片刻。</p>
+        <p class="text-sm uppercase tracking-[0.4em] text-primary/80">資料載入中</p>
+        <p class="mt-2 text-xs text-muted/70">正在準備喜帖內容，請稍候片刻。</p>
       </div>
     </div>
     <div class="page-content">
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
       <!-- Watercolor wash background decoration -->
-      <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30 [.theme-khaki_&]:hidden [.theme-breeze_&]:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <filter id="watercolor-blur">
             <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
           </filter>
         </defs>
         <g filter="url(#watercolor-blur)">
-          <ellipse cx="200" cy="150" rx="280" ry="220" fill="#F0F7FF" opacity="0.9"/>
-          <ellipse cx="900" cy="100" rx="320" ry="280" fill="#FFE9F3" opacity="0.8"/>
-          <ellipse cx="600" cy="500" rx="380" ry="300" fill="#C2E0FF" opacity="0.6"/>
-          <ellipse cx="1000" cy="600" rx="280" ry="240" fill="#F5EDFF" opacity="0.7"/>
-        </g>
-      </svg>
-      <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30 hidden [.theme-khaki_&]:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <filter id="watercolor-blur-khaki">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
-          </filter>
-        </defs>
-        <g filter="url(#watercolor-blur-khaki)">
-          <ellipse cx="200" cy="150" rx="280" ry="220" fill="#E8F5F0" opacity="0.9"/>
-          <ellipse cx="900" cy="100" rx="320" ry="280" fill="#FFF1E0" opacity="0.8"/>
-          <ellipse cx="600" cy="500" rx="380" ry="300" fill="#CFE8D9" opacity="0.6"/>
-          <ellipse cx="1000" cy="600" rx="280" ry="240" fill="#F6E7CC" opacity="0.7"/>
-        </g>
-      </svg>
-      <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30 hidden [.theme-breeze_&]:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <filter id="watercolor-blur-breeze">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
-          </filter>
-        </defs>
-        <g filter="url(#watercolor-blur-breeze)">
-          <ellipse cx="200" cy="150" rx="280" ry="220" fill="#E6F7FF" opacity="0.9"/>
-          <ellipse cx="900" cy="100" rx="320" ry="280" fill="#FFF0F6" opacity="0.8"/>
-          <ellipse cx="600" cy="500" rx="380" ry="300" fill="#BAE6FF" opacity="0.6"/>
-          <ellipse cx="1000" cy="600" rx="280" ry="240" fill="#E0F2FF" opacity="0.7"/>
+          <ellipse cx="200" cy="150" rx="280" ry="220" fill="rgb(var(--color-wash-1))" opacity="0.9"/>
+          <ellipse cx="900" cy="100" rx="320" ry="280" fill="rgb(var(--color-wash-2))" opacity="0.8"/>
+          <ellipse cx="600" cy="500" rx="380" ry="300" fill="rgb(var(--color-wash-3))" opacity="0.6"/>
+          <ellipse cx="1000" cy="600" rx="280" ry="240" fill="rgb(var(--color-wash-4))" opacity="0.7"/>
         </g>
       </svg>
 
@@ -387,7 +451,7 @@
         </div>
       </nav>
       <div class="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-10 text-center text-white sm:px-10">
-        <p class="text-xs uppercase tracking-[0.5em] text-sky-300/80 [.theme-khaki_&]:text-emerald-200/80 [.theme-breeze_&]:text-sky-200/80" data-config="hero.tagline">Warm &amp; Fresh Wedding</p>
+        <p class="text-xs uppercase tracking-[0.5em] text-primary/70" data-config="hero.tagline">Warm &amp; Fresh Wedding</p>
         <h1 class="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl" data-config="hero.names">昊然 &amp; 予晴</h1>
         <p class="mt-6 text-base leading-relaxed text-white/85 sm:text-lg" data-config="hero.description">
           我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
@@ -403,7 +467,7 @@
         <div class="mt-10 flex flex-col gap-4 sm:flex-row">
           <a
             href="#invitation"
-            class="rounded-full bg-white/90 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-slate-600 transition hover:bg-white [.theme-khaki_&]:text-slate-700"
+            class="rounded-full bg-white/90 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-ink transition hover:bg-white"
             data-config="hero.ctaPrimary"
             >查看喜帖</a
           >
@@ -423,61 +487,61 @@
         <section id="couple" class="grain leaf-pattern relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Spring petal corner decorations -->
           <svg class="decorative-svg svg-float absolute top-0 left-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-            <path d="M10 10 Q30 40, 15 70 Q8 50, 10 10Z" fill="#A8D3FF"/>
-            <path d="M15 15 Q45 25, 65 18 Q40 12, 15 15Z" fill="#E8D4FF"/>
-            <circle cx="20" cy="25" r="2.5" fill="#FFD6E8"/>
-            <circle cx="35" cy="18" r="2" fill="#FFD6E8" opacity="0.7"/>
-            <circle cx="28" cy="32" r="1.5" fill="#FFD6E8" opacity="0.5"/>
+            <path d="M10 10 Q30 40, 15 70 Q8 50, 10 10Z" fill="rgb(var(--color-deco-1))"/>
+            <path d="M15 15 Q45 25, 65 18 Q40 12, 15 15Z" fill="rgb(var(--color-deco-2))"/>
+            <circle cx="20" cy="25" r="2.5" fill="rgb(var(--color-deco-3))"/>
+            <circle cx="35" cy="18" r="2" fill="rgb(var(--color-deco-3))" opacity="0.7"/>
+            <circle cx="28" cy="32" r="1.5" fill="rgb(var(--color-deco-3))" opacity="0.5"/>
           </svg>
           <svg class="decorative-svg svg-float absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-            <path d="M110 10 Q90 40, 105 70 Q112 50, 110 10Z" fill="#A8D3FF"/>
-            <path d="M105 15 Q75 25, 55 18 Q80 12, 105 15Z" fill="#E8D4FF"/>
-            <circle cx="100" cy="25" r="2.5" fill="#FFD6E8"/>
-            <circle cx="85" cy="18" r="2" fill="#FFD6E8" opacity="0.7"/>
+            <path d="M110 10 Q90 40, 105 70 Q112 50, 110 10Z" fill="rgb(var(--color-deco-1))"/>
+            <path d="M105 15 Q75 25, 55 18 Q80 12, 105 15Z" fill="rgb(var(--color-deco-2))"/>
+            <circle cx="100" cy="25" r="2.5" fill="rgb(var(--color-deco-3))"/>
+            <circle cx="85" cy="18" r="2" fill="rgb(var(--color-deco-3))" opacity="0.7"/>
           </svg>
 
           <!-- Spring breeze accent arcs -->
           <svg class="decorative-svg svg-drift absolute bottom-8 right-8 w-32 h-32 pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <path d="M20 80 Q50 50, 80 80" stroke="#A8D3FF" stroke-width="1.5" fill="none" opacity="0.6"/>
-            <path d="M30 85 Q50 65, 70 85" stroke="#FFD6E8" stroke-width="1" fill="none" opacity="0.8"/>
-            <circle cx="50" cy="60" r="3" fill="#E8D4FF" opacity="0.5"/>
-            <circle cx="65" cy="75" r="2" fill="#FFD6E8" opacity="0.4"/>
-            <circle cx="35" cy="75" r="2" fill="#C2E0FF" opacity="0.4"/>
+            <path d="M20 80 Q50 50, 80 80" stroke="rgb(var(--color-deco-1))" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M30 85 Q50 65, 70 85" stroke="rgb(var(--color-deco-3))" stroke-width="1" fill="none" opacity="0.8"/>
+            <circle cx="50" cy="60" r="3" fill="rgb(var(--color-deco-2))" opacity="0.5"/>
+            <circle cx="65" cy="75" r="2" fill="rgb(var(--color-deco-3))" opacity="0.4"/>
+            <circle cx="35" cy="75" r="2" fill="rgb(var(--color-deco-2))" opacity="0.4"/>
           </svg>
 
           <div class="content-layer">
             <div class="text-center">
               <img src="img/leaf.svg" alt="小葉片裝飾" class="mx-auto h-12 w-12 opacity-80" loading="lazy" />
-              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-sky-500/70 [.theme-khaki_&]:text-emerald-600/70 [.theme-breeze_&]:text-sky-600/70" data-config="couple.section.label">新人介紹</p>
-              <h2 class="mt-3 font-display text-3xl text-sky-500 sm:text-4xl [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="couple.section.heading">把生活寫成一首溫柔的歌</h2>
-              <p class="mt-4 text-base leading-relaxed text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80" data-config="couple.section.description">
+              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-primary/70" data-config="couple.section.label">新人介紹</p>
+              <h2 class="mt-3 font-display text-3xl text-primary sm:text-4xl" data-config="couple.section.heading">把生活寫成一首溫柔的歌</h2>
+              <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="couple.section.description">
                 我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
               </p>
             </div>
             <div class="mt-10 grid gap-6 md:grid-cols-3">
-              <article class="rounded-3xl bg-sky-50/70 p-6 [.theme-khaki_&]:bg-emerald-50/70 [.theme-breeze_&]:bg-blue-50/70">
-                <p class="font-display text-xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="groom.title">新郎｜昊然</p>
-                <p class="mt-3 text-sm leading-relaxed text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80" data-config="groom.description">
+              <article class="rounded-3xl bg-primary/10 p-6">
+                <p class="font-display text-xl text-primary" data-config="groom.title">新郎｜昊然</p>
+                <p class="mt-3 text-sm leading-relaxed text-ink/80" data-config="groom.description">
                   喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。
                 </p>
-                <ul class="mt-4 space-y-2 text-sm text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80">
+                <ul class="mt-4 space-y-2 text-sm text-ink/80">
                   <li data-config="groom.detail1">婚禮口頭禪：慢慢來，會更美。</li>
                   <li data-config="groom.detail2">最常說的話：別忘了抬頭看天空。</li>
                 </ul>
               </article>
-              <article class="rounded-3xl bg-sky-50/70 p-6 [.theme-khaki_&]:bg-emerald-50/70 [.theme-breeze_&]:bg-blue-50/70">
-                <p class="font-display text-xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="bride.title">新娘｜予晴</p>
-                <p class="mt-3 text-sm leading-relaxed text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80" data-config="bride.description">
+              <article class="rounded-3xl bg-primary/10 p-6">
+                <p class="font-display text-xl text-primary" data-config="bride.title">新娘｜予晴</p>
+                <p class="mt-3 text-sm leading-relaxed text-ink/80" data-config="bride.description">
                   熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。
                 </p>
-                <ul class="mt-4 space-y-2 text-sm text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80">
+                <ul class="mt-4 space-y-2 text-sm text-ink/80">
                   <li data-config="bride.detail1">療癒小夥伴：松鼠與貓咪。</li>
                   <li data-config="bride.detail2">最愛收集：旅行貼紙與古董紙膠帶。</li>
                 </ul>
               </article>
               <article class="rounded-3xl bg-white/80 p-6 shadow-inner">
-                <p class="font-display text-xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="story.title">我們的故事</p>
-                <p class="mt-3 text-sm leading-relaxed text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80" data-config="story.description">
+                <p class="font-display text-xl text-primary" data-config="story.title">我們的故事</p>
+                <p class="mt-3 text-sm leading-relaxed text-ink/80" data-config="story.description">
                   第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。
                 </p>
               </article>
@@ -494,43 +558,43 @@
                 <feGaussianBlur in="SourceGraphic" stdDeviation="20"/>
               </filter>
             </defs>
-            <ellipse cx="150" cy="50" rx="80" ry="60" fill="#F0F7FF" filter="url(#wash-blur)"/>
-            <ellipse cx="120" cy="80" rx="60" ry="50" fill="#E8D4FF" filter="url(#wash-blur)" opacity="0.7"/>
+            <ellipse cx="150" cy="50" rx="80" ry="60" fill="rgb(var(--color-wash-1))" filter="url(#wash-blur)"/>
+            <ellipse cx="120" cy="80" rx="60" ry="50" fill="rgb(var(--color-deco-2))" filter="url(#wash-blur)" opacity="0.7"/>
           </svg>
 
           <!-- Spring petal garland -->
           <svg class="decorative-svg svg-sway absolute -left-6 top-10 w-44 h-44 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-            <path d="M15 120 Q40 80 30 40 Q55 65 70 55 Q60 95 85 110 Q55 105 40 120 Z" fill="#C2E0FF"/>
-            <path d="M60 130 Q85 105 120 110 Q95 120 110 145 Q85 135 60 130 Z" fill="#E8D4FF" opacity="0.8"/>
-            <circle cx="45" cy="78" r="3" fill="#FFD6E8" opacity="0.7"/>
-            <circle cx="95" cy="112" r="2.5" fill="#FFD6E8" opacity="0.6"/>
-            <circle cx="70" cy="98" r="2" fill="#A8D3FF" opacity="0.5"/>
+            <path d="M15 120 Q40 80 30 40 Q55 65 70 55 Q60 95 85 110 Q55 105 40 120 Z" fill="rgb(var(--color-deco-2))"/>
+            <path d="M60 130 Q85 105 120 110 Q95 120 110 145 Q85 135 60 130 Z" fill="rgb(var(--color-deco-2))" opacity="0.8"/>
+            <circle cx="45" cy="78" r="3" fill="rgb(var(--color-deco-3))" opacity="0.7"/>
+            <circle cx="95" cy="112" r="2.5" fill="rgb(var(--color-deco-3))" opacity="0.6"/>
+            <circle cx="70" cy="98" r="2" fill="rgb(var(--color-deco-1))" opacity="0.5"/>
           </svg>
 
           <!-- Spring breeze strokes -->
           <svg class="decorative-svg svg-drift absolute -right-4 bottom-6 w-36 h-36 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-            <path d="M10 70 Q45 40 90 60" stroke="#A8D3FF" stroke-width="1.5" fill="none" opacity="0.6"/>
-            <path d="M20 85 Q60 60 110 78" stroke="#FFD6E8" stroke-width="1" fill="none" opacity="0.5"/>
-            <circle cx="50" cy="58" r="3" fill="#E8D4FF" opacity="0.5"/>
-            <circle cx="85" cy="72" r="2.2" fill="#FFD6E8" opacity="0.4"/>
+            <path d="M10 70 Q45 40 90 60" stroke="rgb(var(--color-deco-1))" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M20 85 Q60 60 110 78" stroke="rgb(var(--color-deco-3))" stroke-width="1" fill="none" opacity="0.5"/>
+            <circle cx="50" cy="58" r="3" fill="rgb(var(--color-deco-2))" opacity="0.5"/>
+            <circle cx="85" cy="72" r="2.2" fill="rgb(var(--color-deco-3))" opacity="0.4"/>
           </svg>
 
           <div class="content-layer">
             <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-sky-500/70 [.theme-khaki_&]:text-emerald-600/70 [.theme-breeze_&]:text-sky-600/70" data-config="location.section.heading">餐廳地點</p>
-              <h2 class="mt-2 font-display text-3xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="location.section.title">森光花園，等你來散步</h2>
-              <p class="mt-4 text-base leading-relaxed text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80" data-config="location.section.description">
+              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="location.section.heading">餐廳地點</p>
+              <h2 class="mt-2 font-display text-3xl text-primary" data-config="location.section.title">森光花園，等你來散步</h2>
+              <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="location.section.description">
                 我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
               </p>
             </div>
             <div class="mt-10 grid gap-8 md:grid-cols-2">
               <div class="rounded-3xl bg-[url('img/forest-path.jpg')] bg-cover bg-center p-6 text-white">
-                <div class="rounded-3xl border border-white/40 bg-slate-900/40 p-6 [.theme-khaki_&]:bg-emerald-900/30 [.theme-breeze_&]:bg-slate-900/40">
+                <div class="rounded-3xl border border-white/40 bg-ink/60 p-6">
                   <p class="text-lg font-semibold" data-config="venue.name">森光花園宴會廳</p>
                 <p class="mt-2 text-sm" data-config="venue.address">台北市信義區林蔭路 88 號</p>
                 <div class="mt-6 flex flex-col gap-3 text-sm">
                   <a
-                    class="rounded-full bg-white/90 px-5 py-2 text-center text-slate-600 transition hover:bg-white [.theme-khaki_&]:text-slate-700"
+                    class="rounded-full bg-white/90 px-5 py-2 text-center text-ink transition hover:bg-white"
                     href="https://maps.google.com"
                     data-config="map.url"
                     data-config-attr="href"
@@ -548,14 +612,14 @@
                 </div>
               </div>
             </div>
-            <div class="rounded-3xl bg-sky-50/80 p-6 text-sm leading-relaxed text-slate-600/80 [.theme-khaki_&]:bg-emerald-50/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:bg-blue-50/80 [.theme-breeze_&]:text-slate-600/80">
-              <h3 class="font-display text-2xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="transport.title">交通方式</h3>
+            <div class="rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80">
+              <h3 class="font-display text-2xl text-primary" data-config="transport.title">交通方式</h3>
               <ul class="mt-4 space-y-3">
                 <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
                 <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
                 <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
               </ul>
-              <p class="mt-6 rounded-2xl bg-white/70 p-4 text-xs text-slate-500/70 [.theme-khaki_&]:text-slate-600/70 [.theme-breeze_&]:text-slate-500/70" data-config="transport.note">
+              <p class="mt-6 rounded-2xl bg-white/70 p-4 text-xs text-muted/70" data-config="transport.note">
                 若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
               </p>
             </div>
@@ -567,27 +631,27 @@
         <section id="survey" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Spring petal elements in corners -->
           <svg class="decorative-svg svg-float absolute bottom-0 left-0 w-48 h-48 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
-            <path d="M10 140 Q35 110, 25 80 Q15 100, 10 140Z" fill="#C2E0FF"/>
-            <path d="M20 135 Q50 120, 75 130 Q45 128, 20 135Z" fill="#E8D4FF" opacity="0.8"/>
-            <circle cx="30" cy="120" r="3" fill="#FFD6E8"/>
-            <circle cx="45" cy="125" r="2" fill="#FFD6E8" opacity="0.6"/>
-            <circle cx="18" cy="128" r="1.5" fill="#A8D3FF" opacity="0.5"/>
+            <path d="M10 140 Q35 110, 25 80 Q15 100, 10 140Z" fill="rgb(var(--color-deco-2))"/>
+            <path d="M20 135 Q50 120, 75 130 Q45 128, 20 135Z" fill="rgb(var(--color-deco-2))" opacity="0.8"/>
+            <circle cx="30" cy="120" r="3" fill="rgb(var(--color-deco-3))"/>
+            <circle cx="45" cy="125" r="2" fill="rgb(var(--color-deco-3))" opacity="0.6"/>
+            <circle cx="18" cy="128" r="1.5" fill="rgb(var(--color-deco-1))" opacity="0.5"/>
           </svg>
 
           <!-- Spring breeze decorative dots -->
           <svg class="decorative-svg svg-drift absolute top-12 right-12 w-28 h-28 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-            <circle cx="20" cy="20" r="3.5" fill="#FFD6E8" opacity="0.7"/>
-            <circle cx="50" cy="30" r="2.5" fill="#E8D4FF" opacity="0.6"/>
-            <circle cx="60" cy="50" r="3" fill="#A8D3FF" opacity="0.5"/>
-            <circle cx="35" cy="60" r="2" fill="#C2E0FF" opacity="0.6"/>
-            <path d="M25 25 Q40 35, 55 28" stroke="#FFD6E8" stroke-width="1" fill="none" opacity="0.5"/>
+            <circle cx="20" cy="20" r="3.5" fill="rgb(var(--color-deco-3))" opacity="0.7"/>
+            <circle cx="50" cy="30" r="2.5" fill="rgb(var(--color-deco-2))" opacity="0.6"/>
+            <circle cx="60" cy="50" r="3" fill="rgb(var(--color-deco-1))" opacity="0.5"/>
+            <circle cx="35" cy="60" r="2" fill="rgb(var(--color-deco-2))" opacity="0.6"/>
+            <path d="M25 25 Q40 35, 55 28" stroke="rgb(var(--color-deco-3))" stroke-width="1" fill="none" opacity="0.5"/>
           </svg>
 
           <div class="content-layer">
             <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-sky-500/70 [.theme-khaki_&]:text-emerald-600/70 [.theme-breeze_&]:text-sky-600/70" data-config="survey.section.heading">簡單問卷</p>
-              <h2 class="mt-2 font-display text-3xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
-              <p class="mt-4 text-base leading-relaxed text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80" data-config="survey.section.description">
+              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="survey.section.heading">簡單問卷</p>
+              <h2 class="mt-2 font-display text-3xl text-primary" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
+              <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="survey.section.description">
                 此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
               </p>
             </div>
@@ -596,7 +660,7 @@
               data-rsvp-form
             >
             <label class="block">
-              <span class="text-slate-500/70 [.theme-khaki_&]:text-slate-600/70 [.theme-breeze_&]:text-slate-500/70" data-config="survey.label.name">你的名字</span>
+              <span class="text-muted/70" data-config="survey.label.name">你的名字</span>
               <input
                 type="text"
                 name="name"
@@ -604,16 +668,16 @@
                 placeholder="請輸入姓名"
                 data-config="survey.placeholder.name"
                 data-config-attr="placeholder"
-                class="mt-2 w-full rounded-2xl border border-sky-100 bg-white/70 px-4 py-3 focus:border-sky-400 focus:outline-none [.theme-khaki_&]:border-emerald-100 [.theme-khaki_&]:focus:border-emerald-500 [.theme-breeze_&]:border-blue-100 [.theme-breeze_&]:focus:border-sky-500"
+                class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
               />
             </label>
             <div class="grid gap-6 md:grid-cols-2">
               <label class="block">
-                <span class="text-slate-500/70 [.theme-khaki_&]:text-slate-600/70 [.theme-breeze_&]:text-slate-500/70" data-config="survey.label.guests">出席人數</span>
+                <span class="text-muted/70" data-config="survey.label.guests">出席人數</span>
                 <select
                   name="guests"
                   required
-                  class="mt-2 w-full rounded-2xl border border-sky-100 bg-white/70 px-4 py-3 focus:border-sky-400 focus:outline-none [.theme-khaki_&]:border-emerald-100 [.theme-khaki_&]:focus:border-emerald-500 [.theme-breeze_&]:border-blue-100 [.theme-breeze_&]:focus:border-sky-500"
+                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
                 >
                   <option value="" data-config="survey.option.guests.placeholder">請選擇</option>
                   <option value="1" data-config="survey.option.guests.1">1 人</option>
@@ -623,11 +687,11 @@
                 </select>
               </label>
               <label class="block">
-                <span class="text-slate-500/70 [.theme-khaki_&]:text-slate-600/70 [.theme-breeze_&]:text-slate-500/70" data-config="survey.label.diet">飲食偏好</span>
+                <span class="text-muted/70" data-config="survey.label.diet">飲食偏好</span>
                 <select
                   name="diet"
                   required
-                  class="mt-2 w-full rounded-2xl border border-sky-100 bg-white/70 px-4 py-3 focus:border-sky-400 focus:outline-none [.theme-khaki_&]:border-emerald-100 [.theme-khaki_&]:focus:border-emerald-500 [.theme-breeze_&]:border-blue-100 [.theme-breeze_&]:focus:border-sky-500"
+                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
                 >
                   <option value="" data-config="survey.option.diet.placeholder">請選擇</option>
                   <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
@@ -638,29 +702,29 @@
               </label>
             </div>
             <label class="block">
-              <span class="text-slate-500/70 [.theme-khaki_&]:text-slate-600/70 [.theme-breeze_&]:text-slate-500/70" data-config="survey.label.message">想對我們說的話</span>
+              <span class="text-muted/70" data-config="survey.label.message">想對我們說的話</span>
               <textarea
                 name="message"
                 rows="4"
                 placeholder="寫下你的祝福或提醒"
                 data-config="survey.placeholder.message"
                 data-config-attr="placeholder"
-                class="mt-2 w-full rounded-2xl border border-sky-100 bg-white/70 px-4 py-3 focus:border-sky-400 focus:outline-none [.theme-khaki_&]:border-emerald-100 [.theme-khaki_&]:focus:border-emerald-500 [.theme-breeze_&]:border-blue-100 [.theme-breeze_&]:focus:border-sky-500"
+                class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
               ></textarea>
             </label>
             <input type="hidden" name="locale" value="zh" data-rsvp-locale />
             <input type="hidden" name="source" value="web" />
             <button
               type="submit"
-              class="w-full rounded-full bg-sky-500 px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-sky-600 [.theme-khaki_&]:bg-emerald-600 [.theme-khaki_&]:hover:bg-emerald-700 [.theme-breeze_&]:bg-sky-600 [.theme-breeze_&]:hover:bg-sky-700"
+              class="w-full rounded-full bg-primary px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-primary/90"
               data-config="survey.button"
             >
               送出回覆
             </button>
-            <p class="mt-4 text-center text-sm text-slate-500/70 hidden [.theme-khaki_&]:text-slate-600/70 [.theme-breeze_&]:text-slate-500/70" data-rsvp-status role="status"></p>
+            <p class="mt-4 text-center text-sm text-muted/70 hidden" data-rsvp-status role="status"></p>
             </form>
             <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
-            <p class="mt-4 text-center text-xs text-slate-500/70 [.theme-khaki_&]:text-slate-600/70 [.theme-breeze_&]:text-slate-500/70" data-config="survey.note">
+            <p class="mt-4 text-center text-xs text-muted/70" data-config="survey.note">
               表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
             </p>
           </div>
@@ -669,98 +733,78 @@
         <!-- Invitation card -->
         <section id="invitation" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Spring sky watercolor background layer -->
-          <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-15 [.theme-khaki_&]:hidden [.theme-breeze_&]:hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <defs>
               <filter id="invitation-wash">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
               </filter>
             </defs>
-            <ellipse cx="30%" cy="40%" rx="220" ry="170" fill="#F0F7FF" filter="url(#invitation-wash)"/>
-            <ellipse cx="70%" cy="60%" rx="200" ry="160" fill="#FFE9F3" filter="url(#invitation-wash)"/>
-            <ellipse cx="50%" cy="20%" rx="150" ry="120" fill="#E8D4FF" filter="url(#invitation-wash)" opacity="0.5"/>
-          </svg>
-          <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-15 hidden [.theme-khaki_&]:block" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs>
-              <filter id="invitation-wash-khaki">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
-              </filter>
-            </defs>
-            <ellipse cx="30%" cy="40%" rx="220" ry="170" fill="#E8F5F0" filter="url(#invitation-wash-khaki)"/>
-            <ellipse cx="70%" cy="60%" rx="200" ry="160" fill="#FFF1E0" filter="url(#invitation-wash-khaki)"/>
-            <ellipse cx="50%" cy="20%" rx="150" ry="120" fill="#F6E7CC" filter="url(#invitation-wash-khaki)" opacity="0.5"/>
-          </svg>
-          <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-15 hidden [.theme-breeze_&]:block" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs>
-              <filter id="invitation-wash-breeze">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
-              </filter>
-            </defs>
-            <ellipse cx="30%" cy="40%" rx="220" ry="170" fill="#E6F7FF" filter="url(#invitation-wash-breeze)"/>
-            <ellipse cx="70%" cy="60%" rx="200" ry="160" fill="#FFF0F6" filter="url(#invitation-wash-breeze)"/>
-            <ellipse cx="50%" cy="20%" rx="150" ry="120" fill="#E0F2FF" filter="url(#invitation-wash-breeze)" opacity="0.5"/>
+            <ellipse cx="30%" cy="40%" rx="220" ry="170" fill="rgb(var(--color-invite-1))" filter="url(#invitation-wash)"/>
+            <ellipse cx="70%" cy="60%" rx="200" ry="160" fill="rgb(var(--color-invite-2))" filter="url(#invitation-wash)"/>
+            <ellipse cx="50%" cy="20%" rx="150" ry="120" fill="rgb(var(--color-invite-3))" filter="url(#invitation-wash)" opacity="0.55"/>
           </svg>
 
           <!-- Spring breeze accent frame -->
           <svg class="decorative-svg absolute top-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <path d="M5 5 L25 5" stroke="#A8D3FF" stroke-width="2" fill="none"/>
-            <path d="M5 5 L5 25" stroke="#A8D3FF" stroke-width="2" fill="none"/>
-            <circle cx="5" cy="5" r="2.5" fill="#FFD6E8"/>
+            <path d="M5 5 L25 5" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
+            <path d="M5 5 L5 25" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
+            <circle cx="5" cy="5" r="2.5" fill="rgb(var(--color-deco-3))"/>
           </svg>
           <svg class="decorative-svg absolute top-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <path d="M55 5 L35 5" stroke="#A8D3FF" stroke-width="2" fill="none"/>
-            <path d="M55 5 L55 25" stroke="#A8D3FF" stroke-width="2" fill="none"/>
-            <circle cx="55" cy="5" r="2.5" fill="#FFD6E8"/>
+            <path d="M55 5 L35 5" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
+            <path d="M55 5 L55 25" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
+            <circle cx="55" cy="5" r="2.5" fill="rgb(var(--color-deco-3))"/>
           </svg>
           <svg class="decorative-svg absolute bottom-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <path d="M5 55 L25 55" stroke="#A8D3FF" stroke-width="2" fill="none"/>
-            <path d="M5 55 L5 35" stroke="#A8D3FF" stroke-width="2" fill="none"/>
-            <circle cx="5" cy="55" r="2.5" fill="#FFD6E8"/>
+            <path d="M5 55 L25 55" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
+            <path d="M5 55 L5 35" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
+            <circle cx="5" cy="55" r="2.5" fill="rgb(var(--color-deco-3))"/>
           </svg>
           <svg class="decorative-svg absolute bottom-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <path d="M55 55 L35 55" stroke="#A8D3FF" stroke-width="2" fill="none"/>
-            <path d="M55 55 L55 35" stroke="#A8D3FF" stroke-width="2" fill="none"/>
-            <circle cx="55" cy="55" r="2.5" fill="#FFD6E8"/>
+            <path d="M55 55 L35 55" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
+            <path d="M55 55 L55 35" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
+            <circle cx="55" cy="55" r="2.5" fill="rgb(var(--color-deco-3))"/>
           </svg>
 
           <div class="content-layer">
             <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-sky-500/70 [.theme-khaki_&]:text-emerald-600/70 [.theme-breeze_&]:text-sky-600/70" data-config="invitation.section.title">喜帖</p>
-              <h2 class="mt-2 font-display text-3xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
-              <p class="mt-4 text-base leading-relaxed text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80" data-config="invitation.section.description">
+              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="invitation.section.title">喜帖</p>
+              <h2 class="mt-2 font-display text-3xl text-primary" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
+              <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="invitation.section.description">
                 用一封溫柔的喜帖，把我們的祝福親手遞給你。
               </p>
             </div>
             <div class="mt-10 grid gap-8 md:grid-cols-2">
-              <div class="rounded-3xl bg-sky-50/70 p-6 text-sm leading-relaxed text-slate-600/80 [.theme-khaki_&]:bg-emerald-50/70 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:bg-blue-50/70 [.theme-breeze_&]:text-slate-600/80">
-                <p class="font-display text-xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="invitation.letter.salutation">Dear You,</p>
+              <div class="rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80">
+                <p class="font-display text-xl text-primary" data-config="invitation.letter.salutation">Dear You,</p>
                 <p class="mt-4" data-config="invitation.letter.body">
                   我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
                 </p>
                 <dl class="mt-6 space-y-4 text-sm">
                   <div>
-                    <dt class="text-slate-500/60 [.theme-khaki_&]:text-slate-600/60 [.theme-breeze_&]:text-slate-500/60" data-config="invitation.date.label">日期</dt>
-                    <dd class="font-display text-lg text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="invitation.date.value">2025 / 10 / 18（六）</dd>
+                    <dt class="text-muted/60" data-config="invitation.date.label">日期</dt>
+                    <dd class="font-display text-lg text-primary" data-config="invitation.date.value">2025 / 10 / 18（六）</dd>
                   </div>
                   <div>
-                    <dt class="text-slate-500/60 [.theme-khaki_&]:text-slate-600/60 [.theme-breeze_&]:text-slate-500/60" data-config="invitation.time.label">時間</dt>
-                    <dd class="font-display text-lg text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="invitation.time.value">15:30 證婚 ・ 18:00 宴客</dd>
+                    <dt class="text-muted/60" data-config="invitation.time.label">時間</dt>
+                    <dd class="font-display text-lg text-primary" data-config="invitation.time.value">15:30 證婚 ・ 18:00 宴客</dd>
                   </div>
                   <div>
-                    <dt class="text-slate-500/60 [.theme-khaki_&]:text-slate-600/60 [.theme-breeze_&]:text-slate-500/60" data-config="invitation.location.label">地點</dt>
-                    <dd class="font-display text-lg text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="invitation.location.value">森光花園宴會廳</dd>
+                    <dt class="text-muted/60" data-config="invitation.location.label">地點</dt>
+                    <dd class="font-display text-lg text-primary" data-config="invitation.location.value">森光花園宴會廳</dd>
                   </div>
                 </dl>
                 <a
                   href="#top"
-                  class="mt-8 inline-flex rounded-full bg-slate-700 px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-slate-800 [.theme-khaki_&]:bg-slate-700 [.theme-khaki_&]:hover:bg-slate-800 [.theme-breeze_&]:bg-slate-700 [.theme-breeze_&]:hover:bg-slate-800"
+                  class="mt-8 inline-flex rounded-full bg-ink px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-ink/90"
                   data-config="invitation.button"
                   >回到頂端</a
                 >
               </div>
-              <div class="rounded-3xl border border-sky-100 bg-white/70 p-6 text-center shadow-inner [.theme-khaki_&]:border-emerald-100 [.theme-breeze_&]:border-blue-100">
+              <div class="rounded-3xl border border-border/60 bg-white/70 p-6 text-center shadow-inner">
                 <img src="img/leaf.svg" alt="森林小插圖" class="mx-auto h-20 w-20" loading="lazy" />
-                <p class="mt-4 font-display text-xl text-sky-500 [.theme-khaki_&]:text-emerald-600 [.theme-breeze_&]:text-sky-600" data-config="invitation.card.message">願你今天也被溫柔包圍</p>
-                <p class="mt-4 text-sm leading-relaxed text-slate-600/80 [.theme-khaki_&]:text-slate-700/80 [.theme-breeze_&]:text-slate-600/80" data-config="invitation.card.note">
+                <p class="mt-4 font-display text-xl text-primary" data-config="invitation.card.message">願你今天也被溫柔包圍</p>
+                <p class="mt-4 text-sm leading-relaxed text-ink/80" data-config="invitation.card.note">
                   我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
                 </p>
               </div>
@@ -770,7 +814,7 @@
       </div>
     </main>
 
-    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-slate-500/60 [.theme-khaki_&]:text-slate-600/60 [.theme-breeze_&]:text-slate-500/60" data-config="footer.text">
+    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-muted/60" data-config="footer.text">
       可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
     </footer>
     </div>
@@ -974,7 +1018,7 @@
             const isAvailable = available.has(lang);
             btn.classList.toggle("is-active", isActive);
             btn.classList.toggle("bg-white/90", isActive);
-            btn.classList.toggle("text-slate-700", isActive);
+            btn.classList.toggle("text-ink", isActive);
             btn.classList.toggle("shadow-sm", isActive);
             btn.classList.toggle("text-white/80", !isActive);
             btn.classList.toggle("hover:text-white", !isActive);
@@ -1156,7 +1200,7 @@
             const isActive = btn.dataset.themeButton === themeName;
             btn.classList.toggle("is-active", isActive);
             btn.classList.toggle("bg-white/90", isActive);
-            btn.classList.toggle("text-slate-700", isActive);
+            btn.classList.toggle("text-ink", isActive);
             btn.classList.toggle("shadow-sm", isActive);
             btn.classList.toggle("text-white/80", !isActive);
             btn.classList.toggle("hover:text-white", !isActive);
