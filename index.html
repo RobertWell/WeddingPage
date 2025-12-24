@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
@@ -11,293 +11,241 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              moss: "#5f6f52",
-              pine: "#1f2a1f",
-              fern: "#8da280",
-              mist: "#e7eddc",
-              parchment: "#f8f4ee",
-            },
-            fontFamily: {
-              display: ['"Noto Serif TC"', 'serif'],
-              body: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
-            },
-            boxShadow: {
-              card: "0 30px 60px rgba(33, 48, 33, 0.18)",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      :root {
-        --page-background: radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%),
-          radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%),
-          linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc);
-        --hero-image-position: 50% 50%;
-        --hero-overlay-opacity: 1;
-        --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' fill='none'%3E%3Cpath d='M48 88c18-30 54-36 80-14-30 12-50 32-60 62-18-18-28-34-20-48z' fill='rgba(95,111,82,0.16)'/%3E%3Cpath d='M158 48c14 18 18 46-2 70-10-20-30-30-52-36 14-18 34-30 54-34z' fill='rgba(95,111,82,0.12)'/%3E%3Cpath d='M110 140c8-22 30-36 52-38-10 28-30 44-48 58-6-6-8-12-4-20z' fill='rgba(95,111,82,0.1)'/%3E%3C/svg%3E");
-      }
-
-      body {
-        font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: var(--page-background);
-        color: #1f2a1f;
-      }
-
-      .grain::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 200 200'%3E%3Cpath stroke='rgba(90,110,90,0.15)' stroke-width='0.5' d='M0 200 200 0'/%3E%3C/svg%3E");
-        opacity: 0.4;
-        pointer-events: none;
-        mix-blend-mode: soft-light;
-      }
-
-      .leaf-pattern {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .leaf-pattern::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: var(--leaf-pattern), var(--leaf-pattern);
-        background-size: 240px 240px;
-        background-position: 0 0, 120px 120px;
-        opacity: 0.32;
-        pointer-events: none;
-        mix-blend-mode: multiply;
-      }
-
-      .hero-image {
-        object-position: var(--hero-image-position);
-      }
-
-      .hero-overlay {
-        background: linear-gradient(180deg, rgba(31, 42, 31, 0.8), rgba(31, 42, 31, 0.6), rgba(248, 244, 238, 0.95));
-        opacity: var(--hero-overlay-opacity);
-      }
-
-      .lang-switch button {
-        border-radius: 999px;
-      }
-
-      .lang-switch button.is-active {
-        background-color: rgba(255, 255, 255, 0.9);
-        color: #1f2a1f;
-      }
-
-      body.is-loading {
-        overflow: hidden;
-      }
-
-      body.is-loading .page-content {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .loading-screen {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.25rem;
-        background: linear-gradient(135deg, rgba(253, 250, 245, 0.96), rgba(233, 239, 220, 0.96));
-        color: #1f2a1f;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
-      }
-
-      .loading-spinner {
-        height: 3rem;
-        width: 3rem;
-        border-radius: 999px;
-        border: 4px solid rgba(95, 111, 82, 0.2);
-        border-top-color: #5f6f52;
-        animation: spin 1s linear infinite;
-      }
-
-      body:not(.is-loading) .loading-screen {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body
-    class="bg-parchment text-pine is-loading"
+    class="is-loading"
     data-config-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIAtQlScbidP76R5pzR3xuO81EN6D1LCTNA9S7pk2W85MVFhJUMao0CH2bkPFe7yMObWw1roH8Hlp1/pub?output=csv"
     data-default-lang="zh"
     data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec"
   >
+    <!-- Loading Screen -->
     <div class="loading-screen" role="status" aria-live="polite" aria-label="Loading">
       <div class="loading-spinner" aria-hidden="true"></div>
-      <div class="text-center">
-        <p class="text-sm uppercase tracking-[0.4em] text-moss/80">資料載入中</p>
-        <p class="mt-2 text-xs text-pine/70">正在準備喜帖內容，請稍候片刻。</p>
+      <div class="loading-text">
+        <p class="loading-title">資料載入中</p>
+        <p class="loading-subtitle">正在準備喜帖內容，請稍候片刻。</p>
       </div>
     </div>
+
     <div class="page-content">
-    <!-- Hero section with forest background and soft overlay -->
-    <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
-      <div class="absolute inset-0">
-        <img
-          src="img/forest-hero.jpg"
-          alt="陽光灑落的森林背景"
-          class="hero-image h-full w-full object-cover"
-          loading="lazy"
-          data-hero-image
-          data-hero-position="50% 50%"
-        />
-        <div class="hero-overlay absolute inset-0" data-hero-overlay data-hero-overlay-default="1"></div>
-      </div>
-      <nav
-        class="relative z-10 flex flex-col gap-4 px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16"
-      >
-        <div class="font-display text-xl tracking-[0.3em] uppercase" data-config="nav.brand">森語誓約</div>
-        <div class="flex flex-col items-start gap-4 text-sm sm:flex-row sm:items-center">
-          <div class="flex flex-wrap gap-4">
-            <a href="#couple" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.couple">新人介紹</a>
-            <a href="#location" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.location">地點交通</a>
-            <a href="#survey" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.survey">飲食問卷</a>
-            <a href="#invitation" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.invitation">喜帖</a>
+      <!-- SVG Definitions -->
+      <svg class="svg-defs" aria-hidden="true" focusable="false">
+        <defs>
+          <!-- Watercolor Wash -->
+          <symbol id="watercolor-wash" viewBox="0 0 600 500">
+            <path
+              d="M92 110c48-54 140-74 224-58 74 14 148 60 176 130 34 82-22 186-106 234-92 52-202 50-286-12-68-50-92-172-8-294z"
+              fill="#EEF3F0"
+              opacity="0.9"
+            />
+            <path
+              d="M280 48c56-22 130-6 184 38 72 58 90 160 36 240-56 82-182 114-280 70-92-40-128-144-90-232 24-58 80-92 150-116z"
+              fill="#F6F1EA"
+              opacity="0.65"
+            />
+            <path
+              d="M120 280c70-40 160-32 228 8 66 38 100 120 60 188-36 60-122 92-198 70-86-26-130-126-90-206z"
+              fill="#E3EAE4"
+              opacity="0.75"
+            />
+          </symbol>
+
+          <!-- Botanical Corner -->
+          <symbol id="botanical-corner" viewBox="0 0 200 200">
+            <path
+              d="M36 140c40-40 80-60 130-70-18 20-36 44-50 74-20 10-52 10-80-4z"
+              fill="#A8B7A6"
+              opacity="0.6"
+            />
+            <path
+              d="M62 58c20 12 36 30 44 52-16-2-32-8-46-18-8-10-6-22 2-34z"
+              fill="#6E7F63"
+              opacity="0.35"
+            />
+            <path
+              d="M116 28c18 10 32 30 32 52-16-8-32-18-42-34-4-8 0-14 10-18z"
+              fill="#A8B7A6"
+              opacity="0.45"
+            />
+            <ellipse cx="80" cy="100" rx="24" ry="36" fill="#A8B7A6" opacity="0.25" />
+          </symbol>
+
+          <!-- Gold Speckles -->
+          <symbol id="gold-speckles" viewBox="0 0 160 160">
+            <circle cx="20" cy="30" r="3" fill="#C9A25D" opacity="0.9" />
+            <circle cx="60" cy="20" r="2" fill="#C9A25D" opacity="0.8" />
+            <circle cx="120" cy="40" r="2.5" fill="#C9A25D" opacity="0.7" />
+            <circle cx="90" cy="80" r="3" fill="#C9A25D" opacity="0.6" />
+            <circle cx="140" cy="140" r="2.5" fill="#C9A25D" opacity="0.75" />
+            <path d="M40 90c8-10 18-16 28-18" stroke="#C9A25D" stroke-width="1.2" fill="none" opacity="0.7" />
+            <path d="M110 110c10-6 20-8 32-8" stroke="#C9A25D" stroke-width="1" fill="none" opacity="0.6" />
+            <circle cx="30" cy="130" r="1.5" fill="#C9A25D" opacity="0.8" />
+          </symbol>
+        </defs>
+      </svg>
+
+      <!-- Hero Section -->
+      <header id="top" class="hero">
+        <div class="decor-layer">
+          <svg class="watercolor-wash primary" aria-hidden="true"><use href="#watercolor-wash" /></svg>
+          <svg class="watercolor-wash secondary" aria-hidden="true"><use href="#watercolor-wash" /></svg>
+          <svg class="botanical-corner top-right float-slower" aria-hidden="true">
+            <use href="#botanical-corner" />
+          </svg>
+          <svg class="botanical-corner bottom-left float-slow" aria-hidden="true">
+            <use href="#botanical-corner" />
+          </svg>
+          <svg class="gold-speckles top-left float-slow" aria-hidden="true">
+            <use href="#gold-speckles" />
+          </svg>
+          <svg class="gold-speckles bottom-right float-slower" aria-hidden="true">
+            <use href="#gold-speckles" />
+          </svg>
+        </div>
+
+        <nav class="site-nav">
+          <div class="site-brand" data-config="nav.brand">森語誓約</div>
+          <div class="nav-links">
+            <a href="#couple" data-config="nav.link.couple">新人介紹</a>
+            <a href="#location" data-config="nav.link.location">地點交通</a>
+            <a href="#survey" data-config="nav.link.survey">飲食問卷</a>
+            <a href="#invitation" data-config="nav.link.invitation">喜帖</a>
           </div>
-          <div
-            class="lang-switch inline-flex rounded-full border border-white/40 bg-white/10 text-xs uppercase tracking-[0.4em]"
-            data-lang-switch
-          >
-            <button
-              type="button"
-              class="px-3 py-1 text-white/80 transition"
-              data-lang-button="zh"
-              data-config="lang.zhLabel"
-              aria-pressed="true"
-            >
+          <div class="lang-switch" data-lang-switch>
+            <button type="button" class="is-active" data-lang-button="zh" data-config="lang.zhLabel" aria-pressed="true">
               中文
             </button>
-            <button
-              type="button"
-              class="px-3 py-1 text-white/80 transition"
-              data-lang-button="en"
-              data-config="lang.enLabel"
-              aria-pressed="false"
-            >
+            <button type="button" data-lang-button="en" data-config="lang.enLabel" aria-pressed="false">
               English
             </button>
           </div>
-        </div>
-      </nav>
-      <div class="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-10 text-center text-white sm:px-10">
-        <p class="text-xs uppercase tracking-[0.5em] text-fern/80" data-config="hero.tagline">Warm &amp; Fresh Wedding</p>
-        <h1 class="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl" data-config="hero.names">昊然 &amp; 予晴</h1>
-        <p class="mt-6 text-base leading-relaxed text-white/85 sm:text-lg" data-config="hero.description">
-          我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
-        </p>
-        <p class="mt-6 text-sm uppercase tracking-[0.4em] text-white/70" data-config="hero.datetime">
-          2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區林蔭路 88 號
-        </p>
-        <div class="mt-8 flex flex-col gap-3 text-sm sm:flex-row">
-          <span class="rounded-full border border-white/40 px-6 py-2" data-config="hero.badge1">戶外草地證婚</span>
-          <span class="rounded-full border border-white/40 px-6 py-2" data-config="hero.badge2">清新溫柔風</span>
-          <span class="rounded-full border border-white/40 px-6 py-2" data-config="hero.badge3">歡迎小小孩</span>
-        </div>
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#invitation"
-            class="rounded-full bg-white/90 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-pine transition hover:bg-white"
-            data-config="hero.ctaPrimary"
-            >查看喜帖</a
-          >
-          <a
-            href="#survey"
-            class="rounded-full border border-white/60 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-white/15"
-            data-config="hero.ctaSecondary"
-            >填寫問卷</a
-          >
-        </div>
-      </div>
-    </header>
+        </nav>
 
-    <main class="relative z-10 -mt-16 px-4 pb-16 sm:px-6 lg:px-8">
-      <div class="mx-auto flex max-w-5xl flex-col gap-10">
-        <!-- New couple introduction card -->
-        <section id="couple" class="grain leaf-pattern relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <div class="relative">
-            <div class="text-center">
-              <img src="img/leaf.svg" alt="小葉片裝飾" class="mx-auto h-12 w-12 opacity-80" loading="lazy" />
-              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-moss/70" data-config="couple.section.label">新人介紹</p>
-              <h2 class="mt-3 font-display text-3xl text-moss sm:text-4xl" data-config="couple.section.heading">把生活寫成一首溫柔的歌</h2>
-              <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="couple.section.description">
+        <div class="hero-inner">
+          <div class="hero-card reveal">
+            <p class="hero-tagline" data-config="hero.tagline">Warm &amp; Fresh Wedding</p>
+            <h1 class="hero-names" data-config="hero.names">昊然 &amp; 予晴</h1>
+            <p class="hero-description" data-config="hero.description">
+              我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
+            </p>
+            <p class="hero-details" data-config="hero.datetime">
+              2025.10.18 · 15:30 · 森光花園宴會廳
+            </p>
+            <div class="hero-badges">
+              <span data-config="hero.badge1">戶外草地證婚</span>
+              <span data-config="hero.badge2">清新溫柔風</span>
+              <span data-config="hero.badge3">歡迎小小孩</span>
+            </div>
+            <div class="hero-actions">
+              <a href="#invitation" class="btn-primary" data-config="hero.ctaPrimary">查看喜帖</a>
+              <a href="#survey" class="btn-secondary" data-config="hero.ctaSecondary">填寫問卷</a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="rhythm-lines" aria-hidden="true"></div>
+            <svg class="botanical-corner top-right float-slow" aria-hidden="true">
+              <use href="#botanical-corner" />
+            </svg>
+            <svg class="gold-speckles bottom-right float-slower" aria-hidden="true">
+              <use href="#gold-speckles" />
+            </svg>
+            <div class="hero-visual-card">
+              <h3 data-config="hero.visual.title">花園裡的誓言</h3>
+              <p data-config="hero.visual.line1">柔和的自然光，映著綠意與水彩色調。</p>
+              <p data-config="hero.visual.line2">用層層紙張與花葉的線條，營造邀請函般的深度。</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="section-stack">
+          <!-- Couple Section -->
+          <section id="couple" class="section-card reveal">
+            <div class="section-decor">
+              <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
+              <svg class="gold-speckles bottom-right" aria-hidden="true"><use href="#gold-speckles" /></svg>
+            </div>
+            <div class="section-header">
+              <p class="section-label" data-config="couple.section.label">新人介紹</p>
+              <h2 class="section-title" data-config="couple.section.heading">把生活寫成一首溫柔的歌</h2>
+              <p class="section-description" data-config="couple.section.description">
                 我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
               </p>
             </div>
-            <div class="mt-10 grid gap-6 md:grid-cols-3">
-              <article class="rounded-3xl bg-mist/60 p-6">
-                <p class="font-display text-xl text-moss" data-config="groom.title">新郎｜昊然</p>
-                <p class="mt-3 text-sm leading-relaxed text-pine/80" data-config="groom.description">
+            <div class="card-grid">
+              <article class="soft-card">
+                <h3 data-config="groom.title">新郎｜昊然</h3>
+                <p data-config="groom.description">
                   喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。
                 </p>
-                <ul class="mt-4 space-y-2 text-sm text-pine/80">
+                <ul>
                   <li data-config="groom.detail1">婚禮口頭禪：慢慢來，會更美。</li>
                   <li data-config="groom.detail2">最常說的話：別忘了抬頭看天空。</li>
                 </ul>
               </article>
-              <article class="rounded-3xl bg-mist/60 p-6">
-                <p class="font-display text-xl text-moss" data-config="bride.title">新娘｜予晴</p>
-                <p class="mt-3 text-sm leading-relaxed text-pine/80" data-config="bride.description">
+              <article class="soft-card">
+                <h3 data-config="bride.title">新娘｜予晴</h3>
+                <p data-config="bride.description">
                   熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。
                 </p>
-                <ul class="mt-4 space-y-2 text-sm text-pine/80">
+                <ul>
                   <li data-config="bride.detail1">療癒小夥伴：松鼠與貓咪。</li>
                   <li data-config="bride.detail2">最愛收集：旅行貼紙與古董紙膠帶。</li>
                 </ul>
               </article>
-              <article class="rounded-3xl bg-white/80 p-6 shadow-inner">
-                <p class="font-display text-xl text-moss" data-config="story.title">我們的故事</p>
-                <p class="mt-3 text-sm leading-relaxed text-pine/80" data-config="story.description">
+              <article class="soft-card">
+                <h3 data-config="story.title">我們的故事</h3>
+                <p data-config="story.description">
                   第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。
                 </p>
               </article>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <!-- Location and transportation details -->
-        <section id="location" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <div class="text-center">
-            <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="location.section.heading">餐廳地點</p>
-            <h2 class="mt-2 font-display text-3xl text-moss" data-config="location.section.title">森光花園，等你來散步</h2>
-            <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="location.section.description">
-              我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
-            </p>
-          </div>
-          <div class="mt-10 grid gap-8 md:grid-cols-2">
-            <div class="rounded-3xl bg-[url('img/forest-path.jpg')] bg-cover bg-center p-6 text-white">
-              <div class="rounded-3xl border border-white/40 bg-pine/60 p-6">
-                <p class="text-lg font-semibold" data-config="venue.name">森光花園宴會廳</p>
-                <p class="mt-2 text-sm" data-config="venue.address">台北市信義區林蔭路 88 號</p>
-                <div class="mt-6 flex flex-col gap-3 text-sm">
+          <!-- Location Section -->
+          <section id="location" class="section-card reveal">
+            <div class="section-decor">
+              <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
+              <svg class="botanical-corner top-right" aria-hidden="true"><use href="#botanical-corner" /></svg>
+            </div>
+            <div class="section-header">
+              <p class="section-label" data-config="location.section.heading">餐廳地點</p>
+              <h2 class="section-title" data-config="location.section.title">森光花園，等你來散步</h2>
+              <p class="section-description" data-config="location.section.description">
+                我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
+              </p>
+            </div>
+            <div class="detail-grid">
+              <article class="detail-card">
+                <p class="detail-label" data-config="event.ceremony.label">證婚儀式</p>
+                <p class="detail-value" data-config="event.ceremony.time">15:30 · 草地庭園</p>
+                <p class="detail-note" data-config="event.ceremony.note">迎著午後光影，一起見證誓言與祝福。</p>
+              </article>
+              <article class="detail-card">
+                <p class="detail-label" data-config="event.reception.label">宴客時光</p>
+                <p class="detail-value" data-config="event.reception.time">18:00 · 室內花園</p>
+                <p class="detail-note" data-config="event.reception.note">舒適的室內綠意場景，分享甜點與暖心故事。</p>
+              </article>
+              <article class="detail-card">
+                <p class="detail-label" data-config="event.dress.label">穿搭提示</p>
+                <p class="detail-value" data-config="event.dress.note">清新米杏色系</p>
+                <p class="detail-note" data-config="event.dress.detail">推薦亞麻或柔和布料，與花園色調相呼應。</p>
+              </article>
+            </div>
+            <div class="card-grid location-cards">
+              <article class="soft-card">
+                <h3 data-config="venue.name">森光花園宴會廳</h3>
+                <p data-config="venue.address">台北市信義區林蔭路 88 號</p>
+                <div class="button-group">
                   <a
-                    class="rounded-full bg-white/90 px-5 py-2 text-center text-pine transition hover:bg-white"
+                    class="btn-primary"
                     href="https://maps.google.com"
                     data-config="map.url"
                     data-config-attr="href"
@@ -306,62 +254,51 @@
                   >
                     <span data-config="location.button.map">開啟地圖</span>
                   </a>
-                  <a
-                    class="rounded-full border border-white/60 px-5 py-2 text-center text-white transition hover:bg-white/10"
-                    href="#survey"
-                    data-config="location.button.rsvp"
-                    >填寫出席</a
-                  >
+                  <a class="btn-secondary" href="#survey" data-config="location.button.rsvp">填寫出席</a>
                 </div>
-              </div>
+              </article>
+              <article class="soft-card">
+                <h3 data-config="transport.title">交通方式</h3>
+                <ul>
+                  <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
+                  <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
+                  <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
+                </ul>
+                <p class="note" data-config="transport.note">
+                  若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
+                </p>
+              </article>
             </div>
-            <div class="rounded-3xl bg-mist/70 p-6 text-sm leading-relaxed text-pine/80">
-              <h3 class="font-display text-2xl text-moss" data-config="transport.title">交通方式</h3>
-              <ul class="mt-4 space-y-3">
-                <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
-                <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
-                <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
-              </ul>
-              <p class="mt-6 rounded-2xl bg-white/70 p-4 text-xs text-pine/70" data-config="transport.note">
-                若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
+          </section>
+
+          <!-- Survey Section -->
+          <section id="survey" class="section-card reveal">
+            <div class="section-decor">
+              <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
+              <svg class="gold-speckles top-left" aria-hidden="true"><use href="#gold-speckles" /></svg>
+            </div>
+            <div class="section-header">
+              <p class="section-label" data-config="survey.section.heading">簡單問卷</p>
+              <h2 class="section-title" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
+              <p class="section-description" data-config="survey.section.description">
+                此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
               </p>
             </div>
-          </div>
-        </section>
-
-        <!-- RSVP / survey section -->
-        <section id="survey" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <div class="text-center">
-            <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="survey.section.heading">簡單問卷</p>
-            <h2 class="mt-2 font-display text-3xl text-moss" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
-            <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="survey.section.description">
-              此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。
-            </p>
-          </div>
-          <form
-            class="mx-auto mt-8 max-w-3xl space-y-6 text-sm"
-            data-rsvp-form
-          >
-            <label class="block">
-              <span class="text-pine/70" data-config="survey.label.name">你的名字</span>
-              <input
-                type="text"
-                name="name"
-                required
-                placeholder="請輸入姓名"
-                data-config="survey.placeholder.name"
-                data-config-attr="placeholder"
-                class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
-              />
-            </label>
-            <div class="grid gap-6 md:grid-cols-2">
-              <label class="block">
-                <span class="text-pine/70" data-config="survey.label.guests">出席人數</span>
-                <select
-                  name="guests"
+            <form class="form-grid" data-rsvp-form>
+              <label>
+                <span data-config="survey.label.name">你的名字</span>
+                <input
+                  type="text"
+                  name="name"
                   required
-                  class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
-                >
+                  placeholder="請輸入姓名"
+                  data-config="survey.placeholder.name"
+                  data-config-attr="placeholder"
+                />
+              </label>
+              <label>
+                <span data-config="survey.label.guests">出席人數</span>
+                <select name="guests" required>
                   <option value="" data-config="survey.option.guests.placeholder">請選擇</option>
                   <option value="1" data-config="survey.option.guests.1">1 人</option>
                   <option value="2" data-config="survey.option.guests.2">2 人</option>
@@ -369,13 +306,9 @@
                   <option value="4" data-config="survey.option.guests.4plus">4 人以上</option>
                 </select>
               </label>
-              <label class="block">
-                <span class="text-pine/70" data-config="survey.label.diet">飲食偏好</span>
-                <select
-                  name="diet"
-                  required
-                  class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
-                >
+              <label>
+                <span data-config="survey.label.diet">飲食偏好</span>
+                <select name="diet" required>
                   <option value="" data-config="survey.option.diet.placeholder">請選擇</option>
                   <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
                   <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素</option>
@@ -383,443 +316,79 @@
                   <option value="no-seafood" data-config="survey.option.diet.noSeafood">不吃海鮮</option>
                 </select>
               </label>
-            </div>
-            <label class="block">
-              <span class="text-pine/70" data-config="survey.label.message">想對我們說的話</span>
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="寫下你的祝福或提醒"
-                data-config="survey.placeholder.message"
-                data-config-attr="placeholder"
-                class="mt-2 w-full rounded-2xl border border-mist bg-white/70 px-4 py-3 focus:border-moss focus:outline-none"
-              ></textarea>
-            </label>
-            <input type="hidden" name="locale" value="zh" data-rsvp-locale />
-            <input type="hidden" name="source" value="web" />
-            <button
-              type="submit"
-              class="w-full rounded-full bg-moss px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-moss/90"
-              data-config="survey.button"
-            >
-              送出回覆
-            </button>
-            <p class="mt-4 text-center text-sm text-pine/70 hidden" data-rsvp-status role="status"></p>
-          </form>
-          <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
-          <p class="mt-4 text-center text-xs text-pine/70" data-config="survey.note">
-            表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
-          </p>
-        </section>
-
-        <!-- Invitation card -->
-        <section id="invitation" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <div class="text-center">
-            <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="invitation.section.title">喜帖</p>
-            <h2 class="mt-2 font-display text-3xl text-moss" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
-            <p class="mt-4 text-base leading-relaxed text-pine/80" data-config="invitation.section.description">
-              用一封溫柔的喜帖，把我們的祝福親手遞給你。
+              <label class="full-width">
+                <span data-config="survey.label.message">想對我們說的話</span>
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="寫下你的祝福或提醒"
+                  data-config="survey.placeholder.message"
+                  data-config-attr="placeholder"
+                ></textarea>
+              </label>
+              <input type="hidden" name="locale" value="zh" data-rsvp-locale />
+              <input type="hidden" name="source" value="web" />
+              <button type="submit" class="form-submit" data-config="survey.button">送出回覆</button>
+              <p class="full-width form-status" data-rsvp-status role="status"></p>
+            </form>
+            <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
+            <p class="form-note" data-config="survey.note">
+              表單送出後會跳出感謝訊息，正式串接 Google Sheets 時會再通知。
             </p>
-          </div>
-          <div class="mt-10 grid gap-8 md:grid-cols-2">
-            <div class="rounded-3xl bg-mist/60 p-6 text-sm leading-relaxed text-pine/80">
-              <p class="font-display text-xl text-moss" data-config="invitation.letter.salutation">Dear You,</p>
-              <p class="mt-4" data-config="invitation.letter.body">
-                我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
-              </p>
-              <dl class="mt-6 space-y-4 text-sm">
-                <div>
-                  <dt class="text-pine/60" data-config="invitation.date.label">日期</dt>
-                  <dd class="font-display text-lg text-moss" data-config="invitation.date.value">2025 / 10 / 18（六）</dd>
-                </div>
-                <div>
-                  <dt class="text-pine/60" data-config="invitation.time.label">時間</dt>
-                  <dd class="font-display text-lg text-moss" data-config="invitation.time.value">15:30 證婚 ・ 18:00 宴客</dd>
-                </div>
-                <div>
-                  <dt class="text-pine/60" data-config="invitation.location.label">地點</dt>
-                  <dd class="font-display text-lg text-moss" data-config="invitation.location.value">森光花園宴會廳</dd>
-                </div>
-              </dl>
-              <a
-                href="#top"
-                class="mt-8 inline-flex rounded-full bg-pine px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-pine/90"
-                data-config="invitation.button"
-                >回到頂端</a
-              >
-            </div>
-            <div class="rounded-3xl border border-mist bg-white/70 p-6 text-center shadow-inner">
-              <img src="img/leaf.svg" alt="森林小插圖" class="mx-auto h-20 w-20" loading="lazy" />
-              <p class="mt-4 font-display text-xl text-moss" data-config="invitation.card.message">願你今天也被溫柔包圍</p>
-              <p class="mt-4 text-sm leading-relaxed text-pine/80" data-config="invitation.card.note">
-                我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+          </section>
 
-    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-pine/60" data-config="footer.text">
-      可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
-    </footer>
+          <!-- Invitation Section -->
+          <section id="invitation" class="section-card reveal">
+            <div class="section-decor">
+              <svg class="watercolor-wash" aria-hidden="true"><use href="#watercolor-wash" /></svg>
+              <svg class="botanical-corner bottom-left" aria-hidden="true"><use href="#botanical-corner" /></svg>
+            </div>
+            <div class="section-header">
+              <p class="section-label" data-config="invitation.section.title">喜帖</p>
+              <h2 class="section-title" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
+              <p class="section-description" data-config="invitation.section.description">
+                用一封溫柔的喜帖，把我們的祝福親手遞給你。
+              </p>
+            </div>
+            <div class="card-grid">
+              <article class="soft-card invitation-letter">
+                <h3 data-config="invitation.letter.salutation">Dear You,</h3>
+                <p data-config="invitation.letter.body">
+                  我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
+                </p>
+                <dl>
+                  <div>
+                    <dt data-config="invitation.date.label">日期</dt>
+                    <dd data-config="invitation.date.value">2025 / 10 / 18（六）</dd>
+                  </div>
+                  <div>
+                    <dt data-config="invitation.time.label">時間</dt>
+                    <dd data-config="invitation.time.value">15:30 證婚 ・ 18:00 宴客</dd>
+                  </div>
+                  <div>
+                    <dt data-config="invitation.location.label">地點</dt>
+                    <dd data-config="invitation.location.value">森光花園宴會廳</dd>
+                  </div>
+                </dl>
+                <a href="#top" class="btn-primary" data-config="invitation.button">回到頂端</a>
+              </article>
+              <article class="soft-card invitation-message">
+                <h3 data-config="invitation.card.message">願你今天也被溫柔包圍</h3>
+                <p data-config="invitation.card.note">
+                  我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
+                </p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" data-config="footer.text">
+        可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
+      </footer>
     </div>
-    <script>
-      (function () {
-        const bodyEl = document.body;
-        const CONFIG_SOURCE_URL =
-          (bodyEl && bodyEl.dataset.configSrc) ||
-          (typeof window !== "undefined" && window.CONFIG_SOURCE_URL) ||
-          "config.csv";
-        const FALLBACK_CONFIG_URL =
-          (typeof window !== "undefined" && window.CONFIG_FALLBACK_URL) ||
-          "config.csv";
-        const DEFAULT_LANG = (bodyEl && bodyEl.dataset.defaultLang) || "zh";
-        const STORAGE_KEY = "forest-wedding-lang";
-        const state = {
-          languages: [],
-          data: {},
-          currentLang: DEFAULT_LANG,
-        };
-        const rootStyle = document.documentElement.style;
-        const heroImageEl = document.querySelector("[data-hero-image]");
-        const heroOverlayEl = document.querySelector("[data-hero-overlay]");
-        const visualDefaults = {
-          heroImage: heroImageEl ? heroImageEl.getAttribute("src") : "",
-          heroPosition: heroImageEl ? heroImageEl.dataset.heroPosition || "50% 50%" : "",
-          heroOverlayOpacity: heroOverlayEl ? heroOverlayEl.dataset.heroOverlayDefault || "" : "",
-        };
-        const resetScrollPosition = () => {
-          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-        };
 
-        if ("scrollRestoration" in history) {
-          history.scrollRestoration = "manual";
-        }
-
-        window.addEventListener("pageshow", (event) => {
-          if (event.persisted) {
-            resetScrollPosition();
-          }
-        });
-
-        const getRSVPEndpoint = () =>
-          (bodyEl && bodyEl.dataset.rsvpEndpoint) ||
-          (typeof window !== "undefined" && window.RSVP_ENDPOINT) ||
-          "";
-
-        function parseCSVLine(line) {
-          const cells = [];
-          let current = "";
-          let inQuotes = false;
-          for (let i = 0; i < line.length; i++) {
-            const char = line[i];
-            if (char === '"') {
-              if (inQuotes && line[i + 1] === '"') {
-                current += '"';
-                i++;
-              } else {
-                inQuotes = !inQuotes;
-              }
-            } else if (char === "," && !inQuotes) {
-              cells.push(current);
-              current = "";
-            } else {
-              current += char;
-            }
-          }
-          cells.push(current);
-          return cells;
-        }
-
-        function parseConfig(text) {
-          const cleaned = text.replace(/^\uFEFF/, "");
-          const lines = cleaned.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-          if (!lines.length) {
-            return { languages: [], data: {} };
-          }
-          const headerCells = parseCSVLine(lines.shift());
-          const langHeaders = headerCells.slice(1).map((cell) => cell.trim() || "value");
-          if (!langHeaders.length) {
-            langHeaders.push("value");
-          }
-          const data = {};
-          langHeaders.forEach((lang) => {
-            data[lang] = {};
-          });
-          lines.forEach((line) => {
-            const cells = parseCSVLine(line);
-            const key = (cells[0] || "").trim();
-            if (!key) return;
-            langHeaders.forEach((lang, idx) => {
-              const value = (cells[idx + 1] || "").trim();
-              if (!data[lang]) data[lang] = {};
-              data[lang][key] = value;
-            });
-          });
-          const languages = Array.from(new Set(langHeaders.filter(Boolean)));
-          return { languages, data };
-        }
-
-        function mergeConfig(primary, fallback) {
-          if (!fallback.languages.length) return primary;
-          const languages = Array.from(new Set([...primary.languages, ...fallback.languages]));
-          const data = {};
-          languages.forEach((lang) => {
-            const primaryBucket = primary.data[lang] || {};
-            const fallbackBucket = fallback.data[lang] || {};
-            const merged = { ...fallbackBucket, ...primaryBucket };
-            Object.keys(merged).forEach((key) => {
-              if (primaryBucket[key] === "" && fallbackBucket[key]) {
-                merged[key] = fallbackBucket[key];
-              }
-            });
-            data[lang] = merged;
-          });
-          return { languages, data };
-        }
-
-        function getStoredLang() {
-          try {
-            return window.localStorage.getItem(STORAGE_KEY);
-          } catch (err) {
-            return null;
-          }
-        }
-
-        function storeLang(lang) {
-          try {
-            window.localStorage.setItem(STORAGE_KEY, lang);
-          } catch (err) {
-            /* ignore */
-          }
-        }
-
-        function updateDocumentLang(lang) {
-          document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
-        }
-
-        function getValueForKey(key, fallback = "", lang = state.currentLang) {
-          const order = [];
-          const enqueue = (code) => {
-            if (code && !order.includes(code)) order.push(code);
-          };
-          enqueue(lang);
-          enqueue(DEFAULT_LANG);
-          state.languages.forEach(enqueue);
-          enqueue("value");
-          for (const code of order) {
-            const bucket = state.data[code];
-            if (bucket && Object.prototype.hasOwnProperty.call(bucket, key)) {
-              const value = bucket[key];
-              if (value !== "") return value;
-            }
-          }
-          return fallback;
-        }
-
-        function applyLanguage(lang) {
-          document.querySelectorAll("[data-config]").forEach((el) => {
-            const key = el.dataset.config;
-            if (!key) return;
-            const value = getValueForKey(key, "", lang);
-            if (value === "") return;
-            const attr = el.dataset.configAttr;
-            if (attr) {
-              el.setAttribute(attr, value);
-            } else {
-              el.textContent = value;
-            }
-          });
-        }
-
-        function applyVisualConfig(lang = state.currentLang) {
-          const heroImage = getValueForKey("hero.imageUrl", "", lang);
-          const heroPosition = getValueForKey("hero.imagePosition", "", lang);
-          const overlayOpacity = getValueForKey("hero.overlayOpacity", "", lang);
-          const bodyBackground = getValueForKey("body.background", "", lang);
-
-          if (heroImageEl) {
-            heroImageEl.src = heroImage || visualDefaults.heroImage;
-          }
-
-          const resolvedPosition = heroPosition || visualDefaults.heroPosition;
-          if (resolvedPosition) {
-            rootStyle.setProperty("--hero-image-position", resolvedPosition);
-          }
-
-          const resolvedOverlayOpacity =
-            overlayOpacity !== "" ? overlayOpacity : visualDefaults.heroOverlayOpacity;
-          if (resolvedOverlayOpacity !== "") {
-            rootStyle.setProperty("--hero-overlay-opacity", resolvedOverlayOpacity);
-          }
-
-          if (bodyBackground) {
-            rootStyle.setProperty("--page-background", bodyBackground);
-          } else {
-            rootStyle.removeProperty("--page-background");
-          }
-        }
-
-        function refreshLangButtons() {
-          const available = new Set(state.languages);
-          const buttons = document.querySelectorAll("[data-lang-button]");
-          buttons.forEach((btn) => {
-            const lang = btn.dataset.langButton;
-            const isActive = lang === state.currentLang;
-            const isAvailable = available.has(lang);
-            btn.classList.toggle("is-active", isActive);
-            btn.setAttribute("aria-pressed", String(isActive));
-            btn.disabled = !isAvailable;
-            btn.classList.toggle("opacity-40", !isAvailable);
-          });
-          const switcher = document.querySelector("[data-lang-switch]");
-          if (switcher) {
-            switcher.classList.toggle("hidden", available.size <= 1);
-          }
-        }
-
-        function setLanguage(lang) {
-          if (!state.languages.includes(lang)) return;
-          if (lang === state.currentLang) return;
-          state.currentLang = lang;
-          applyLanguage(lang);
-          applyVisualConfig(lang);
-          refreshLangButtons();
-          updateDocumentLang(lang);
-          storeLang(lang);
-          updateLocaleField();
-        }
-
-        function setLoading(isLoading) {
-          if (!bodyEl) return;
-          bodyEl.classList.toggle("is-loading", isLoading);
-        }
-
-        async function loadConfig() {
-          try {
-            const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
-            if (!res.ok) throw new Error("Failed to load config");
-            const raw = await res.text();
-            let parsed = parseConfig(raw);
-            if (!parsed.languages.length) return;
-            if (FALLBACK_CONFIG_URL && FALLBACK_CONFIG_URL !== CONFIG_SOURCE_URL) {
-              try {
-                const fallbackRes = await fetch(FALLBACK_CONFIG_URL, { cache: "no-store" });
-                if (fallbackRes.ok) {
-                  const fallbackRaw = await fallbackRes.text();
-                  const fallbackParsed = parseConfig(fallbackRaw);
-                  parsed = mergeConfig(parsed, fallbackParsed);
-                }
-              } catch (err) {
-                console.warn("Unable to load fallback config", err);
-              }
-            }
-            state.languages = parsed.languages;
-            state.data = parsed.data;
-            const storedLang = getStoredLang();
-            const preferred = [storedLang, DEFAULT_LANG].find(
-              (code) => code && state.languages.includes(code)
-            );
-            state.currentLang = preferred || state.languages[0];
-            applyLanguage(state.currentLang);
-            applyVisualConfig(state.currentLang);
-            refreshLangButtons();
-            updateDocumentLang(state.currentLang);
-            storeLang(state.currentLang);
-            updateLocaleField();
-          } catch (err) {
-            console.error("Unable to load config", err);
-          }
-        }
-
-        function updateLocaleField() {
-          const input = document.querySelector("[data-rsvp-locale]");
-          if (input) {
-            input.value = state.currentLang || DEFAULT_LANG;
-          }
-        }
-
-        function showRSVPStatus(type, fallback = "") {
-          const statusEl = document.querySelector("[data-rsvp-status]");
-          if (!statusEl) return;
-          const message = getValueForKey(`survey.message.${type}`, fallback) || fallback;
-          if (!message) {
-            statusEl.classList.add("hidden");
-            return;
-          }
-          statusEl.textContent = message;
-          statusEl.dataset.status = type;
-          statusEl.classList.remove("hidden");
-        }
-
-        function setupRSVPForm() {
-          const form = document.querySelector("[data-rsvp-form]");
-          if (!form) return;
-          const endpoint = getRSVPEndpoint();
-          const frame = document.querySelector("[data-rsvp-frame]");
-          let isSubmitting = false;
-
-          if (frame && !frame.name) {
-            frame.name = "rsvp-frame";
-          }
-
-          if (frame) {
-            frame.addEventListener("load", () => {
-              if (!isSubmitting) return;
-              isSubmitting = false;
-              showRSVPStatus("success");
-              form.reset();
-              updateLocaleField();
-            });
-          }
-
-          form.addEventListener("submit", async (event) => {
-            event.preventDefault();
-
-            if (!endpoint) {
-              showRSVPStatus("error", "RSVP endpoint not configured");
-              return;
-            }
-
-            showRSVPStatus("sending");
-            form.action = endpoint;
-            form.method = "POST";
-
-            if (frame) {
-              form.target = frame.name;
-              isSubmitting = true;
-              form.submit();
-              return;
-            }
-
-            try {
-              const response = await fetch(endpoint, {
-                method: "POST",
-                body: new FormData(form)
-              });
-              if (!response.ok) throw new Error("Request failed");
-              showRSVPStatus("success");
-              form.reset();
-              updateLocaleField();
-            } catch (error) {
-              console.error("RSVP submission error:", error);
-              showRSVPStatus("error", "提交失敗，請稍後再試");
-            }
-          });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-          resetScrollPosition();
-          document.querySelectorAll("[data-lang-button]").forEach((btn) => {
-            btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
-          });
-          setupRSVPForm();
-          loadConfig().finally(() => setLoading(false));
-        });
-
-        window.addEventListener("load", resetScrollPosition);
-      })();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
