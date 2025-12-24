@@ -152,6 +152,17 @@
         color: var(--color-charcoal);
       }
 
+      /* Theme switcher */
+      .theme-switch button {
+        border-radius: 999px;
+        transition: var(--transition-smooth);
+      }
+
+      .theme-switch button.is-active {
+        background-color: rgba(255, 255, 255, 0.95);
+        color: var(--color-charcoal);
+      }
+
       /* Loading states */
       body.is-loading {
         overflow: hidden;
@@ -367,6 +378,35 @@
               aria-pressed="false"
             >
               English
+            </button>
+          </div>
+          <div
+            class="theme-switch inline-flex rounded-full border border-white/40 bg-white/10 text-xs uppercase tracking-[0.4em]"
+            data-theme-switch
+          >
+            <button
+              type="button"
+              class="px-3 py-1 text-white/80 transition hover:text-white"
+              data-theme-button="khaki"
+              title="卡其色"
+            >
+              卡其
+            </button>
+            <button
+              type="button"
+              class="px-3 py-1 text-white/80 transition hover:text-white is-active"
+              data-theme-button="spring"
+              title="Spring"
+            >
+              春日
+            </button>
+            <button
+              type="button"
+              class="px-3 py-1 text-white/80 transition hover:text-white"
+              data-theme-button="breeze"
+              title="Fresh & Breeze"
+            >
+              清風
             </button>
           </div>
         </div>
@@ -1084,11 +1124,124 @@
           });
         }
 
+        // Theme switching functionality
+        const THEME_STORAGE_KEY = "wedding-theme";
+        const DEFAULT_THEME = "spring";
+
+        const themes = {
+          khaki: {
+            "--color-ivory": "#fffef8",
+            "--color-cream": "#fff9f0",
+            "--color-sky-wash": "#e8f5f0",
+            "--color-blush": "#ffd4a3",
+            "--color-blush-soft": "#fff5eb",
+            "--color-lavender": "#c9a25d",
+            "--color-lavender-light": "#fff9f0",
+            "--color-sky": "#a8b7a6",
+            "--color-sky-bright": "#7dd4a8",
+            "--color-spring-blue": "#4ec590",
+            "--color-charcoal": "#4a5568",
+            "--color-charcoal-light": "#718096",
+            "--color-sunshine": "#ffc857",
+            "--shadow": "0 18px 40px rgba(62, 197, 144, 0.15)",
+            "--glow": "0 28px 60px rgba(255, 200, 87, 0.25)",
+            "--page-background": "radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.95) 0%, transparent 50%), radial-gradient(circle at 85% 10%, #e8f5f0 0%, transparent 45%), linear-gradient(135deg, #fff9f0, #fffef8 60%, #EEE9E0)",
+            "--shadow-soft": "0 20px 50px rgba(62, 197, 144, 0.08)",
+            "--shadow-medium": "0 30px 60px rgba(62, 197, 144, 0.12)",
+            "--shadow-card": "0 25px 55px rgba(78, 197, 144, 0.15)"
+          },
+          spring: {
+            "--color-ivory": "#fffffe",
+            "--color-cream": "#fefcff",
+            "--color-sky-wash": "#f0f7ff",
+            "--color-blush": "#ffd6e8",
+            "--color-blush-soft": "#ffe9f3",
+            "--color-lavender": "#e8d4ff",
+            "--color-lavender-light": "#f5edff",
+            "--color-sky": "#c2e0ff",
+            "--color-sky-bright": "#a8d3ff",
+            "--color-spring-blue": "#7db8ff",
+            "--color-charcoal": "#6b7280",
+            "--color-charcoal-light": "#9ca3af",
+            "--color-sunshine": "#fff9c2",
+            "--shadow": "0 18px 40px rgba(162, 211, 255, 0.2)",
+            "--glow": "0 28px 60px rgba(232, 212, 255, 0.35)",
+            "--page-background": "radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.98) 0%, transparent 50%), radial-gradient(circle at 85% 10%, #f0f7ff 0%, transparent 45%), linear-gradient(135deg, #f0f7ff, #fffffe 40%, #f5edff 80%, #ffe9f3)",
+            "--shadow-soft": "0 20px 50px rgba(168, 211, 255, 0.15)",
+            "--shadow-medium": "0 30px 60px rgba(194, 224, 255, 0.2)",
+            "--shadow-card": "0 25px 55px rgba(168, 211, 255, 0.25)"
+          },
+          breeze: {
+            "--color-ivory": "#ffffff",
+            "--color-cream": "#f8fcff",
+            "--color-sky-wash": "#e6f7ff",
+            "--color-blush": "#ffe4f0",
+            "--color-blush-soft": "#fff0f6",
+            "--color-lavender": "#e0f2ff",
+            "--color-lavender-light": "#f0f9ff",
+            "--color-sky": "#bae6ff",
+            "--color-sky-bright": "#7dd3fc",
+            "--color-spring-blue": "#38bdf8",
+            "--color-charcoal": "#64748b",
+            "--color-charcoal-light": "#94a3b8",
+            "--color-sunshine": "#fef3c7",
+            "--shadow": "0 18px 40px rgba(56, 189, 248, 0.15)",
+            "--glow": "0 28px 60px rgba(125, 211, 252, 0.3)",
+            "--page-background": "radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 1) 0%, transparent 50%), radial-gradient(circle at 85% 10%, #e6f7ff 0%, transparent 45%), linear-gradient(135deg, #f0f9ff, #ffffff 40%, #e0f2ff 70%, #fff0f6)",
+            "--shadow-soft": "0 20px 50px rgba(56, 189, 248, 0.12)",
+            "--shadow-medium": "0 30px 60px rgba(125, 211, 252, 0.18)",
+            "--shadow-card": "0 25px 55px rgba(56, 189, 248, 0.2)"
+          }
+        };
+
+        function getStoredTheme() {
+          try {
+            return window.localStorage.getItem(THEME_STORAGE_KEY) || DEFAULT_THEME;
+          } catch (err) {
+            return DEFAULT_THEME;
+          }
+        }
+
+        function storeTheme(theme) {
+          try {
+            window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+          } catch (err) {
+            /* ignore */
+          }
+        }
+
+        function applyTheme(themeName) {
+          const theme = themes[themeName];
+          if (!theme) return;
+
+          const root = document.documentElement;
+          Object.keys(theme).forEach(property => {
+            root.style.setProperty(property, theme[property]);
+          });
+
+          // Update active button state
+          document.querySelectorAll("[data-theme-button]").forEach(btn => {
+            const isActive = btn.dataset.themeButton === themeName;
+            btn.classList.toggle("is-active", isActive);
+          });
+
+          storeTheme(themeName);
+        }
+
+        function initializeTheme() {
+          const savedTheme = getStoredTheme();
+          applyTheme(savedTheme);
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
           resetScrollPosition();
           document.querySelectorAll("[data-lang-button]").forEach((btn) => {
             btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
           });
+          document.querySelectorAll("[data-theme-button]").forEach((btn) => {
+            btn.addEventListener("click", () => applyTheme(btn.dataset.themeButton));
+          });
+          initializeTheme();
           setupRSVPForm();
           loadConfig().finally(() => setLoading(false));
         });
