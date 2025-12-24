@@ -1233,7 +1233,7 @@
           applyTheme(savedTheme);
         }
 
-        document.addEventListener("DOMContentLoaded", () => {
+        function init() {
           resetScrollPosition();
           document.querySelectorAll("[data-lang-button]").forEach((btn) => {
             btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
@@ -1244,7 +1244,13 @@
           initializeTheme();
           setupRSVPForm();
           loadConfig().finally(() => setLoading(false));
-        });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", init);
+        } else {
+          init();
+        }
 
         window.addEventListener("load", resetScrollPosition);
       })();
