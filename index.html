@@ -64,14 +64,66 @@
         background-color: rgba(255, 255, 255, 0.9);
         color: #1f2a1f;
       }
+
+      body.is-loading {
+        overflow: hidden;
+      }
+
+      body.is-loading .page-content {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .loading-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        background: linear-gradient(135deg, rgba(253, 250, 245, 0.96), rgba(233, 239, 220, 0.96));
+        color: #1f2a1f;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+      }
+
+      .loading-spinner {
+        height: 3rem;
+        width: 3rem;
+        border-radius: 999px;
+        border: 4px solid rgba(95, 111, 82, 0.2);
+        border-top-color: #5f6f52;
+        animation: spin 1s linear infinite;
+      }
+
+      body:not(.is-loading) .loading-screen {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body
-    class="bg-parchment text-pine"
+    class="bg-parchment text-pine is-loading"
     data-config-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIAtQlScbidP76R5pzR3xuO81EN6D1LCTNA9S7pk2W85MVFhJUMao0CH2bkPFe7yMObWw1roH8Hlp1/pub?output=csv"
     data-default-lang="zh"
     data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec"
   >
+    <div class="loading-screen" role="status" aria-live="polite" aria-label="Loading">
+      <div class="loading-spinner" aria-hidden="true"></div>
+      <div class="text-center">
+        <p class="text-sm uppercase tracking-[0.4em] text-moss/80">資料載入中</p>
+        <p class="mt-2 text-xs text-pine/70">正在準備喜帖內容，請稍候片刻。</p>
+      </div>
+    </div>
+    <div class="page-content">
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="relative isolate min-h-[80vh] overflow-hidden">
       <div class="absolute inset-0">
@@ -376,6 +428,7 @@
     <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-pine/60" data-config="footer.text">
       可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
     </footer>
+    </div>
     <script>
       (function () {
         const bodyEl = document.body;
@@ -529,6 +582,11 @@
           updateLocaleField();
         }
 
+        function setLoading(isLoading) {
+          if (!bodyEl) return;
+          bodyEl.classList.toggle("is-loading", isLoading);
+        }
+
         async function loadConfig() {
           try {
             const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
@@ -634,7 +692,7 @@
             btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
           });
           setupRSVPForm();
-          loadConfig();
+          loadConfig().finally(() => setLoading(false));
         });
       })();
     </script>
