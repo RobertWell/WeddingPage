@@ -216,6 +216,18 @@
         }
       }
 
+      @keyframes sway-soft {
+        0%, 100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        40% {
+          transform: translate(-6px, -4px) rotate(-1.5deg);
+        }
+        70% {
+          transform: translate(5px, 6px) rotate(1.5deg);
+        }
+      }
+
       @keyframes spin {
         to {
           transform: rotate(360deg);
@@ -233,6 +245,10 @@
 
       .svg-pulse {
         animation: fade-pulse 8s ease-in-out infinite;
+      }
+
+      .svg-sway {
+        animation: sway-soft 16s ease-in-out infinite;
       }
 
       /* Stagger animation start times for organic feel */
@@ -450,10 +466,21 @@
             <ellipse cx="120" cy="80" rx="60" ry="50" fill="#A8B7A6" filter="url(#wash-blur)" opacity="0.7"/>
           </svg>
 
-          <!-- Architectural rhythm lines -->
-          <svg class="absolute left-0 top-0 h-full w-full pointer-events-none opacity-8" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <line x1="15%" y1="0" x2="15%" y2="100%" stroke="#6E7F63" stroke-width="1"/>
-            <line x1="85%" y1="0" x2="85%" y2="100%" stroke="#6E7F63" stroke-width="1"/>
+          <!-- Botanical garland -->
+          <svg class="svg-sway absolute -left-6 top-10 w-44 h-44 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+            <path d="M15 120 Q40 80 30 40 Q55 65 70 55 Q60 95 85 110 Q55 105 40 120 Z" fill="#A8B7A6"/>
+            <path d="M60 130 Q85 105 120 110 Q95 120 110 145 Q85 135 60 130 Z" fill="#6E7F63" opacity="0.8"/>
+            <circle cx="45" cy="78" r="3" fill="#C9A25D" opacity="0.7"/>
+            <circle cx="95" cy="112" r="2.5" fill="#C9A25D" opacity="0.6"/>
+            <circle cx="70" cy="98" r="2" fill="#C9A25D" opacity="0.5"/>
+          </svg>
+
+          <!-- Golden breeze strokes -->
+          <svg class="svg-drift absolute -right-4 bottom-6 w-36 h-36 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+            <path d="M10 70 Q45 40 90 60" stroke="#C9A25D" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M20 85 Q60 60 110 78" stroke="#C9A25D" stroke-width="1" fill="none" opacity="0.5"/>
+            <circle cx="50" cy="58" r="3" fill="#C9A25D" opacity="0.5"/>
+            <circle cx="85" cy="72" r="2.2" fill="#C9A25D" opacity="0.4"/>
           </svg>
 
           <div class="text-center">
