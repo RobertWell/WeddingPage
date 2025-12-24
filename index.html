@@ -41,6 +41,7 @@
       };
     </script>
     <style>
+      /* Default theme (Spring) */
       :root {
         /* Color Palette - Bright Spring Breeze */
         --color-ivory: #FFFFFE;
@@ -60,8 +61,8 @@
 
         /* Backgrounds */
         --page-background: radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.98) 0%, transparent 50%),
-          radial-gradient(circle at 85% 10%, var(--color-sky-wash) 0%, transparent 45%),
-          linear-gradient(135deg, var(--color-sky-wash), var(--color-ivory) 40%, var(--color-lavender-light) 80%, var(--color-blush-soft));
+          radial-gradient(circle at 85% 10%, #F0F7FF 0%, transparent 45%),
+          linear-gradient(135deg, #F0F7FF, #FFFFFE 40%, #F5EDFF 80%, #FFE9F3);
 
         /* Shadows */
         --shadow-soft: 0 20px 50px rgba(168, 211, 255, 0.15);
@@ -81,6 +82,52 @@
 
         /* Spring Petal Pattern - Light & Airy */
         --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' fill='none'%3E%3Cpath d='M52 96c20-32 58-38 86-16-32 14-54 34-64 66-20-19-30-36-22-50z' fill='rgba(168,211,255,0.08)'/%3E%3Cpath d='M172 52c16 20 20 50-2 76-12-22-32-32-56-38 16-20 36-32 58-38z' fill='rgba(232,212,255,0.07)'/%3E%3Cpath d='M120 152c10-24 32-38 56-40-12 30-32 48-52 62-6-6-10-14-4-22z' fill='rgba(255,214,232,0.06)'/%3E%3Cpath d='M200 180c-8 16-28 20-44 12 8-18 22-28 38-32 4 6 7 13 6 20z' fill='rgba(194,224,255,0.07)'/%3E%3C/svg%3E");
+      }
+
+      /* Khaki Theme */
+      html.theme-khaki {
+        --color-ivory: #FFFEF8;
+        --color-cream: #FFF9F0;
+        --color-sky-wash: #E8F5F0;
+        --color-blush: #FFD4A3;
+        --color-blush-soft: #FFF5EB;
+        --color-lavender: #C9A25D;
+        --color-lavender-light: #FFF9F0;
+        --color-sky: #A8B7A6;
+        --color-sky-bright: #7DD4A8;
+        --color-spring-blue: #4EC590;
+        --color-charcoal: #4A5568;
+        --color-charcoal-light: #718096;
+        --color-sunshine: #FFC857;
+        --page-background: radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.95) 0%, transparent 50%),
+          radial-gradient(circle at 85% 10%, #E8F5F0 0%, transparent 45%),
+          linear-gradient(135deg, #FFF9F0, #FFFEF8 60%, #EEE9E0);
+        --shadow-soft: 0 20px 50px rgba(62, 197, 144, 0.08);
+        --shadow-medium: 0 30px 60px rgba(62, 197, 144, 0.12);
+        --shadow-card: 0 25px 55px rgba(78, 197, 144, 0.15);
+      }
+
+      /* Breeze Theme */
+      html.theme-breeze {
+        --color-ivory: #FFFFFF;
+        --color-cream: #F8FCFF;
+        --color-sky-wash: #E6F7FF;
+        --color-blush: #FFE4F0;
+        --color-blush-soft: #FFF0F6;
+        --color-lavender: #E0F2FF;
+        --color-lavender-light: #F0F9FF;
+        --color-sky: #BAE6FF;
+        --color-sky-bright: #7DD3FC;
+        --color-spring-blue: #38BDF8;
+        --color-charcoal: #64748B;
+        --color-charcoal-light: #94A3B8;
+        --color-sunshine: #FEF3C7;
+        --page-background: radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 1) 0%, transparent 50%),
+          radial-gradient(circle at 85% 10%, #E6F7FF 0%, transparent 45%),
+          linear-gradient(135deg, #F0F9FF, #FFFFFF 40%, #E0F2FF 70%, #FFF0F6);
+        --shadow-soft: 0 20px 50px rgba(56, 189, 248, 0.12);
+        --shadow-medium: 0 30px 60px rgba(125, 211, 252, 0.18);
+        --shadow-card: 0 25px 55px rgba(56, 189, 248, 0.2);
       }
 
       * {
@@ -1124,75 +1171,9 @@
           });
         }
 
-        // Theme switching functionality
+        // Theme switching functionality - simplified with CSS classes
         const THEME_STORAGE_KEY = "wedding-theme";
         const DEFAULT_THEME = "spring";
-
-        const themes = {
-          khaki: {
-            "--color-ivory": "#fffef8",
-            "--color-cream": "#fff9f0",
-            "--color-sky-wash": "#e8f5f0",
-            "--color-blush": "#ffd4a3",
-            "--color-blush-soft": "#fff5eb",
-            "--color-lavender": "#c9a25d",
-            "--color-lavender-light": "#fff9f0",
-            "--color-sky": "#a8b7a6",
-            "--color-sky-bright": "#7dd4a8",
-            "--color-spring-blue": "#4ec590",
-            "--color-charcoal": "#4a5568",
-            "--color-charcoal-light": "#718096",
-            "--color-sunshine": "#ffc857",
-            "--shadow": "0 18px 40px rgba(62, 197, 144, 0.15)",
-            "--glow": "0 28px 60px rgba(255, 200, 87, 0.25)",
-            "--page-background": "radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.95) 0%, transparent 50%), radial-gradient(circle at 85% 10%, #e8f5f0 0%, transparent 45%), linear-gradient(135deg, #fff9f0, #fffef8 60%, #EEE9E0)",
-            "--shadow-soft": "0 20px 50px rgba(62, 197, 144, 0.08)",
-            "--shadow-medium": "0 30px 60px rgba(62, 197, 144, 0.12)",
-            "--shadow-card": "0 25px 55px rgba(78, 197, 144, 0.15)"
-          },
-          spring: {
-            "--color-ivory": "#fffffe",
-            "--color-cream": "#fefcff",
-            "--color-sky-wash": "#f0f7ff",
-            "--color-blush": "#ffd6e8",
-            "--color-blush-soft": "#ffe9f3",
-            "--color-lavender": "#e8d4ff",
-            "--color-lavender-light": "#f5edff",
-            "--color-sky": "#c2e0ff",
-            "--color-sky-bright": "#a8d3ff",
-            "--color-spring-blue": "#7db8ff",
-            "--color-charcoal": "#6b7280",
-            "--color-charcoal-light": "#9ca3af",
-            "--color-sunshine": "#fff9c2",
-            "--shadow": "0 18px 40px rgba(162, 211, 255, 0.2)",
-            "--glow": "0 28px 60px rgba(232, 212, 255, 0.35)",
-            "--page-background": "radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.98) 0%, transparent 50%), radial-gradient(circle at 85% 10%, #f0f7ff 0%, transparent 45%), linear-gradient(135deg, #f0f7ff, #fffffe 40%, #f5edff 80%, #ffe9f3)",
-            "--shadow-soft": "0 20px 50px rgba(168, 211, 255, 0.15)",
-            "--shadow-medium": "0 30px 60px rgba(194, 224, 255, 0.2)",
-            "--shadow-card": "0 25px 55px rgba(168, 211, 255, 0.25)"
-          },
-          breeze: {
-            "--color-ivory": "#ffffff",
-            "--color-cream": "#f8fcff",
-            "--color-sky-wash": "#e6f7ff",
-            "--color-blush": "#ffe4f0",
-            "--color-blush-soft": "#fff0f6",
-            "--color-lavender": "#e0f2ff",
-            "--color-lavender-light": "#f0f9ff",
-            "--color-sky": "#bae6ff",
-            "--color-sky-bright": "#7dd3fc",
-            "--color-spring-blue": "#38bdf8",
-            "--color-charcoal": "#64748b",
-            "--color-charcoal-light": "#94a3b8",
-            "--color-sunshine": "#fef3c7",
-            "--shadow": "0 18px 40px rgba(56, 189, 248, 0.15)",
-            "--glow": "0 28px 60px rgba(125, 211, 252, 0.3)",
-            "--page-background": "radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 1) 0%, transparent 50%), radial-gradient(circle at 85% 10%, #e6f7ff 0%, transparent 45%), linear-gradient(135deg, #f0f9ff, #ffffff 40%, #e0f2ff 70%, #fff0f6)",
-            "--shadow-soft": "0 20px 50px rgba(56, 189, 248, 0.12)",
-            "--shadow-medium": "0 30px 60px rgba(125, 211, 252, 0.18)",
-            "--shadow-card": "0 25px 55px rgba(56, 189, 248, 0.2)"
-          }
-        };
 
         function getStoredTheme() {
           try {
@@ -1211,13 +1192,17 @@
         }
 
         function applyTheme(themeName) {
-          const theme = themes[themeName];
-          if (!theme) return;
+          if (!themeName) return;
 
-          const root = document.documentElement;
-          Object.keys(theme).forEach(property => {
-            root.style.setProperty(property, theme[property]);
-          });
+          const htmlEl = document.documentElement;
+
+          // Remove all theme classes
+          htmlEl.classList.remove("theme-khaki", "theme-spring", "theme-breeze");
+
+          // Add the new theme class (spring is default, no class needed)
+          if (themeName !== "spring") {
+            htmlEl.classList.add("theme-" + themeName);
+          }
 
           // Update active button state
           document.querySelectorAll("[data-theme-button]").forEach(btn => {
