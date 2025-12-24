@@ -443,6 +443,19 @@
           data: {},
           currentLang: DEFAULT_LANG,
         };
+        const resetScrollPosition = () => {
+          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        };
+
+        if ("scrollRestoration" in history) {
+          history.scrollRestoration = "manual";
+        }
+
+        window.addEventListener("pageshow", (event) => {
+          if (event.persisted) {
+            resetScrollPosition();
+          }
+        });
 
         const getRSVPEndpoint = () =>
           (bodyEl && bodyEl.dataset.rsvpEndpoint) ||
@@ -688,12 +701,15 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
+          resetScrollPosition();
           document.querySelectorAll("[data-lang-button]").forEach((btn) => {
             btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
           });
           setupRSVPForm();
           loadConfig().finally(() => setLoading(false));
         });
+
+        window.addEventListener("load", resetScrollPosition);
       })();
     </script>
   </body>
