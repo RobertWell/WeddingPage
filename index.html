@@ -39,30 +39,69 @@
     </script>
     <style>
       :root {
-        --page-background: radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%),
-          radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%),
-          linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc);
+        /* Color Palette - Warm, Romantic, Elegant */
+        --color-ivory: #F6F1EA;
+        --color-cream: #FAF6F0;
+        --color-sage-wash: #EEF3F0;
+        --color-sage: #A8B7A6;
+        --color-moss: #6E7F63;
+        --color-moss-deep: #5f6f52;
+        --color-charcoal: #2E2F33;
+        --color-charcoal-light: #4A4E52;
+        --color-gold: #C9A25D;
+        --color-gold-soft: rgba(201, 162, 93, 0.15);
+        --color-white: #FFFFFF;
+
+        /* Backgrounds */
+        --page-background: radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.95) 0%, transparent 50%),
+          radial-gradient(circle at 85% 10%, var(--color-sage-wash) 0%, transparent 45%),
+          linear-gradient(135deg, var(--color-cream), var(--color-ivory) 60%, #EEE9E0);
+
+        /* Shadows */
+        --shadow-soft: 0 20px 50px rgba(46, 47, 51, 0.08);
+        --shadow-medium: 0 30px 60px rgba(46, 47, 51, 0.12);
+        --shadow-card: 0 25px 55px rgba(110, 127, 99, 0.15);
+
+        /* Typography */
+        --font-display: "Noto Serif TC", serif;
+        --font-body: "Noto Sans TC", system-ui, sans-serif;
+        --letter-spacing-wide: 0.3em;
+        --letter-spacing-wider: 0.4em;
+
+        /* Misc */
         --hero-image-position: 50% 50%;
         --hero-overlay-opacity: 1;
-        --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' fill='none'%3E%3Cpath d='M48 88c18-30 54-36 80-14-30 12-50 32-60 62-18-18-28-34-20-48z' fill='rgba(95,111,82,0.16)'/%3E%3Cpath d='M158 48c14 18 18 46-2 70-10-20-30-30-52-36 14-18 34-30 54-34z' fill='rgba(95,111,82,0.12)'/%3E%3Cpath d='M110 140c8-22 30-36 52-38-10 28-30 44-48 58-6-6-8-12-4-20z' fill='rgba(95,111,82,0.1)'/%3E%3C/svg%3E");
+        --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+        /* Leaf Pattern - Refined */
+        --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' fill='none'%3E%3Cpath d='M52 96c20-32 58-38 86-16-32 14-54 34-64 66-20-19-30-36-22-50z' fill='rgba(168,183,166,0.12)'/%3E%3Cpath d='M172 52c16 20 20 50-2 76-12-22-32-32-56-38 16-20 36-32 58-38z' fill='rgba(168,183,166,0.09)'/%3E%3Cpath d='M120 152c10-24 32-38 56-40-12 30-32 48-52 62-6-6-10-14-4-22z' fill='rgba(168,183,166,0.07)'/%3E%3Cpath d='M200 180c-8 16-28 20-44 12 8-18 22-28 38-32 4 6 7 13 6 20z' fill='rgba(168,183,166,0.08)'/%3E%3C/svg%3E");
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
-        font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family: var(--font-body);
         background: var(--page-background);
-        color: #1f2a1f;
+        background-attachment: fixed;
+        color: var(--color-charcoal);
+        line-height: 1.7;
+        letter-spacing: 0.01em;
       }
 
+      /* Grain texture for premium feel */
       .grain::after {
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 200 200'%3E%3Cpath stroke='rgba(90,110,90,0.15)' stroke-width='0.5' d='M0 200 200 0'/%3E%3C/svg%3E");
-        opacity: 0.4;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 400 400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        opacity: 0.5;
         pointer-events: none;
-        mix-blend-mode: soft-light;
+        mix-blend-mode: overlay;
       }
 
+      /* Leaf pattern - subtle and elegant */
       .leaf-pattern {
         position: relative;
         overflow: hidden;
@@ -72,32 +111,40 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-image: var(--leaf-pattern), var(--leaf-pattern);
-        background-size: 240px 240px;
-        background-position: 0 0, 120px 120px;
-        opacity: 0.32;
+        background-image: var(--leaf-pattern);
+        background-size: 280px 280px;
+        background-position: -40px -40px;
+        opacity: 0.25;
         pointer-events: none;
         mix-blend-mode: multiply;
       }
 
+      /* Hero styling */
       .hero-image {
         object-position: var(--hero-image-position);
+        filter: saturate(0.95) brightness(1.05);
       }
 
       .hero-overlay {
-        background: linear-gradient(180deg, rgba(31, 42, 31, 0.8), rgba(31, 42, 31, 0.6), rgba(248, 244, 238, 0.95));
+        background: linear-gradient(180deg,
+          rgba(46, 47, 51, 0.75),
+          rgba(46, 47, 51, 0.55),
+          rgba(246, 241, 234, 0.96));
         opacity: var(--hero-overlay-opacity);
       }
 
+      /* Language switcher */
       .lang-switch button {
         border-radius: 999px;
+        transition: var(--transition-smooth);
       }
 
       .lang-switch button.is-active {
-        background-color: rgba(255, 255, 255, 0.9);
-        color: #1f2a1f;
+        background-color: rgba(255, 255, 255, 0.95);
+        color: var(--color-charcoal);
       }
 
+      /* Loading states */
       body.is-loading {
         overflow: hidden;
       }
@@ -116,18 +163,20 @@
         align-items: center;
         justify-content: center;
         gap: 1.25rem;
-        background: linear-gradient(135deg, rgba(253, 250, 245, 0.96), rgba(233, 239, 220, 0.96));
-        color: #1f2a1f;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
+        background: linear-gradient(135deg,
+          rgba(250, 246, 240, 0.98),
+          rgba(238, 243, 240, 0.98));
+        color: var(--color-charcoal);
+        transition: opacity 0.5s ease, visibility 0.5s ease;
       }
 
       .loading-spinner {
         height: 3rem;
         width: 3rem;
         border-radius: 999px;
-        border: 4px solid rgba(95, 111, 82, 0.2);
-        border-top-color: #5f6f52;
-        animation: spin 1s linear infinite;
+        border: 4px solid var(--color-sage);
+        border-top-color: var(--color-gold);
+        animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
       }
 
       body:not(.is-loading) .loading-screen {
@@ -136,9 +185,77 @@
         pointer-events: none;
       }
 
+      /* Subtle floating animation for decorative elements */
+      @keyframes float-gentle {
+        0%, 100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-8px) rotate(1deg);
+        }
+      }
+
+      @keyframes drift-slow {
+        0%, 100% {
+          transform: translate(0, 0);
+        }
+        33% {
+          transform: translate(-3px, -5px);
+        }
+        66% {
+          transform: translate(3px, -3px);
+        }
+      }
+
+      @keyframes fade-pulse {
+        0%, 100% {
+          opacity: 0.15;
+        }
+        50% {
+          opacity: 0.25;
+        }
+      }
+
       @keyframes spin {
         to {
           transform: rotate(360deg);
+        }
+      }
+
+      /* Apply animations to decorative SVG elements */
+      .svg-float {
+        animation: float-gentle 12s ease-in-out infinite;
+      }
+
+      .svg-drift {
+        animation: drift-slow 18s ease-in-out infinite;
+      }
+
+      .svg-pulse {
+        animation: fade-pulse 8s ease-in-out infinite;
+      }
+
+      /* Stagger animation start times for organic feel */
+      .svg-float:nth-of-type(2) {
+        animation-delay: -4s;
+      }
+
+      .svg-drift:nth-of-type(2) {
+        animation-delay: -6s;
+      }
+
+      .svg-pulse:nth-of-type(2) {
+        animation-delay: -3s;
+      }
+
+      /* Respect reduced motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
       }
     </style>
@@ -159,6 +276,21 @@
     <div class="page-content">
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
+      <!-- Watercolor wash background decoration -->
+      <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="watercolor-blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="25"/>
+          </filter>
+        </defs>
+        <g filter="url(#watercolor-blur)">
+          <ellipse cx="200" cy="150" rx="280" ry="220" fill="#EEF3F0" opacity="0.6"/>
+          <ellipse cx="900" cy="100" rx="320" ry="280" fill="#F6F1EA" opacity="0.5"/>
+          <ellipse cx="600" cy="500" rx="380" ry="300" fill="#A8B7A6" opacity="0.3"/>
+          <ellipse cx="1000" cy="600" rx="280" ry="240" fill="#EEF3F0" opacity="0.4"/>
+        </g>
+      </svg>
+
       <div class="absolute inset-0">
         <img
           src="img/forest-hero.jpg"
@@ -241,6 +373,28 @@
       <div class="mx-auto flex max-w-5xl flex-col gap-10">
         <!-- New couple introduction card -->
         <section id="couple" class="grain leaf-pattern relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <!-- Botanical corner decorations -->
+          <svg class="svg-float absolute top-0 left-0 w-32 h-32 pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+            <path d="M10 10 Q30 40, 15 70 Q8 50, 10 10Z" fill="#6E7F63"/>
+            <path d="M15 15 Q45 25, 65 18 Q40 12, 15 15Z" fill="#A8B7A6"/>
+            <circle cx="20" cy="25" r="2" fill="#C9A25D"/>
+            <circle cx="35" cy="18" r="1.5" fill="#C9A25D" opacity="0.6"/>
+          </svg>
+          <svg class="svg-float absolute top-0 right-0 w-32 h-32 pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+            <path d="M110 10 Q90 40, 105 70 Q112 50, 110 10Z" fill="#6E7F63"/>
+            <path d="M105 15 Q75 25, 55 18 Q80 12, 105 15Z" fill="#A8B7A6"/>
+            <circle cx="100" cy="25" r="2" fill="#C9A25D"/>
+          </svg>
+
+          <!-- Gold accent arcs -->
+          <svg class="svg-drift absolute bottom-8 right-8 w-24 h-24 pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path d="M20 80 Q50 50, 80 80" stroke="#C9A25D" stroke-width="1" fill="none" opacity="0.5"/>
+            <path d="M30 85 Q50 65, 70 85" stroke="#C9A25D" stroke-width="0.5" fill="none" opacity="0.7"/>
+            <circle cx="50" cy="60" r="2" fill="#C9A25D" opacity="0.4"/>
+            <circle cx="65" cy="75" r="1.5" fill="#C9A25D" opacity="0.3"/>
+            <circle cx="35" cy="75" r="1.5" fill="#C9A25D" opacity="0.3"/>
+          </svg>
+
           <div class="relative">
             <div class="text-center">
               <img src="img/leaf.svg" alt="小葉片裝飾" class="mx-auto h-12 w-12 opacity-80" loading="lazy" />
@@ -283,6 +437,23 @@
 
         <!-- Location and transportation details -->
         <section id="location" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <!-- Watercolor wash accents -->
+          <svg class="svg-pulse absolute top-0 right-0 w-64 h-64 pointer-events-none opacity-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+            <defs>
+              <filter id="wash-blur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="15"/>
+              </filter>
+            </defs>
+            <ellipse cx="150" cy="50" rx="80" ry="60" fill="#EEF3F0" filter="url(#wash-blur)"/>
+            <ellipse cx="120" cy="80" rx="60" ry="50" fill="#A8B7A6" filter="url(#wash-blur)" opacity="0.6"/>
+          </svg>
+
+          <!-- Architectural rhythm lines -->
+          <svg class="absolute left-0 top-0 h-full w-full pointer-events-none opacity-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <line x1="15%" y1="0" x2="15%" y2="100%" stroke="#6E7F63" stroke-width="1"/>
+            <line x1="85%" y1="0" x2="85%" y2="100%" stroke="#6E7F63" stroke-width="1"/>
+          </svg>
+
           <div class="text-center">
             <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="location.section.heading">餐廳地點</p>
             <h2 class="mt-2 font-display text-3xl text-moss" data-config="location.section.title">森光花園，等你來散步</h2>
@@ -331,6 +502,23 @@
 
         <!-- RSVP / survey section -->
         <section id="survey" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <!-- Botanical elements in corners -->
+          <svg class="svg-float absolute bottom-0 left-0 w-40 h-40 pointer-events-none opacity-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+            <path d="M10 140 Q35 110, 25 80 Q15 100, 10 140Z" fill="#A8B7A6"/>
+            <path d="M20 135 Q50 120, 75 130 Q45 128, 20 135Z" fill="#6E7F63" opacity="0.7"/>
+            <circle cx="30" cy="120" r="2.5" fill="#C9A25D"/>
+            <circle cx="45" cy="125" r="1.5" fill="#C9A25D" opacity="0.5"/>
+          </svg>
+
+          <!-- Gold decorative dots -->
+          <svg class="svg-drift absolute top-12 right-12 w-20 h-20 pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+            <circle cx="20" cy="20" r="3" fill="#C9A25D" opacity="0.6"/>
+            <circle cx="50" cy="30" r="2" fill="#C9A25D" opacity="0.5"/>
+            <circle cx="60" cy="50" r="2.5" fill="#C9A25D" opacity="0.4"/>
+            <circle cx="35" cy="60" r="1.5" fill="#C9A25D" opacity="0.5"/>
+            <path d="M25 25 Q40 35, 55 28" stroke="#C9A25D" stroke-width="0.5" fill="none" opacity="0.3"/>
+          </svg>
+
           <div class="text-center">
             <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="survey.section.heading">簡單問卷</p>
             <h2 class="mt-2 font-display text-3xl text-moss" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
@@ -414,6 +602,39 @@
 
         <!-- Invitation card -->
         <section id="invitation" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <!-- Watercolor background layer -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-8" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <filter id="invitation-wash">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+              </filter>
+            </defs>
+            <ellipse cx="30%" cy="40%" rx="200" ry="150" fill="#EEF3F0" filter="url(#invitation-wash)"/>
+            <ellipse cx="70%" cy="60%" rx="180" ry="140" fill="#F6F1EA" filter="url(#invitation-wash)"/>
+          </svg>
+
+          <!-- Gold accent frame -->
+          <svg class="absolute top-8 left-8 w-16 h-16 pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+            <path d="M5 5 L25 5" stroke="#C9A25D" stroke-width="1.5" fill="none"/>
+            <path d="M5 5 L5 25" stroke="#C9A25D" stroke-width="1.5" fill="none"/>
+            <circle cx="5" cy="5" r="2" fill="#C9A25D"/>
+          </svg>
+          <svg class="absolute top-8 right-8 w-16 h-16 pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+            <path d="M55 5 L35 5" stroke="#C9A25D" stroke-width="1.5" fill="none"/>
+            <path d="M55 5 L55 25" stroke="#C9A25D" stroke-width="1.5" fill="none"/>
+            <circle cx="55" cy="5" r="2" fill="#C9A25D"/>
+          </svg>
+          <svg class="absolute bottom-8 left-8 w-16 h-16 pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+            <path d="M5 55 L25 55" stroke="#C9A25D" stroke-width="1.5" fill="none"/>
+            <path d="M5 55 L5 35" stroke="#C9A25D" stroke-width="1.5" fill="none"/>
+            <circle cx="5" cy="55" r="2" fill="#C9A25D"/>
+          </svg>
+          <svg class="absolute bottom-8 right-8 w-16 h-16 pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+            <path d="M55 55 L35 55" stroke="#C9A25D" stroke-width="1.5" fill="none"/>
+            <path d="M55 55 L55 35" stroke="#C9A25D" stroke-width="1.5" fill="none"/>
+            <circle cx="55" cy="55" r="2" fill="#C9A25D"/>
+          </svg>
+
           <div class="text-center">
             <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="invitation.section.title">喜帖</p>
             <h2 class="mt-2 font-display text-3xl text-moss" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
