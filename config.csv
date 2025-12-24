@@ -11,6 +11,10 @@ hero.datetime,2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區�
 hero.badge1,戶外草地證婚,"Outdoor meadow vows"
 hero.badge2,清新溫柔風,"Soft forest styling"
 hero.badge3,歡迎小小孩,"Little guests welcome"
+hero.imageUrl,img/forest-hero.jpg,img/forest-hero.jpg
+hero.imagePosition,50% 50%,50% 50%
+hero.overlayOpacity,1,1
+body.background,"radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%), radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%), linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)","radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%), radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%), linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)"
 hero.ctaPrimary,查看喜帖,"View Invitation"
 hero.ctaSecondary,填寫問卷,"RSVP Form"
 couple.section.label,新人介紹,"Couple"

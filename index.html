@@ -38,11 +38,18 @@
       };
     </script>
     <style>
-      body {
-        font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%),
+      :root {
+        --page-background: radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%),
           radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%),
           linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc);
+        --hero-image-position: 50% 50%;
+        --hero-overlay-opacity: 1;
+        --leaf-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' fill='none'%3E%3Cpath d='M48 88c18-30 54-36 80-14-30 12-50 32-60 62-18-18-28-34-20-48z' fill='rgba(95,111,82,0.16)'/%3E%3Cpath d='M158 48c14 18 18 46-2 70-10-20-30-30-52-36 14-18 34-30 54-34z' fill='rgba(95,111,82,0.12)'/%3E%3Cpath d='M110 140c8-22 30-36 52-38-10 28-30 44-48 58-6-6-8-12-4-20z' fill='rgba(95,111,82,0.1)'/%3E%3C/svg%3E");
+      }
+
+      body {
+        font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--page-background);
         color: #1f2a1f;
       }
 
@@ -54,6 +61,32 @@
         opacity: 0.4;
         pointer-events: none;
         mix-blend-mode: soft-light;
+      }
+
+      .leaf-pattern {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .leaf-pattern::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--leaf-pattern), var(--leaf-pattern);
+        background-size: 240px 240px;
+        background-position: 0 0, 120px 120px;
+        opacity: 0.32;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+      }
+
+      .hero-image {
+        object-position: var(--hero-image-position);
+      }
+
+      .hero-overlay {
+        background: linear-gradient(180deg, rgba(31, 42, 31, 0.8), rgba(31, 42, 31, 0.6), rgba(248, 244, 238, 0.95));
+        opacity: var(--hero-overlay-opacity);
       }
 
       .lang-switch button {
@@ -125,15 +158,17 @@
     </div>
     <div class="page-content">
     <!-- Hero section with forest background and soft overlay -->
-    <header id="top" class="relative isolate min-h-[80vh] overflow-hidden">
+    <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
       <div class="absolute inset-0">
         <img
           src="img/forest-hero.jpg"
           alt="陽光灑落的森林背景"
-          class="h-full w-full object-cover"
+          class="hero-image h-full w-full object-cover"
           loading="lazy"
+          data-hero-image
+          data-hero-position="50% 50%"
         />
-        <div class="absolute inset-0 bg-gradient-to-b from-pine/80 via-pine/60 to-parchment/95"></div>
+        <div class="hero-overlay absolute inset-0" data-hero-overlay data-hero-overlay-default="1"></div>
       </div>
       <nav
         class="relative z-10 flex flex-col gap-4 px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16"
@@ -205,7 +240,7 @@
     <main class="relative z-10 -mt-16 px-4 pb-16 sm:px-6 lg:px-8">
       <div class="mx-auto flex max-w-5xl flex-col gap-10">
         <!-- New couple introduction card -->
-        <section id="couple" class="grain relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+        <section id="couple" class="grain leaf-pattern relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <div class="relative">
             <div class="text-center">
               <img src="img/leaf.svg" alt="小葉片裝飾" class="mx-auto h-12 w-12 opacity-80" loading="lazy" />
@@ -247,7 +282,7 @@
         </section>
 
         <!-- Location and transportation details -->
-        <section id="location" class="rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+        <section id="location" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <div class="text-center">
             <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="location.section.heading">餐廳地點</p>
             <h2 class="mt-2 font-display text-3xl text-moss" data-config="location.section.title">森光花園，等你來散步</h2>
@@ -295,7 +330,7 @@
         </section>
 
         <!-- RSVP / survey section -->
-        <section id="survey" class="rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+        <section id="survey" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <div class="text-center">
             <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="survey.section.heading">簡單問卷</p>
             <h2 class="mt-2 font-display text-3xl text-moss" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
@@ -378,7 +413,7 @@
         </section>
 
         <!-- Invitation card -->
-        <section id="invitation" class="rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
+        <section id="invitation" class="leaf-pattern relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <div class="text-center">
             <p class="text-sm uppercase tracking-[0.4em] text-moss/70" data-config="invitation.section.title">喜帖</p>
             <h2 class="mt-2 font-display text-3xl text-moss" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
@@ -442,6 +477,14 @@
           languages: [],
           data: {},
           currentLang: DEFAULT_LANG,
+        };
+        const rootStyle = document.documentElement.style;
+        const heroImageEl = document.querySelector("[data-hero-image]");
+        const heroOverlayEl = document.querySelector("[data-hero-overlay]");
+        const visualDefaults = {
+          heroImage: heroImageEl ? heroImageEl.getAttribute("src") : "",
+          heroPosition: heroImageEl ? heroImageEl.dataset.heroPosition || "50% 50%" : "",
+          heroOverlayOpacity: heroOverlayEl ? heroOverlayEl.dataset.heroOverlayDefault || "" : "",
         };
         const resetScrollPosition = () => {
           window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -546,7 +589,7 @@
           enqueue("value");
           for (const code of order) {
             const bucket = state.data[code];
-            if (bucket && bucket[key]) return bucket[key];
+            if (bucket && Object.prototype.hasOwnProperty.call(bucket, key)) return bucket[key];
           }
           return fallback;
         }
@@ -556,7 +599,7 @@
             const key = el.dataset.config;
             if (!key) return;
             const value = getValueForKey(key, "", lang);
-            if (!value) return;
+            if (value === "") return;
             const attr = el.dataset.configAttr;
             if (attr) {
               el.setAttribute(attr, value);
@@ -564,6 +607,34 @@
               el.textContent = value;
             }
           });
+        }
+
+        function applyVisualConfig(lang = state.currentLang) {
+          const heroImage = getValueForKey("hero.imageUrl", "", lang);
+          const heroPosition = getValueForKey("hero.imagePosition", "", lang);
+          const overlayOpacity = getValueForKey("hero.overlayOpacity", "", lang);
+          const bodyBackground = getValueForKey("body.background", "", lang);
+
+          if (heroImageEl) {
+            heroImageEl.src = heroImage || visualDefaults.heroImage;
+          }
+
+          const resolvedPosition = heroPosition || visualDefaults.heroPosition;
+          if (resolvedPosition) {
+            rootStyle.setProperty("--hero-image-position", resolvedPosition);
+          }
+
+          const resolvedOverlayOpacity =
+            overlayOpacity !== "" ? overlayOpacity : visualDefaults.heroOverlayOpacity;
+          if (resolvedOverlayOpacity !== "") {
+            rootStyle.setProperty("--hero-overlay-opacity", resolvedOverlayOpacity);
+          }
+
+          if (bodyBackground) {
+            rootStyle.setProperty("--page-background", bodyBackground);
+          } else {
+            rootStyle.removeProperty("--page-background");
+          }
         }
 
         function refreshLangButtons() {
@@ -589,6 +660,7 @@
           if (lang === state.currentLang) return;
           state.currentLang = lang;
           applyLanguage(lang);
+          applyVisualConfig(lang);
           refreshLangButtons();
           updateDocumentLang(lang);
           storeLang(lang);
@@ -615,6 +687,7 @@
             );
             state.currentLang = preferred || state.languages[0];
             applyLanguage(state.currentLang);
+            applyVisualConfig(state.currentLang);
             refreshLangButtons();
             updateDocumentLang(state.currentLang);
             storeLang(state.currentLang);
