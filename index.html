@@ -471,6 +471,9 @@
           (bodyEl && bodyEl.dataset.configSrc) ||
           (typeof window !== "undefined" && window.CONFIG_SOURCE_URL) ||
           "config.csv";
+        const FALLBACK_CONFIG_URL =
+          (typeof window !== "undefined" && window.CONFIG_FALLBACK_URL) ||
+          "config.csv";
         const DEFAULT_LANG = (bodyEl && bodyEl.dataset.defaultLang) || "zh";
         const STORAGE_KEY = "forest-wedding-lang";
         const state = {
@@ -555,6 +558,24 @@
             });
           });
           const languages = Array.from(new Set(langHeaders.filter(Boolean)));
+          return { languages, data };
+        }
+
+        function mergeConfig(primary, fallback) {
+          if (!fallback.languages.length) return primary;
+          const languages = Array.from(new Set([...primary.languages, ...fallback.languages]));
+          const data = {};
+          languages.forEach((lang) => {
+            const primaryBucket = primary.data[lang] || {};
+            const fallbackBucket = fallback.data[lang] || {};
+            const merged = { ...fallbackBucket, ...primaryBucket };
+            Object.keys(merged).forEach((key) => {
+              if (primaryBucket[key] === "" && fallbackBucket[key]) {
+                merged[key] = fallbackBucket[key];
+              }
+            });
+            data[lang] = merged;
+          });
           return { languages, data };
         }
 
@@ -680,10 +701,22 @@
             const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
             if (!res.ok) throw new Error("Failed to load config");
             const raw = await res.text();
-            const { languages, data } = parseConfig(raw);
-            if (!languages.length) return;
-            state.languages = languages;
-            state.data = data;
+            let parsed = parseConfig(raw);
+            if (!parsed.languages.length) return;
+            if (FALLBACK_CONFIG_URL && FALLBACK_CONFIG_URL !== CONFIG_SOURCE_URL) {
+              try {
+                const fallbackRes = await fetch(FALLBACK_CONFIG_URL, { cache: "no-store" });
+                if (fallbackRes.ok) {
+                  const fallbackRaw = await fallbackRes.text();
+                  const fallbackParsed = parseConfig(fallbackRaw);
+                  parsed = mergeConfig(parsed, fallbackParsed);
+                }
+              } catch (err) {
+                console.warn("Unable to load fallback config", err);
+              }
+            }
+            state.languages = parsed.languages;
+            state.data = parsed.data;
             const storedLang = getStoredLang();
             const preferred = [storedLang, DEFAULT_LANG].find(
               (code) => code && state.languages.includes(code)
