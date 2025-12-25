@@ -82,7 +82,7 @@
         --hero-overlay-opacity: 1;
         --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         --leaf-pattern: url("img/patterns/leaf-pattern-forest.svg");
-        --leaf-pattern-secondary: url("img/patterns/leaf-pattern-secondary-forest.svg");
+        --leaf-pattern-secondary: url("img/botanical-corner-secondary.png");
       }
 
       * {
@@ -323,12 +323,14 @@
         position: absolute;
         bottom: -6px;
         left: -18px;
+        display: block;
         width: clamp(170px, 22vw, 250px);
         height: auto;
-        opacity: 0.5;
+        opacity: 0.7;
         transform-origin: bottom left;
-        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0 65%, rgba(0, 0, 0, 0) 100%);
-        mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0 65%, rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-image: linear-gradient(to right, #000 0%, #000 65%, transparent 100%);
+        mask-image: linear-gradient(to right, #000 0%, #000 65%, transparent 100%);
+        mix-blend-mode: multiply;
       }
 
       @media (max-width: 640px) {
@@ -391,18 +393,6 @@
     <div class="page-content">
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
-      <!-- Watercolor wash background decoration -->
-      <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <use href="img/decorations/decorations.svg#hero-wash" data-decor-role="hero-wash"></use>
-      </svg>
-      <img
-        src="img/projections/gold-speckle.svg"
-        alt=""
-        class="decorative-svg svg-drift absolute inset-x-0 top-16 mx-auto w-[36rem] max-w-full pointer-events-none opacity-25"
-        loading="lazy"
-        aria-hidden="true"
-      />
-
       <div class="absolute inset-0">
         <img
           src="img/forest-hero.jpg"
@@ -523,31 +513,12 @@
         <!-- New couple introduction card -->
         <section id="couple" class="grain leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <img
-            src="img/projections/background-wash.svg"
+            src="img/botanical-corner-secondary.png"
             alt=""
-            class="decorative-svg absolute inset-0 h-full w-full object-cover pointer-events-none opacity-15"
+            class="decorative-svg absolute bottom-4 right-4 w-36 h-36 pointer-events-none opacity-18"
             loading="lazy"
             aria-hidden="true"
           />
-          <!-- Spring petal corner decorations -->
-          <svg class="decorative-svg svg-float absolute top-0 left-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#couple-corner-left" data-decor-role="couple-corner-left"></use>
-          </svg>
-          <svg class="decorative-svg svg-float absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#couple-corner-right" data-decor-role="couple-corner-right"></use>
-          </svg>
-          <img
-            src="img/botanical-corner.svg"
-            alt=""
-            class="decorative-svg svg-float absolute bottom-0 right-0 w-36 h-36 pointer-events-none opacity-18"
-            loading="lazy"
-            aria-hidden="true"
-          />
-
-          <!-- Spring breeze accent arcs -->
-          <svg class="decorative-svg svg-drift absolute bottom-8 right-8 w-32 h-32 pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#couple-breeze" data-decor-role="couple-breeze"></use>
-          </svg>
 
           <div class="content-layer content-safe">
             <div class="text-center">
@@ -590,53 +561,15 @@
         </section>
 
         <!-- Location and transportation details -->
-        <div class="section-divider relative my-6 flex items-center justify-center">
-          <img
-            src="img/projections/section-divider.svg"
-            alt=""
-            class="decorative-svg absolute inset-0 h-full w-full pointer-events-none opacity-35"
-            loading="lazy"
-            aria-hidden="true"
-          />
-          <svg class="decorative-svg h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#divider-couple" data-decor-role="divider-couple"></use>
-          </svg>
-        </div>
         <section id="location" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <div class="decorative-layer" aria-hidden="true">
-            <!-- Spring sky wash accents -->
-            <svg class="decorative-svg svg-pulse absolute top-0 right-0 w-80 h-80 opacity-18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-              <use href="img/decorations/decorations.svg#location-wash" data-decor-role="location-wash"></use>
-            </svg>
-
-            <!-- Spring petal garland -->
-            <svg class="decorative-svg svg-sway absolute -left-6 top-10 w-44 h-44 opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-              <use href="img/decorations/decorations.svg#location-garland" data-decor-role="location-garland"></use>
-            </svg>
-
-            <!-- Spring breeze strokes -->
-            <svg class="decorative-svg svg-drift absolute -right-4 bottom-6 w-36 h-36 opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-              <use href="img/decorations/decorations.svg#location-breeze" data-decor-role="location-breeze"></use>
-            </svg>
-
-            <!-- Indoor garden tree -->
-            <svg class="decorative-svg decorative-tree svg-sway" viewBox="0 0 240 360" xmlns="http://www.w3.org/2000/svg">
-              <path d="M120 330C116 286 116 238 124 192C132 146 146 104 170 62" stroke="#6f7d6b" stroke-width="12" stroke-linecap="round" opacity="0.55" />
-              <path d="M140 210C162 182 192 160 222 142" stroke="#6f7d6b" stroke-width="7" stroke-linecap="round" opacity="0.5" />
-              <path d="M126 236C102 212 74 194 46 182" stroke="#6f7d6b" stroke-width="6" stroke-linecap="round" opacity="0.48" />
-              <path d="M150 168C168 146 192 128 214 118" stroke="#6f7d6b" stroke-width="5" stroke-linecap="round" opacity="0.45" />
-              <path d="M110 186C92 166 72 152 52 144" stroke="#6f7d6b" stroke-width="5" stroke-linecap="round" opacity="0.45" />
-              <circle cx="170" cy="92" r="26" fill="#96ad97" opacity="0.55" />
-              <circle cx="146" cy="118" r="28" fill="#9bb39a" opacity="0.5" />
-              <circle cx="198" cy="118" r="22" fill="#9aad98" opacity="0.45" />
-              <circle cx="120" cy="116" r="30" fill="#94aa94" opacity="0.5" />
-              <circle cx="94" cy="138" r="24" fill="#9bb39a" opacity="0.46" />
-              <circle cx="64" cy="160" r="22" fill="#92a991" opacity="0.42" />
-              <circle cx="190" cy="150" r="26" fill="#97ae97" opacity="0.48" />
-              <circle cx="150" cy="152" r="22" fill="#93a892" opacity="0.43" />
-              <circle cx="112" cy="154" r="20" fill="#9cb39b" opacity="0.45" />
-              <circle cx="176" cy="178" r="20" fill="#95ab95" opacity="0.4" />
-            </svg>
+            <img
+              src="img/indoor-tree.png"
+              alt=""
+              class="decorative-svg decorative-tree"
+              loading="lazy"
+              aria-hidden="true"
+            />
           </div>
 
           <div class="content-layer content-safe">
@@ -688,35 +621,14 @@
         </section>
 
         <!-- RSVP / survey section -->
-        <div class="section-divider relative my-6 flex items-center justify-center">
-          <img
-            src="img/projections/section-divider.svg"
-            alt=""
-            class="decorative-svg absolute inset-0 h-full w-full pointer-events-none opacity-35"
-            loading="lazy"
-            aria-hidden="true"
-          />
-          <svg class="decorative-svg h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#divider-survey" data-decor-role="divider-survey"></use>
-          </svg>
-        </div>
         <section id="survey" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <img
-            src="img/projections/botanical-corner.svg"
+            src="img/botanical-corner-secondary.png"
             alt=""
-            class="decorative-svg svg-float absolute top-0 left-0 w-32 h-32 pointer-events-none opacity-20"
+            class="decorative-svg absolute top-4 left-4 w-32 h-32 pointer-events-none opacity-20"
             loading="lazy"
             aria-hidden="true"
           />
-          <!-- Spring petal elements in corners -->
-          <svg class="decorative-svg svg-float absolute bottom-0 left-0 w-48 h-48 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#survey-corner" data-decor-role="survey-corner"></use>
-          </svg>
-
-          <!-- Spring breeze decorative dots -->
-          <svg class="decorative-svg svg-drift absolute top-12 right-12 w-28 h-28 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#survey-dots" data-decor-role="survey-dots"></use>
-          </svg>
 
           <div class="content-layer content-safe">
             <div class="text-center">
@@ -802,38 +714,7 @@
         </section>
 
         <!-- Invitation card -->
-        <div class="section-divider relative my-6 flex items-center justify-center">
-          <img
-            src="img/projections/section-divider.svg"
-            alt=""
-            class="decorative-svg absolute inset-0 h-full w-full pointer-events-none opacity-35"
-            loading="lazy"
-            aria-hidden="true"
-          />
-          <svg class="decorative-svg h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#divider-invitation" data-decor-role="divider-invitation"></use>
-          </svg>
-        </div>
         <section id="invitation" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <!-- Spring sky watercolor background layer -->
-          <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#invitation-wash" data-decor-role="invitation-wash"></use>
-          </svg>
-
-          <!-- Spring breeze accent frame -->
-          <svg class="decorative-svg absolute top-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#invitation-corner-tl" data-decor-role="invitation-corner-tl"></use>
-          </svg>
-          <svg class="decorative-svg absolute top-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#invitation-corner-tr" data-decor-role="invitation-corner-tr"></use>
-          </svg>
-          <svg class="decorative-svg absolute bottom-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#invitation-corner-bl" data-decor-role="invitation-corner-bl"></use>
-          </svg>
-          <svg class="decorative-svg absolute bottom-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
-            <use href="img/decorations/decorations.svg#invitation-corner-br" data-decor-role="invitation-corner-br"></use>
-          </svg>
-
           <div class="content-layer content-safe">
             <div class="text-center">
               <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="invitation.section.title">喜帖</p>
