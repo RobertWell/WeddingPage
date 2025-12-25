@@ -128,11 +128,90 @@ Now both the display content and RSVP data flow through Google Sheets while the 
 
 ---
 
-## 5. Enhancement: Config-Driven Backgrounds (No UI)
+## 5. Design Direction (Quick Reference)
+
+Use this as the baseline look-and-feel when updating copy, photos, or layout. It prioritizes a calm, forest-inspired palette, soft contrast, and generous spacing.
+
+### 5.1. Tone + Visual Language
+
+- **Mood**: quiet, romantic, woodland, ceremonial.
+- **Texture**: parchment-like backgrounds, subtle gradients, and soft shadows rather than hard borders.
+- **Motion**: minimal; prefer gentle fades or slight parallax, never attention-grabbing.
+
+### 5.2. Color Palette
+
+Keep colors muted and natural. If you add a new accent, keep it within the same earthy range.
+
+| Purpose | Suggested |
+| --- | --- |
+| Background | `#f8f4ea` (parchment) |
+| Primary text | `#1f3a2f` (pine) |
+| Secondary text | `#4f6159` (moss gray) |
+| Accent | `#c7b58a` (warm sand) |
+| Highlight | `#8ea784` (sage) |
+
+### 5.3. Typography
+
+- **Headings**: use the existing serif stack for ceremony feel; limit to 1–2 sizes for consistency.
+- **Body**: use the existing sans serif stack for clarity.
+- **Hierarchy**: keep headings short; use line height ≥ 1.4 for readability.
+
+### 5.4. Spacing + Layout
+
+- Prefer **large vertical spacing** between sections (48–72px).
+- Align content to the same central column; avoid right-aligned blocks unless mirroring.
+- Cards or boxes should have **soft corners** and light borders or shadows.
+
+### 5.5. Imagery Guidelines
+
+- Use wide, calm photos (forests, sunrise, rivers) with soft contrast.
+- Keep faces centered for mobile; avoid high-contrast backgrounds behind text.
+- Favor a single hero image with one supporting photo to avoid clutter.
+
+### 5.6. RSVP Form Styling
+
+- Inputs: light backgrounds, subtle borders, and ample padding.
+- Buttons: pine or sage background with high-contrast text; hover darkens slightly.
+- Error states: muted warm red (avoid neon).
+
+### 5.7. Theme Variations + Decoration Checklist
+
+To show a visibly different **decoration style** for each theme, update the hero image, background, and accent color together. Keep text styles consistent so only the decor shifts.
+
+| Theme | Hero/Backdrop | Accent | Decorative Motif |
+| --- | --- | --- | --- |
+| Forest (default) | Pines, fog, warm sunrise | `#c7b58a` | Pine cones, leaf silhouettes |
+| Garden | Floral arch, soft daylight | `#d7a3b2` | Blossoms, ribbon lines |
+| Coastal | Ocean horizon, pale sky | `#91b8c5` | Wave dividers, shell icons |
+| Candlelit | Evening glow, bokeh lights | `#b88962` | Lanterns, gold dust specks |
+
+**When switching themes:**
+
+1. **Hero image**: update `hero.imageUrl` and `hero.imagePosition` in the `config` sheet.
+2. **Background**: set `body.background` to a matching gradient (examples below).
+3. **Accent usage**: update button or highlight colors in `styles.css` if you want the accent to shift with the theme.
+4. **Decorations**: swap supporting images in `/img` and update any `<img>` references in `index.html` (e.g., florals, dividers, icons).
+
+Example background gradients:
+
+- **Garden**
+  ```
+  radial-gradient(circle at 20% 10%, #fff4f6 0, transparent 55%),
+  linear-gradient(135deg, #fef7f9, #f7edf1 60%, #f2e6ec)
+  ```
+- **Coastal**
+  ```
+  radial-gradient(circle at 80% 0%, #e3f3f8 0, transparent 55%),
+  linear-gradient(180deg, #f8fbfc, #eef6f9 55%, #e5f0f4)
+  ```
+
+---
+
+## 6. Enhancement: Config-Driven Backgrounds (No UI)
 
 This enhancement lets you change the hero image and overall background purely via the `config` sheet. There is no in-page UI, which keeps the page simple and avoids client-side security concerns.
 
-### 5.1. Background Configuration Keys
+### 6.1. Background Configuration Keys
 
 Add the following keys to the `config` sheet:
 
@@ -145,7 +224,7 @@ Add the following keys to the `config` sheet:
 
 **Why this works:** the image URL and its position live together in the config, so there is no extra “mapping file.” Changing the sheet updates the display at page load.
 
-### 5.2. Host Images on Google Cloud Storage (GCS)
+### 6.2. Host Images on Google Cloud Storage (GCS)
 
 1. **Create a bucket**
    - In Google Cloud Console → **Storage** → **Buckets** → **Create**.
@@ -160,7 +239,7 @@ Add the following keys to the `config` sheet:
      `https://storage.googleapis.com/<bucket>/<file>`
    - Paste this URL into `hero.imageUrl` in the `config` sheet.
 
-### 5.3. Choose the Image Focal Point
+### 6.3. Choose the Image Focal Point
 
 To keep the important part of the image visible, set `hero.imagePosition` in the sheet:
 
@@ -170,7 +249,7 @@ To keep the important part of the image visible, set `hero.imagePosition` in the
 
 If a face or couple is in the image, adjust the percentages so the subject stays centered on mobile.
 
-### 5.4. Optional Body Background Control
+### 6.4. Optional Body Background Control
 
 To override the page background, set `body.background` to a valid CSS background string:
 
@@ -182,7 +261,7 @@ linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)
 
 Leave the cell empty to use the default design.
 
-### 5.5. Implementation Notes (for future code work)
+### 6.5. Implementation Notes (for future code work)
 
 - The hero image currently uses an `<img>` in `index.html`. You can continue to use it and apply `object-position` using `hero.imagePosition`.
 - Alternatively, convert the hero to a CSS background layer and apply `hero.imageUrl` and `hero.imagePosition` as CSS variables.
