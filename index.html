@@ -359,6 +359,20 @@
         transform: scaleY(-1);
       }
 
+      .botanical-corner-blend {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .botanical-corner-blend::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, transparent 20%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.95) 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
 
       @media (max-width: 640px) {
         .decorative-tree {
@@ -542,14 +556,14 @@
           <img
             src="img/botanical-corner.svg"
             alt=""
-            class="decorative-svg decorative-corner-flip-vertical absolute top-6 left-6 w-32 h-32 pointer-events-none opacity-18"
+            class="botanical-corner-blend decorative-svg decorative-corner-flip-vertical absolute top-6 left-6 w-32 h-32 pointer-events-none opacity-18"
             loading="lazy"
             aria-hidden="true"
           />
           <img
             src="img/botanical-corner.svg"
             alt=""
-            class="decorative-svg decorative-corner-flip absolute bottom-6 right-6 w-32 h-32 pointer-events-none opacity-18"
+            class="botanical-corner-blend decorative-svg decorative-corner-flip absolute bottom-6 right-6 w-32 h-32 pointer-events-none opacity-18"
             loading="lazy"
             aria-hidden="true"
           />
@@ -660,7 +674,7 @@
           <img
             src="img/botanical-corner.svg"
             alt=""
-            class="decorative-svg decorative-corner-flip absolute bottom-4 right-4 w-32 h-32 pointer-events-none opacity-20"
+            class="botanical-corner-blend decorative-svg decorative-corner-flip absolute bottom-4 right-4 w-32 h-32 pointer-events-none opacity-20"
             loading="lazy"
             aria-hidden="true"
           />
