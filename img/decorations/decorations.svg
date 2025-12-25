@@ -132,4 +132,57 @@
     <path d="M55 55L55 35" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
     <circle cx="55" cy="55" r="2.5" fill="var(--deco-3, #d6b48a)" />
   </symbol>
+
+  <symbol id="forest-leaf-branch" viewBox="0 0 200 120">
+    <path d="M10 100C60 70 110 60 190 20" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.4" stroke-linecap="round" fill="none" />
+    <path d="M52 78C42 62 45 46 62 34" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M82 64C70 50 70 36 88 24" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M112 50C98 38 98 24 120 16" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M142 38C128 28 130 16 152 10" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+  </symbol>
+
+  <symbol id="botanical-wreath" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="68" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.4" fill="none" />
+    <path d="M52 76C38 70 32 58 34 44C46 52 60 54 72 52" stroke="var(--sage, #9cbca8)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M148 76C162 70 168 58 166 44C154 52 140 54 128 52" stroke="var(--sage, #9cbca8)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M58 132C40 134 28 144 28 160C44 150 60 148 74 150" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M142 132C160 134 172 144 172 160C156 150 140 148 126 150" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </symbol>
+
+  <symbol id="line-frame-elegant" viewBox="0 0 240 140">
+    <rect x="12" y="12" width="216" height="116" rx="18" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.4" fill="none" />
+    <path d="M28 26H70" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M170 26H212" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M28 114H70" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M170 114H212" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M120 12V30" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+    <path d="M120 110V128" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+  </symbol>
+
+  <symbol id="floral-ornament" viewBox="0 0 180 80">
+    <path d="M20 50C45 40 70 40 90 48C110 56 135 56 160 46" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.4" stroke-linecap="round" fill="none" />
+    <path d="M76 40C70 30 76 18 90 14C104 18 110 30 104 40" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <path d="M66 52C60 44 60 34 66 28" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+    <path d="M114 52C120 44 120 34 114 28" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+  </symbol>
+
+  <symbol id="organic-flow" viewBox="0 0 220 120">
+    <path d="M12 80C52 30 110 30 150 70C170 90 196 94 208 78" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.4" stroke-linecap="round" fill="none" />
+    <path d="M20 96C54 58 106 56 136 86C152 102 176 108 200 98" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+    <path d="M40 40C60 28 82 28 100 36" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+  </symbol>
+
+  <symbol id="corner-sprig" viewBox="0 0 120 120">
+    <path d="M12 108C40 80 64 60 108 12" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.4" stroke-linecap="round" fill="none" />
+    <path d="M40 86C32 74 34 60 48 50" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M58 68C50 58 52 44 68 36" stroke="var(--sage, #9cbca8)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M78 50C70 40 72 30 88 24" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+  </symbol>
+
+  <symbol id="section-divider-leaves" viewBox="0 0 280 50">
+    <path d="M10 26C60 10 120 10 160 26C200 42 230 42 270 26" stroke="var(--dusty-blue, #a8becd)" stroke-width="1.4" stroke-linecap="round" fill="none" />
+    <path d="M118 24C112 18 114 12 124 10" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+    <path d="M162 24C168 18 166 12 156 10" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+    <path d="M138 30C134 24 136 18 144 16" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+  </symbol>
 </svg>
