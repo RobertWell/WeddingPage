@@ -333,6 +333,15 @@
         mix-blend-mode: multiply;
       }
 
+      .decorative-corner-flip {
+        transform: scaleX(-1);
+      }
+
+      .decorative-corner-flip-vertical {
+        transform: scaleY(-1);
+      }
+
+
       @media (max-width: 640px) {
         .decorative-tree {
           opacity: 0.38;
@@ -513,9 +522,16 @@
         <!-- New couple introduction card -->
         <section id="couple" class="grain leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <img
-            src="img/botanical-corner-secondary.png"
+            src="img/botanical-corner.svg"
             alt=""
-            class="decorative-svg absolute bottom-4 right-4 w-36 h-36 pointer-events-none opacity-18"
+            class="decorative-svg decorative-corner-flip-vertical absolute top-6 left-6 w-32 h-32 pointer-events-none opacity-18"
+            loading="lazy"
+            aria-hidden="true"
+          />
+          <img
+            src="img/botanical-corner.svg"
+            alt=""
+            class="decorative-svg decorative-corner-flip absolute bottom-6 right-6 w-32 h-32 pointer-events-none opacity-18"
             loading="lazy"
             aria-hidden="true"
           />
@@ -623,9 +639,9 @@
         <!-- RSVP / survey section -->
         <section id="survey" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <img
-            src="img/botanical-corner-secondary.png"
+            src="img/botanical-corner.svg"
             alt=""
-            class="decorative-svg absolute top-4 left-4 w-32 h-32 pointer-events-none opacity-20"
+            class="decorative-svg decorative-corner-flip absolute bottom-4 right-4 w-32 h-32 pointer-events-none opacity-20"
             loading="lazy"
             aria-hidden="true"
           />
