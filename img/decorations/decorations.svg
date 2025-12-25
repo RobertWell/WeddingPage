@@ -1,101 +1,83 @@
 <svg xmlns="http://www.w3.org/2000/svg" fill="none">
   <symbol id="hero-wash" viewBox="0 0 1200 800">
-    <defs>
-      <filter id="hero-wash-blur">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
-      </filter>
-    </defs>
-    <g filter="url(#hero-wash-blur)">
-      <ellipse cx="200" cy="150" rx="280" ry="220" fill="var(--wash-1, #e6f6e7)" opacity="0.9" />
-      <ellipse cx="900" cy="100" rx="320" ry="280" fill="var(--wash-2, #f2e2c8)" opacity="0.8" />
-      <ellipse cx="600" cy="500" rx="380" ry="300" fill="var(--wash-3, #cfedd5)" opacity="0.6" />
-      <ellipse cx="1000" cy="600" rx="280" ry="240" fill="var(--wash-4, #e8f4dd)" opacity="0.7" />
-    </g>
+    <path d="M40 420C220 240 420 220 640 360C760 440 920 460 1160 380L1160 800H40Z" fill="var(--wash-1, #dfead6)" opacity="0.45" />
+    <path d="M0 260C180 80 420 70 660 200C820 290 980 310 1200 240L1200 800H0Z" fill="var(--wash-2, #e8dcc8)" opacity="0.35" />
+    <path d="M140 560C340 420 520 410 760 520C900 590 1040 600 1200 560L1200 800H140Z" fill="var(--wash-3, #d7e6d0)" opacity="0.4" />
   </symbol>
 
   <symbol id="couple-corner-left" viewBox="0 0 120 120">
-    <path d="M10 10Q30 40 15 70Q8 50 10 10Z" fill="var(--deco-1, #78c48c)" />
-    <path d="M15 15Q45 25 65 18Q40 12 15 15Z" fill="var(--deco-2, #c4dbb8)" />
-    <circle cx="20" cy="25" r="2.5" fill="var(--deco-3, #d6b48a)" />
-    <circle cx="35" cy="18" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
-    <circle cx="28" cy="32" r="1.5" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
+    <path d="M14 94C38 74 62 54 106 14" stroke="var(--deco-1, #6f8f6f)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5" />
+    <path d="M44 72C36 62 36 48 48 38" stroke="var(--deco-2, #93ab89)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M70 50C62 42 64 30 80 22" stroke="var(--deco-2, #93ab89)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
   </symbol>
 
   <symbol id="couple-corner-right" viewBox="0 0 120 120">
-    <path d="M110 10Q90 40 105 70Q112 50 110 10Z" fill="var(--deco-1, #78c48c)" />
-    <path d="M105 15Q75 25 55 18Q80 12 105 15Z" fill="var(--deco-2, #c4dbb8)" />
-    <circle cx="100" cy="25" r="2.5" fill="var(--deco-3, #d6b48a)" />
-    <circle cx="85" cy="18" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <path d="M106 94C82 74 58 54 14 14" stroke="var(--deco-1, #6f8f6f)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5" />
+    <path d="M76 72C84 62 84 48 72 38" stroke="var(--deco-2, #93ab89)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M50 50C58 42 56 30 40 22" stroke="var(--deco-2, #93ab89)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
   </symbol>
 
   <symbol id="couple-breeze" viewBox="0 0 100 100">
-    <path d="M20 80Q50 50 80 80" stroke="var(--deco-1, #78c48c)" stroke-width="1.5" fill="none" opacity="0.6" />
-    <path d="M30 85Q50 65 70 85" stroke="var(--deco-3, #d6b48a)" stroke-width="1" fill="none" opacity="0.8" />
-    <circle cx="50" cy="60" r="3" fill="var(--deco-2, #c4dbb8)" opacity="0.5" />
-    <circle cx="65" cy="75" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.4" />
-    <circle cx="35" cy="75" r="2" fill="var(--deco-2, #c4dbb8)" opacity="0.4" />
+    <path d="M20 82L34 52L50 82Z" fill="var(--deco-2, #93ab89)" opacity="0.5" />
+    <rect x="44" y="78" width="6" height="10" rx="2" fill="var(--deco-1, #6f8f6f)" opacity="0.5" />
+    <path d="M56 84L66 60L78 84Z" fill="var(--deco-2, #93ab89)" opacity="0.45" />
+    <rect x="68" y="82" width="5" height="8" rx="2" fill="var(--deco-1, #6f8f6f)" opacity="0.45" />
   </symbol>
 
   <symbol id="divider-couple" viewBox="0 0 260 48">
-    <path d="M10 28C60 8 120 8 170 28 200 42 230 42 250 28" stroke="var(--accent, #d6b48a)" stroke-width="2" stroke-linecap="round" />
-    <circle cx="130" cy="18" r="4" fill="var(--primary, #228b5c)" />
-    <circle cx="90" cy="24" r="3" fill="var(--deco-2, #c4dbb8)" />
-    <circle cx="170" cy="24" r="3" fill="var(--deco-1, #78c48c)" />
+    <path d="M10 30C60 10 110 12 160 30 190 42 220 42 250 30" stroke="var(--accent, #d6b48a)" stroke-width="2" stroke-linecap="round" />
+    <path d="M88 26C84 18 86 10 96 6" stroke="var(--deco-2, #93ab89)" stroke-width="2" stroke-linecap="round" fill="none" />
+    <path d="M170 26C174 18 172 10 162 6" stroke="var(--deco-2, #93ab89)" stroke-width="2" stroke-linecap="round" fill="none" />
   </symbol>
 
   <symbol id="location-wash" viewBox="0 0 200 200">
-    <defs>
-      <filter id="location-wash-blur">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
-      </filter>
-    </defs>
-    <ellipse cx="150" cy="50" rx="80" ry="60" fill="var(--wash-1, #e6f6e7)" filter="url(#location-wash-blur)" />
-    <ellipse cx="120" cy="80" rx="60" ry="50" fill="var(--deco-2, #c4dbb8)" filter="url(#location-wash-blur)" opacity="0.7" />
+    <path d="M20 160C40 100 80 70 120 70C160 70 190 100 200 140" stroke="var(--wash-1, #e3e8f0)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M40 170C60 120 100 98 140 98C170 98 190 114 200 130" stroke="var(--deco-2, #c7d2e4)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5" />
+    <path d="M70 40V120" stroke="var(--deco-3, #d6c5aa)" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+    <path d="M110 30V118" stroke="var(--deco-3, #d6c5aa)" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+    <path d="M150 50V130" stroke="var(--deco-3, #d6c5aa)" stroke-width="2" stroke-linecap="round" opacity="0.35" />
   </symbol>
 
   <symbol id="location-garland" viewBox="0 0 160 160">
-    <path d="M15 120Q40 80 30 40Q55 65 70 55Q60 95 85 110Q55 105 40 120Z" fill="var(--deco-2, #c4dbb8)" />
-    <path d="M60 130Q85 105 120 110Q95 120 110 145Q85 135 60 130Z" fill="var(--deco-2, #c4dbb8)" opacity="0.8" />
-    <circle cx="45" cy="78" r="3" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
-    <circle cx="95" cy="112" r="2.5" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
-    <circle cx="70" cy="98" r="2" fill="var(--deco-1, #78c48c)" opacity="0.5" />
+    <path d="M20 120C40 80 80 60 120 72C140 78 150 92 154 110" stroke="var(--deco-1, #c2cbd8)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M30 130C50 96 84 82 118 92C132 96 144 106 150 120" stroke="var(--deco-2, #c7d2e4)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.45" />
+    <path d="M44 40V96" stroke="var(--deco-3, #d6c5aa)" stroke-width="2.4" stroke-linecap="round" opacity="0.5" />
+    <path d="M70 32V90" stroke="var(--deco-3, #d6c5aa)" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+    <path d="M96 44V100" stroke="var(--deco-3, #d6c5aa)" stroke-width="2" stroke-linecap="round" opacity="0.35" />
   </symbol>
 
   <symbol id="location-breeze" viewBox="0 0 120 120">
-    <path d="M10 70Q45 40 90 60" stroke="var(--deco-1, #78c48c)" stroke-width="1.5" fill="none" opacity="0.6" />
-    <path d="M20 85Q60 60 110 78" stroke="var(--deco-3, #d6b48a)" stroke-width="1" fill="none" opacity="0.5" />
-    <circle cx="50" cy="58" r="3" fill="var(--deco-2, #c4dbb8)" opacity="0.5" />
-    <circle cx="85" cy="72" r="2.2" fill="var(--deco-3, #d6b48a)" opacity="0.4" />
+    <path d="M10 74C36 50 70 46 108 66" stroke="var(--deco-1, #c2cbd8)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M16 90C44 70 78 66 110 82" stroke="var(--deco-2, #c7d2e4)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.5" />
   </symbol>
 
   <symbol id="divider-survey" viewBox="0 0 260 48">
-    <path d="M10 20C70 42 120 42 180 20 210 8 235 8 250 20" stroke="var(--accent, #d6b48a)" stroke-width="2" stroke-linecap="round" />
-    <circle cx="130" cy="30" r="4" fill="var(--primary, #228b5c)" />
-    <circle cx="95" cy="26" r="3" fill="var(--deco-2, #c4dbb8)" />
-    <circle cx="165" cy="26" r="3" fill="var(--deco-1, #78c48c)" />
+    <path d="M12 24H248" stroke="var(--accent, #d6b48a)" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="130" cy="24" r="3" fill="var(--accent, #d6b48a)" opacity="0.7" />
+    <circle cx="100" cy="24" r="2" fill="var(--accent, #d6b48a)" opacity="0.5" />
+    <circle cx="160" cy="24" r="2" fill="var(--accent, #d6b48a)" opacity="0.5" />
   </symbol>
 
   <symbol id="survey-corner" viewBox="0 0 150 150">
-    <path d="M10 140Q35 110 25 80Q15 100 10 140Z" fill="var(--deco-2, #c4dbb8)" />
-    <path d="M20 135Q50 120 75 130Q45 128 20 135Z" fill="var(--deco-2, #c4dbb8)" opacity="0.8" />
-    <circle cx="30" cy="120" r="3" fill="var(--deco-3, #d6b48a)" />
-    <circle cx="45" cy="125" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
-    <circle cx="18" cy="128" r="1.5" fill="var(--deco-1, #78c48c)" opacity="0.5" />
+    <path d="M20 130H90" stroke="var(--deco-2, #c7cfd8)" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M20 130V60" stroke="var(--deco-2, #c7cfd8)" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="20" cy="130" r="2.5" fill="var(--deco-3, #d6c5aa)" opacity="0.6" />
   </symbol>
 
   <symbol id="survey-dots" viewBox="0 0 80 80">
-    <circle cx="20" cy="20" r="3.5" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
-    <circle cx="50" cy="30" r="2.5" fill="var(--deco-2, #c4dbb8)" opacity="0.6" />
-    <circle cx="60" cy="50" r="3" fill="var(--deco-1, #78c48c)" opacity="0.5" />
-    <circle cx="35" cy="60" r="2" fill="var(--deco-2, #c4dbb8)" opacity="0.6" />
-    <path d="M25 25Q40 35 55 28" stroke="var(--deco-3, #d6b48a)" stroke-width="1" fill="none" opacity="0.5" />
+    <circle cx="18" cy="18" r="2.5" fill="var(--deco-3, #d6c5aa)" opacity="0.6" />
+    <circle cx="40" cy="24" r="1.8" fill="var(--deco-2, #c7cfd8)" opacity="0.5" />
+    <circle cx="58" cy="36" r="2.2" fill="var(--deco-3, #d6c5aa)" opacity="0.45" />
+    <circle cx="30" cy="54" r="1.6" fill="var(--deco-2, #c7cfd8)" opacity="0.5" />
   </symbol>
 
   <symbol id="divider-invitation" viewBox="0 0 260 48">
-    <path d="M10 24C60 4 120 4 170 24 200 36 230 36 250 24" stroke="var(--accent, #d6b48a)" stroke-width="2" stroke-linecap="round" />
-    <circle cx="130" cy="14" r="4" fill="var(--primary, #228b5c)" />
-    <circle cx="95" cy="20" r="3" fill="var(--deco-2, #c4dbb8)" />
-    <circle cx="165" cy="20" r="3" fill="var(--deco-1, #78c48c)" />
+    <path d="M12 26C60 10 118 10 168 26 198 36 226 36 248 26" stroke="var(--accent, #d6b48a)" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M124 18C116 12 116 6 126 6C136 6 136 12 128 18Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M136 30C130 24 130 18 138 16C146 18 146 24 140 30Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <circle cx="96" cy="20" r="2.2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="166" cy="20" r="2.2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="150" cy="14" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.45" />
   </symbol>
 
   <symbol id="invitation-wash" viewBox="0 0 600 420">
@@ -104,33 +86,37 @@
         <feGaussianBlur in="SourceGraphic" stdDeviation="35" />
       </filter>
     </defs>
-    <ellipse cx="180" cy="168" rx="220" ry="170" fill="var(--invite-1, #e6f6e7)" filter="url(#invitation-wash-blur)" />
-    <ellipse cx="420" cy="252" rx="200" ry="160" fill="var(--invite-2, #f3e4cc)" filter="url(#invitation-wash-blur)" />
-    <ellipse cx="300" cy="84" rx="150" ry="120" fill="var(--invite-3, #cfebc8)" filter="url(#invitation-wash-blur)" opacity="0.55" />
+    <ellipse cx="170" cy="160" rx="230" ry="170" fill="var(--invite-1, #f1e5d6)" filter="url(#invitation-wash-blur)" />
+    <ellipse cx="430" cy="250" rx="210" ry="150" fill="var(--invite-2, #f7e9d1)" filter="url(#invitation-wash-blur)" opacity="0.9" />
+    <ellipse cx="320" cy="90" rx="160" ry="110" fill="var(--invite-3, #f3e1c7)" filter="url(#invitation-wash-blur)" opacity="0.6" />
   </symbol>
 
   <symbol id="invitation-corner-tl" viewBox="0 0 60 60">
-    <path d="M5 5L25 5" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
-    <path d="M5 5L5 25" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
-    <circle cx="5" cy="5" r="2.5" fill="var(--deco-3, #d6b48a)" />
+    <path d="M8 14C16 10 22 12 26 20C20 24 14 24 8 14Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M10 28C18 24 24 26 28 34C22 38 16 38 10 28Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <circle cx="14" cy="10" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="26" cy="18" r="1.2" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
   </symbol>
 
   <symbol id="invitation-corner-tr" viewBox="0 0 60 60">
-    <path d="M55 5L35 5" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
-    <path d="M55 5L55 25" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
-    <circle cx="55" cy="5" r="2.5" fill="var(--deco-3, #d6b48a)" />
+    <path d="M52 14C44 10 38 12 34 20C40 24 46 24 52 14Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M50 28C42 24 36 26 32 34C38 38 44 38 50 28Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <circle cx="46" cy="10" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="34" cy="18" r="1.2" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
   </symbol>
 
   <symbol id="invitation-corner-bl" viewBox="0 0 60 60">
-    <path d="M5 55L25 55" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
-    <path d="M5 55L5 35" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
-    <circle cx="5" cy="55" r="2.5" fill="var(--deco-3, #d6b48a)" />
+    <path d="M8 46C16 42 22 44 26 52C20 56 14 56 8 46Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M10 32C18 28 24 30 28 38C22 42 16 42 10 32Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <circle cx="14" cy="50" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="26" cy="42" r="1.2" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
   </symbol>
 
   <symbol id="invitation-corner-br" viewBox="0 0 60 60">
-    <path d="M55 55L35 55" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
-    <path d="M55 55L55 35" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
-    <circle cx="55" cy="55" r="2.5" fill="var(--deco-3, #d6b48a)" />
+    <path d="M52 46C44 42 38 44 34 52C40 56 46 56 52 46Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M50 32C42 28 36 30 32 38C38 42 44 42 50 32Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <circle cx="46" cy="50" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="34" cy="42" r="1.2" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
   </symbol>
 
   <symbol id="forest-leaf-branch" viewBox="0 0 200 120">
@@ -184,5 +170,299 @@
     <path d="M118 24C112 18 114 12 124 10" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
     <path d="M162 24C168 18 166 12 156 10" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
     <path d="M138 30C134 24 136 18 144 16" stroke="var(--sage, #9cbca8)" stroke-width="1.1" stroke-linecap="round" fill="none" />
+  </symbol>
+
+  <symbol id="garden-hero-wash" viewBox="0 0 1200 800">
+    <path d="M30 460C220 260 440 220 660 360C820 460 1000 500 1180 420L1180 800H30Z" fill="var(--wash-1, #fdeff5)" opacity="0.5" />
+    <path d="M0 300C200 140 420 120 680 230C860 310 1020 330 1200 270L1200 800H0Z" fill="var(--wash-2, #f5e6ee)" opacity="0.35" />
+    <path d="M160 580C360 440 520 430 760 520C900 580 1040 590 1200 560L1200 800H160Z" fill="var(--wash-3, #f0dbe7)" opacity="0.4" />
+  </symbol>
+
+  <symbol id="garden-couple-corner-left" viewBox="0 0 120 120">
+    <path d="M14 102C34 78 54 58 100 14" stroke="var(--deco-2, #f6d6e5)" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.5" />
+    <path d="M34 84C30 70 38 58 52 52C54 66 46 76 34 84Z" fill="var(--deco-1, #d7a3b2)" opacity="0.7" />
+    <path d="M58 64C54 50 62 38 76 32C78 46 70 56 58 64Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="garden-couple-corner-right" viewBox="0 0 120 120">
+    <path d="M106 102C86 78 66 58 20 14" stroke="var(--deco-2, #f6d6e5)" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.5" />
+    <path d="M86 84C90 70 82 58 68 52C66 66 74 76 86 84Z" fill="var(--deco-1, #d7a3b2)" opacity="0.7" />
+    <path d="M62 64C66 50 58 38 44 32C42 46 50 56 62 64Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="garden-couple-breeze" viewBox="0 0 100 100">
+    <path d="M22 78C32 68 46 64 60 70C54 80 40 84 22 78Z" fill="var(--deco-2, #f6d6e5)" opacity="0.6" />
+    <path d="M44 84C52 74 66 70 80 76C74 86 60 90 44 84Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+    <circle cx="36" cy="62" r="2.2" fill="var(--deco-3, #caa7b5)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="garden-divider-couple" viewBox="0 0 260 48">
+    <path d="M12 30C60 12 110 12 160 30 190 42 220 42 248 30" stroke="var(--accent, #d7a3b2)" stroke-width="2" stroke-linecap="round" />
+    <path d="M118 20C114 14 116 8 124 6C132 8 134 14 130 20Z" fill="var(--deco-2, #f6d6e5)" opacity="0.7" />
+    <path d="M140 20C136 14 138 8 146 6C154 8 156 14 152 20Z" fill="var(--deco-1, #d7a3b2)" opacity="0.7" />
+  </symbol>
+
+  <symbol id="garden-location-wash" viewBox="0 0 200 200">
+    <path d="M20 150C60 90 110 70 160 80C182 84 196 96 200 120" fill="none" stroke="var(--wash-2, #f5e6ee)" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+    <path d="M36 166C70 120 112 106 150 112C170 116 184 126 192 140" fill="none" stroke="var(--wash-3, #f0dbe7)" stroke-width="4" stroke-linecap="round" opacity="0.5" />
+    <circle cx="70" cy="70" r="6" fill="var(--deco-2, #f6d6e5)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="garden-location-garland" viewBox="0 0 160 160">
+    <path d="M18 120C44 86 82 70 120 80C138 86 150 98 156 114" stroke="var(--deco-2, #f6d6e5)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M40 104C36 92 44 82 58 78C60 90 52 100 40 104Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+    <path d="M86 96C82 84 90 74 104 70C106 82 98 92 86 96Z" fill="var(--deco-1, #d7a3b2)" opacity="0.55" />
+  </symbol>
+
+  <symbol id="garden-location-breeze" viewBox="0 0 120 120">
+    <path d="M10 74C36 52 72 46 110 64" stroke="var(--deco-2, #f6d6e5)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M20 90C48 72 80 68 110 82" stroke="var(--deco-1, #d7a3b2)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="garden-divider-survey" viewBox="0 0 260 48">
+    <path d="M12 24H248" stroke="var(--accent, #d7a3b2)" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="130" cy="24" r="3" fill="var(--deco-2, #f6d6e5)" opacity="0.7" />
+    <circle cx="100" cy="24" r="2" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+    <circle cx="160" cy="24" r="2" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="garden-survey-corner" viewBox="0 0 150 150">
+    <path d="M22 128H92" stroke="var(--deco-2, #f6d6e5)" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M22 128V56" stroke="var(--deco-2, #f6d6e5)" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="22" cy="128" r="2.5" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="garden-survey-dots" viewBox="0 0 80 80">
+    <circle cx="18" cy="18" r="2.4" fill="var(--deco-2, #f6d6e5)" opacity="0.6" />
+    <circle cx="38" cy="24" r="1.8" fill="var(--deco-1, #d7a3b2)" opacity="0.5" />
+    <circle cx="58" cy="36" r="2.2" fill="var(--deco-2, #f6d6e5)" opacity="0.5" />
+    <circle cx="30" cy="54" r="1.6" fill="var(--deco-1, #d7a3b2)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="garden-divider-invitation" viewBox="0 0 260 48">
+    <path d="M12 26C60 10 118 10 168 26 198 36 226 36 248 26" stroke="var(--accent, #d7a3b2)" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M124 18C116 12 116 6 126 6C136 6 136 12 128 18Z" fill="var(--deco-2, #f6d6e5)" opacity="0.7" />
+    <path d="M136 30C130 24 130 18 138 16C146 18 146 24 140 30Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="garden-invitation-wash" viewBox="0 0 600 420">
+    <path d="M40 320C140 200 270 180 380 230C460 266 520 300 560 300L560 420H40Z" fill="var(--invite-1, #fff0f6)" opacity="0.6" />
+    <path d="M0 220C120 120 260 110 400 180C480 220 540 240 600 230L600 420H0Z" fill="var(--invite-2, #f7e3ee)" opacity="0.45" />
+    <path d="M140 360C220 300 320 300 420 340C470 360 520 370 600 360L600 420H140Z" fill="var(--invite-3, #f0dbe7)" opacity="0.45" />
+  </symbol>
+
+  <symbol id="garden-invitation-corner-tl" viewBox="0 0 60 60">
+    <path d="M8 16C18 10 26 12 30 22C22 26 14 26 8 16Z" fill="var(--deco-2, #f6d6e5)" opacity="0.7" />
+    <path d="M12 30C22 24 30 26 34 36C26 40 18 40 12 30Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+    <circle cx="14" cy="12" r="1.6" fill="var(--deco-3, #caa7b5)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="garden-invitation-corner-tr" viewBox="0 0 60 60">
+    <path d="M52 16C42 10 34 12 30 22C38 26 46 26 52 16Z" fill="var(--deco-2, #f6d6e5)" opacity="0.7" />
+    <path d="M48 30C38 24 30 26 26 36C34 40 42 40 48 30Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+    <circle cx="46" cy="12" r="1.6" fill="var(--deco-3, #caa7b5)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="garden-invitation-corner-bl" viewBox="0 0 60 60">
+    <path d="M8 44C18 38 26 40 30 50C22 54 14 54 8 44Z" fill="var(--deco-2, #f6d6e5)" opacity="0.7" />
+    <path d="M12 30C22 24 30 26 34 36C26 40 18 40 12 30Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+    <circle cx="14" cy="48" r="1.6" fill="var(--deco-3, #caa7b5)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="garden-invitation-corner-br" viewBox="0 0 60 60">
+    <path d="M52 44C42 38 34 40 30 50C38 54 46 54 52 44Z" fill="var(--deco-2, #f6d6e5)" opacity="0.7" />
+    <path d="M48 30C38 24 30 26 26 36C34 40 42 40 48 30Z" fill="var(--deco-1, #d7a3b2)" opacity="0.6" />
+    <circle cx="46" cy="48" r="1.6" fill="var(--deco-3, #caa7b5)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="coastal-hero-wash" viewBox="0 0 1200 800">
+    <path d="M0 420C200 360 420 360 660 420C860 470 1040 470 1200 420L1200 800H0Z" fill="var(--wash-1, #eaf6fa)" opacity="0.5" />
+    <path d="M0 300C220 240 460 240 700 300C900 350 1060 350 1200 310L1200 800H0Z" fill="var(--wash-2, #e3f0f6)" opacity="0.4" />
+    <path d="M0 560C240 520 520 520 760 560C940 590 1080 590 1200 560L1200 800H0Z" fill="var(--wash-3, #e0ecf2)" opacity="0.4" />
+  </symbol>
+
+  <symbol id="coastal-couple-corner-left" viewBox="0 0 120 120">
+    <path d="M10 90C28 70 46 60 66 60C80 60 92 64 104 70" stroke="var(--deco-2, #b8d6e0)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M22 72C34 58 52 54 72 58" stroke="var(--deco-1, #91b8c5)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="coastal-couple-corner-right" viewBox="0 0 120 120">
+    <path d="M110 90C92 70 74 60 54 60C40 60 28 64 16 70" stroke="var(--deco-2, #b8d6e0)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M98 72C86 58 68 54 48 58" stroke="var(--deco-1, #91b8c5)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="coastal-couple-breeze" viewBox="0 0 100 100">
+    <path d="M10 70C32 54 58 54 90 70" stroke="var(--deco-2, #b8d6e0)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M20 82C42 70 62 70 86 82" stroke="var(--deco-1, #91b8c5)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="coastal-divider-couple" viewBox="0 0 260 48">
+    <path d="M12 28C60 18 110 18 160 28 196 36 226 36 248 28" stroke="var(--accent, #91b8c5)" stroke-width="2" stroke-linecap="round" />
+    <path d="M108 22C118 14 132 14 142 22" stroke="var(--deco-2, #b8d6e0)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+  </symbol>
+
+  <symbol id="coastal-location-wash" viewBox="0 0 200 200">
+    <path d="M0 140C40 100 90 90 140 100C170 106 190 118 200 136" stroke="var(--wash-2, #e3f0f6)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M10 160C50 130 96 122 140 130C164 134 184 144 200 158" stroke="var(--wash-3, #e0ecf2)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="coastal-location-garland" viewBox="0 0 160 160">
+    <path d="M10 120C40 92 82 82 120 90C140 94 152 104 160 118" stroke="var(--deco-2, #b8d6e0)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M22 132C52 108 86 104 118 110" stroke="var(--deco-1, #91b8c5)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="coastal-location-breeze" viewBox="0 0 120 120">
+    <path d="M8 70C36 50 70 48 112 66" stroke="var(--deco-2, #b8d6e0)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M18 86C46 70 78 68 112 82" stroke="var(--deco-1, #91b8c5)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="coastal-divider-survey" viewBox="0 0 260 48">
+    <path d="M12 24H248" stroke="var(--accent, #91b8c5)" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="130" cy="24" r="3" fill="var(--deco-2, #b8d6e0)" opacity="0.6" />
+    <circle cx="100" cy="24" r="2" fill="var(--deco-1, #91b8c5)" opacity="0.6" />
+    <circle cx="160" cy="24" r="2" fill="var(--deco-1, #91b8c5)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="coastal-survey-corner" viewBox="0 0 150 150">
+    <path d="M22 128H92" stroke="var(--deco-2, #b8d6e0)" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M22 128V56" stroke="var(--deco-2, #b8d6e0)" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="22" cy="128" r="2.5" fill="var(--deco-1, #91b8c5)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="coastal-survey-dots" viewBox="0 0 80 80">
+    <circle cx="18" cy="18" r="2.4" fill="var(--deco-2, #b8d6e0)" opacity="0.6" />
+    <circle cx="38" cy="24" r="1.8" fill="var(--deco-1, #91b8c5)" opacity="0.5" />
+    <circle cx="58" cy="36" r="2.2" fill="var(--deco-2, #b8d6e0)" opacity="0.5" />
+    <circle cx="30" cy="54" r="1.6" fill="var(--deco-1, #91b8c5)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="coastal-divider-invitation" viewBox="0 0 260 48">
+    <path d="M12 28C60 18 110 18 160 28 196 36 226 36 248 28" stroke="var(--accent, #91b8c5)" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M112 22C120 16 128 16 136 22" stroke="var(--deco-2, #b8d6e0)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+  </symbol>
+
+  <symbol id="coastal-invitation-wash" viewBox="0 0 600 420">
+    <path d="M0 300C140 240 300 240 460 300C520 320 560 330 600 320L600 420H0Z" fill="var(--invite-1, #eaf6fa)" opacity="0.6" />
+    <path d="M0 220C140 170 300 170 460 220C520 240 560 250 600 242L600 420H0Z" fill="var(--invite-2, #e0eef4)" opacity="0.45" />
+    <path d="M0 360C140 330 300 330 460 360C520 372 560 380 600 372L600 420H0Z" fill="var(--invite-3, #d6e8f0)" opacity="0.45" />
+  </symbol>
+
+  <symbol id="coastal-invitation-corner-tl" viewBox="0 0 60 60">
+    <path d="M8 18C18 12 28 12 38 18" stroke="var(--deco-2, #b8d6e0)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7" />
+    <path d="M10 30C20 26 30 26 40 30" stroke="var(--deco-1, #91b8c5)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.6" />
+  </symbol>
+
+  <symbol id="coastal-invitation-corner-tr" viewBox="0 0 60 60">
+    <path d="M52 18C42 12 32 12 22 18" stroke="var(--deco-2, #b8d6e0)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7" />
+    <path d="M50 30C40 26 30 26 20 30" stroke="var(--deco-1, #91b8c5)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.6" />
+  </symbol>
+
+  <symbol id="coastal-invitation-corner-bl" viewBox="0 0 60 60">
+    <path d="M8 42C18 36 28 36 38 42" stroke="var(--deco-2, #b8d6e0)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7" />
+    <path d="M10 30C20 26 30 26 40 30" stroke="var(--deco-1, #91b8c5)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.6" />
+  </symbol>
+
+  <symbol id="coastal-invitation-corner-br" viewBox="0 0 60 60">
+    <path d="M52 42C42 36 32 36 22 42" stroke="var(--deco-2, #b8d6e0)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7" />
+    <path d="M50 30C40 26 30 26 20 30" stroke="var(--deco-1, #91b8c5)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-hero-wash" viewBox="0 0 1200 800">
+    <path d="M0 420C220 260 440 240 660 340C820 420 980 460 1200 420L1200 800H0Z" fill="var(--wash-1, #fff0e6)" opacity="0.5" />
+    <path d="M0 300C220 170 440 160 700 240C860 290 1000 320 1200 280L1200 800H0Z" fill="var(--wash-2, #f8e0cf)" opacity="0.4" />
+    <path d="M120 560C320 440 520 430 760 520C900 580 1040 590 1200 560L1200 800H120Z" fill="var(--wash-3, #f2d6c2)" opacity="0.4" />
+  </symbol>
+
+  <symbol id="candlelit-couple-corner-left" viewBox="0 0 120 120">
+    <path d="M18 104C42 78 64 56 102 16" stroke="var(--deco-1, #b88962)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M36 86C32 68 42 54 58 50C62 68 52 80 36 86Z" fill="var(--deco-2, #ffd6b2)" opacity="0.6" />
+    <circle cx="50" cy="44" r="2" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-couple-corner-right" viewBox="0 0 120 120">
+    <path d="M102 104C78 78 56 56 18 16" stroke="var(--deco-1, #b88962)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M84 86C88 68 78 54 62 50C58 68 68 80 84 86Z" fill="var(--deco-2, #ffd6b2)" opacity="0.6" />
+    <circle cx="70" cy="44" r="2" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-couple-breeze" viewBox="0 0 100 100">
+    <path d="M20 80C36 64 58 62 80 72" stroke="var(--deco-1, #b88962)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+    <circle cx="46" cy="66" r="2.4" fill="var(--deco-2, #ffd6b2)" opacity="0.6" />
+    <circle cx="64" cy="72" r="1.8" fill="var(--deco-3, #d8aa82)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="candlelit-divider-couple" viewBox="0 0 260 48">
+    <path d="M12 30C60 12 110 12 160 30 190 42 220 42 248 30" stroke="var(--accent, #b88962)" stroke-width="2" stroke-linecap="round" />
+    <path d="M126 18C120 12 120 8 128 6C136 8 136 12 130 18Z" fill="var(--deco-2, #ffd6b2)" opacity="0.7" />
+  </symbol>
+
+  <symbol id="candlelit-location-wash" viewBox="0 0 200 200">
+    <path d="M20 160C60 110 110 90 160 100C182 106 196 120 200 140" stroke="var(--wash-2, #f8e0cf)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M40 176C76 132 116 120 152 126C172 130 186 142 196 156" stroke="var(--wash-3, #f2d6c2)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5" />
+    <path d="M70 60V120" stroke="var(--deco-3, #d8aa82)" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+    <path d="M110 50V118" stroke="var(--deco-3, #d8aa82)" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+  </symbol>
+
+  <symbol id="candlelit-location-garland" viewBox="0 0 160 160">
+    <path d="M16 120C44 88 84 74 120 82C140 86 152 98 160 114" stroke="var(--deco-1, #b88962)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <circle cx="48" cy="96" r="3.4" fill="var(--deco-2, #ffd6b2)" opacity="0.6" />
+    <circle cx="86" cy="90" r="2.8" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-location-breeze" viewBox="0 0 120 120">
+    <path d="M10 72C36 52 72 50 110 68" stroke="var(--deco-1, #b88962)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M18 88C46 72 80 70 112 84" stroke="var(--deco-2, #ffd6b2)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="candlelit-divider-survey" viewBox="0 0 260 48">
+    <path d="M12 24H248" stroke="var(--accent, #b88962)" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="130" cy="24" r="3" fill="var(--deco-2, #ffd6b2)" opacity="0.7" />
+    <circle cx="100" cy="24" r="2" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+    <circle cx="160" cy="24" r="2" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-survey-corner" viewBox="0 0 150 150">
+    <path d="M22 128H92" stroke="var(--deco-2, #ffd6b2)" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M22 128V56" stroke="var(--deco-2, #ffd6b2)" stroke-width="1.6" stroke-linecap="round" />
+    <circle cx="22" cy="128" r="2.5" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-survey-dots" viewBox="0 0 80 80">
+    <circle cx="18" cy="18" r="2.4" fill="var(--deco-2, #ffd6b2)" opacity="0.6" />
+    <circle cx="38" cy="24" r="1.8" fill="var(--deco-3, #d8aa82)" opacity="0.5" />
+    <circle cx="58" cy="36" r="2.2" fill="var(--deco-2, #ffd6b2)" opacity="0.5" />
+    <circle cx="30" cy="54" r="1.6" fill="var(--deco-3, #d8aa82)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="candlelit-divider-invitation" viewBox="0 0 260 48">
+    <path d="M12 26C60 10 118 10 168 26 198 36 226 36 248 26" stroke="var(--accent, #b88962)" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M124 18C116 12 116 6 126 6C136 6 136 12 128 18Z" fill="var(--deco-2, #ffd6b2)" opacity="0.7" />
+    <circle cx="150" cy="14" r="1.6" fill="var(--deco-3, #d8aa82)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="candlelit-invitation-wash" viewBox="0 0 600 420">
+    <path d="M40 320C140 200 270 180 380 230C460 266 520 300 560 300L560 420H40Z" fill="var(--invite-1, #fff0e6)" opacity="0.6" />
+    <path d="M0 220C120 120 260 110 400 180C480 220 540 240 600 230L600 420H0Z" fill="var(--invite-2, #f6dcc6)" opacity="0.45" />
+    <path d="M140 360C220 300 320 300 420 340C470 360 520 370 600 360L600 420H140Z" fill="var(--invite-3, #f0d2ba)" opacity="0.45" />
+  </symbol>
+
+  <symbol id="candlelit-invitation-corner-tl" viewBox="0 0 60 60">
+    <path d="M8 18C18 12 26 14 30 24C22 28 14 28 8 18Z" fill="var(--deco-2, #ffd6b2)" opacity="0.7" />
+    <circle cx="16" cy="14" r="1.6" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-invitation-corner-tr" viewBox="0 0 60 60">
+    <path d="M52 18C42 12 34 14 30 24C38 28 46 28 52 18Z" fill="var(--deco-2, #ffd6b2)" opacity="0.7" />
+    <circle cx="44" cy="14" r="1.6" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-invitation-corner-bl" viewBox="0 0 60 60">
+    <path d="M8 44C18 38 26 40 30 50C22 54 14 54 8 44Z" fill="var(--deco-2, #ffd6b2)" opacity="0.7" />
+    <circle cx="16" cy="48" r="1.6" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
+  </symbol>
+
+  <symbol id="candlelit-invitation-corner-br" viewBox="0 0 60 60">
+    <path d="M52 44C42 38 34 40 30 50C38 54 46 54 52 44Z" fill="var(--deco-2, #ffd6b2)" opacity="0.7" />
+    <circle cx="44" cy="48" r="1.6" fill="var(--deco-3, #d8aa82)" opacity="0.6" />
   </symbol>
 </svg>
