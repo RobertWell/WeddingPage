@@ -249,6 +249,22 @@
         z-index: -1;
       }
 
+      .gold-speckle {
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(circle at 12% 20%, rgb(var(--color-accent) / 0.35) 0 1.6px, transparent 2.6px),
+          radial-gradient(circle at 78% 18%, rgb(var(--color-accent) / 0.25) 0 1.2px, transparent 2.4px),
+          radial-gradient(circle at 35% 62%, rgb(var(--color-accent) / 0.3) 0 1.4px, transparent 2.6px),
+          radial-gradient(circle at 66% 70%, rgb(var(--color-accent) / 0.28) 0 1.1px, transparent 2.2px),
+          radial-gradient(circle at 22% 86%, rgb(var(--color-accent) / 0.26) 0 1.2px, transparent 2.4px);
+        background-size: 220px 220px;
+        opacity: 0.45;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+        z-index: 0;
+      }
+
       /* Hero styling */
       .hero-image {
         object-position: var(--hero-image-position);
@@ -692,7 +708,8 @@
     </header>
 
     <main class="relative z-10 -mt-16 px-4 pb-16 sm:px-6 lg:px-8">
-      <div class="mx-auto flex max-w-5xl flex-col gap-10">
+      <div class="gold-speckle" aria-hidden="true"></div>
+      <div class="relative z-10 mx-auto flex max-w-5xl flex-col gap-10">
         <!-- New couple introduction card -->
         <section id="couple" class="grain leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <img
@@ -749,6 +766,12 @@
             </div>
           </div>
         </section>
+
+        <div class="section-divider flex justify-center py-6 sm:py-8" aria-hidden="true">
+          <svg class="h-10 w-64" viewBox="0 0 260 48" fill="none">
+            <use data-decor-role="divider-couple" href="img/decorations/decorations.svg#divider-couple"></use>
+          </svg>
+        </div>
 
         <!-- Location and transportation details -->
         <section id="location" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12" style="overflow: visible;">
@@ -810,6 +833,12 @@
             </div>
           </div>
         </section>
+
+        <div class="section-divider flex justify-center py-6 sm:py-8" aria-hidden="true">
+          <svg class="h-10 w-64" viewBox="0 0 260 48" fill="none">
+            <use data-decor-role="divider-survey" href="img/decorations/decorations.svg#divider-survey"></use>
+          </svg>
+        </div>
 
         <!-- RSVP / survey section -->
         <section id="survey" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
@@ -903,6 +932,12 @@
             </p>
           </div>
         </section>
+
+        <div class="section-divider flex justify-center py-6 sm:py-8" aria-hidden="true">
+          <svg class="h-10 w-64" viewBox="0 0 260 48" fill="none">
+            <use data-decor-role="divider-invitation" href="img/decorations/decorations.svg#divider-invitation"></use>
+          </svg>
+        </div>
 
         <!-- Invitation card -->
         <section id="invitation" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
