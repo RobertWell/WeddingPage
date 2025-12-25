@@ -79,8 +79,8 @@
         --hero-image-position: 50% 50%;
         --hero-overlay-opacity: 1;
         --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        --leaf-pattern: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27280%27%20height%3D%27280%27%20fill%3D%27none%27%3E%3Ccircle%20cx%3D%2770%27%20cy%3D%2780%27%20r%3D%2728%27%20fill%3D%27rgba%28120%2C196%2C140%2C0.14%29%27%2F%3E%3Ccircle%20cx%3D%2790%27%20cy%3D%2772%27%20r%3D%2710%27%20fill%3D%27rgba%28214%2C180%2C138%2C0.18%29%27%2F%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2772%27%20r%3D%273%27%20fill%3D%27rgba%2868%2C74%2C60%2C0.18%29%27%2F%3E%3Cpath%20d%3D%27M50%20130c30-30%2070-30%20100%200-20%2024-80%2024-100%200z%27%20fill%3D%27rgba%28120%2C196%2C140%2C0.12%29%27%2F%3E%3Cpath%20d%3D%27M160%20190c20-18%2046-18%2066%200-16%2016-50%2016-66%200z%27%20fill%3D%27rgba%28196%2C219%2C184%2C0.12%29%27%2F%3E%3C%2Fsvg%3E");
-        --leaf-pattern-secondary: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%20fill%3D%27none%27%3E%3Cellipse%20cx%3D%2770%27%20cy%3D%27150%27%20rx%3D%2730%27%20ry%3D%2712%27%20fill%3D%27rgba%28120%2C196%2C140%2C0.12%29%27%2F%3E%3Cellipse%20cx%3D%27150%27%20cy%3D%2790%27%20rx%3D%2726%27%20ry%3D%2710%27%20fill%3D%27rgba%28214%2C180%2C138%2C0.14%29%27%2F%3E%3Ccircle%20cx%3D%2760%27%20cy%3D%2760%27%20r%3D%274%27%20fill%3D%27rgba%28196%2C219%2C184%2C0.2%29%27%2F%3E%3Ccircle%20cx%3D%27180%27%20cy%3D%27150%27%20r%3D%273%27%20fill%3D%27rgba%28120%2C196%2C140%2C0.16%29%27%2F%3E%3C%2Fsvg%3E");
+        --leaf-pattern: url("img/patterns/leaf-pattern-forest.svg");
+        --leaf-pattern-secondary: url("img/patterns/leaf-pattern-secondary-forest.svg");
       }
 
       * {
@@ -99,7 +99,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 400 400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        background-image: url("img/patterns/noise.svg");
         opacity: 0.5;
         pointer-events: none;
         mix-blend-mode: overlay;
@@ -284,6 +284,18 @@
 
       .decorative-svg {
         z-index: 0;
+        --deco-1: rgb(var(--color-deco-1));
+        --deco-2: rgb(var(--color-deco-2));
+        --deco-3: rgb(var(--color-deco-3));
+        --accent: rgb(var(--color-accent));
+        --primary: rgb(var(--color-primary));
+        --wash-1: rgb(var(--color-wash-1));
+        --wash-2: rgb(var(--color-wash-2));
+        --wash-3: rgb(var(--color-wash-3));
+        --wash-4: rgb(var(--color-wash-4));
+        --invite-1: rgb(var(--color-invite-1));
+        --invite-2: rgb(var(--color-invite-2));
+        --invite-3: rgb(var(--color-invite-3));
       }
 
       .content-layer {
@@ -345,18 +357,8 @@
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
       <!-- Watercolor wash background decoration -->
-      <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <filter id="watercolor-blur">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
-          </filter>
-        </defs>
-        <g filter="url(#watercolor-blur)">
-          <ellipse cx="200" cy="150" rx="280" ry="220" fill="rgb(var(--color-wash-1))" opacity="0.9"/>
-          <ellipse cx="900" cy="100" rx="320" ry="280" fill="rgb(var(--color-wash-2))" opacity="0.8"/>
-          <ellipse cx="600" cy="500" rx="380" ry="300" fill="rgb(var(--color-wash-3))" opacity="0.6"/>
-          <ellipse cx="1000" cy="600" rx="280" ry="240" fill="rgb(var(--color-wash-4))" opacity="0.7"/>
-        </g>
+      <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <use href="img/decorations/decorations.svg#hero-wash"></use>
       </svg>
 
       <div class="absolute inset-0">
@@ -479,27 +481,16 @@
         <!-- New couple introduction card -->
         <section id="couple" class="grain leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Spring petal corner decorations -->
-          <svg class="decorative-svg svg-float absolute top-0 left-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-            <path d="M10 10 Q30 40, 15 70 Q8 50, 10 10Z" fill="rgb(var(--color-deco-1))"/>
-            <path d="M15 15 Q45 25, 65 18 Q40 12, 15 15Z" fill="rgb(var(--color-deco-2))"/>
-            <circle cx="20" cy="25" r="2.5" fill="rgb(var(--color-deco-3))"/>
-            <circle cx="35" cy="18" r="2" fill="rgb(var(--color-deco-3))" opacity="0.7"/>
-            <circle cx="28" cy="32" r="1.5" fill="rgb(var(--color-deco-3))" opacity="0.5"/>
+          <svg class="decorative-svg svg-float absolute top-0 left-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#couple-corner-left"></use>
           </svg>
-          <svg class="decorative-svg svg-float absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-            <path d="M110 10 Q90 40, 105 70 Q112 50, 110 10Z" fill="rgb(var(--color-deco-1))"/>
-            <path d="M105 15 Q75 25, 55 18 Q80 12, 105 15Z" fill="rgb(var(--color-deco-2))"/>
-            <circle cx="100" cy="25" r="2.5" fill="rgb(var(--color-deco-3))"/>
-            <circle cx="85" cy="18" r="2" fill="rgb(var(--color-deco-3))" opacity="0.7"/>
+          <svg class="decorative-svg svg-float absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#couple-corner-right"></use>
           </svg>
 
           <!-- Spring breeze accent arcs -->
-          <svg class="decorative-svg svg-drift absolute bottom-8 right-8 w-32 h-32 pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <path d="M20 80 Q50 50, 80 80" stroke="rgb(var(--color-deco-1))" stroke-width="1.5" fill="none" opacity="0.6"/>
-            <path d="M30 85 Q50 65, 70 85" stroke="rgb(var(--color-deco-3))" stroke-width="1" fill="none" opacity="0.8"/>
-            <circle cx="50" cy="60" r="3" fill="rgb(var(--color-deco-2))" opacity="0.5"/>
-            <circle cx="65" cy="75" r="2" fill="rgb(var(--color-deco-3))" opacity="0.4"/>
-            <circle cx="35" cy="75" r="2" fill="rgb(var(--color-deco-2))" opacity="0.4"/>
+          <svg class="decorative-svg svg-drift absolute bottom-8 right-8 w-32 h-32 pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#couple-breeze"></use>
           </svg>
 
           <div class="content-layer">
@@ -544,40 +535,24 @@
 
         <!-- Location and transportation details -->
         <div class="section-divider relative my-6 flex items-center justify-center">
-          <svg class="h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10 28 C60 8, 120 8, 170 28 C200 42, 230 42, 250 28" stroke="rgb(var(--color-accent))" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="130" cy="18" r="4" fill="rgb(var(--color-primary))"/>
-            <circle cx="90" cy="24" r="3" fill="rgb(var(--color-deco-2))"/>
-            <circle cx="170" cy="24" r="3" fill="rgb(var(--color-deco-1))"/>
+          <svg class="decorative-svg h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#divider-couple"></use>
           </svg>
         </div>
         <section id="location" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Spring sky wash accents -->
-          <svg class="decorative-svg svg-pulse absolute top-0 right-0 w-80 h-80 pointer-events-none opacity-18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-            <defs>
-              <filter id="wash-blur">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="20"/>
-              </filter>
-            </defs>
-            <ellipse cx="150" cy="50" rx="80" ry="60" fill="rgb(var(--color-wash-1))" filter="url(#wash-blur)"/>
-            <ellipse cx="120" cy="80" rx="60" ry="50" fill="rgb(var(--color-deco-2))" filter="url(#wash-blur)" opacity="0.7"/>
+          <svg class="decorative-svg svg-pulse absolute top-0 right-0 w-80 h-80 pointer-events-none opacity-18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#location-wash"></use>
           </svg>
 
           <!-- Spring petal garland -->
-          <svg class="decorative-svg svg-sway absolute -left-6 top-10 w-44 h-44 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-            <path d="M15 120 Q40 80 30 40 Q55 65 70 55 Q60 95 85 110 Q55 105 40 120 Z" fill="rgb(var(--color-deco-2))"/>
-            <path d="M60 130 Q85 105 120 110 Q95 120 110 145 Q85 135 60 130 Z" fill="rgb(var(--color-deco-2))" opacity="0.8"/>
-            <circle cx="45" cy="78" r="3" fill="rgb(var(--color-deco-3))" opacity="0.7"/>
-            <circle cx="95" cy="112" r="2.5" fill="rgb(var(--color-deco-3))" opacity="0.6"/>
-            <circle cx="70" cy="98" r="2" fill="rgb(var(--color-deco-1))" opacity="0.5"/>
+          <svg class="decorative-svg svg-sway absolute -left-6 top-10 w-44 h-44 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#location-garland"></use>
           </svg>
 
           <!-- Spring breeze strokes -->
-          <svg class="decorative-svg svg-drift absolute -right-4 bottom-6 w-36 h-36 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-            <path d="M10 70 Q45 40 90 60" stroke="rgb(var(--color-deco-1))" stroke-width="1.5" fill="none" opacity="0.6"/>
-            <path d="M20 85 Q60 60 110 78" stroke="rgb(var(--color-deco-3))" stroke-width="1" fill="none" opacity="0.5"/>
-            <circle cx="50" cy="58" r="3" fill="rgb(var(--color-deco-2))" opacity="0.5"/>
-            <circle cx="85" cy="72" r="2.2" fill="rgb(var(--color-deco-3))" opacity="0.4"/>
+          <svg class="decorative-svg svg-drift absolute -right-4 bottom-6 w-36 h-36 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#location-breeze"></use>
           </svg>
 
           <div class="content-layer">
@@ -630,30 +605,19 @@
 
         <!-- RSVP / survey section -->
         <div class="section-divider relative my-6 flex items-center justify-center">
-          <svg class="h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10 20 C70 42, 120 42, 180 20 C210 8, 235 8, 250 20" stroke="rgb(var(--color-accent))" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="130" cy="30" r="4" fill="rgb(var(--color-primary))"/>
-            <circle cx="95" cy="26" r="3" fill="rgb(var(--color-deco-2))"/>
-            <circle cx="165" cy="26" r="3" fill="rgb(var(--color-deco-1))"/>
+          <svg class="decorative-svg h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#divider-survey"></use>
           </svg>
         </div>
         <section id="survey" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Spring petal elements in corners -->
-          <svg class="decorative-svg svg-float absolute bottom-0 left-0 w-48 h-48 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
-            <path d="M10 140 Q35 110, 25 80 Q15 100, 10 140Z" fill="rgb(var(--color-deco-2))"/>
-            <path d="M20 135 Q50 120, 75 130 Q45 128, 20 135Z" fill="rgb(var(--color-deco-2))" opacity="0.8"/>
-            <circle cx="30" cy="120" r="3" fill="rgb(var(--color-deco-3))"/>
-            <circle cx="45" cy="125" r="2" fill="rgb(var(--color-deco-3))" opacity="0.6"/>
-            <circle cx="18" cy="128" r="1.5" fill="rgb(var(--color-deco-1))" opacity="0.5"/>
+          <svg class="decorative-svg svg-float absolute bottom-0 left-0 w-48 h-48 pointer-events-none opacity-22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#survey-corner"></use>
           </svg>
 
           <!-- Spring breeze decorative dots -->
-          <svg class="decorative-svg svg-drift absolute top-12 right-12 w-28 h-28 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-            <circle cx="20" cy="20" r="3.5" fill="rgb(var(--color-deco-3))" opacity="0.7"/>
-            <circle cx="50" cy="30" r="2.5" fill="rgb(var(--color-deco-2))" opacity="0.6"/>
-            <circle cx="60" cy="50" r="3" fill="rgb(var(--color-deco-1))" opacity="0.5"/>
-            <circle cx="35" cy="60" r="2" fill="rgb(var(--color-deco-2))" opacity="0.6"/>
-            <path d="M25 25 Q40 35, 55 28" stroke="rgb(var(--color-deco-3))" stroke-width="1" fill="none" opacity="0.5"/>
+          <svg class="decorative-svg svg-drift absolute top-12 right-12 w-28 h-28 pointer-events-none opacity-25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#survey-dots"></use>
           </svg>
 
           <div class="content-layer">
@@ -741,46 +705,28 @@
 
         <!-- Invitation card -->
         <div class="section-divider relative my-6 flex items-center justify-center">
-          <svg class="h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M10 24 C60 4, 120 4, 170 24 C200 36, 230 36, 250 24" stroke="rgb(var(--color-accent))" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="130" cy="14" r="4" fill="rgb(var(--color-primary))"/>
-            <circle cx="95" cy="20" r="3" fill="rgb(var(--color-deco-2))"/>
-            <circle cx="165" cy="20" r="3" fill="rgb(var(--color-deco-1))"/>
+          <svg class="decorative-svg h-12 w-64" viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#divider-invitation"></use>
           </svg>
         </div>
         <section id="invitation" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <!-- Spring sky watercolor background layer -->
-          <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs>
-              <filter id="invitation-wash">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="35"/>
-              </filter>
-            </defs>
-            <ellipse cx="30%" cy="40%" rx="220" ry="170" fill="rgb(var(--color-invite-1))" filter="url(#invitation-wash)"/>
-            <ellipse cx="70%" cy="60%" rx="200" ry="160" fill="rgb(var(--color-invite-2))" filter="url(#invitation-wash)"/>
-            <ellipse cx="50%" cy="20%" rx="150" ry="120" fill="rgb(var(--color-invite-3))" filter="url(#invitation-wash)" opacity="0.55"/>
+          <svg class="decorative-svg absolute inset-0 w-full h-full pointer-events-none opacity-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#invitation-wash"></use>
           </svg>
 
           <!-- Spring breeze accent frame -->
-          <svg class="decorative-svg absolute top-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <path d="M5 5 L25 5" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
-            <path d="M5 5 L5 25" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
-            <circle cx="5" cy="5" r="2.5" fill="rgb(var(--color-deco-3))"/>
+          <svg class="decorative-svg absolute top-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#invitation-corner-tl"></use>
           </svg>
-          <svg class="decorative-svg absolute top-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <path d="M55 5 L35 5" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
-            <path d="M55 5 L55 25" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
-            <circle cx="55" cy="5" r="2.5" fill="rgb(var(--color-deco-3))"/>
+          <svg class="decorative-svg absolute top-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#invitation-corner-tr"></use>
           </svg>
-          <svg class="decorative-svg absolute bottom-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <path d="M5 55 L25 55" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
-            <path d="M5 55 L5 35" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
-            <circle cx="5" cy="55" r="2.5" fill="rgb(var(--color-deco-3))"/>
+          <svg class="decorative-svg absolute bottom-8 left-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#invitation-corner-bl"></use>
           </svg>
-          <svg class="decorative-svg absolute bottom-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <path d="M55 55 L35 55" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
-            <path d="M55 55 L55 35" stroke="rgb(var(--color-deco-1))" stroke-width="2" fill="none"/>
-            <circle cx="55" cy="55" r="2.5" fill="rgb(var(--color-deco-3))"/>
+          <svg class="decorative-svg absolute bottom-8 right-8 w-20 h-20 pointer-events-none opacity-35" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" aria-hidden="true">
+            <use href="img/decorations/decorations.svg#invitation-corner-br"></use>
           </svg>
 
           <div class="content-layer">
@@ -1207,10 +1153,8 @@
             "color-invite-1": "230 246 231",
             "color-invite-2": "243 228 204",
             "color-invite-3": "207 235 200",
-            "leaf-pattern":
-              "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27280%27%20height%3D%27280%27%20fill%3D%27none%27%3E%3Ccircle%20cx%3D%2770%27%20cy%3D%2780%27%20r%3D%2728%27%20fill%3D%27rgba%28120%2C196%2C140%2C0.14%29%27%2F%3E%3Ccircle%20cx%3D%2790%27%20cy%3D%2772%27%20r%3D%2710%27%20fill%3D%27rgba%28214%2C180%2C138%2C0.18%29%27%2F%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2772%27%20r%3D%273%27%20fill%3D%27rgba%2868%2C74%2C60%2C0.18%29%27%2F%3E%3Cpath%20d%3D%27M50%20130c30-30%2070-30%20100%200-20%2024-80%2024-100%200z%27%20fill%3D%27rgba%28120%2C196%2C140%2C0.12%29%27%2F%3E%3Cpath%20d%3D%27M160%20190c20-18%2046-18%2066%200-16%2016-50%2016-66%200z%27%20fill%3D%27rgba%28196%2C219%2C184%2C0.12%29%27%2F%3E%3C%2Fsvg%3E\")",
-            "leaf-pattern-secondary":
-              "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%20fill%3D%27none%27%3E%3Cellipse%20cx%3D%2770%27%20cy%3D%27150%27%20rx%3D%2730%27%20ry%3D%2712%27%20fill%3D%27rgba%28120%2C196%2C140%2C0.12%29%27%2F%3E%3Cellipse%20cx%3D%27150%27%20cy%3D%2790%27%20rx%3D%2726%27%20ry%3D%2710%27%20fill%3D%27rgba%28214%2C180%2C138%2C0.14%29%27%2F%3E%3Ccircle%20cx%3D%2760%27%20cy%3D%2760%27%20r%3D%274%27%20fill%3D%27rgba%28196%2C219%2C184%2C0.2%29%27%2F%3E%3Ccircle%20cx%3D%27180%27%20cy%3D%27150%27%20r%3D%273%27%20fill%3D%27rgba%28120%2C196%2C140%2C0.16%29%27%2F%3E%3C%2Fsvg%3E\")",
+            "leaf-pattern": "url(\"img/patterns/leaf-pattern-forest.svg\")",
+            "leaf-pattern-secondary": "url(\"img/patterns/leaf-pattern-secondary-forest.svg\")",
           },
           garden: {
             "color-primary": "138 94 114",
@@ -1236,10 +1180,8 @@
             "color-invite-1": "255 242 246",
             "color-invite-2": "245 229 238",
             "color-invite-3": "236 221 230",
-            "leaf-pattern":
-              "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27280%27%20height%3D%27280%27%20fill%3D%27none%27%3E%3Ccircle%20cx%3D%2790%27%20cy%3D%2790%27%20r%3D%2722%27%20fill%3D%27rgba%28214%2C163%2C178%2C0.18%29%27%2F%3E%3Ccircle%20cx%3D%2790%27%20cy%3D%2760%27%20r%3D%2718%27%20fill%3D%27rgba%28246%2C214%2C229%2C0.18%29%27%2F%3E%3Ccircle%20cx%3D%27120%27%20cy%3D%2790%27%20r%3D%2718%27%20fill%3D%27rgba%28246%2C214%2C229%2C0.16%29%27%2F%3E%3Ccircle%20cx%3D%2760%27%20cy%3D%2790%27%20r%3D%2718%27%20fill%3D%27rgba%28246%2C214%2C229%2C0.16%29%27%2F%3E%3Ccircle%20cx%3D%2790%27%20cy%3D%27120%27%20r%3D%2718%27%20fill%3D%27rgba%28246%2C214%2C229%2C0.16%29%27%2F%3E%3Ccircle%20cx%3D%27180%27%20cy%3D%27170%27%20r%3D%2716%27%20fill%3D%27rgba%28214%2C163%2C178%2C0.14%29%27%2F%3E%3Cpath%20d%3D%27M170%20190c20-10%2040-10%2060%200%27%20stroke%3D%27rgba%28156%2C186%2C150%2C0.18%29%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%2F%3E%3C%2Fsvg%3E\")",
-            "leaf-pattern-secondary":
-              "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M30%20140c40-50%2090-50%20130%200%27%20stroke%3D%27rgba%28214%2C163%2C178%2C0.2%29%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M80%20170c20-26%2060-26%2080%200%27%20stroke%3D%27rgba%28156%2C186%2C150%2C0.2%29%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Ccircle%20cx%3D%2760%27%20cy%3D%2780%27%20r%3D%273.5%27%20fill%3D%27rgba%28246%2C214%2C229%2C0.2%29%27%2F%3E%3Ccircle%20cx%3D%27170%27%20cy%3D%2760%27%20r%3D%273%27%20fill%3D%27rgba%28214%2C163%2C178%2C0.2%29%27%2F%3E%3C%2Fsvg%3E\")",
+            "leaf-pattern": "url(\"img/patterns/leaf-pattern-garden.svg\")",
+            "leaf-pattern-secondary": "url(\"img/patterns/leaf-pattern-secondary-garden.svg\")",
           },
           coastal: {
             "color-primary": "52 120 206",
@@ -1265,10 +1207,8 @@
             "color-invite-1": "236 247 251",
             "color-invite-2": "224 238 244",
             "color-invite-3": "214 232 240",
-            "leaf-pattern":
-              "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27280%27%20height%3D%27280%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M40%20120c30-30%2070-30%20100%200-20%2018-80%2018-100%200z%27%20fill%3D%27rgba%28145%2C184%2C197%2C0.16%29%27%2F%3E%3Cpath%20d%3D%27M140%20160c30-30%2070-30%20100%200-20%2018-80%2018-100%200z%27%20fill%3D%27rgba%28184%2C214%2C224%2C0.14%29%27%2F%3E%3Ccircle%20cx%3D%27200%27%20cy%3D%2780%27%20r%3D%2716%27%20fill%3D%27rgba%28215%2C230%2C235%2C0.2%29%27%2F%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2760%27%20r%3D%2710%27%20fill%3D%27rgba%28145%2C184%2C197%2C0.18%29%27%2F%3E%3C%2Fsvg%3E\")",
-            "leaf-pattern-secondary":
-              "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M20%20140c30-20%2070-20%20100%200%27%20stroke%3D%27rgba%28145%2C184%2C197%2C0.2%29%27%20stroke-width%3D%271.5%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M80%20170c24-16%2056-16%2080%200%27%20stroke%3D%27rgba%28184%2C214%2C224%2C0.2%29%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Ccircle%20cx%3D%2760%27%20cy%3D%2780%27%20r%3D%273.5%27%20fill%3D%27rgba%28215%2C230%2C235%2C0.22%29%27%2F%3E%3Ccircle%20cx%3D%27170%27%20cy%3D%2760%27%20r%3D%273%27%20fill%3D%27rgba%28145%2C184%2C197%2C0.18%29%27%2F%3E%3C%2Fsvg%3E\")",
+            "leaf-pattern": "url(\"img/patterns/leaf-pattern-coastal.svg\")",
+            "leaf-pattern-secondary": "url(\"img/patterns/leaf-pattern-secondary-coastal.svg\")",
           },
           candlelit: {
             "color-primary": "167 94 52",
@@ -1294,10 +1234,8 @@
             "color-invite-1": "255 238 226",
             "color-invite-2": "248 224 206",
             "color-invite-3": "238 210 190",
-            "leaf-pattern":
-              "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27280%27%20height%3D%27280%27%20fill%3D%27none%27%3E%3Crect%20x%3D%2760%27%20y%3D%2770%27%20width%3D%2750%27%20height%3D%2780%27%20rx%3D%2712%27%20fill%3D%27rgba%28184%2C137%2C98%2C0.16%29%27%2F%3E%3Ccircle%20cx%3D%2785%27%20cy%3D%2770%27%20r%3D%2712%27%20fill%3D%27rgba%28255%2C214%2C178%2C0.2%29%27%2F%3E%3Crect%20x%3D%27160%27%20y%3D%27130%27%20width%3D%2740%27%20height%3D%2770%27%20rx%3D%2710%27%20fill%3D%27rgba%28184%2C137%2C98%2C0.14%29%27%2F%3E%3Ccircle%20cx%3D%27180%27%20cy%3D%27130%27%20r%3D%2710%27%20fill%3D%27rgba%28255%2C214%2C178%2C0.18%29%27%2F%3E%3Ccircle%20cx%3D%27210%27%20cy%3D%2760%27%20r%3D%276%27%20fill%3D%27rgba%28255%2C214%2C178%2C0.2%29%27%2F%3E%3C%2Fsvg%3E\")",
-            "leaf-pattern-secondary":
-              "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M40%20140c20-26%2040-26%2060%200%27%20stroke%3D%27rgba%28184%2C137%2C98%2C0.2%29%27%20stroke-width%3D%271.4%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M120%20160c16-20%2036-20%2052%200%27%20stroke%3D%27rgba%28255%2C214%2C178%2C0.2%29%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Ccircle%20cx%3D%2770%27%20cy%3D%2780%27%20r%3D%273.5%27%20fill%3D%27rgba%28255%2C214%2C178%2C0.22%29%27%2F%3E%3Ccircle%20cx%3D%27170%27%20cy%3D%2770%27%20r%3D%273%27%20fill%3D%27rgba%28184%2C137%2C98%2C0.18%29%27%2F%3E%3C%2Fsvg%3E\")",
+            "leaf-pattern": "url(\"img/patterns/leaf-pattern-candlelit.svg\")",
+            "leaf-pattern-secondary": "url(\"img/patterns/leaf-pattern-secondary-candlelit.svg\")",
           },
         };
 

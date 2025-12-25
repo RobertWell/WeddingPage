@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none">
+  <symbol id="hero-wash" viewBox="0 0 1200 800">
+    <defs>
+      <filter id="hero-wash-blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+      </filter>
+    </defs>
+    <g filter="url(#hero-wash-blur)">
+      <ellipse cx="200" cy="150" rx="280" ry="220" fill="var(--wash-1, #e6f6e7)" opacity="0.9" />
+      <ellipse cx="900" cy="100" rx="320" ry="280" fill="var(--wash-2, #f2e2c8)" opacity="0.8" />
+      <ellipse cx="600" cy="500" rx="380" ry="300" fill="var(--wash-3, #cfedd5)" opacity="0.6" />
+      <ellipse cx="1000" cy="600" rx="280" ry="240" fill="var(--wash-4, #e8f4dd)" opacity="0.7" />
+    </g>
+  </symbol>
+
+  <symbol id="couple-corner-left" viewBox="0 0 120 120">
+    <path d="M10 10Q30 40 15 70Q8 50 10 10Z" fill="var(--deco-1, #78c48c)" />
+    <path d="M15 15Q45 25 65 18Q40 12 15 15Z" fill="var(--deco-2, #c4dbb8)" />
+    <circle cx="20" cy="25" r="2.5" fill="var(--deco-3, #d6b48a)" />
+    <circle cx="35" cy="18" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="28" cy="32" r="1.5" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="couple-corner-right" viewBox="0 0 120 120">
+    <path d="M110 10Q90 40 105 70Q112 50 110 10Z" fill="var(--deco-1, #78c48c)" />
+    <path d="M105 15Q75 25 55 18Q80 12 105 15Z" fill="var(--deco-2, #c4dbb8)" />
+    <circle cx="100" cy="25" r="2.5" fill="var(--deco-3, #d6b48a)" />
+    <circle cx="85" cy="18" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+  </symbol>
+
+  <symbol id="couple-breeze" viewBox="0 0 100 100">
+    <path d="M20 80Q50 50 80 80" stroke="var(--deco-1, #78c48c)" stroke-width="1.5" fill="none" opacity="0.6" />
+    <path d="M30 85Q50 65 70 85" stroke="var(--deco-3, #d6b48a)" stroke-width="1" fill="none" opacity="0.8" />
+    <circle cx="50" cy="60" r="3" fill="var(--deco-2, #c4dbb8)" opacity="0.5" />
+    <circle cx="65" cy="75" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.4" />
+    <circle cx="35" cy="75" r="2" fill="var(--deco-2, #c4dbb8)" opacity="0.4" />
+  </symbol>
+
+  <symbol id="divider-couple" viewBox="0 0 260 48">
+    <path d="M10 28C60 8 120 8 170 28 200 42 230 42 250 28" stroke="var(--accent, #d6b48a)" stroke-width="2" stroke-linecap="round" />
+    <circle cx="130" cy="18" r="4" fill="var(--primary, #228b5c)" />
+    <circle cx="90" cy="24" r="3" fill="var(--deco-2, #c4dbb8)" />
+    <circle cx="170" cy="24" r="3" fill="var(--deco-1, #78c48c)" />
+  </symbol>
+
+  <symbol id="location-wash" viewBox="0 0 200 200">
+    <defs>
+      <filter id="location-wash-blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+      </filter>
+    </defs>
+    <ellipse cx="150" cy="50" rx="80" ry="60" fill="var(--wash-1, #e6f6e7)" filter="url(#location-wash-blur)" />
+    <ellipse cx="120" cy="80" rx="60" ry="50" fill="var(--deco-2, #c4dbb8)" filter="url(#location-wash-blur)" opacity="0.7" />
+  </symbol>
+
+  <symbol id="location-garland" viewBox="0 0 160 160">
+    <path d="M15 120Q40 80 30 40Q55 65 70 55Q60 95 85 110Q55 105 40 120Z" fill="var(--deco-2, #c4dbb8)" />
+    <path d="M60 130Q85 105 120 110Q95 120 110 145Q85 135 60 130Z" fill="var(--deco-2, #c4dbb8)" opacity="0.8" />
+    <circle cx="45" cy="78" r="3" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="95" cy="112" r="2.5" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
+    <circle cx="70" cy="98" r="2" fill="var(--deco-1, #78c48c)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="location-breeze" viewBox="0 0 120 120">
+    <path d="M10 70Q45 40 90 60" stroke="var(--deco-1, #78c48c)" stroke-width="1.5" fill="none" opacity="0.6" />
+    <path d="M20 85Q60 60 110 78" stroke="var(--deco-3, #d6b48a)" stroke-width="1" fill="none" opacity="0.5" />
+    <circle cx="50" cy="58" r="3" fill="var(--deco-2, #c4dbb8)" opacity="0.5" />
+    <circle cx="85" cy="72" r="2.2" fill="var(--deco-3, #d6b48a)" opacity="0.4" />
+  </symbol>
+
+  <symbol id="divider-survey" viewBox="0 0 260 48">
+    <path d="M10 20C70 42 120 42 180 20 210 8 235 8 250 20" stroke="var(--accent, #d6b48a)" stroke-width="2" stroke-linecap="round" />
+    <circle cx="130" cy="30" r="4" fill="var(--primary, #228b5c)" />
+    <circle cx="95" cy="26" r="3" fill="var(--deco-2, #c4dbb8)" />
+    <circle cx="165" cy="26" r="3" fill="var(--deco-1, #78c48c)" />
+  </symbol>
+
+  <symbol id="survey-corner" viewBox="0 0 150 150">
+    <path d="M10 140Q35 110 25 80Q15 100 10 140Z" fill="var(--deco-2, #c4dbb8)" />
+    <path d="M20 135Q50 120 75 130Q45 128 20 135Z" fill="var(--deco-2, #c4dbb8)" opacity="0.8" />
+    <circle cx="30" cy="120" r="3" fill="var(--deco-3, #d6b48a)" />
+    <circle cx="45" cy="125" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
+    <circle cx="18" cy="128" r="1.5" fill="var(--deco-1, #78c48c)" opacity="0.5" />
+  </symbol>
+
+  <symbol id="survey-dots" viewBox="0 0 80 80">
+    <circle cx="20" cy="20" r="3.5" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="50" cy="30" r="2.5" fill="var(--deco-2, #c4dbb8)" opacity="0.6" />
+    <circle cx="60" cy="50" r="3" fill="var(--deco-1, #78c48c)" opacity="0.5" />
+    <circle cx="35" cy="60" r="2" fill="var(--deco-2, #c4dbb8)" opacity="0.6" />
+    <path d="M25 25Q40 35 55 28" stroke="var(--deco-3, #d6b48a)" stroke-width="1" fill="none" opacity="0.5" />
+  </symbol>
+
+  <symbol id="divider-invitation" viewBox="0 0 260 48">
+    <path d="M10 24C60 4 120 4 170 24 200 36 230 36 250 24" stroke="var(--accent, #d6b48a)" stroke-width="2" stroke-linecap="round" />
+    <circle cx="130" cy="14" r="4" fill="var(--primary, #228b5c)" />
+    <circle cx="95" cy="20" r="3" fill="var(--deco-2, #c4dbb8)" />
+    <circle cx="165" cy="20" r="3" fill="var(--deco-1, #78c48c)" />
+  </symbol>
+
+  <symbol id="invitation-wash" viewBox="0 0 600 420">
+    <defs>
+      <filter id="invitation-wash-blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="35" />
+      </filter>
+    </defs>
+    <ellipse cx="180" cy="168" rx="220" ry="170" fill="var(--invite-1, #e6f6e7)" filter="url(#invitation-wash-blur)" />
+    <ellipse cx="420" cy="252" rx="200" ry="160" fill="var(--invite-2, #f3e4cc)" filter="url(#invitation-wash-blur)" />
+    <ellipse cx="300" cy="84" rx="150" ry="120" fill="var(--invite-3, #cfebc8)" filter="url(#invitation-wash-blur)" opacity="0.55" />
+  </symbol>
+
+  <symbol id="invitation-corner-tl" viewBox="0 0 60 60">
+    <path d="M5 5L25 5" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
+    <path d="M5 5L5 25" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
+    <circle cx="5" cy="5" r="2.5" fill="var(--deco-3, #d6b48a)" />
+  </symbol>
+
+  <symbol id="invitation-corner-tr" viewBox="0 0 60 60">
+    <path d="M55 5L35 5" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
+    <path d="M55 5L55 25" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
+    <circle cx="55" cy="5" r="2.5" fill="var(--deco-3, #d6b48a)" />
+  </symbol>
+
+  <symbol id="invitation-corner-bl" viewBox="0 0 60 60">
+    <path d="M5 55L25 55" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
+    <path d="M5 55L5 35" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
+    <circle cx="5" cy="55" r="2.5" fill="var(--deco-3, #d6b48a)" />
+  </symbol>
+
+  <symbol id="invitation-corner-br" viewBox="0 0 60 60">
+    <path d="M55 55L35 55" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
+    <path d="M55 55L55 35" stroke="var(--deco-1, #78c48c)" stroke-width="2" fill="none" />
+    <circle cx="55" cy="55" r="2.5" fill="var(--deco-3, #d6b48a)" />
+  </symbol>
+</svg>
