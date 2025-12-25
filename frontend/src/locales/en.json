@@ -1,0 +1,152 @@
+{
+  "nav": {
+    "brand": "Forest Promise",
+    "link": {
+      "couple": "Couple",
+      "location": "Location",
+      "survey": "RSVP",
+      "invitation": "Invitation"
+    }
+  },
+  "hero": {
+    "tagline": "Warm & Fresh Wedding",
+    "names": "Haoran & Yu-Ching",
+    "description": "We chose a garden afternoon with breeze and laughter to place our vows inside each other's names. Join us in this gentle forest ceremony.",
+    "datetime": "Oct 18, 2025 · 3:30 PM · Forestlight Conservatory · 88 Linyin Rd, Taipei",
+    "badge1": "Outdoor meadow vows",
+    "badge2": "Soft forest styling",
+    "badge3": "Little guests welcome",
+    "imageUrl": "img/forest-hero.jpg",
+    "imagePosition": "50% 50%",
+    "overlayOpacity": "1",
+    "ctaPrimary": "View Invitation",
+    "ctaSecondary": "RSVP Form"
+  },
+  "body": {
+    "background": "radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%), radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%), linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)"
+  },
+  "couple": {
+    "section": {
+      "label": "Couple",
+      "heading": "Turning daily life into a gentle song",
+      "description": "We like to walk slowly, sketching each day like a postcard. We hope you feel the same soft, fresh warmth here."
+    }
+  },
+  "groom": {
+    "title": "Groom · Haoran",
+    "description": "Enjoys pour-over coffee, sketching doodles, and editing photos with Yu-Ching while honoring little rituals.",
+    "detail1": "Wedding mantra: slow down and it becomes beautiful.",
+    "detail2": "Often says: remember to look up at the sky."
+  },
+  "bride": {
+    "title": "Bride · Yu-Ching",
+    "description": "Loves plants, travel, and decorating cozy corners with family. She says the wedding is for collecting their first promises.",
+    "detail1": "Comfort companions: squirrels and cats.",
+    "detail2": "Favorite collectibles: travel stickers and vintage washi."
+  },
+  "story": {
+    "title": "Our Story",
+    "description": "After a rain-washed walk we decided to write one another into the future. For the wedding we prepared greenery, handwritten cards, and a corner to keep your blessings."
+  },
+  "location": {
+    "section": {
+      "heading": "Venue",
+      "title": "Forestlight Garden · Come wander with us",
+      "description": "We chose a convenient venue wrapped in nature—feel free to stroll the neighborhood beforehand."
+    },
+    "button": {
+      "map": "Open map",
+      "rsvp": "RSVP here"
+    }
+  },
+  "venue": {
+    "name": "Forestlight Conservatory",
+    "address": "88 Linyin Rd, Xinyi District, Taipei"
+  },
+  "map": {
+    "url": "https://maps.google.com"
+  },
+  "transport": {
+    "title": "How to get there",
+    "item1": "Metro · Xinyi Line to Songshan Station, 6 min walk.",
+    "item2": "Bus · 88/208/Blue 10 to Linyin Rd stop.",
+    "item3": "Driving · Underground parking leads straight to the hall.",
+    "note": "Need a shuttle or assistance? Leave a note in the RSVP and we'll have a helper contact you."
+  },
+  "survey": {
+    "section": {
+      "heading": "RSVP Form",
+      "subtitle": "We want to take good care of you",
+      "description": "We'll later connect this form to Google Sheets; for now it gathers your needs simply."
+    },
+    "label": {
+      "name": "Your name",
+      "guests": "Number of guests",
+      "diet": "Dietary preference",
+      "message": "Message for us"
+    },
+    "placeholder": {
+      "name": "Please enter your name",
+      "message": "Write your wishes or reminders"
+    },
+    "option": {
+      "guests": {
+        "placeholder": "Select",
+        "1": "1 guest",
+        "2": "2 guests",
+        "3": "3 guests",
+        "4plus": "4+ guests"
+      },
+      "diet": {
+        "placeholder": "Select",
+        "standard": "Standard meal",
+        "vegetarian": "Lacto-ovo vegetarian",
+        "vegan": "Vegan",
+        "noSeafood": "No seafood"
+      }
+    },
+    "button": "Send RSVP",
+    "note": "You'll see a thank-you message after sending; we'll update you when Google Sheets integration is live.",
+    "message": {
+      "sending": "Sending your reply…",
+      "success": "We received your RSVP—thank you!",
+      "error": "Something went wrong—please try again soon.",
+      "offline": "We can't reach the RSVP server right now. Check your connection and try again."
+    }
+  },
+  "invitation": {
+    "section": {
+      "title": "Invitation",
+      "heading": "May this ceremony be shared with you",
+      "description": "A gentle card to hand our blessings to you."
+    },
+    "letter": {
+      "salutation": "Dear You",
+      "body": "We warmly invite you to witness this forest promise. We'll trade vows, light candles, and prepare gifts for every friend who travels to us. Let's capture a heartfelt photo together."
+    },
+    "date": {
+      "label": "Date",
+      "value": "Oct 18, 2025 (Sat)"
+    },
+    "time": {
+      "label": "Time",
+      "value": "3:30 PM Ceremony · 6:00 PM Dinner"
+    },
+    "location": {
+      "label": "Venue",
+      "value": "Forestlight Conservatory"
+    },
+    "button": "Back to top",
+    "card": {
+      "message": "May today wrap you in gentleness",
+      "note": "We hid little phrases in every place card and light, waiting for you to find them. Can't wait to toast with you under the trees."
+    }
+  },
+  "footer": {
+    "text": "Single-page invite ready for GitHub Pages · Thank you for your love"
+  },
+  "lang": {
+    "zhLabel": "中文",
+    "enLabel": "English"
+  }
+}

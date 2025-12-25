@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - GOOGLE_SHEETS_SPREADSHEET_ID=${GOOGLE_SHEETS_SPREADSHEET_ID}
+      - GOOGLE_SHEETS_CREDENTIALS_PATH=/app/credentials.json
+    volumes:
+      - ./backend/credentials.json:/app/credentials.json:ro
+      - ./backend/tokens:/app/tokens
+    networks:
+      - wedding-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - wedding-network
+
+networks:
+  wedding-network:
+    driver: bridge

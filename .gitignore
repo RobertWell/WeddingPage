@@ -1,0 +1,29 @@
+# Node
+node_modules/
+dist/
+*.log
+
+# Maven
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Google Sheets Credentials
+credentials.json
+tokens/
+
+# OS
+.DS_Store
+Thumbs.db
