@@ -6,28 +6,66 @@
   </symbol>
 
   <symbol id="couple-corner-left" viewBox="0 0 120 120">
-    <path d="M14 94C38 74 62 54 106 14" stroke="var(--deco-1, #6f8f6f)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5" />
-    <path d="M44 72C36 62 36 48 48 38" stroke="var(--deco-2, #93ab89)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
-    <path d="M70 50C62 42 64 30 80 22" stroke="var(--deco-2, #93ab89)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M14 102C34 78 54 58 100 14" stroke="var(--deco-1, #6f8f6f)" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.5" />
+    <!-- Realistic leaf 1 -->
+    <path d="M32 84C28 70 36 58 50 52C54 66 46 76 32 84Z" fill="var(--deco-2, #93ab89)" opacity="0.7" />
+    <path d="M38 68L44 62" stroke="var(--deco-1, #6f8f6f)" stroke-width="0.8" stroke-linecap="round" opacity="0.4" />
+    <!-- Realistic leaf 2 -->
+    <path d="M56 64C52 50 60 38 74 32C78 46 70 56 56 64Z" fill="var(--deco-2, #93ab89)" opacity="0.65" />
+    <path d="M62 48L68 42" stroke="var(--deco-1, #6f8f6f)" stroke-width="0.8" stroke-linecap="round" opacity="0.4" />
+    <!-- Realistic leaf 3 -->
+    <path d="M78 46C74 34 80 24 92 20C96 32 90 42 78 46Z" fill="var(--deco-3, #c4dbb8)" opacity="0.6" />
+    <circle cx="42" cy="58" r="1.4" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
   </symbol>
 
   <symbol id="couple-corner-right" viewBox="0 0 120 120">
-    <path d="M106 94C82 74 58 54 14 14" stroke="var(--deco-1, #6f8f6f)" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.5" />
-    <path d="M76 72C84 62 84 48 72 38" stroke="var(--deco-2, #93ab89)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
-    <path d="M50 50C58 42 56 30 40 22" stroke="var(--deco-2, #93ab89)" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M106 102C86 78 66 58 20 14" stroke="var(--deco-1, #6f8f6f)" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.5" />
+    <!-- Realistic leaf 1 -->
+    <path d="M88 84C92 70 84 58 70 52C66 66 74 76 88 84Z" fill="var(--deco-2, #93ab89)" opacity="0.7" />
+    <path d="M82 68L76 62" stroke="var(--deco-1, #6f8f6f)" stroke-width="0.8" stroke-linecap="round" opacity="0.4" />
+    <!-- Realistic leaf 2 -->
+    <path d="M64 64C68 50 60 38 46 32C42 46 50 56 64 64Z" fill="var(--deco-2, #93ab89)" opacity="0.65" />
+    <path d="M58 48L52 42" stroke="var(--deco-1, #6f8f6f)" stroke-width="0.8" stroke-linecap="round" opacity="0.4" />
+    <!-- Realistic leaf 3 -->
+    <path d="M42 46C46 34 40 24 28 20C24 32 30 42 42 46Z" fill="var(--deco-3, #c4dbb8)" opacity="0.6" />
+    <circle cx="78" cy="58" r="1.4" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
   </symbol>
 
   <symbol id="couple-breeze" viewBox="0 0 100 100">
-    <path d="M20 82L34 52L50 82Z" fill="var(--deco-2, #93ab89)" opacity="0.5" />
-    <rect x="44" y="78" width="6" height="10" rx="2" fill="var(--deco-1, #6f8f6f)" opacity="0.5" />
-    <path d="M56 84L66 60L78 84Z" fill="var(--deco-2, #93ab89)" opacity="0.45" />
-    <rect x="68" y="82" width="5" height="8" rx="2" fill="var(--deco-1, #6f8f6f)" opacity="0.45" />
+    <!-- Tree 1 - Realistic tree with foliage clusters -->
+    <rect x="18" y="76" width="3" height="14" rx="1.5" fill="var(--deco-1, #6f8f6f)" opacity="0.6" />
+    <path d="M10 76C12 66 16 62 20 62C24 62 28 66 30 76C26 78 22 78 20 78C18 78 14 78 10 76Z" fill="var(--deco-2, #93ab89)" opacity="0.6" />
+    <path d="M12 68C14 60 17 58 20 58C23 58 26 60 28 68" fill="var(--deco-3, #c4dbb8)" opacity="0.5" />
+    <circle cx="15" cy="70" r="2.5" fill="var(--deco-2, #93ab89)" opacity="0.5" />
+    <circle cx="25" cy="70" r="2.5" fill="var(--deco-2, #93ab89)" opacity="0.5" />
+
+    <!-- Tree 2 - Taller tree with organic foliage -->
+    <rect x="45" y="70" width="3.5" height="20" rx="1.5" fill="var(--deco-1, #6f8f6f)" opacity="0.6" />
+    <path d="M38 70C40 58 44 52 47 52C50 52 54 58 56 70C52 74 48 74 47 74C46 74 42 74 38 70Z" fill="var(--deco-2, #93ab89)" opacity="0.65" />
+    <ellipse cx="47" cy="62" rx="6" ry="7" fill="var(--deco-3, #c4dbb8)" opacity="0.5" />
+    <circle cx="42" cy="64" r="3" fill="var(--deco-2, #93ab89)" opacity="0.55" />
+    <circle cx="52" cy="64" r="3" fill="var(--deco-2, #93ab89)" opacity="0.55" />
+
+    <!-- Tree 3 - Smaller tree -->
+    <rect x="70" y="78" width="2.5" height="12" rx="1" fill="var(--deco-1, #6f8f6f)" opacity="0.55" />
+    <path d="M66 78C68 70 70 68 72 68C74 68 76 70 78 78C75 80 73 80 72 80C71 80 69 80 66 78Z" fill="var(--deco-2, #93ab89)" opacity="0.6" />
+    <circle cx="68" cy="74" r="2" fill="var(--deco-3, #c4dbb8)" opacity="0.5" />
+    <circle cx="76" cy="74" r="2" fill="var(--deco-3, #c4dbb8)" opacity="0.5" />
   </symbol>
 
   <symbol id="divider-couple" viewBox="0 0 260 48">
     <path d="M10 30C60 10 110 12 160 30 190 42 220 42 250 30" stroke="var(--accent, #d6b48a)" stroke-width="2" stroke-linecap="round" />
-    <path d="M88 26C84 18 86 10 96 6" stroke="var(--deco-2, #93ab89)" stroke-width="2" stroke-linecap="round" fill="none" />
-    <path d="M170 26C174 18 172 10 162 6" stroke="var(--deco-2, #93ab89)" stroke-width="2" stroke-linecap="round" fill="none" />
+    <!-- Leaf cluster left -->
+    <path d="M116 24C112 16 114 10 124 8C134 10 136 16 132 24Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M120 20L124 16" stroke="var(--deco-1, #78c48c)" stroke-width="0.8" opacity="0.5" />
+    <!-- Leaf cluster right -->
+    <path d="M144 24C148 16 146 10 136 8C126 10 124 16 128 24Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M140 20L136 16" stroke="var(--deco-1, #78c48c)" stroke-width="0.8" opacity="0.5" />
+    <!-- Small accent leaves -->
+    <path d="M100 28C98 22 100 18 106 16C112 18 114 22 112 28Z" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
+    <path d="M160 28C162 22 160 18 154 16C148 18 146 22 148 28Z" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
+    <circle cx="88" cy="24" r="1.6" fill="var(--deco-2, #93ab89)" opacity="0.6" />
+    <circle cx="172" cy="24" r="1.6" fill="var(--deco-2, #93ab89)" opacity="0.6" />
   </symbol>
 
   <symbol id="location-wash" viewBox="0 0 200 200">
@@ -73,11 +111,19 @@
 
   <symbol id="divider-invitation" viewBox="0 0 260 48">
     <path d="M12 26C60 10 118 10 168 26 198 36 226 36 248 26" stroke="var(--accent, #d6b48a)" stroke-width="1.8" stroke-linecap="round" />
-    <path d="M124 18C116 12 116 6 126 6C136 6 136 12 128 18Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
-    <path d="M136 30C130 24 130 18 138 16C146 18 146 24 140 30Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
-    <circle cx="96" cy="20" r="2.2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
-    <circle cx="166" cy="20" r="2.2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
-    <circle cx="150" cy="14" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.45" />
+    <!-- Center leaf cluster -->
+    <path d="M122 18C116 12 116 8 126 6C136 8 136 12 130 18Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M126 14L126 10" stroke="var(--deco-1, #78c48c)" stroke-width="0.8" opacity="0.5" />
+    <path d="M134 30C130 24 130 20 138 18C146 20 146 24 142 30Z" fill="var(--deco-1, #78c48c)" opacity="0.65" />
+    <path d="M138 26L138 22" stroke="var(--deco-2, #c4dbb8)" stroke-width="0.6" opacity="0.4" />
+    <!-- Side leaves -->
+    <path d="M106 24C104 18 106 14 112 12C118 14 120 18 118 24Z" fill="var(--deco-3, #d6b48a)" opacity="0.65" />
+    <path d="M154 24C156 18 154 14 148 12C142 14 140 18 142 24Z" fill="var(--deco-3, #d6b48a)" opacity="0.65" />
+    <!-- Berries/accents -->
+    <circle cx="96" cy="20" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="166" cy="20" r="2" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
+    <circle cx="88" cy="16" r="1.4" fill="var(--deco-2, #93ab89)" opacity="0.6" />
+    <circle cx="174" cy="16" r="1.4" fill="var(--deco-2, #93ab89)" opacity="0.6" />
   </symbol>
 
   <symbol id="invitation-wash" viewBox="0 0 600 420">
@@ -92,31 +138,63 @@
   </symbol>
 
   <symbol id="invitation-corner-tl" viewBox="0 0 60 60">
+    <!-- Main leaf -->
     <path d="M8 14C16 10 22 12 26 20C20 24 14 24 8 14Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M14 16L18 14" stroke="var(--deco-1, #78c48c)" stroke-width="0.6" opacity="0.5" />
+    <!-- Secondary leaf -->
     <path d="M10 28C18 24 24 26 28 34C22 38 16 38 10 28Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <path d="M16 30L20 28" stroke="var(--deco-2, #c4dbb8)" stroke-width="0.6" opacity="0.4" />
+    <!-- Small leaves -->
+    <path d="M18 38C22 36 26 37 28 42C24 44 20 44 18 38Z" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
+    <!-- Berries -->
     <circle cx="14" cy="10" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
     <circle cx="26" cy="18" r="1.2" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
+    <circle cx="32" cy="26" r="1" fill="var(--deco-2, #93ab89)" opacity="0.5" />
   </symbol>
 
   <symbol id="invitation-corner-tr" viewBox="0 0 60 60">
+    <!-- Main leaf -->
     <path d="M52 14C44 10 38 12 34 20C40 24 46 24 52 14Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M46 16L42 14" stroke="var(--deco-1, #78c48c)" stroke-width="0.6" opacity="0.5" />
+    <!-- Secondary leaf -->
     <path d="M50 28C42 24 36 26 32 34C38 38 44 38 50 28Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <path d="M44 30L40 28" stroke="var(--deco-2, #c4dbb8)" stroke-width="0.6" opacity="0.4" />
+    <!-- Small leaves -->
+    <path d="M42 38C38 36 34 37 32 42C36 44 40 44 42 38Z" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
+    <!-- Berries -->
     <circle cx="46" cy="10" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
     <circle cx="34" cy="18" r="1.2" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
+    <circle cx="28" cy="26" r="1" fill="var(--deco-2, #93ab89)" opacity="0.5" />
   </symbol>
 
   <symbol id="invitation-corner-bl" viewBox="0 0 60 60">
+    <!-- Main leaf -->
     <path d="M8 46C16 42 22 44 26 52C20 56 14 56 8 46Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M14 48L18 46" stroke="var(--deco-1, #78c48c)" stroke-width="0.6" opacity="0.5" />
+    <!-- Secondary leaf -->
     <path d="M10 32C18 28 24 30 28 38C22 42 16 42 10 32Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <path d="M16 34L20 32" stroke="var(--deco-2, #c4dbb8)" stroke-width="0.6" opacity="0.4" />
+    <!-- Small leaves -->
+    <path d="M18 22C22 20 26 21 28 26C24 28 20 28 18 22Z" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
+    <!-- Berries -->
     <circle cx="14" cy="50" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
     <circle cx="26" cy="42" r="1.2" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
+    <circle cx="32" cy="34" r="1" fill="var(--deco-2, #93ab89)" opacity="0.5" />
   </symbol>
 
   <symbol id="invitation-corner-br" viewBox="0 0 60 60">
+    <!-- Main leaf -->
     <path d="M52 46C44 42 38 44 34 52C40 56 46 56 52 46Z" fill="var(--deco-2, #c4dbb8)" opacity="0.7" />
+    <path d="M46 48L42 46" stroke="var(--deco-1, #78c48c)" stroke-width="0.6" opacity="0.5" />
+    <!-- Secondary leaf -->
     <path d="M50 32C42 28 36 30 32 38C38 42 44 42 50 32Z" fill="var(--deco-1, #78c48c)" opacity="0.6" />
+    <path d="M44 34L40 32" stroke="var(--deco-2, #c4dbb8)" stroke-width="0.6" opacity="0.4" />
+    <!-- Small leaves -->
+    <path d="M42 22C38 20 34 21 32 26C36 28 40 28 42 22Z" fill="var(--deco-3, #d6b48a)" opacity="0.6" />
+    <!-- Berries -->
     <circle cx="46" cy="50" r="1.6" fill="var(--deco-3, #d6b48a)" opacity="0.7" />
     <circle cx="34" cy="42" r="1.2" fill="var(--deco-3, #d6b48a)" opacity="0.5" />
+    <circle cx="28" cy="34" r="1" fill="var(--deco-2, #93ab89)" opacity="0.5" />
   </symbol>
 
   <symbol id="forest-leaf-branch" viewBox="0 0 200 120">
