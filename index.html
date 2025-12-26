@@ -324,6 +324,153 @@
         pointer-events: none;
       }
 
+      .loading-orbit {
+        position: relative;
+        color: #ffffff;
+        --orbit-scale: 0.6;
+      }
+
+      .loading-orbit__center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(var(--orbit-scale));
+      }
+
+      .loading-orbit__dot {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 999px;
+        background: #ffffff;
+      }
+
+      .loading-orbit__s {
+        position: absolute;
+        background: currentColor;
+      }
+
+      .loading-orbit__s1 {
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        transform-origin: 70px -40px;
+        animation: orbit 3.1s infinite linear;
+      }
+
+      .loading-orbit__s2 {
+        width: 14px;
+        height: 14px;
+        border-radius: 14px;
+        transform-origin: -18px -40px;
+        animation: orbit 3.43s infinite linear;
+      }
+
+      .loading-orbit__s3 {
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        transform-origin: 20px 20px;
+        animation: orbit 3.22s infinite linear;
+      }
+
+      .loading-orbit__s4 {
+        width: 80px;
+        height: 80px;
+        border-radius: 80px;
+        transform-origin: 50px 50px;
+        animation: orbit 3.121s infinite linear;
+      }
+
+      .loading-orbit__s5 {
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        transform-origin: 20px 40px;
+        animation: orbit 3.488s infinite linear;
+      }
+
+      .loading-orbit__s6 {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        transform-origin: 20px 90px;
+        animation: orbit 3.66s infinite linear;
+      }
+
+      .loading-orbit__s7 {
+        width: 24px;
+        height: 24px;
+        border-radius: 24px;
+        transform-origin: -20px 50px;
+        animation: orbit 3.2s infinite linear;
+      }
+
+      .loading-orbit__s8 {
+        width: 16px;
+        height: 16px;
+        border-radius: 16px;
+        transform-origin: -44px 34px;
+        animation: orbit 3.05s infinite linear;
+      }
+
+      .loading-orbit__s9 {
+        width: 7px;
+        height: 7px;
+        border-radius: 7px;
+        transform-origin: -64px -20px;
+        animation: orbit 3s infinite linear;
+      }
+
+      .loading-orbit__s10 {
+        width: 12px;
+        height: 12px;
+        border-radius: 12px;
+        transform-origin: -40px 80px;
+        animation: orbit 3.8s infinite linear;
+      }
+
+      .loading-orbit__s11 {
+        width: 22px;
+        height: 22px;
+        border-radius: 22px;
+        transform-origin: 30px 60px;
+        animation: orbit 3.33s infinite linear;
+      }
+
+      .loading-orbit__s12 {
+        width: 26px;
+        height: 26px;
+        border-radius: 26px;
+        transform-origin: 34px -28px;
+        animation: orbit 3.12s infinite linear;
+      }
+
+      .loading-orbit__s13 {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        transform-origin: 10px -70px;
+        animation: orbit 3.21s infinite linear;
+      }
+
+      .loading-orbit__s14 {
+        width: 24px;
+        height: 24px;
+        border-radius: 24px;
+        transform-origin: 54px 20px;
+        animation: orbit 4.13s infinite linear;
+      }
+
+      @keyframes orbit {
+        0% {
+          transform: rotate(0deg) translate3d(0, 0, 0);
+        }
+        100% {
+          transform: rotate(360deg) translate3d(0, 0, 0);
+        }
+      }
+
       /* Subtle floating animation for decorative elements */
       @keyframes float-gentle {
         0%, 100% {
@@ -556,16 +703,24 @@
     data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec"
   >
     <div class="loading-screen bg-[linear-gradient(135deg,rgb(var(--color-loading-1)_/_0.98),rgb(var(--color-loading-2)_/_0.98))] text-ink" role="status" aria-live="polite" aria-label="Loading">
-      <div class="h-12 w-12 rounded-full border-2 border-primary/30 border-t-accent/60 animate-spin motion-reduce:animate-none" aria-hidden="true"></div>
-      <div class="text-center">
-        <p class="text-sm uppercase tracking-[0.4em] text-primary/80">資料載入中</p>
-        <p class="mt-2 text-xs text-muted/70">正在準備喜帖內容，請稍候片刻。</p>
-      </div>
-      <!-- Loading dots: adjust spacing/size via Tailwind utilities -->
-      <div class="flex items-center justify-center gap-2 pt-1" aria-hidden="true">
-        <span class="h-2 w-2 rounded-full bg-primary/40 animate-pulse motion-reduce:animate-none"></span>
-        <span class="h-2 w-2 rounded-full bg-accent/50 animate-pulse motion-reduce:animate-none"></span>
-        <span class="h-2 w-2 rounded-full bg-primary/30 animate-pulse motion-reduce:animate-none"></span>
+      <div class="loading-orbit h-56 w-56 sm:h-72 sm:w-72 md:h-80 md:w-80 [--orbit-scale:0.6] sm:[--orbit-scale:0.75] md:[--orbit-scale:0.9]" aria-hidden="true">
+        <div class="loading-orbit__center">
+          <div class="loading-orbit__dot"></div>
+          <div class="loading-orbit__s loading-orbit__s1"></div>
+          <div class="loading-orbit__s loading-orbit__s2"></div>
+          <div class="loading-orbit__s loading-orbit__s3"></div>
+          <div class="loading-orbit__s loading-orbit__s4"></div>
+          <div class="loading-orbit__s loading-orbit__s5"></div>
+          <div class="loading-orbit__s loading-orbit__s6"></div>
+          <div class="loading-orbit__s loading-orbit__s7"></div>
+          <div class="loading-orbit__s loading-orbit__s8"></div>
+          <div class="loading-orbit__s loading-orbit__s9"></div>
+          <div class="loading-orbit__s loading-orbit__s10"></div>
+          <div class="loading-orbit__s loading-orbit__s11"></div>
+          <div class="loading-orbit__s loading-orbit__s12"></div>
+          <div class="loading-orbit__s loading-orbit__s13"></div>
+          <div class="loading-orbit__s loading-orbit__s14"></div>
+        </div>
       </div>
     </div>
     <div class="page-content">
