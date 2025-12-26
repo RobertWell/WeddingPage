@@ -471,113 +471,6 @@
         }
       }
 
-      .garden-only {
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.4s ease;
-      }
-
-      body[data-theme="garden"] .garden-only {
-        opacity: 1;
-      }
-
-      .garden-flower {
-        position: absolute;
-        width: clamp(28px, 4.5vw, 48px);
-        height: clamp(28px, 4.5vw, 48px);
-        z-index: 2;
-        opacity: 0.85;
-        mix-blend-mode: normal;
-      }
-
-      .garden-flower--b {
-        bottom: clamp(2rem, 10vh, 8rem);
-        left: clamp(1rem, 5vw, 4rem);
-      }
-
-      .garden-flower__core {
-        --flower-size: clamp(14px, 2.6vw, 24px);
-        --leaf-translate: calc(var(--flower-size) * -0.7);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: var(--flower-size);
-        height: var(--flower-size);
-        transform: translate(-50%, -50%);
-        animation: flower-rotate 16s ease infinite;
-      }
-
-      .garden-flower__core .leaf {
-        position: absolute;
-        z-index: 1;
-        width: var(--flower-size);
-        height: var(--flower-size);
-        background: rgba(255, 255, 255, 0.85);
-        border-radius: 2px 50px;
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        opacity: 0.75;
-        transform: rotate(var(--leaf-angle)) translateY(0);
-        animation: leaf-bloom 16s ease infinite;
-        animation-delay: var(--leaf-delay);
-      }
-
-      .garden-flower__core .dot {
-        position: absolute;
-        z-index: 3;
-        width: var(--flower-size);
-        height: var(--flower-size);
-        top: 0;
-        left: 0;
-        background: rgb(var(--color-accent) / 0.9);
-        border-radius: 50%;
-        opacity: 0.85;
-        transform: scale(0);
-        animation: flower-dot 16s ease-in-out infinite;
-      }
-
-
-      @keyframes leaf-bloom {
-        0%, 100% {
-          transform: rotate(var(--leaf-angle)) translateY(0);
-        }
-        25%, 70% {
-          transform: rotate(var(--leaf-angle)) translate(var(--leaf-translate), var(--leaf-translate)) scale(2);
-        }
-      }
-
-      @keyframes flower-rotate {
-        0% {
-          transform: translate(-50%, -50%) rotate(0);
-        }
-        60% {
-          transform: translate(-50%, -50%) rotate(180deg);
-        }
-        100% {
-          transform: translate(-50%, -50%) rotate(360deg);
-        }
-      }
-
-      @keyframes flower-dot {
-        12% {
-          transform: scale(0);
-        }
-        20% {
-          transform: scale(1.1);
-        }
-        25% {
-          transform: scale(0.95);
-        }
-        30%, 55% {
-          transform: scale(1);
-        }
-        58% {
-          transform: scale(1.1);
-        }
-        70% {
-          transform: scale(0);
-        }
-      }
-
       /* Subtle floating animation for decorative elements */
       @keyframes float-gentle {
         0%, 100% {
@@ -708,14 +601,6 @@
         mask-image: linear-gradient(to right, #000 0%, #000 78%, transparent 100%);
       }
 
-      .decorative-corner-flip {
-        transform: scaleX(-1);
-      }
-
-      .decorative-corner-flip-vertical {
-        transform: scaleY(-1);
-      }
-
       .corner-deco {
         position: absolute;
         width: clamp(80px, 16vw, 128px);
@@ -728,6 +613,16 @@
         left: clamp(12px, 3vw, 24px);
       }
 
+      .corner-deco--tr {
+        top: clamp(12px, 3vw, 24px);
+        right: clamp(12px, 3vw, 24px);
+      }
+
+      .corner-deco--bl {
+        bottom: clamp(12px, 3vw, 24px);
+        left: clamp(12px, 3vw, 24px);
+      }
+
       .corner-deco--br {
         right: clamp(12px, 3vw, 24px);
         bottom: clamp(12px, 3vw, 24px);
@@ -736,6 +631,274 @@
       .corner-deco--tight {
         right: clamp(10px, 2.5vw, 20px);
         bottom: clamp(10px, 2.5vw, 20px);
+      }
+
+      .theme-only {
+        display: none !important;
+      }
+
+      body[data-theme="garden"] .theme-only--garden {
+        display: inline-block !important;
+      }
+
+      body[data-theme="garden"] .theme-only--default {
+        display: none !important;
+      }
+
+      body:not([data-theme="garden"]) .theme-only--default {
+        display: inline-block !important;
+      }
+
+      body[data-theme="candlelit"] .theme-only--default {
+        display: none !important;
+      }
+
+      body[data-theme="candlelit"] .theme-only--candlelit {
+        display: inline-block !important;
+      }
+
+      .maple-deco {
+        mix-blend-mode: soft-light;
+      }
+
+      .fire-icon {
+        --fire-scale: 0.6px;
+        --log-width: 20em;
+        position: relative;
+        width: 80em;
+        height: 80em;
+        display: inline-block;
+        font-size: var(--fire-scale);
+      }
+
+      .fire-icon * {
+        position: absolute;
+        box-sizing: border-box;
+      }
+
+      .fire-icon__logs {
+        bottom: 0;
+        left: 50%;
+        width: 10em;
+        transform: translateX(-50%);
+      }
+
+      .fire-icon__logs .two {
+        width: var(--log-width);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .fire-icon__logs .two .log {
+        position: relative;
+        width: 100%;
+        height: calc(var(--log-width) * 0.75);
+        background: #725442;
+        margin-bottom: -8em;
+        clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+      }
+
+      .fire-icon__logs .two::before {
+        content: "";
+        display: block;
+        position: relative;
+        width: calc(var(--log-width) * 0.4);
+        height: calc(var(--log-width) * 0.36);
+        background: #725442;
+        margin: 0 auto;
+        border-radius: 50%;
+        transform: translateY(60%);
+      }
+
+      .fire-icon__logs .two::after {
+        content: "";
+        display: block;
+        position: relative;
+        width: var(--log-width);
+        height: calc(var(--log-width) * 0.9);
+        border-radius: 50%;
+        background: #91725c;
+        border: calc(80em * 0.0125) solid #725442;
+      }
+
+      .fire-icon__logs .one,
+      .fire-icon__logs .three {
+        width: calc(var(--log-width) * 0.9);
+        margin-left: -18em;
+        bottom: -11em;
+      }
+
+      .fire-icon__logs .one .log,
+      .fire-icon__logs .three .log {
+        position: relative;
+        width: 100%;
+        height: calc(var(--log-width) * 0.9);
+        background: #725442;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 41%, 11% 100%);
+        transform-origin: 0 0;
+        transform: skewY(-10deg);
+      }
+
+      .fire-icon__logs .one::before,
+      .fire-icon__logs .three::before {
+        content: "";
+        display: block;
+        position: relative;
+        width: calc(var(--log-width) * 0.24);
+        height: calc(var(--log-width) * 0.36);
+        background: #725442;
+        margin-left: auto;
+        border-radius: 50%;
+        transform: translate(45%, 57%);
+      }
+
+      .fire-icon__logs .one::after,
+      .fire-icon__logs .three::after {
+        content: "";
+        display: block;
+        position: relative;
+        width: calc(var(--log-width) * 0.6);
+        height: calc(var(--log-width) * 0.9);
+        border-radius: 50%;
+        background: #91725c;
+        transform: translate(-50%, -100%);
+        border: calc(80em * 0.0125) solid #725442;
+      }
+
+      .fire-icon__logs .three {
+        transform: scaleX(-1);
+        margin-left: 10em;
+      }
+
+      .fire-icon__fire {
+        left: 50%;
+        bottom: 24.5em;
+        transform: translateX(-50%);
+      }
+
+      .fire-icon__flames > * {
+        bottom: 0;
+        right: 0;
+      }
+
+      .fire-icon__flames .flame {
+        bottom: 0;
+        right: 0;
+        background: rgba(255, 119, 15, 0.6);
+        width: 35em;
+        height: 48em;
+        border-radius: 0 40em;
+        transform-origin: 100% 100%;
+      }
+
+      .fire-icon__flames .two {
+        transform: rotate(30deg);
+      }
+
+      .fire-icon__flames .three {
+        transform: scaleX(-1);
+      }
+
+      .fire-icon__flames.inner .flame {
+        background: rgba(255, 218, 119, 0.4);
+        width: 20em;
+        height: 24em;
+      }
+
+      .fire-icon__glow {
+        background: radial-gradient(closest-side, #ff770f, rgba(255, 119, 15, 0));
+        width: 100%;
+        height: 100%;
+        top: -8em;
+      }
+
+      .fire-icon--lg {
+        --fire-scale: 1px;
+      }
+
+      .fire-icon__flames .one .flame,
+      .fire-icon__flames.inner .one .flame {
+        animation-delay: -0.2s;
+      }
+
+      .fire-icon__flames .two .flame,
+      .fire-icon__flames.inner .two .flame {
+        animation-delay: -0.5s;
+      }
+
+      .fire-icon__flames .three .flame,
+      .fire-icon__flames.inner .three .flame {
+        animation-delay: -0.9s;
+      }
+
+      .fire-icon .flame {
+        animation:
+          wave 1s ease-in-out infinite alternate,
+          flicker 0.3s ease-in-out infinite alternate,
+          height 0.5s ease infinite alternate;
+      }
+
+      .fire-icon__flames.inner .flame {
+        animation:
+          wave 0.8s ease-in-out infinite alternate,
+          flicker 0.2s ease-in-out infinite alternate,
+          heightsmall 0.3s ease infinite alternate;
+      }
+
+      .fire-icon__glow {
+        animation:
+          glow 0.8s ease-in-out infinite alternate,
+          flicker 0.3s ease-in-out infinite alternate;
+      }
+
+      @keyframes wave {
+        from {
+          transform: rotate(-5deg);
+        }
+        to {
+          transform: rotate(5deg);
+        }
+      }
+
+      @keyframes flicker {
+        from {
+          opacity: 0.8;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes height {
+        from {
+          height: 48em;
+          width: 35em;
+        }
+        to {
+          height: 44em;
+          width: 30em;
+        }
+      }
+
+      @keyframes heightsmall {
+        from {
+          height: 24em;
+          width: 20em;
+        }
+        to {
+          height: 23em;
+          width: 18em;
+        }
+      }
+
+      @keyframes glow {
+        from {
+          transform: scale(1.1);
+        }
+        to {
+          transform: scale(1);
+        }
       }
 
       .botanical-corner-blend {
@@ -767,6 +930,16 @@
 
         .corner-deco--tl {
           top: 12px;
+          left: 12px;
+        }
+
+        .corner-deco--tr {
+          top: 12px;
+          right: 12px;
+        }
+
+        .corner-deco--bl {
+          bottom: 12px;
           left: 12px;
         }
 
@@ -981,44 +1154,54 @@
         <!-- New couple introduction card -->
         <section id="couple" class="grain leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <img
-            src="img/botanical-corner.svg"
+            src="img/decoration2/botanical-corner_right_top.png"
             alt=""
-            class="botanical-corner-blend decorative-svg decorative-corner-flip-vertical corner-deco corner-deco--tl opacity-18"
+            class="botanical-corner-blend decorative-svg corner-deco corner-deco--tr opacity-30"
             loading="lazy"
             aria-hidden="true"
           />
           <img
-            src="img/botanical-corner.svg"
+            src="img/decoration2/botanical-corner_left_down.png"
             alt=""
-            class="botanical-corner-blend decorative-svg decorative-corner-flip corner-deco corner-deco--br opacity-18"
+            class="botanical-corner-blend decorative-svg corner-deco corner-deco--bl opacity-30"
             loading="lazy"
             aria-hidden="true"
           />
-          <div class="garden-only garden-flower garden-flower--b scale-75 sm:scale-90 md:scale-100" aria-hidden="true">
-            <div class="garden-flower__core">
-              <div class="leaf" style="--leaf-angle: 0deg; --leaf-delay: 0s;"></div>
-              <div class="leaf" style="--leaf-angle: 22.5deg; --leaf-delay: -0.2s;"></div>
-              <div class="leaf" style="--leaf-angle: 45deg; --leaf-delay: -0.4s;"></div>
-              <div class="leaf" style="--leaf-angle: 67.5deg; --leaf-delay: -0.6s;"></div>
-              <div class="leaf" style="--leaf-angle: 90deg; --leaf-delay: -0.8s;"></div>
-              <div class="leaf" style="--leaf-angle: 112.5deg; --leaf-delay: -1s;"></div>
-              <div class="leaf" style="--leaf-angle: 135deg; --leaf-delay: -1.2s;"></div>
-              <div class="leaf" style="--leaf-angle: 157.5deg; --leaf-delay: -1.4s;"></div>
-              <div class="leaf" style="--leaf-angle: 180deg; --leaf-delay: -1.6s;"></div>
-              <div class="leaf" style="--leaf-angle: 202.5deg; --leaf-delay: -1.8s;"></div>
-              <div class="leaf" style="--leaf-angle: 225deg; --leaf-delay: -2s;"></div>
-              <div class="leaf" style="--leaf-angle: 247.5deg; --leaf-delay: -2.2s;"></div>
-              <div class="leaf" style="--leaf-angle: 270deg; --leaf-delay: -2.4s;"></div>
-              <div class="leaf" style="--leaf-angle: 292.5deg; --leaf-delay: -2.6s;"></div>
-              <div class="leaf" style="--leaf-angle: 315deg; --leaf-delay: -2.8s;"></div>
-              <div class="leaf" style="--leaf-angle: 337.5deg; --leaf-delay: -3s;"></div>
-              <div class="dot"></div>
-            </div>
-          </div>
 
           <div class="content-layer content-safe">
             <div class="text-center">
-              <img src="img/leaf.svg" alt="小葉片裝飾" class="mx-auto h-12 w-12 opacity-80" loading="lazy" />
+              <img
+                src="img/leaf.svg"
+                alt="小葉片裝飾"
+                class="theme-only theme-only--default mx-auto h-12 w-12 opacity-80"
+                loading="lazy"
+              />
+              <div class="theme-only theme-only--candlelit fire-icon mx-auto" aria-hidden="true">
+                <div class="fire-icon__logs logs">
+                  <div class="one"><div class="log"></div></div>
+                  <div class="two"><div class="log"></div></div>
+                  <div class="three"><div class="log"></div></div>
+                </div>
+                <div class="fire-icon__fire fire">
+                  <div class="fire-icon__flames flames">
+                    <div class="one"><div class="flame"></div></div>
+                    <div class="two"><div class="flame"></div></div>
+                    <div class="three"><div class="flame"></div></div>
+                  </div>
+                  <div class="fire-icon__flames flames inner">
+                    <div class="one"><div class="flame"></div></div>
+                    <div class="two"><div class="flame"></div></div>
+                    <div class="three"><div class="flame"></div></div>
+                  </div>
+                  <div class="fire-icon__glow glow"></div>
+                </div>
+              </div>
+              <img
+                src="img/decoration2/maple.png"
+                alt="小葉片裝飾"
+                class="theme-only theme-only--garden maple-deco mx-auto h-12 w-12 opacity-60"
+                loading="lazy"
+              />
               <p class="mt-4 text-sm uppercase tracking-[0.4em] text-primary/70" data-config="couple.section.label">新人介紹</p>
               <h2 class="mt-3 font-display text-3xl text-primary sm:text-4xl" data-config="couple.section.heading">把生活寫成一首溫柔的歌</h2>
               <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="couple.section.description">
@@ -1142,9 +1325,9 @@
         <!-- RSVP / survey section -->
         <section id="survey" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <img
-            src="img/botanical-corner.svg"
+            src="img/decoration2/botanical-corner_right_top.png"
             alt=""
-            class="botanical-corner-blend decorative-svg decorative-corner-flip corner-deco corner-deco--tight opacity-20"
+            class="botanical-corner-blend decorative-svg corner-deco corner-deco--tr opacity-30"
             loading="lazy"
             aria-hidden="true"
           />
@@ -1279,7 +1462,38 @@
                 >
               </div>
               <div class="rounded-3xl border border-border/60 bg-white/70 p-6 text-center shadow-inner">
-                <img src="img/leaf.svg" alt="森林小插圖" class="mx-auto h-20 w-20" loading="lazy" />
+                <img
+                  src="img/leaf.svg"
+                  alt="森林小插圖"
+                  class="theme-only theme-only--default mx-auto h-20 w-20"
+                  loading="lazy"
+                />
+                <div class="theme-only theme-only--candlelit fire-icon fire-icon--lg mx-auto" aria-hidden="true">
+                  <div class="fire-icon__logs logs">
+                    <div class="one"><div class="log"></div></div>
+                    <div class="two"><div class="log"></div></div>
+                    <div class="three"><div class="log"></div></div>
+                  </div>
+                  <div class="fire-icon__fire fire">
+                    <div class="fire-icon__flames flames">
+                      <div class="one"><div class="flame"></div></div>
+                      <div class="two"><div class="flame"></div></div>
+                      <div class="three"><div class="flame"></div></div>
+                    </div>
+                    <div class="fire-icon__flames flames inner">
+                      <div class="one"><div class="flame"></div></div>
+                      <div class="two"><div class="flame"></div></div>
+                      <div class="three"><div class="flame"></div></div>
+                    </div>
+                    <div class="fire-icon__glow glow"></div>
+                  </div>
+                </div>
+                <img
+                  src="img/decoration2/maple.png"
+                  alt="森林小插圖"
+                  class="theme-only theme-only--garden maple-deco mx-auto h-20 w-20 opacity-60"
+                  loading="lazy"
+                />
                 <p class="mt-4 font-display text-xl text-primary" data-config="invitation.card.message">願你今天也被溫柔包圍</p>
                 <p class="mt-4 text-sm leading-relaxed text-ink/80" data-config="invitation.card.note">
                   我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。

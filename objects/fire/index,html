@@ -1,0 +1,24 @@
+.container
+  .glow
+  .logs
+    .one
+      .log
+    .two
+      .log
+    .three
+      .log
+  .fire
+    .flames
+      .one
+        .flame
+      .two
+        .flame
+      .three
+        .flame
+    .flames.inner
+      .one
+        .flame
+      .two
+        .flame
+      .three
+        .flame
