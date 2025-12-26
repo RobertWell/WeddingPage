@@ -749,8 +749,8 @@
                   喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。
                 </p>
                 <ul class="mt-4 space-y-2 text-sm text-ink/80">
-                  <li data-config="groom.detail1">婚禮口頭禪：慢慢來，會更美。</li>
-                  <li data-config="groom.detail2">最常說的話：別忘了抬頭看天空。</li>
+                  <li data-config="groom.detail1"></li>
+                  <li data-config="groom.detail2"></li>
                 </ul>
               </article>
               <article class="rounded-3xl bg-primary/10 p-6">
@@ -759,8 +759,8 @@
                   熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。
                 </p>
                 <ul class="mt-4 space-y-2 text-sm text-ink/80">
-                  <li data-config="bride.detail1">療癒小夥伴：松鼠與貓咪。</li>
-                  <li data-config="bride.detail2">最愛收集：旅行貼紙與古董紙膠帶。</li>
+                  <li data-config="bride.detail1"></li>
+                  <li data-config="bride.detail2"></li>
                 </ul>
               </article>
               <article class="rounded-3xl bg-white/80 p-6 shadow-inner">
@@ -884,7 +884,6 @@
                 type="text"
                 name="name"
                 required
-                placeholder="請輸入姓名"
                 data-config="survey.placeholder.name"
                 data-config-attr="placeholder"
                 class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
@@ -898,7 +897,7 @@
                   required
                   class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
                 >
-                  <option value="" data-config="survey.option.guests.placeholder">請選擇</option>
+                  <option value="" data-config="survey.option.guests.placeholder"></option>
                   <option value="1" data-config="survey.option.guests.1">1 人</option>
                   <option value="2" data-config="survey.option.guests.2">2 人</option>
                   <option value="3" data-config="survey.option.guests.3">3 人</option>
@@ -912,7 +911,7 @@
                   required
                   class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
                 >
-                  <option value="" data-config="survey.option.diet.placeholder">請選擇</option>
+                  <option value="" data-config="survey.option.diet.placeholder"></option>
                   <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
                   <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素</option>
                   <option value="vegan" data-config="survey.option.diet.vegan">全素</option>
@@ -925,7 +924,6 @@
               <textarea
                 name="message"
                 rows="4"
-                placeholder="寫下你的祝福或提醒"
                 data-config="survey.placeholder.message"
                 data-config-attr="placeholder"
                 class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
@@ -1020,10 +1018,7 @@
         const CONFIG_SOURCE_URL =
           (bodyEl && bodyEl.dataset.configSrc) ||
           (typeof window !== "undefined" && window.CONFIG_SOURCE_URL) ||
-          "config.csv";
-        const FALLBACK_CONFIG_URL =
-          (typeof window !== "undefined" && window.CONFIG_FALLBACK_URL) ||
-          "config.csv";
+          "";
         const DEFAULT_LANG = (bodyEl && bodyEl.dataset.defaultLang) || "zh";
         const STORAGE_KEY = "forest-wedding-lang";
         const state = {
@@ -1108,24 +1103,6 @@
             });
           });
           const languages = Array.from(new Set(langHeaders.filter(Boolean)));
-          return { languages, data };
-        }
-
-        function mergeConfig(primary, fallback) {
-          if (!fallback.languages.length) return primary;
-          const languages = Array.from(new Set([...primary.languages, ...fallback.languages]));
-          const data = {};
-          languages.forEach((lang) => {
-            const primaryBucket = primary.data[lang] || {};
-            const fallbackBucket = fallback.data[lang] || {};
-            const merged = { ...fallbackBucket, ...primaryBucket };
-            Object.keys(merged).forEach((key) => {
-              if (primaryBucket[key] === "" && fallbackBucket[key]) {
-                merged[key] = fallbackBucket[key];
-              }
-            });
-            data[lang] = merged;
-          });
           return { languages, data };
         }
 
@@ -1298,23 +1275,12 @@
 
         async function loadConfig() {
           try {
+            if (!CONFIG_SOURCE_URL) return;
             const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
             if (!res.ok) throw new Error("Failed to load config");
             const raw = await res.text();
             let parsed = parseConfig(raw);
             if (!parsed.languages.length) return;
-            if (FALLBACK_CONFIG_URL && FALLBACK_CONFIG_URL !== CONFIG_SOURCE_URL) {
-              try {
-                const fallbackRes = await fetch(FALLBACK_CONFIG_URL, { cache: "no-store" });
-                if (fallbackRes.ok) {
-                  const fallbackRaw = await fallbackRes.text();
-                  const fallbackParsed = parseConfig(fallbackRaw);
-                  parsed = mergeConfig(parsed, fallbackParsed);
-                }
-              } catch (err) {
-                console.warn("Unable to load fallback config", err);
-              }
-            }
             state.languages = parsed.languages;
             state.data = parsed.data;
             const storedLang = getStoredLang();
