@@ -17,6 +17,11 @@ hero.overlayOpacity,1,1
 body.background,"radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%), radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%), linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)","radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%), radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%), linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)"
 hero.ctaPrimary,查看喜帖,"View Invitation"
 hero.ctaSecondary,填寫問卷,"RSVP Form"
+countdown.section.heading,倒數這一天...,Counting down the days...
+countdown.label.days,天,Days
+countdown.label.hours,小時,Hours
+countdown.label.minutes,分鐘,Minutes
+countdown.datetime,2025-10-18T15:30:00+08:00,2025-10-18T15:30:00+08:00
 couple.section.label,新人介紹,"Couple"
 couple.section.heading,把生活寫成一首溫柔的歌,"Turning daily life into a gentle song"
 couple.section.description,"我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。","We like to walk slowly, sketching each day like a postcard. We hope you feel the same soft, fresh warmth here."
