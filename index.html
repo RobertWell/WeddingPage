@@ -471,6 +471,113 @@
         }
       }
 
+      .garden-only {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+      }
+
+      body[data-theme="garden"] .garden-only {
+        opacity: 1;
+      }
+
+      .garden-flower {
+        position: absolute;
+        width: clamp(28px, 4.5vw, 48px);
+        height: clamp(28px, 4.5vw, 48px);
+        z-index: 2;
+        opacity: 0.85;
+        mix-blend-mode: normal;
+      }
+
+      .garden-flower--b {
+        bottom: clamp(2rem, 10vh, 8rem);
+        left: clamp(1rem, 5vw, 4rem);
+      }
+
+      .garden-flower__core {
+        --flower-size: clamp(14px, 2.6vw, 24px);
+        --leaf-translate: calc(var(--flower-size) * -0.7);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--flower-size);
+        height: var(--flower-size);
+        transform: translate(-50%, -50%);
+        animation: flower-rotate 16s ease infinite;
+      }
+
+      .garden-flower__core .leaf {
+        position: absolute;
+        z-index: 1;
+        width: var(--flower-size);
+        height: var(--flower-size);
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 2px 50px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        opacity: 0.75;
+        transform: rotate(var(--leaf-angle)) translateY(0);
+        animation: leaf-bloom 16s ease infinite;
+        animation-delay: var(--leaf-delay);
+      }
+
+      .garden-flower__core .dot {
+        position: absolute;
+        z-index: 3;
+        width: var(--flower-size);
+        height: var(--flower-size);
+        top: 0;
+        left: 0;
+        background: rgb(var(--color-accent) / 0.9);
+        border-radius: 50%;
+        opacity: 0.85;
+        transform: scale(0);
+        animation: flower-dot 16s ease-in-out infinite;
+      }
+
+
+      @keyframes leaf-bloom {
+        0%, 100% {
+          transform: rotate(var(--leaf-angle)) translateY(0);
+        }
+        25%, 70% {
+          transform: rotate(var(--leaf-angle)) translate(var(--leaf-translate), var(--leaf-translate)) scale(2);
+        }
+      }
+
+      @keyframes flower-rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+        60% {
+          transform: translate(-50%, -50%) rotate(180deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      @keyframes flower-dot {
+        12% {
+          transform: scale(0);
+        }
+        20% {
+          transform: scale(1.1);
+        }
+        25% {
+          transform: scale(0.95);
+        }
+        30%, 55% {
+          transform: scale(1);
+        }
+        58% {
+          transform: scale(1.1);
+        }
+        70% {
+          transform: scale(0);
+        }
+      }
+
       /* Subtle floating animation for decorative elements */
       @keyframes float-gentle {
         0%, 100% {
@@ -887,6 +994,27 @@
             loading="lazy"
             aria-hidden="true"
           />
+          <div class="garden-only garden-flower garden-flower--b scale-75 sm:scale-90 md:scale-100" aria-hidden="true">
+            <div class="garden-flower__core">
+              <div class="leaf" style="--leaf-angle: 0deg; --leaf-delay: 0s;"></div>
+              <div class="leaf" style="--leaf-angle: 22.5deg; --leaf-delay: -0.2s;"></div>
+              <div class="leaf" style="--leaf-angle: 45deg; --leaf-delay: -0.4s;"></div>
+              <div class="leaf" style="--leaf-angle: 67.5deg; --leaf-delay: -0.6s;"></div>
+              <div class="leaf" style="--leaf-angle: 90deg; --leaf-delay: -0.8s;"></div>
+              <div class="leaf" style="--leaf-angle: 112.5deg; --leaf-delay: -1s;"></div>
+              <div class="leaf" style="--leaf-angle: 135deg; --leaf-delay: -1.2s;"></div>
+              <div class="leaf" style="--leaf-angle: 157.5deg; --leaf-delay: -1.4s;"></div>
+              <div class="leaf" style="--leaf-angle: 180deg; --leaf-delay: -1.6s;"></div>
+              <div class="leaf" style="--leaf-angle: 202.5deg; --leaf-delay: -1.8s;"></div>
+              <div class="leaf" style="--leaf-angle: 225deg; --leaf-delay: -2s;"></div>
+              <div class="leaf" style="--leaf-angle: 247.5deg; --leaf-delay: -2.2s;"></div>
+              <div class="leaf" style="--leaf-angle: 270deg; --leaf-delay: -2.4s;"></div>
+              <div class="leaf" style="--leaf-angle: 292.5deg; --leaf-delay: -2.6s;"></div>
+              <div class="leaf" style="--leaf-angle: 315deg; --leaf-delay: -2.8s;"></div>
+              <div class="leaf" style="--leaf-angle: 337.5deg; --leaf-delay: -3s;"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
 
           <div class="content-layer content-safe">
             <div class="text-center">
@@ -1703,6 +1831,9 @@
           }
 
           updateDecorations(themeName);
+          if (bodyEl) {
+            bodyEl.dataset.theme = themeName;
+          }
 
           // Update active button state
           document.querySelectorAll("[data-theme-button]").forEach(btn => {
