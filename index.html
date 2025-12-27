@@ -581,12 +581,8 @@
 
       .decorative-tree {
         position: absolute;
-        bottom: -6px;
-        right: -18px;
         display: block;
         z-index: 0;
-        width: clamp(170px, 22vw, 250px);
-        opacity: 0.7;
         pointer-events: none;
         transform-origin: bottom left;
       }
@@ -649,11 +645,31 @@
         display: inline-block !important;
       }
 
+      body[data-theme="coastal"] .theme-only--default {
+        display: none !important;
+      }
+
+      body[data-theme="coastal"] .theme-only--coastal {
+        display: inline-block !important;
+      }
+
       body[data-theme="candlelit"] .theme-only--default {
         display: none !important;
       }
 
       body[data-theme="candlelit"] .theme-only--candlelit {
+        display: inline-block !important;
+      }
+
+      body[data-theme="forest"] .theme-only--forest {
+        display: inline-block !important;
+      }
+
+      body[data-theme="garden"] .theme-only--warm {
+        display: inline-block !important;
+      }
+
+      body[data-theme="candlelit"] .theme-only--warm {
         display: inline-block !important;
       }
 
@@ -917,13 +933,6 @@
 
 
       @media (max-width: 640px) {
-        .decorative-tree {
-          opacity: 0.38;
-          transform: translateX(-8px) scale(0.9);
-          right: -8px;
-          bottom: -12px;
-        }
-
         .corner-deco {
           width: clamp(64px, 22vw, 96px);
         }
@@ -1176,6 +1185,12 @@
                 class="theme-only theme-only--default mx-auto h-12 w-12 opacity-80"
                 loading="lazy"
               />
+              <img
+                src="img/decoration2/water_wave.png"
+                alt="小葉片裝飾"
+                class="theme-only theme-only--coastal mx-auto h-12 w-12 opacity-80"
+                loading="lazy"
+              />
               <div class="theme-only theme-only--candlelit fire-icon mx-auto" aria-hidden="true">
                 <div class="fire-icon__logs logs">
                   <div class="one"><div class="log"></div></div>
@@ -1254,11 +1269,17 @@
         <section id="location" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12" style="overflow: visible;">
           <div class="decorative-layer" aria-hidden="true">
           </div>
-          <div class="decorative-tree" aria-hidden="true">
+          <div class="decorative-tree bottom-6 right-6 w-[140px] opacity-50 mix-blend-soft-light sm:bottom-8 sm:right-8 sm:w-[180px] lg:bottom-10 lg:right-10 lg:w-[220px]" aria-hidden="true">
             <img
-              src="img/indoor-tree.png"
+              src="img/decoration2/tree_in_spring.png"
               alt=""
-              class="decorative-svg"
+              class="decorative-svg theme-only theme-only--forest"
+              loading="lazy"
+            />
+            <img
+              src="img/decoration2/trees_in_fall.png"
+              alt=""
+              class="decorative-svg theme-only theme-only--warm"
               loading="lazy"
             />
           </div>
@@ -1466,6 +1487,12 @@
                   src="img/leaf.svg"
                   alt="森林小插圖"
                   class="theme-only theme-only--default mx-auto h-20 w-20"
+                  loading="lazy"
+                />
+                <img
+                  src="img/decoration2/water_wave.png"
+                  alt="森林小插圖"
+                  class="theme-only theme-only--coastal mx-auto h-20 w-20"
                   loading="lazy"
                 />
                 <div class="theme-only theme-only--candlelit fire-icon fire-icon--lg mx-auto" aria-hidden="true">
