@@ -1930,6 +1930,26 @@
           dividers.forEach((divider) => observer.observe(divider));
         }
 
+        function preloadImages() {
+          const images = Array.from(document.images || []);
+          images.forEach((img) => {
+            if (img.loading === "lazy") {
+              img.loading = "eager";
+            }
+          });
+          const waitForImage = (img) =>
+            new Promise((resolve) => {
+              if (img.complete && img.naturalWidth > 0) {
+                resolve();
+                return;
+              }
+              const done = () => resolve();
+              img.addEventListener("load", done, { once: true });
+              img.addEventListener("error", done, { once: true });
+            });
+          return Promise.all(images.map(waitForImage));
+        }
+
         // Theme switching functionality - Tailwind color tokens driven by CSS variables
         const THEME_STORAGE_KEY = "wedding-theme";
         const THEME_PALETTES = window.THEME_PALETTES || {};
@@ -2108,7 +2128,7 @@
           applyTheme(savedTheme);
         }
 
-        function init() {
+        async function init() {
           resetScrollPosition();
           document.querySelectorAll("[data-lang-button]").forEach((btn) => {
             btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
@@ -2119,7 +2139,9 @@
           initializeTheme();
           setupDividerReveal();
           setupRSVPForm();
-          loadConfig().finally(() => setLoading(false));
+          await loadConfig();
+          await preloadImages();
+          setLoading(false);
         }
 
         if (document.readyState === "loading") {
