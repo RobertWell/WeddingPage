@@ -68,7 +68,6 @@
           "color-invite-2": "243 228 204",
           "color-invite-3": "207 235 200",
           "leaf-pattern": "url(\"img/patterns/themed/forest-pattern.svg\")",
-          "leaf-pattern-secondary": "url(\"img/patterns/leaf-pattern-secondary-forest.svg\")",
         },
         garden: {
           "color-primary": "138 94 114",
@@ -97,7 +96,6 @@
           "color-invite-2": "245 229 238",
           "color-invite-3": "236 221 230",
           "leaf-pattern": "url(\"img/patterns/themed/garden-pattern.svg\")",
-          "leaf-pattern-secondary": "url(\"img/patterns/leaf-pattern-secondary-garden.svg\")",
         },
         coastal: {
           "color-primary": "52 120 206",
@@ -126,7 +124,6 @@
           "color-invite-2": "224 238 244",
           "color-invite-3": "214 232 240",
           "leaf-pattern": "url(\"img/patterns/themed/coastal-pattern.svg\")",
-          "leaf-pattern-secondary": "url(\"img/patterns/leaf-pattern-secondary-coastal.svg\")",
         },
         candlelit: {
           "color-primary": "167 94 52",
@@ -155,7 +152,6 @@
           "color-invite-2": "248 224 206",
           "color-invite-3": "238 210 190",
           "leaf-pattern": "url(\"img/patterns/themed/candlelit-pattern.svg\")",
-          "leaf-pattern-secondary": "url(\"img/patterns/leaf-pattern-secondary-candlelit.svg\")",
         },
       };
       (function initThemeVariables() {
@@ -237,18 +233,6 @@
         z-index: -1;
       }
 
-      .leaf-pattern::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: var(--leaf-pattern-secondary);
-        background-size: 240px 240px;
-        background-position: 60px 40px;
-        opacity: 0.35;
-        pointer-events: none;
-        mix-blend-mode: screen;
-        z-index: -1;
-      }
 
       .gold-speckle {
         position: absolute;
@@ -1018,14 +1002,17 @@
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
       <div class="absolute inset-0">
-        <img
-          src="img/wedding_photos/heros_background.jpeg"
-          alt="陽光灑落的森林背景"
-          class="hero-image h-full w-full object-cover"
-          loading="lazy"
-          data-hero-image
-          data-hero-position="50% 70%"
-        />
+        <picture>
+          <source media="(max-width: 640px)" srcset="img/wedding_photos/heros_background_mobile.jpeg">
+          <img
+            src="img/wedding_photos/heros_background.jpeg"
+            alt="陽光灑落的森林背景"
+            class="hero-image h-full w-full object-cover"
+            loading="lazy"
+            data-hero-image
+            data-hero-position="30% 70%"
+          />
+        </picture>
         <div class="hero-overlay absolute inset-0" data-hero-overlay data-hero-overlay-default="1"></div>
       </div>
       <nav
@@ -1555,6 +1542,7 @@
         const rootStyle = document.documentElement.style;
         const heroImageEl = document.querySelector("[data-hero-image]");
         const heroOverlayEl = document.querySelector("[data-hero-overlay]");
+        let heroPositionListener = null;
         const visualDefaults = {
           heroImage: heroImageEl ? heroImageEl.getAttribute("src") : "",
           heroPosition: heroImageEl ? heroImageEl.dataset.heroPosition || "50% 50%" : "",
@@ -1692,12 +1680,43 @@
           const overlayOpacity = getValueForKey("hero.overlayOpacity", "", lang);
 
           if (heroImageEl) {
-            heroImageEl.src = heroImage || visualDefaults.heroImage;
+            const nextHeroImage = heroImage || visualDefaults.heroImage;
+            if (nextHeroImage && !heroImageEl.src.endsWith(nextHeroImage)) {
+              heroImageEl.src = nextHeroImage;
+              const parent = heroImageEl.parentElement;
+              if (parent && parent.tagName === 'PICTURE') {
+                const sourceTag = parent.querySelector('source');
+                if (sourceTag) {
+                  const mobileExtMatch = nextHeroImage.match(/\.(jpeg|jpg|png|webp)$/i);
+                  if (mobileExtMatch) {
+                    sourceTag.srcset = nextHeroImage.replace(mobileExtMatch[0], '_mobile' + mobileExtMatch[0]);
+                  } else {
+                    sourceTag.srcset = nextHeroImage;
+                  }
+                }
+              }
+            }
           }
 
           const resolvedPosition = heroPosition || visualDefaults.heroPosition;
           if (resolvedPosition) {
-            rootStyle.setProperty("--hero-image-position", resolvedPosition);
+            const applyPosition = () => {
+              rootStyle.setProperty("--hero-image-position", resolvedPosition);
+              heroPositionListener = null;
+            };
+            if (!heroImageEl) {
+              applyPosition();
+            } else if (heroImageEl.complete && heroImageEl.naturalWidth > 0) {
+              applyPosition();
+            } else {
+              if (heroPositionListener) {
+                heroImageEl.removeEventListener("load", heroPositionListener);
+                heroImageEl.removeEventListener("error", heroPositionListener);
+              }
+              heroPositionListener = applyPosition;
+              heroImageEl.addEventListener("load", heroPositionListener, { once: true });
+              heroImageEl.addEventListener("error", heroPositionListener, { once: true });
+            }
           }
 
           const resolvedOverlayOpacity =
@@ -2061,7 +2080,6 @@
           "color-invite-2",
           "color-invite-3",
           "leaf-pattern",
-          "leaf-pattern-secondary",
         ];
 
         function getStoredTheme() {
