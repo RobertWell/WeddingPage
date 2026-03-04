@@ -9,7 +9,7 @@ This project keeps presentation content in `config.csv` and pushes RSVP submissi
 1. Create a new Google Sheet (for example “Forest Wedding”).
 2. Add two tabs:
    - `config` – columns: `key`, `zh`, `en`. Copy/paste the entire contents of `config.csv` (row 1 should be the header).
-   - `rsvp` – columns: `Timestamp`, `Name`, `Guests`, `Diet`, `Message`, `Locale`, `Source`. You can rename or add columns, but keep the first row as the header so the script can append rows.
+   - `rsvp` – columns: `Timestamp`, `Name`, `Guests`, `Diet`, `HasChildren`, `ChildSeats`, `Message`, `Locale`, `Source`. You can rename or add columns, but keep the first row as the header so the script can append rows.
 3. Share the sheet with anyone who needs to edit the text or view RSVPs. Visitors to the website never access the sheet directly; they only hit the Apps Script endpoint.
 
 ---
@@ -55,6 +55,8 @@ function doPost(e) {
     payload.name || '',
     payload.guests || '',
     payload.diet || '',
+    payload.hasChildren || 'no',
+    payload.childSeats || '0',
     payload.message || '',
     payload.locale || '',
     payload.source || 'web',

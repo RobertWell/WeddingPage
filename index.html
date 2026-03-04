@@ -1395,6 +1395,28 @@
                 </select>
               </label>
             </div>
+            <div class="grid gap-6 md:grid-cols-2">
+              <label class="block">
+                <span class="text-muted/70">是否有小孩</span>
+                <select
+                  name="hasChildren"
+                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
+                >
+                  <option value="no" selected>無</option>
+                  <option value="yes">有</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="text-muted/70">小孩椅幾張</span>
+                <input
+                  type="number"
+                  name="childSeats"
+                  min="0"
+                  value="0"
+                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
+                />
+              </label>
+            </div>
             <label class="block">
               <span class="text-muted/70" data-config="survey.label.message">想對我們說的話</span>
               <textarea

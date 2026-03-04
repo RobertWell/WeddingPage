@@ -47,6 +47,8 @@ function doPost(e) {
   const name = getField('name');
   const guests = getField('guests');
   const diet = getField('diet');
+  const hasChildren = getField('hasChildren') || 'no';
+  const childSeats = getField('childSeats') || '0';
   const message = getField('message');
   const locale = getField('locale') || 'zh';
   const source = getField('source') || 'web';
@@ -68,6 +70,8 @@ function doPost(e) {
     name,
     guests,
     diet,
+    hasChildren,
+    childSeats,
     message,
     locale,
     source,
