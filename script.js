@@ -5,7 +5,7 @@ if (surveyForm) {
     event.preventDefault();
     const formData = new FormData(surveyForm);
     const name = formData.get("name") || "朋友";
-    alert(`${name}，謝謝你的回覆！之後我們會把表單串接到 Google Sheets。`);
+    alert(`✅ ${name}，我們已收到你的回覆，謝謝你！`);
     surveyForm.reset();
   });
 }
