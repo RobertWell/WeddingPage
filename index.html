@@ -1273,8 +1273,6 @@
               <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="location.section.heading">餐廳地點
               </p>
               <h2 class="mt-2 font-display text-3xl text-primary" data-config="location.section.title">森光花園，等你來散步</h2>
-              <p class="mt-3 text-lg font-semibold text-primary/90" data-config="venue.name">森光花園宴會廳</p>
-              <p class="mt-1 text-sm text-ink/70" data-config="venue.address">台北市信義區林蔭路 88 號</p>
               <p class="mt-5 text-base leading-relaxed text-ink/80" data-config="location.section.description">
                 我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
               </p>
@@ -1284,25 +1282,34 @@
                 <img src="img/wedding_photos/position_traffic.jpg" alt="交通位置圖"
                   class="object-cover w-full h-full min-h-[250px]" loading="lazy" />
               </div>
-              <div class="flex flex-col rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80">
-                <h3 class="font-display text-2xl text-primary" data-config="transport.title">交通方式</h3>
-                <ul class="mt-4 space-y-3 flex-grow">
-                  <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
-                  <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
-                  <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
-                </ul>
-                <div class="mt-6 flex flex-row gap-3 text-sm">
-                  <a class="flex-1 rounded-full bg-white/90 px-4 py-2 text-center text-ink transition hover:bg-white border border-border/40 shadow-sm"
-                    href="https://maps.google.com" data-config="map.url" data-config-attr="href" target="_blank"
-                    rel="noreferrer">
-                    <span data-config="location.button.map">開啟地圖</span>
-                  </a>
-                  <a class="flex-1 rounded-full bg-primary/90 px-4 py-2 text-center text-white transition hover:bg-primary border border-primary/20 shadow-sm"
-                    href="#survey" data-config="location.button.rsvp">填寫出席</a>
+              <div class="flex flex-col gap-6">
+                <!-- Upper Panel: Venue Info -->
+                <div class="flex flex-col rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80">
+                  <h3 class="font-display text-2xl text-primary mb-4">餐廳位置</h3>
+                  <p class="text-lg font-semibold text-primary/90" data-config="venue.name">森光花園宴會廳</p>
+                  <p class="mt-1 text-sm text-ink/70" data-config="venue.address">台北市信義區林蔭路 88 號</p>
                 </div>
-                <p class="mt-4 rounded-2xl bg-white/70 p-4 text-xs text-muted/70" data-config="transport.note">
-                  若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
-                </p>
+                <!-- Lower Panel: Traffic Info -->
+                <div class="flex flex-col rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80 flex-grow">
+                  <h3 class="font-display text-2xl text-primary" data-config="transport.title">交通方式</h3>
+                  <ul class="mt-4 space-y-3 flex-grow">
+                    <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
+                    <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
+                    <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
+                  </ul>
+                  <div class="mt-6 flex flex-row gap-3 text-sm">
+                    <a class="flex-1 rounded-full bg-white/90 px-4 py-2 text-center text-ink transition hover:bg-white border border-border/40 shadow-sm"
+                      href="https://maps.google.com" data-config="map.url" data-config-attr="href" target="_blank"
+                      rel="noreferrer">
+                      <span data-config="location.button.map">開啟地圖</span>
+                    </a>
+                    <a class="flex-1 rounded-full bg-primary/90 px-4 py-2 text-center text-white transition hover:bg-primary border border-primary/20 shadow-sm"
+                      href="#survey" data-config="location.button.rsvp">填寫出席</a>
+                  </div>
+                  <p class="mt-4 rounded-2xl bg-white/70 p-4 text-xs text-muted/70" data-config="transport.note">
+                    若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
+                  </p>
+                </div>
               </div>
             </div>
           </div>
