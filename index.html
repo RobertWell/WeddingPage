@@ -1,1095 +1,1088 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>森語誓約｜溫馨清新系電子喜帖</title>
-    <meta
-      name="description"
-      content="以 GitHub Pages 佈署的溫暖森林系電子喜帖，包含新人介紹、地點資訊、飲食問卷與儀式感邀請。"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        safelist: ["opacity-100", "translate-y-0", "scale-100"],
-        theme: {
-          extend: {
-            fontFamily: {
-              display: ['"Noto Serif TC"', 'serif'],
-              body: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
-            },
-            boxShadow: {
-              card: "0 30px 60px rgba(33, 48, 33, 0.18)",
-            },
-            colors: {
-              primary: "rgb(var(--color-primary) / <alpha-value>)",
-              accent: "rgb(var(--color-accent) / <alpha-value>)",
-              ink: "rgb(var(--color-ink) / <alpha-value>)",
-              muted: "rgb(var(--color-muted) / <alpha-value>)",
-              border: "rgb(var(--color-border) / <alpha-value>)",
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>森語誓約｜溫馨清新系電子喜帖</title>
+  <meta name="description" content="以 GitHub Pages 佈署的溫暖森林系電子喜帖，包含新人介紹、地點資訊、飲食問卷與儀式感邀請。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      safelist: ["opacity-100", "translate-y-0", "scale-100"],
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Noto Serif TC"', 'serif'],
+            body: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            card: "0 30px 60px rgba(33, 48, 33, 0.18)",
+          },
+          colors: {
+            primary: "rgb(var(--color-primary) / <alpha-value>)",
+            accent: "rgb(var(--color-accent) / <alpha-value>)",
+            ink: "rgb(var(--color-ink) / <alpha-value>)",
+            muted: "rgb(var(--color-muted) / <alpha-value>)",
+            border: "rgb(var(--color-border) / <alpha-value>)",
           },
         },
-      };
-    </script>
-    <script>
-      window.DEFAULT_THEME = "forest";
-      window.THEME_PALETTES = {
-        forest: {
-          "color-primary": "34 139 92",
-          "color-accent": "214 180 138",
-          "color-ink": "68 74 60",
-          "color-muted": "120 130 110",
-          "color-border": "207 222 208",
-          "color-deco-1": "120 196 140",
-          "color-deco-2": "196 219 184",
-          "color-deco-3": "214 180 138",
-          "color-sage": "156 188 168",
-          "color-dusty-blue": "168 190 205",
-          "color-wash-1": "230 246 231",
-          "color-wash-2": "242 226 200",
-          "color-wash-3": "207 238 213",
-          "color-wash-4": "232 244 221",
-          "color-page-radial-1": "255 255 255",
-          "color-page-radial-2": "227 248 230",
-          "color-page-gradient-1": "234 248 233",
-          "color-page-gradient-2": "255 255 254",
-          "color-page-gradient-3": "245 235 221",
-          "color-page-gradient-4": "216 242 214",
-          "color-loading-1": "232 248 233",
-          "color-loading-2": "245 235 221",
-          "color-invite-1": "230 246 231",
-          "color-invite-2": "243 228 204",
-          "color-invite-3": "207 235 200",
-          "leaf-pattern": "url(\"img/patterns/themed/forest-pattern.svg\")",
-        },
-        garden: {
-          "color-primary": "138 94 114",
-          "color-accent": "215 163 178",
-          "color-ink": "74 70 72",
-          "color-muted": "120 110 118",
-          "color-border": "230 210 218",
-          "color-deco-1": "214 163 178",
-          "color-deco-2": "246 214 229",
-          "color-deco-3": "156 186 150",
-          "color-sage": "176 196 186",
-          "color-dusty-blue": "186 198 214",
-          "color-wash-1": "255 244 248",
-          "color-wash-2": "247 235 240",
-          "color-wash-3": "237 221 229",
-          "color-wash-4": "251 240 246",
-          "color-page-radial-1": "255 255 255",
-          "color-page-radial-2": "255 240 246",
-          "color-page-gradient-1": "255 247 249",
-          "color-page-gradient-2": "255 252 252",
-          "color-page-gradient-3": "245 230 236",
-          "color-page-gradient-4": "238 221 230",
-          "color-loading-1": "255 247 249",
-          "color-loading-2": "245 230 236",
-          "color-invite-1": "255 242 246",
-          "color-invite-2": "245 229 238",
-          "color-invite-3": "236 221 230",
-          "leaf-pattern": "url(\"img/patterns/themed/garden-pattern.svg\")",
-        },
-        coastal: {
-          "color-primary": "52 120 206",
-          "color-accent": "145 184 197",
-          "color-ink": "65 78 96",
-          "color-muted": "104 122 140",
-          "color-border": "198 220 232",
-          "color-deco-1": "145 184 197",
-          "color-deco-2": "184 214 224",
-          "color-deco-3": "215 230 235",
-          "color-sage": "170 200 200",
-          "color-dusty-blue": "164 190 212",
-          "color-wash-1": "234 246 250",
-          "color-wash-2": "230 240 246",
-          "color-wash-3": "224 236 242",
-          "color-wash-4": "240 248 252",
-          "color-page-radial-1": "255 255 255",
-          "color-page-radial-2": "230 245 250",
-          "color-page-gradient-1": "240 250 253",
-          "color-page-gradient-2": "255 255 255",
-          "color-page-gradient-3": "224 239 246",
-          "color-page-gradient-4": "232 244 248",
-          "color-loading-1": "240 250 253",
-          "color-loading-2": "232 244 248",
-          "color-invite-1": "236 247 251",
-          "color-invite-2": "224 238 244",
-          "color-invite-3": "214 232 240",
-          "leaf-pattern": "url(\"img/patterns/themed/coastal-pattern.svg\")",
-        },
-        candlelit: {
-          "color-primary": "167 94 52",
-          "color-accent": "184 137 98",
-          "color-ink": "92 66 52",
-          "color-muted": "138 104 86",
-          "color-border": "232 205 182",
-          "color-deco-1": "184 137 98",
-          "color-deco-2": "255 214 178",
-          "color-deco-3": "216 170 130",
-          "color-sage": "187 186 166",
-          "color-dusty-blue": "184 190 200",
-          "color-wash-1": "255 242 232",
-          "color-wash-2": "250 232 218",
-          "color-wash-3": "242 220 204",
-          "color-wash-4": "255 246 238",
-          "color-page-radial-1": "255 255 255",
-          "color-page-radial-2": "255 236 224",
-          "color-page-gradient-1": "255 248 240",
-          "color-page-gradient-2": "255 242 234",
-          "color-page-gradient-3": "248 226 210",
-          "color-page-gradient-4": "244 232 220",
-          "color-loading-1": "255 248 240",
-          "color-loading-2": "250 232 218",
-          "color-invite-1": "255 238 226",
-          "color-invite-2": "248 224 206",
-          "color-invite-3": "238 210 190",
-          "leaf-pattern": "url(\"img/patterns/themed/candlelit-pattern.svg\")",
-        },
-      };
-      (function initThemeVariables() {
-        let preferredTheme = window.DEFAULT_THEME;
-        try {
-          const stored = window.localStorage.getItem("wedding-theme");
-          if (stored && window.THEME_PALETTES[stored]) {
-            preferredTheme = stored;
-          }
-        } catch (error) {
-          preferredTheme = window.DEFAULT_THEME;
+      },
+    };
+  </script>
+  <script>
+    window.DEFAULT_THEME = "forest";
+    window.THEME_PALETTES = {
+      forest: {
+        "color-primary": "34 139 92",
+        "color-accent": "214 180 138",
+        "color-ink": "68 74 60",
+        "color-muted": "120 130 110",
+        "color-border": "207 222 208",
+        "color-deco-1": "120 196 140",
+        "color-deco-2": "196 219 184",
+        "color-deco-3": "214 180 138",
+        "color-sage": "156 188 168",
+        "color-dusty-blue": "168 190 205",
+        "color-wash-1": "230 246 231",
+        "color-wash-2": "242 226 200",
+        "color-wash-3": "207 238 213",
+        "color-wash-4": "232 244 221",
+        "color-page-radial-1": "255 255 255",
+        "color-page-radial-2": "227 248 230",
+        "color-page-gradient-1": "234 248 233",
+        "color-page-gradient-2": "255 255 254",
+        "color-page-gradient-3": "245 235 221",
+        "color-page-gradient-4": "216 242 214",
+        "color-loading-1": "232 248 233",
+        "color-loading-2": "245 235 221",
+        "color-invite-1": "230 246 231",
+        "color-invite-2": "243 228 204",
+        "color-invite-3": "207 235 200",
+        "leaf-pattern": "url(\"img/patterns/themed/forest-pattern.svg\")",
+      },
+      garden: {
+        "color-primary": "138 94 114",
+        "color-accent": "215 163 178",
+        "color-ink": "74 70 72",
+        "color-muted": "120 110 118",
+        "color-border": "230 210 218",
+        "color-deco-1": "214 163 178",
+        "color-deco-2": "246 214 229",
+        "color-deco-3": "156 186 150",
+        "color-sage": "176 196 186",
+        "color-dusty-blue": "186 198 214",
+        "color-wash-1": "255 244 248",
+        "color-wash-2": "247 235 240",
+        "color-wash-3": "237 221 229",
+        "color-wash-4": "251 240 246",
+        "color-page-radial-1": "255 255 255",
+        "color-page-radial-2": "255 240 246",
+        "color-page-gradient-1": "255 247 249",
+        "color-page-gradient-2": "255 252 252",
+        "color-page-gradient-3": "245 230 236",
+        "color-page-gradient-4": "238 221 230",
+        "color-loading-1": "255 247 249",
+        "color-loading-2": "245 230 236",
+        "color-invite-1": "255 242 246",
+        "color-invite-2": "245 229 238",
+        "color-invite-3": "236 221 230",
+        "leaf-pattern": "url(\"img/patterns/themed/garden-pattern.svg\")",
+      },
+      coastal: {
+        "color-primary": "52 120 206",
+        "color-accent": "145 184 197",
+        "color-ink": "65 78 96",
+        "color-muted": "104 122 140",
+        "color-border": "198 220 232",
+        "color-deco-1": "145 184 197",
+        "color-deco-2": "184 214 224",
+        "color-deco-3": "215 230 235",
+        "color-sage": "170 200 200",
+        "color-dusty-blue": "164 190 212",
+        "color-wash-1": "234 246 250",
+        "color-wash-2": "230 240 246",
+        "color-wash-3": "224 236 242",
+        "color-wash-4": "240 248 252",
+        "color-page-radial-1": "255 255 255",
+        "color-page-radial-2": "230 245 250",
+        "color-page-gradient-1": "240 250 253",
+        "color-page-gradient-2": "255 255 255",
+        "color-page-gradient-3": "224 239 246",
+        "color-page-gradient-4": "232 244 248",
+        "color-loading-1": "240 250 253",
+        "color-loading-2": "232 244 248",
+        "color-invite-1": "236 247 251",
+        "color-invite-2": "224 238 244",
+        "color-invite-3": "214 232 240",
+        "leaf-pattern": "url(\"img/patterns/themed/coastal-pattern.svg\")",
+      },
+      candlelit: {
+        "color-primary": "167 94 52",
+        "color-accent": "184 137 98",
+        "color-ink": "92 66 52",
+        "color-muted": "138 104 86",
+        "color-border": "232 205 182",
+        "color-deco-1": "184 137 98",
+        "color-deco-2": "255 214 178",
+        "color-deco-3": "216 170 130",
+        "color-sage": "187 186 166",
+        "color-dusty-blue": "184 190 200",
+        "color-wash-1": "255 242 232",
+        "color-wash-2": "250 232 218",
+        "color-wash-3": "242 220 204",
+        "color-wash-4": "255 246 238",
+        "color-page-radial-1": "255 255 255",
+        "color-page-radial-2": "255 236 224",
+        "color-page-gradient-1": "255 248 240",
+        "color-page-gradient-2": "255 242 234",
+        "color-page-gradient-3": "248 226 210",
+        "color-page-gradient-4": "244 232 220",
+        "color-loading-1": "255 248 240",
+        "color-loading-2": "250 232 218",
+        "color-invite-1": "255 238 226",
+        "color-invite-2": "248 224 206",
+        "color-invite-3": "238 210 190",
+        "leaf-pattern": "url(\"img/patterns/themed/candlelit-pattern.svg\")",
+      },
+    };
+    (function initThemeVariables() {
+      let preferredTheme = window.DEFAULT_THEME;
+      try {
+        const stored = window.localStorage.getItem("wedding-theme");
+        if (stored && window.THEME_PALETTES[stored]) {
+          preferredTheme = stored;
         }
-        const palette = window.THEME_PALETTES[preferredTheme];
-        if (!palette) return;
-        const root = document.documentElement;
-        Object.entries(palette).forEach(([key, value]) => {
-          root.style.setProperty(`--${key}`, value);
-        });
-      })();
-    </script>
-    <style>
-      :root {
-        /* Shadows */
-        --shadow-soft: 0 20px 50px rgba(168, 211, 255, 0.15);
-        --shadow-medium: 0 30px 60px rgba(194, 224, 255, 0.2);
-        --shadow-card: 0 25px 55px rgba(168, 211, 255, 0.25);
-
-        /* Typography */
-        --font-display: "Noto Serif TC", serif;
-        --font-body: "Noto Sans TC", system-ui, sans-serif;
-        --letter-spacing-wide: 0.3em;
-        --letter-spacing-wider: 0.4em;
-
-        /* Misc */
-        --hero-image-position: 50% 50%;
-        --hero-overlay-opacity: 1;
-        --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      } catch (error) {
+        preferredTheme = window.DEFAULT_THEME;
       }
+      const palette = window.THEME_PALETTES[preferredTheme];
+      if (!palette) return;
+      const root = document.documentElement;
+      Object.entries(palette).forEach(([key, value]) => {
+        root.style.setProperty(`--${key}`, value);
+      });
+    })();
+  </script>
+  <style>
+    :root {
+      /* Shadows */
+      --shadow-soft: 0 20px 50px rgba(168, 211, 255, 0.15);
+      --shadow-medium: 0 30px 60px rgba(194, 224, 255, 0.2);
+      --shadow-card: 0 25px 55px rgba(168, 211, 255, 0.25);
 
-      * {
-        box-sizing: border-box;
-      }
+      /* Typography */
+      --font-display: "Noto Serif TC", serif;
+      --font-body: "Noto Sans TC", system-ui, sans-serif;
+      --letter-spacing-wide: 0.3em;
+      --letter-spacing-wider: 0.4em;
 
-      body {
-        font-family: var(--font-body);
-        background-attachment: fixed;
-        line-height: 1.7;
-        letter-spacing: 0.01em;
-      }
+      /* Misc */
+      --hero-image-position: 50% 50%;
+      --hero-overlay-opacity: 1;
+      --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-      /* Grain texture for premium feel */
-      .grain::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("img/patterns/textures/noise-overlay.svg");
-        opacity: 0.5;
-        pointer-events: none;
-        mix-blend-mode: overlay;
-      }
+    * {
+      box-sizing: border-box;
+    }
 
-      /* Leaf pattern - subtle and elegant */
-      .leaf-pattern {
-        position: relative;
-        overflow: hidden;
-        isolation: isolate;
-      }
+    body {
+      font-family: var(--font-body);
+      background-attachment: fixed;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
 
-      .leaf-pattern::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: var(--leaf-pattern);
-        background-size: 280px 280px;
-        background-position: -40px -40px;
-        opacity: 0.25;
-        pointer-events: none;
-        mix-blend-mode: multiply;
-        z-index: -1;
-      }
+    /* Grain texture for premium feel */
+    .grain::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("img/patterns/textures/noise-overlay.svg");
+      opacity: 0.5;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    /* Leaf pattern - subtle and elegant */
+    .leaf-pattern {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .leaf-pattern::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: var(--leaf-pattern);
+      background-size: 280px 280px;
+      background-position: -40px -40px;
+      opacity: 0.25;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      z-index: -1;
+    }
 
 
-      .gold-speckle {
-        position: absolute;
-        inset: 0;
-        background-image:
-          radial-gradient(circle at 12% 20%, rgb(var(--color-accent) / 0.35) 0 1.6px, transparent 2.6px),
-          radial-gradient(circle at 78% 18%, rgb(var(--color-accent) / 0.25) 0 1.2px, transparent 2.4px),
-          radial-gradient(circle at 35% 62%, rgb(var(--color-accent) / 0.3) 0 1.4px, transparent 2.6px),
-          radial-gradient(circle at 66% 70%, rgb(var(--color-accent) / 0.28) 0 1.1px, transparent 2.2px),
-          radial-gradient(circle at 22% 86%, rgb(var(--color-accent) / 0.26) 0 1.2px, transparent 2.4px);
-        background-size: 220px 220px;
-        opacity: 0.45;
-        pointer-events: none;
-        mix-blend-mode: multiply;
-        z-index: 0;
-      }
+    .gold-speckle {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 12% 20%, rgb(var(--color-accent) / 0.35) 0 1.6px, transparent 2.6px),
+        radial-gradient(circle at 78% 18%, rgb(var(--color-accent) / 0.25) 0 1.2px, transparent 2.4px),
+        radial-gradient(circle at 35% 62%, rgb(var(--color-accent) / 0.3) 0 1.4px, transparent 2.6px),
+        radial-gradient(circle at 66% 70%, rgb(var(--color-accent) / 0.28) 0 1.1px, transparent 2.2px),
+        radial-gradient(circle at 22% 86%, rgb(var(--color-accent) / 0.26) 0 1.2px, transparent 2.4px);
+      background-size: 220px 220px;
+      opacity: 0.45;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
 
-      /* Hero styling */
-      .hero-image {
-        object-position: var(--hero-image-position);
-        filter: saturate(0.95) brightness(1.05);
-        transform: scale(1.2);
-        transform-origin: center;
-      }
+    /* Hero styling */
+    .hero-image {
+      object-position: var(--hero-image-position);
+      filter: saturate(0.95) brightness(1.05);
+      transform: scale(1.2);
+      transform-origin: center;
+    }
 
-      .hero-overlay {
-        background: linear-gradient(180deg,
+    .hero-overlay {
+      background: linear-gradient(180deg,
           rgba(46, 47, 51, 0.75),
           rgba(46, 47, 51, 0.55),
           rgba(246, 241, 234, 0.96));
-        opacity: var(--hero-overlay-opacity);
+      opacity: var(--hero-overlay-opacity);
+    }
+
+    /* Language switcher */
+    .lang-switch button {
+      border-radius: 999px;
+      transition: var(--transition-smooth);
+    }
+
+    /* Theme switcher */
+    .theme-switch button {
+      border-radius: 999px;
+      transition: var(--transition-smooth);
+    }
+
+    .theme-switch .is-active {
+      color: rgb(var(--color-ink));
+    }
+
+    /* Loading states */
+    body.is-loading {
+      overflow: hidden;
+    }
+
+    body.is-loading .page-content {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loading-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    body:not(.is-loading) .loading-screen {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loading-orbit {
+      position: relative;
+      color: #ffffff;
+      --orbit-scale: 0.6;
+    }
+
+    .loading-orbit__center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(var(--orbit-scale));
+    }
+
+    .loading-orbit__dot {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    .loading-orbit__s {
+      position: absolute;
+      background: currentColor;
+    }
+
+    .loading-orbit__s1 {
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+      transform-origin: 70px -40px;
+      animation: orbit 3.1s infinite linear;
+    }
+
+    .loading-orbit__s2 {
+      width: 14px;
+      height: 14px;
+      border-radius: 14px;
+      transform-origin: -18px -40px;
+      animation: orbit 3.43s infinite linear;
+    }
+
+    .loading-orbit__s3 {
+      width: 60px;
+      height: 60px;
+      border-radius: 60px;
+      transform-origin: 20px 20px;
+      animation: orbit 3.22s infinite linear;
+    }
+
+    .loading-orbit__s4 {
+      width: 80px;
+      height: 80px;
+      border-radius: 80px;
+      transform-origin: 50px 50px;
+      animation: orbit 3.121s infinite linear;
+    }
+
+    .loading-orbit__s5 {
+      width: 60px;
+      height: 60px;
+      border-radius: 60px;
+      transform-origin: 20px 40px;
+      animation: orbit 3.488s infinite linear;
+    }
+
+    .loading-orbit__s6 {
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      transform-origin: 20px 90px;
+      animation: orbit 3.66s infinite linear;
+    }
+
+    .loading-orbit__s7 {
+      width: 24px;
+      height: 24px;
+      border-radius: 24px;
+      transform-origin: -20px 50px;
+      animation: orbit 3.2s infinite linear;
+    }
+
+    .loading-orbit__s8 {
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      transform-origin: -44px 34px;
+      animation: orbit 3.05s infinite linear;
+    }
+
+    .loading-orbit__s9 {
+      width: 7px;
+      height: 7px;
+      border-radius: 7px;
+      transform-origin: -64px -20px;
+      animation: orbit 3s infinite linear;
+    }
+
+    .loading-orbit__s10 {
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
+      transform-origin: -40px 80px;
+      animation: orbit 3.8s infinite linear;
+    }
+
+    .loading-orbit__s11 {
+      width: 22px;
+      height: 22px;
+      border-radius: 22px;
+      transform-origin: 30px 60px;
+      animation: orbit 3.33s infinite linear;
+    }
+
+    .loading-orbit__s12 {
+      width: 26px;
+      height: 26px;
+      border-radius: 26px;
+      transform-origin: 34px -28px;
+      animation: orbit 3.12s infinite linear;
+    }
+
+    .loading-orbit__s13 {
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      transform-origin: 10px -70px;
+      animation: orbit 3.21s infinite linear;
+    }
+
+    .loading-orbit__s14 {
+      width: 24px;
+      height: 24px;
+      border-radius: 24px;
+      transform-origin: 54px 20px;
+      animation: orbit 4.13s infinite linear;
+    }
+
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
       }
 
-      /* Language switcher */
-      .lang-switch button {
-        border-radius: 999px;
-        transition: var(--transition-smooth);
+      100% {
+        transform: rotate(360deg) translate3d(0, 0, 0);
+      }
+    }
+
+    /* Subtle floating animation for decorative elements */
+    @keyframes float-gentle {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
       }
 
-      /* Theme switcher */
-      .theme-switch button {
-        border-radius: 999px;
-        transition: var(--transition-smooth);
+      50% {
+        transform: translateY(-8px) rotate(1deg);
+      }
+    }
+
+    @keyframes drift-slow {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
       }
 
-      .theme-switch .is-active {
-        color: rgb(var(--color-ink));
+      33% {
+        transform: translate(-3px, -5px);
       }
 
-      /* Loading states */
-      body.is-loading {
-        overflow: hidden;
+      66% {
+        transform: translate(3px, -3px);
+      }
+    }
+
+    @keyframes fade-pulse {
+
+      0%,
+      100% {
+        opacity: 0.15;
       }
 
-      body.is-loading .page-content {
-        opacity: 0;
-        visibility: hidden;
+      50% {
+        opacity: 0.25;
+      }
+    }
+
+    @keyframes sway-soft {
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
       }
 
-      .loading-screen {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.25rem;
-        transition: opacity 0.5s ease, visibility 0.5s ease;
+      40% {
+        transform: translate(-6px, -4px) rotate(-1.5deg);
       }
 
-      body:not(.is-loading) .loading-screen {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
+      70% {
+        transform: translate(5px, 6px) rotate(1.5deg);
+      }
+    }
+
+    /* Apply animations to decorative SVG elements */
+    .svg-float {
+      animation: float-gentle 12s ease-in-out infinite;
+    }
+
+    .svg-drift {
+      animation: drift-slow 18s ease-in-out infinite;
+    }
+
+    .svg-pulse {
+      animation: fade-pulse 8s ease-in-out infinite;
+    }
+
+    .svg-sway {
+      animation: sway-soft 16s ease-in-out infinite;
+    }
+
+    /* Stagger animation start times for organic feel */
+    .svg-float:nth-of-type(2) {
+      animation-delay: -4s;
+    }
+
+    .svg-drift:nth-of-type(2) {
+      animation-delay: -6s;
+    }
+
+    .svg-pulse:nth-of-type(2) {
+      animation-delay: -3s;
+    }
+
+    .decorative-svg {
+      z-index: 0;
+      --deco-1: rgb(var(--color-deco-1));
+      --deco-2: rgb(var(--color-deco-2));
+      --deco-3: rgb(var(--color-deco-3));
+      --sage: rgb(var(--color-sage));
+      --dusty-blue: rgb(var(--color-dusty-blue));
+      --accent: rgb(var(--color-accent));
+      --primary: rgb(var(--color-primary));
+      --wash-1: rgb(var(--color-wash-1));
+      --wash-2: rgb(var(--color-wash-2));
+      --wash-3: rgb(var(--color-wash-3));
+      --wash-4: rgb(var(--color-wash-4));
+      --invite-1: rgb(var(--color-invite-1));
+      --invite-2: rgb(var(--color-invite-2));
+      --invite-3: rgb(var(--color-invite-3));
+    }
+
+    .content-layer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .content-safe {
+      max-width: 66rem;
+      margin: 0 auto;
+    }
+
+    .decorative-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .decorative-tree {
+      position: absolute;
+      display: block;
+      z-index: 0;
+      pointer-events: none;
+      transform-origin: bottom left;
+    }
+
+    .decorative-tree img {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+      z-index: 0;
+      -webkit-mask-image: linear-gradient(to right, #000 0%, #000 78%, transparent 100%);
+      mask-image: linear-gradient(to right, #000 0%, #000 78%, transparent 100%);
+    }
+
+    .corner-deco {
+      position: absolute;
+      width: clamp(80px, 16vw, 128px);
+      height: auto;
+      pointer-events: none;
+    }
+
+    .corner-deco--tl {
+      top: clamp(12px, 3vw, 24px);
+      left: clamp(12px, 3vw, 24px);
+    }
+
+    .corner-deco--tr {
+      top: clamp(12px, 3vw, 24px);
+      right: clamp(12px, 3vw, 24px);
+    }
+
+    .corner-deco--bl {
+      bottom: clamp(12px, 3vw, 24px);
+      left: clamp(12px, 3vw, 24px);
+    }
+
+    .corner-deco--br {
+      right: clamp(12px, 3vw, 24px);
+      bottom: clamp(12px, 3vw, 24px);
+    }
+
+    .corner-deco--tight {
+      right: clamp(10px, 2.5vw, 20px);
+      bottom: clamp(10px, 2.5vw, 20px);
+    }
+
+    .theme-only {
+      display: none !important;
+    }
+
+    body[data-theme="garden"] .theme-only--garden {
+      display: inline-block !important;
+    }
+
+    body[data-theme="garden"] .theme-only--default {
+      display: none !important;
+    }
+
+    body:not([data-theme="garden"]) .theme-only--default {
+      display: inline-block !important;
+    }
+
+    body[data-theme="coastal"] .theme-only--default {
+      display: none !important;
+    }
+
+    body[data-theme="coastal"] .theme-only--coastal {
+      display: inline-block !important;
+    }
+
+    body[data-theme="candlelit"] .theme-only--default {
+      display: none !important;
+    }
+
+    body[data-theme="candlelit"] .theme-only--candlelit {
+      display: inline-block !important;
+    }
+
+    body[data-theme="forest"] .theme-only--forest {
+      display: inline-block !important;
+    }
+
+    body[data-theme="garden"] .theme-only--warm {
+      display: inline-block !important;
+    }
+
+    body[data-theme="candlelit"] .theme-only--warm {
+      display: inline-block !important;
+    }
+
+    .maple-deco {
+      mix-blend-mode: soft-light;
+    }
+
+    .fire-icon {
+      --fire-scale: 0.6px;
+      --log-width: 20em;
+      position: relative;
+      width: 80em;
+      height: 80em;
+      display: inline-block;
+      font-size: var(--fire-scale);
+    }
+
+    .fire-icon * {
+      position: absolute;
+      box-sizing: border-box;
+    }
+
+    .fire-icon__logs {
+      bottom: 0;
+      left: 50%;
+      width: 10em;
+      transform: translateX(-50%);
+    }
+
+    .fire-icon__logs .two {
+      width: var(--log-width);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .fire-icon__logs .two .log {
+      position: relative;
+      width: 100%;
+      height: calc(var(--log-width) * 0.75);
+      background: #725442;
+      margin-bottom: -8em;
+      clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+    }
+
+    .fire-icon__logs .two::before {
+      content: "";
+      display: block;
+      position: relative;
+      width: calc(var(--log-width) * 0.4);
+      height: calc(var(--log-width) * 0.36);
+      background: #725442;
+      margin: 0 auto;
+      border-radius: 50%;
+      transform: translateY(60%);
+    }
+
+    .fire-icon__logs .two::after {
+      content: "";
+      display: block;
+      position: relative;
+      width: var(--log-width);
+      height: calc(var(--log-width) * 0.9);
+      border-radius: 50%;
+      background: #91725c;
+      border: calc(80em * 0.0125) solid #725442;
+    }
+
+    .fire-icon__logs .one,
+    .fire-icon__logs .three {
+      width: calc(var(--log-width) * 0.9);
+      margin-left: -18em;
+      bottom: -11em;
+    }
+
+    .fire-icon__logs .one .log,
+    .fire-icon__logs .three .log {
+      position: relative;
+      width: 100%;
+      height: calc(var(--log-width) * 0.9);
+      background: #725442;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 41%, 11% 100%);
+      transform-origin: 0 0;
+      transform: skewY(-10deg);
+    }
+
+    .fire-icon__logs .one::before,
+    .fire-icon__logs .three::before {
+      content: "";
+      display: block;
+      position: relative;
+      width: calc(var(--log-width) * 0.24);
+      height: calc(var(--log-width) * 0.36);
+      background: #725442;
+      margin-left: auto;
+      border-radius: 50%;
+      transform: translate(45%, 57%);
+    }
+
+    .fire-icon__logs .one::after,
+    .fire-icon__logs .three::after {
+      content: "";
+      display: block;
+      position: relative;
+      width: calc(var(--log-width) * 0.6);
+      height: calc(var(--log-width) * 0.9);
+      border-radius: 50%;
+      background: #91725c;
+      transform: translate(-50%, -100%);
+      border: calc(80em * 0.0125) solid #725442;
+    }
+
+    .fire-icon__logs .three {
+      transform: scaleX(-1);
+      margin-left: 10em;
+    }
+
+    .fire-icon__fire {
+      left: 50%;
+      bottom: 24.5em;
+      transform: translateX(-50%);
+    }
+
+    .fire-icon__flames>* {
+      bottom: 0;
+      right: 0;
+    }
+
+    .fire-icon__flames .flame {
+      bottom: 0;
+      right: 0;
+      background: rgba(255, 119, 15, 0.6);
+      width: 35em;
+      height: 48em;
+      border-radius: 0 40em;
+      transform-origin: 100% 100%;
+    }
+
+    .fire-icon__flames .two {
+      transform: rotate(30deg);
+    }
+
+    .fire-icon__flames .three {
+      transform: scaleX(-1);
+    }
+
+    .fire-icon__flames.inner .flame {
+      background: rgba(255, 218, 119, 0.4);
+      width: 20em;
+      height: 24em;
+    }
+
+    .fire-icon__glow {
+      background: radial-gradient(closest-side, #ff770f, rgba(255, 119, 15, 0));
+      width: 100%;
+      height: 100%;
+      top: -8em;
+    }
+
+    .fire-icon--lg {
+      --fire-scale: 1px;
+    }
+
+    .fire-icon__flames .one .flame,
+    .fire-icon__flames.inner .one .flame {
+      animation-delay: -0.2s;
+    }
+
+    .fire-icon__flames .two .flame,
+    .fire-icon__flames.inner .two .flame {
+      animation-delay: -0.5s;
+    }
+
+    .fire-icon__flames .three .flame,
+    .fire-icon__flames.inner .three .flame {
+      animation-delay: -0.9s;
+    }
+
+    .fire-icon .flame {
+      animation:
+        wave 1s ease-in-out infinite alternate,
+        flicker 0.3s ease-in-out infinite alternate,
+        height 0.5s ease infinite alternate;
+    }
+
+    .fire-icon__flames.inner .flame {
+      animation:
+        wave 0.8s ease-in-out infinite alternate,
+        flicker 0.2s ease-in-out infinite alternate,
+        heightsmall 0.3s ease infinite alternate;
+    }
+
+    .fire-icon__glow {
+      animation:
+        glow 0.8s ease-in-out infinite alternate,
+        flicker 0.3s ease-in-out infinite alternate;
+    }
+
+    @keyframes wave {
+      from {
+        transform: rotate(-5deg);
       }
 
-      .loading-orbit {
-        position: relative;
-        color: #ffffff;
-        --orbit-scale: 0.6;
+      to {
+        transform: rotate(5deg);
+      }
+    }
+
+    @keyframes flicker {
+      from {
+        opacity: 0.8;
       }
 
-      .loading-orbit__center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(var(--orbit-scale));
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes height {
+      from {
+        height: 48em;
+        width: 35em;
       }
 
-      .loading-orbit__dot {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        border-radius: 999px;
-        background: #ffffff;
+      to {
+        height: 44em;
+        width: 30em;
+      }
+    }
+
+    @keyframes heightsmall {
+      from {
+        height: 24em;
+        width: 20em;
       }
 
-      .loading-orbit__s {
-        position: absolute;
-        background: currentColor;
+      to {
+        height: 23em;
+        width: 18em;
+      }
+    }
+
+    @keyframes glow {
+      from {
+        transform: scale(1.1);
       }
 
-      .loading-orbit__s1 {
-        width: 8px;
-        height: 8px;
-        border-radius: 8px;
-        transform-origin: 70px -40px;
-        animation: orbit 3.1s infinite linear;
+      to {
+        transform: scale(1);
       }
+    }
 
-      .loading-orbit__s2 {
-        width: 14px;
-        height: 14px;
-        border-radius: 14px;
-        transform-origin: -18px -40px;
-        animation: orbit 3.43s infinite linear;
-      }
+    .botanical-corner-blend {
+      position: absolute;
+      isolation: isolate;
+    }
 
-      .loading-orbit__s3 {
-        width: 60px;
-        height: 60px;
-        border-radius: 60px;
-        transform-origin: 20px 20px;
-        animation: orbit 3.22s infinite linear;
-      }
+    .botanical-corner-blend::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 20%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.95) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
 
-      .loading-orbit__s4 {
-        width: 80px;
-        height: 80px;
-        border-radius: 80px;
-        transform-origin: 50px 50px;
-        animation: orbit 3.121s infinite linear;
-      }
 
-      .loading-orbit__s5 {
-        width: 60px;
-        height: 60px;
-        border-radius: 60px;
-        transform-origin: 20px 40px;
-        animation: orbit 3.488s infinite linear;
-      }
-
-      .loading-orbit__s6 {
-        width: 10px;
-        height: 10px;
-        border-radius: 10px;
-        transform-origin: 20px 90px;
-        animation: orbit 3.66s infinite linear;
-      }
-
-      .loading-orbit__s7 {
-        width: 24px;
-        height: 24px;
-        border-radius: 24px;
-        transform-origin: -20px 50px;
-        animation: orbit 3.2s infinite linear;
-      }
-
-      .loading-orbit__s8 {
-        width: 16px;
-        height: 16px;
-        border-radius: 16px;
-        transform-origin: -44px 34px;
-        animation: orbit 3.05s infinite linear;
-      }
-
-      .loading-orbit__s9 {
-        width: 7px;
-        height: 7px;
-        border-radius: 7px;
-        transform-origin: -64px -20px;
-        animation: orbit 3s infinite linear;
-      }
-
-      .loading-orbit__s10 {
-        width: 12px;
-        height: 12px;
-        border-radius: 12px;
-        transform-origin: -40px 80px;
-        animation: orbit 3.8s infinite linear;
-      }
-
-      .loading-orbit__s11 {
-        width: 22px;
-        height: 22px;
-        border-radius: 22px;
-        transform-origin: 30px 60px;
-        animation: orbit 3.33s infinite linear;
-      }
-
-      .loading-orbit__s12 {
-        width: 26px;
-        height: 26px;
-        border-radius: 26px;
-        transform-origin: 34px -28px;
-        animation: orbit 3.12s infinite linear;
-      }
-
-      .loading-orbit__s13 {
-        width: 10px;
-        height: 10px;
-        border-radius: 10px;
-        transform-origin: 10px -70px;
-        animation: orbit 3.21s infinite linear;
-      }
-
-      .loading-orbit__s14 {
-        width: 24px;
-        height: 24px;
-        border-radius: 24px;
-        transform-origin: 54px 20px;
-        animation: orbit 4.13s infinite linear;
-      }
-
-      @keyframes orbit {
-        0% {
-          transform: rotate(0deg) translate3d(0, 0, 0);
-        }
-        100% {
-          transform: rotate(360deg) translate3d(0, 0, 0);
-        }
-      }
-
-      /* Subtle floating animation for decorative elements */
-      @keyframes float-gentle {
-        0%, 100% {
-          transform: translateY(0px) rotate(0deg);
-        }
-        50% {
-          transform: translateY(-8px) rotate(1deg);
-        }
-      }
-
-      @keyframes drift-slow {
-        0%, 100% {
-          transform: translate(0, 0);
-        }
-        33% {
-          transform: translate(-3px, -5px);
-        }
-        66% {
-          transform: translate(3px, -3px);
-        }
-      }
-
-      @keyframes fade-pulse {
-        0%, 100% {
-          opacity: 0.15;
-        }
-        50% {
-          opacity: 0.25;
-        }
-      }
-
-      @keyframes sway-soft {
-        0%, 100% {
-          transform: translate(0, 0) rotate(0deg);
-        }
-        40% {
-          transform: translate(-6px, -4px) rotate(-1.5deg);
-        }
-        70% {
-          transform: translate(5px, 6px) rotate(1.5deg);
-        }
-      }
-
-      /* Apply animations to decorative SVG elements */
-      .svg-float {
-        animation: float-gentle 12s ease-in-out infinite;
-      }
-
-      .svg-drift {
-        animation: drift-slow 18s ease-in-out infinite;
-      }
-
-      .svg-pulse {
-        animation: fade-pulse 8s ease-in-out infinite;
-      }
-
-      .svg-sway {
-        animation: sway-soft 16s ease-in-out infinite;
-      }
-
-      /* Stagger animation start times for organic feel */
-      .svg-float:nth-of-type(2) {
-        animation-delay: -4s;
-      }
-
-      .svg-drift:nth-of-type(2) {
-        animation-delay: -6s;
-      }
-
-      .svg-pulse:nth-of-type(2) {
-        animation-delay: -3s;
-      }
-
-      .decorative-svg {
-        z-index: 0;
-        --deco-1: rgb(var(--color-deco-1));
-        --deco-2: rgb(var(--color-deco-2));
-        --deco-3: rgb(var(--color-deco-3));
-        --sage: rgb(var(--color-sage));
-        --dusty-blue: rgb(var(--color-dusty-blue));
-        --accent: rgb(var(--color-accent));
-        --primary: rgb(var(--color-primary));
-        --wash-1: rgb(var(--color-wash-1));
-        --wash-2: rgb(var(--color-wash-2));
-        --wash-3: rgb(var(--color-wash-3));
-        --wash-4: rgb(var(--color-wash-4));
-        --invite-1: rgb(var(--color-invite-1));
-        --invite-2: rgb(var(--color-invite-2));
-        --invite-3: rgb(var(--color-invite-3));
-      }
-
-      .content-layer {
-        position: relative;
-        z-index: 1;
-      }
-
-      .content-safe {
-        max-width: 66rem;
-        margin: 0 auto;
-      }
-
-      .decorative-layer {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-      }
-
-      .decorative-tree {
-        position: absolute;
-        display: block;
-        z-index: 0;
-        pointer-events: none;
-        transform-origin: bottom left;
-      }
-
-      .decorative-tree img {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: auto;
-        z-index: 0;
-        -webkit-mask-image: linear-gradient(to right, #000 0%, #000 78%, transparent 100%);
-        mask-image: linear-gradient(to right, #000 0%, #000 78%, transparent 100%);
-      }
-
+    @media (max-width: 640px) {
       .corner-deco {
-        position: absolute;
-        width: clamp(80px, 16vw, 128px);
-        height: auto;
-        pointer-events: none;
+        width: clamp(64px, 22vw, 96px);
       }
 
       .corner-deco--tl {
-        top: clamp(12px, 3vw, 24px);
-        left: clamp(12px, 3vw, 24px);
+        top: 12px;
+        left: 12px;
       }
 
       .corner-deco--tr {
-        top: clamp(12px, 3vw, 24px);
-        right: clamp(12px, 3vw, 24px);
+        top: 12px;
+        right: 12px;
       }
 
       .corner-deco--bl {
-        bottom: clamp(12px, 3vw, 24px);
-        left: clamp(12px, 3vw, 24px);
+        bottom: 12px;
+        left: 12px;
       }
 
       .corner-deco--br {
-        right: clamp(12px, 3vw, 24px);
-        bottom: clamp(12px, 3vw, 24px);
+        right: 12px;
+        bottom: 12px;
       }
 
       .corner-deco--tight {
-        right: clamp(10px, 2.5vw, 20px);
-        bottom: clamp(10px, 2.5vw, 20px);
+        right: 10px;
+        bottom: 10px;
       }
+    }
 
-      .theme-only {
-        display: none !important;
+    .card-elevated {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 24px 48px rgba(33, 48, 33, 0.18), 0 12px 20px rgba(33, 48, 33, 0.08);
+    }
+
+    .card-elevated:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(33, 48, 33, 0.25), 0 16px 24px rgba(33, 48, 33, 0.12);
+    }
+
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
+    }
+  </style>
+</head>
 
-      body[data-theme="garden"] .theme-only--garden {
-        display: inline-block !important;
-      }
-
-      body[data-theme="garden"] .theme-only--default {
-        display: none !important;
-      }
-
-      body:not([data-theme="garden"]) .theme-only--default {
-        display: inline-block !important;
-      }
-
-      body[data-theme="coastal"] .theme-only--default {
-        display: none !important;
-      }
-
-      body[data-theme="coastal"] .theme-only--coastal {
-        display: inline-block !important;
-      }
-
-      body[data-theme="candlelit"] .theme-only--default {
-        display: none !important;
-      }
-
-      body[data-theme="candlelit"] .theme-only--candlelit {
-        display: inline-block !important;
-      }
-
-      body[data-theme="forest"] .theme-only--forest {
-        display: inline-block !important;
-      }
-
-      body[data-theme="garden"] .theme-only--warm {
-        display: inline-block !important;
-      }
-
-      body[data-theme="candlelit"] .theme-only--warm {
-        display: inline-block !important;
-      }
-
-      .maple-deco {
-        mix-blend-mode: soft-light;
-      }
-
-      .fire-icon {
-        --fire-scale: 0.6px;
-        --log-width: 20em;
-        position: relative;
-        width: 80em;
-        height: 80em;
-        display: inline-block;
-        font-size: var(--fire-scale);
-      }
-
-      .fire-icon * {
-        position: absolute;
-        box-sizing: border-box;
-      }
-
-      .fire-icon__logs {
-        bottom: 0;
-        left: 50%;
-        width: 10em;
-        transform: translateX(-50%);
-      }
-
-      .fire-icon__logs .two {
-        width: var(--log-width);
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .fire-icon__logs .two .log {
-        position: relative;
-        width: 100%;
-        height: calc(var(--log-width) * 0.75);
-        background: #725442;
-        margin-bottom: -8em;
-        clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
-      }
-
-      .fire-icon__logs .two::before {
-        content: "";
-        display: block;
-        position: relative;
-        width: calc(var(--log-width) * 0.4);
-        height: calc(var(--log-width) * 0.36);
-        background: #725442;
-        margin: 0 auto;
-        border-radius: 50%;
-        transform: translateY(60%);
-      }
-
-      .fire-icon__logs .two::after {
-        content: "";
-        display: block;
-        position: relative;
-        width: var(--log-width);
-        height: calc(var(--log-width) * 0.9);
-        border-radius: 50%;
-        background: #91725c;
-        border: calc(80em * 0.0125) solid #725442;
-      }
-
-      .fire-icon__logs .one,
-      .fire-icon__logs .three {
-        width: calc(var(--log-width) * 0.9);
-        margin-left: -18em;
-        bottom: -11em;
-      }
-
-      .fire-icon__logs .one .log,
-      .fire-icon__logs .three .log {
-        position: relative;
-        width: 100%;
-        height: calc(var(--log-width) * 0.9);
-        background: #725442;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 41%, 11% 100%);
-        transform-origin: 0 0;
-        transform: skewY(-10deg);
-      }
-
-      .fire-icon__logs .one::before,
-      .fire-icon__logs .three::before {
-        content: "";
-        display: block;
-        position: relative;
-        width: calc(var(--log-width) * 0.24);
-        height: calc(var(--log-width) * 0.36);
-        background: #725442;
-        margin-left: auto;
-        border-radius: 50%;
-        transform: translate(45%, 57%);
-      }
-
-      .fire-icon__logs .one::after,
-      .fire-icon__logs .three::after {
-        content: "";
-        display: block;
-        position: relative;
-        width: calc(var(--log-width) * 0.6);
-        height: calc(var(--log-width) * 0.9);
-        border-radius: 50%;
-        background: #91725c;
-        transform: translate(-50%, -100%);
-        border: calc(80em * 0.0125) solid #725442;
-      }
-
-      .fire-icon__logs .three {
-        transform: scaleX(-1);
-        margin-left: 10em;
-      }
-
-      .fire-icon__fire {
-        left: 50%;
-        bottom: 24.5em;
-        transform: translateX(-50%);
-      }
-
-      .fire-icon__flames > * {
-        bottom: 0;
-        right: 0;
-      }
-
-      .fire-icon__flames .flame {
-        bottom: 0;
-        right: 0;
-        background: rgba(255, 119, 15, 0.6);
-        width: 35em;
-        height: 48em;
-        border-radius: 0 40em;
-        transform-origin: 100% 100%;
-      }
-
-      .fire-icon__flames .two {
-        transform: rotate(30deg);
-      }
-
-      .fire-icon__flames .three {
-        transform: scaleX(-1);
-      }
-
-      .fire-icon__flames.inner .flame {
-        background: rgba(255, 218, 119, 0.4);
-        width: 20em;
-        height: 24em;
-      }
-
-      .fire-icon__glow {
-        background: radial-gradient(closest-side, #ff770f, rgba(255, 119, 15, 0));
-        width: 100%;
-        height: 100%;
-        top: -8em;
-      }
-
-      .fire-icon--lg {
-        --fire-scale: 1px;
-      }
-
-      .fire-icon__flames .one .flame,
-      .fire-icon__flames.inner .one .flame {
-        animation-delay: -0.2s;
-      }
-
-      .fire-icon__flames .two .flame,
-      .fire-icon__flames.inner .two .flame {
-        animation-delay: -0.5s;
-      }
-
-      .fire-icon__flames .three .flame,
-      .fire-icon__flames.inner .three .flame {
-        animation-delay: -0.9s;
-      }
-
-      .fire-icon .flame {
-        animation:
-          wave 1s ease-in-out infinite alternate,
-          flicker 0.3s ease-in-out infinite alternate,
-          height 0.5s ease infinite alternate;
-      }
-
-      .fire-icon__flames.inner .flame {
-        animation:
-          wave 0.8s ease-in-out infinite alternate,
-          flicker 0.2s ease-in-out infinite alternate,
-          heightsmall 0.3s ease infinite alternate;
-      }
-
-      .fire-icon__glow {
-        animation:
-          glow 0.8s ease-in-out infinite alternate,
-          flicker 0.3s ease-in-out infinite alternate;
-      }
-
-      @keyframes wave {
-        from {
-          transform: rotate(-5deg);
-        }
-        to {
-          transform: rotate(5deg);
-        }
-      }
-
-      @keyframes flicker {
-        from {
-          opacity: 0.8;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes height {
-        from {
-          height: 48em;
-          width: 35em;
-        }
-        to {
-          height: 44em;
-          width: 30em;
-        }
-      }
-
-      @keyframes heightsmall {
-        from {
-          height: 24em;
-          width: 20em;
-        }
-        to {
-          height: 23em;
-          width: 18em;
-        }
-      }
-
-      @keyframes glow {
-        from {
-          transform: scale(1.1);
-        }
-        to {
-          transform: scale(1);
-        }
-      }
-
-      .botanical-corner-blend {
-        position: absolute;
-        isolation: isolate;
-      }
-
-      .botanical-corner-blend::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at center, transparent 20%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.95) 100%);
-        pointer-events: none;
-        z-index: 1;
-      }
-
-
-      @media (max-width: 640px) {
-        .corner-deco {
-          width: clamp(64px, 22vw, 96px);
-        }
-
-        .corner-deco--tl {
-          top: 12px;
-          left: 12px;
-        }
-
-        .corner-deco--tr {
-          top: 12px;
-          right: 12px;
-        }
-
-        .corner-deco--bl {
-          bottom: 12px;
-          left: 12px;
-        }
-
-        .corner-deco--br {
-          right: 12px;
-          bottom: 12px;
-        }
-
-        .corner-deco--tight {
-          right: 10px;
-          bottom: 10px;
-        }
-      }
-
-      .card-elevated {
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        box-shadow: 0 24px 48px rgba(33, 48, 33, 0.18), 0 12px 20px rgba(33, 48, 33, 0.08);
-      }
-
-      .card-elevated:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 30px 60px rgba(33, 48, 33, 0.25), 0 16px 24px rgba(33, 48, 33, 0.12);
-      }
-
-      /* Respect reduced motion preferences */
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-      }
-    </style>
-  </head>
-  <body
-    class="is-loading bg-[radial-gradient(circle_at_15%_25%,rgb(var(--color-page-radial-1)_/_0.98)_0%,transparent_50%),radial-gradient(circle_at_85%_10%,rgb(var(--color-page-radial-2)_/_0.9)_0%,transparent_45%),linear-gradient(135deg,rgb(var(--color-page-gradient-1)),rgb(var(--color-page-gradient-2))_40%,rgb(var(--color-page-gradient-3))_75%,rgb(var(--color-page-gradient-4)))] text-ink"
-    data-config-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIAtQlScbidP76R5pzR3xuO81EN6D1LCTNA9S7pk2W85MVFhJUMao0CH2bkPFe7yMObWw1roH8Hlp1/pub?output=csv"
-    data-default-lang="zh"
-    data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec"
-  >
-    <div class="loading-screen bg-[linear-gradient(135deg,rgb(var(--color-loading-1)_/_0.98),rgb(var(--color-loading-2)_/_0.98))] text-ink" role="status" aria-live="polite" aria-label="Loading">
-      <div class="loading-orbit h-56 w-56 sm:h-72 sm:w-72 md:h-80 md:w-80 [--orbit-scale:0.6] sm:[--orbit-scale:0.75] md:[--orbit-scale:0.9]" aria-hidden="true">
-        <div class="loading-orbit__center">
-          <div class="loading-orbit__dot"></div>
-          <div class="loading-orbit__s loading-orbit__s1"></div>
-          <div class="loading-orbit__s loading-orbit__s2"></div>
-          <div class="loading-orbit__s loading-orbit__s3"></div>
-          <div class="loading-orbit__s loading-orbit__s4"></div>
-          <div class="loading-orbit__s loading-orbit__s5"></div>
-          <div class="loading-orbit__s loading-orbit__s6"></div>
-          <div class="loading-orbit__s loading-orbit__s7"></div>
-          <div class="loading-orbit__s loading-orbit__s8"></div>
-          <div class="loading-orbit__s loading-orbit__s9"></div>
-          <div class="loading-orbit__s loading-orbit__s10"></div>
-          <div class="loading-orbit__s loading-orbit__s11"></div>
-          <div class="loading-orbit__s loading-orbit__s12"></div>
-          <div class="loading-orbit__s loading-orbit__s13"></div>
-          <div class="loading-orbit__s loading-orbit__s14"></div>
-        </div>
+<body
+  class="is-loading bg-[radial-gradient(circle_at_15%_25%,rgb(var(--color-page-radial-1)_/_0.98)_0%,transparent_50%),radial-gradient(circle_at_85%_10%,rgb(var(--color-page-radial-2)_/_0.9)_0%,transparent_45%),linear-gradient(135deg,rgb(var(--color-page-gradient-1)),rgb(var(--color-page-gradient-2))_40%,rgb(var(--color-page-gradient-3))_75%,rgb(var(--color-page-gradient-4)))] text-ink"
+  data-config-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIAtQlScbidP76R5pzR3xuO81EN6D1LCTNA9S7pk2W85MVFhJUMao0CH2bkPFe7yMObWw1roH8Hlp1/pub?output=csv"
+  data-default-lang="zh"
+  data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbw5glgrF8ODvZ_X5onkXlXAlwPa19jo-mBdNJ5tu80rZ6rhYeracZrJOxumVRNK0ecs/exec">
+  <div
+    class="loading-screen bg-[linear-gradient(135deg,rgb(var(--color-loading-1)_/_0.98),rgb(var(--color-loading-2)_/_0.98))] text-ink"
+    role="status" aria-live="polite" aria-label="Loading">
+    <div
+      class="loading-orbit h-56 w-56 sm:h-72 sm:w-72 md:h-80 md:w-80 [--orbit-scale:0.6] sm:[--orbit-scale:0.75] md:[--orbit-scale:0.9]"
+      aria-hidden="true">
+      <div class="loading-orbit__center">
+        <div class="loading-orbit__dot"></div>
+        <div class="loading-orbit__s loading-orbit__s1"></div>
+        <div class="loading-orbit__s loading-orbit__s2"></div>
+        <div class="loading-orbit__s loading-orbit__s3"></div>
+        <div class="loading-orbit__s loading-orbit__s4"></div>
+        <div class="loading-orbit__s loading-orbit__s5"></div>
+        <div class="loading-orbit__s loading-orbit__s6"></div>
+        <div class="loading-orbit__s loading-orbit__s7"></div>
+        <div class="loading-orbit__s loading-orbit__s8"></div>
+        <div class="loading-orbit__s loading-orbit__s9"></div>
+        <div class="loading-orbit__s loading-orbit__s10"></div>
+        <div class="loading-orbit__s loading-orbit__s11"></div>
+        <div class="loading-orbit__s loading-orbit__s12"></div>
+        <div class="loading-orbit__s loading-orbit__s13"></div>
+        <div class="loading-orbit__s loading-orbit__s14"></div>
       </div>
     </div>
-    <div class="page-content">
+  </div>
+  <div class="page-content">
     <!-- Hero section with forest background and soft overlay -->
     <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
       <div class="absolute inset-0">
         <picture>
           <source media="(max-width: 640px)" srcset="img/wedding_photos/heros_background_mobile.jpeg">
-          <img
-            src="img/wedding_photos/heros_background.jpeg"
-            alt="陽光灑落的森林背景"
-            class="hero-image h-full w-full object-cover"
-            loading="lazy"
-            data-hero-image
-            data-hero-position="30% 70%"
-          />
+          <img src="img/wedding_photos/heros_background.jpeg" alt="陽光灑落的森林背景"
+            class="hero-image h-full w-full object-cover" loading="lazy" data-hero-image data-hero-position="30% 70%" />
         </picture>
         <div class="hero-overlay absolute inset-0" data-hero-overlay data-hero-overlay-default="1"></div>
       </div>
       <nav
-        class="relative z-10 flex flex-col gap-4 px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16"
-      >
+        class="relative z-10 flex flex-col gap-4 px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16">
         <div class="font-display text-xl tracking-[0.3em] uppercase" data-config="nav.brand">森語誓約</div>
         <div class="flex flex-col items-start gap-4 text-sm sm:flex-row sm:items-center">
           <div class="flex flex-wrap gap-4">
-            <a href="#couple" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.couple">新人介紹</a>
-            <a href="#location" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.location">地點交通</a>
-            <a href="#survey" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.survey">飲食問卷</a>
-            <a href="#invitation" class="uppercase tracking-[0.3em] text-white/80 hover:text-white" data-config="nav.link.invitation">喜帖</a>
+            <a href="#couple" class="uppercase tracking-[0.3em] text-white/80 hover:text-white"
+              data-config="nav.link.couple">新人介紹</a>
+            <a href="#location" class="uppercase tracking-[0.3em] text-white/80 hover:text-white"
+              data-config="nav.link.location">地點交通</a>
+            <a href="#survey" class="uppercase tracking-[0.3em] text-white/80 hover:text-white"
+              data-config="nav.link.survey">飲食問卷</a>
+            <a href="#invitation" class="uppercase tracking-[0.3em] text-white/80 hover:text-white"
+              data-config="nav.link.invitation">喜帖</a>
           </div>
           <div
             class="lang-switch inline-flex rounded-full border border-white/40 bg-white/10 text-xs uppercase tracking-[0.4em]"
-            data-lang-switch
-          >
-            <button
-              type="button"
-              class="px-3 py-1 text-white/80 transition"
-              data-lang-button="zh"
-              data-config="lang.zhLabel"
-              aria-pressed="true"
-            >
+            data-lang-switch>
+            <button type="button" class="px-3 py-1 text-white/80 transition" data-lang-button="zh"
+              data-config="lang.zhLabel" aria-pressed="true">
               中文
             </button>
-            <button
-              type="button"
-              class="px-3 py-1 text-white/80 transition"
-              data-lang-button="en"
-              data-config="lang.enLabel"
-              aria-pressed="false"
-            >
+            <button type="button" class="px-3 py-1 text-white/80 transition" data-lang-button="en"
+              data-config="lang.enLabel" aria-pressed="false">
               English
             </button>
           </div>
           <div
             class="theme-switch inline-flex rounded-full border border-white/40 bg-white/10 text-xs uppercase tracking-[0.4em]"
-            data-theme-switch
-          >
-            <button
-              type="button"
-              class="px-3 py-1 text-white/80 transition hover:text-white is-active"
-              data-theme-button="forest"
-              title="Forest"
-            >
+            data-theme-switch>
+            <button type="button" class="px-3 py-1 text-white/80 transition hover:text-white is-active"
+              data-theme-button="forest" title="Forest">
               森林
             </button>
-            <button
-              type="button"
-              class="px-3 py-1 text-white/80 transition hover:text-white"
-              data-theme-button="garden"
-              title="Garden"
-            >
+            <button type="button" class="px-3 py-1 text-white/80 transition hover:text-white" data-theme-button="garden"
+              title="Garden">
               花園
             </button>
-            <button
-              type="button"
-              class="px-3 py-1 text-white/80 transition hover:text-white"
-              data-theme-button="coastal"
-              title="Coastal"
-            >
+            <button type="button" class="px-3 py-1 text-white/80 transition hover:text-white"
+              data-theme-button="coastal" title="Coastal">
               海岸
             </button>
-            <button
-              type="button"
-              class="px-3 py-1 text-white/80 transition hover:text-white"
-              data-theme-button="candlelit"
-              title="Candlelit"
-            >
+            <button type="button" class="px-3 py-1 text-white/80 transition hover:text-white"
+              data-theme-button="candlelit" title="Candlelit">
               燭光
             </button>
           </div>
         </div>
       </nav>
-      <div class="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-10 text-center text-white sm:px-10">
-        <p class="text-xs uppercase tracking-[0.5em] text-primary/70" data-config="hero.tagline">Warm &amp; Fresh Wedding</p>
+      <div
+        class="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-10 text-center text-white sm:px-10">
+        <p class="text-xs uppercase tracking-[0.5em] text-primary/70" data-config="hero.tagline">Warm &amp; Fresh
+          Wedding</p>
         <h1 class="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl" data-config="hero.names">昊然 &amp; 予晴</h1>
         <p class="mt-6 text-base leading-relaxed text-white/85 sm:text-lg" data-config="hero.description">
           我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
@@ -1103,41 +1096,47 @@
           <span class="rounded-full border border-white/40 px-6 py-2" data-config="hero.badge3">歡迎小小孩</span>
         </div>
         <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="#invitation"
+          <a href="#invitation"
             class="rounded-full bg-white/90 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-ink transition hover:bg-white"
-            data-config="hero.ctaPrimary"
-            >查看喜帖</a
-          >
-          <a
-            href="#survey"
+            data-config="hero.ctaPrimary">查看喜帖</a>
+          <a href="#survey"
             class="rounded-full border border-white/60 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-white/15"
-            data-config="hero.ctaSecondary"
-            >填寫問卷</a
-          >
+            data-config="hero.ctaSecondary">填寫問卷</a>
         </div>
       </div>
     </header>
 
     <main class="relative z-10 -mt-16 px-4 pb-16 sm:px-6 lg:px-8">
-      <div class="gold-speckle pointer-events-none animate-none sm:animate-pulse motion-reduce:animate-none" aria-hidden="true"></div>
+      <div class="gold-speckle pointer-events-none animate-none sm:animate-pulse motion-reduce:animate-none"
+        aria-hidden="true"></div>
       <div class="relative z-10 mx-auto flex max-w-5xl flex-col gap-10">
         <!-- Countdown section -->
-        <section id="countdown" class="leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 text-center shadow-card backdrop-blur-sm sm:p-12">
+        <section id="countdown"
+          class="leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 text-center shadow-card backdrop-blur-sm sm:p-12">
           <div class="content-layer content-safe">
-            <p class="font-display text-2xl text-accent/80 sm:text-3xl" data-config="countdown.section.heading">Counting down the days...</p>
+            <p class="font-display text-2xl text-accent/80 sm:text-3xl" data-config="countdown.section.heading">Counting
+              down the days...</p>
             <div class="mx-auto mt-8 grid w-full max-w-3xl grid-cols-1 gap-6 sm:grid-cols-3">
-              <div class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
-                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.days" data-countdown-value="days">142</p>
-                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.days">Days</p>
+              <div
+                class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
+                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.days"
+                  data-countdown-value="days">142</p>
+                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.days">Days
+                </p>
               </div>
-              <div class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
-                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.hours" data-countdown-value="hours">08</p>
-                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.hours">Hours</p>
+              <div
+                class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
+                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.hours"
+                  data-countdown-value="hours">08</p>
+                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.hours">
+                  Hours</p>
               </div>
-              <div class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
-                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.minutes" data-countdown-value="minutes">30</p>
-                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.minutes">Minutes</p>
+              <div
+                class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
+                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.minutes"
+                  data-countdown-value="minutes">30</p>
+                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.minutes">
+                  Minutes</p>
               </div>
             </div>
           </div>
@@ -1150,64 +1149,65 @@
         </div>
 
         <!-- New couple introduction card -->
-        <section id="couple" class="grain leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <img
-            src="img/illustrations/botanical/floral/watercolor-corner-right.webp"
-            alt=""
-            class="botanical-corner-blend decorative-svg corner-deco corner-deco--tr opacity-30"
-            loading="lazy"
-            aria-hidden="true"
-          />
-          <img
-            src="img/illustrations/botanical/floral/watercolor-corner-left.webp"
-            alt=""
-            class="botanical-corner-blend decorative-svg corner-deco corner-deco--bl opacity-30"
-            loading="lazy"
-            aria-hidden="true"
-          />
+        <section id="couple"
+          class="grain leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <img src="img/illustrations/botanical/floral/watercolor-corner-right.webp" alt=""
+            class="botanical-corner-blend decorative-svg corner-deco corner-deco--tr opacity-30" loading="lazy"
+            aria-hidden="true" />
+          <img src="img/illustrations/botanical/floral/watercolor-corner-left.webp" alt=""
+            class="botanical-corner-blend decorative-svg corner-deco corner-deco--bl opacity-30" loading="lazy"
+            aria-hidden="true" />
 
           <div class="content-layer content-safe">
             <div class="text-center">
-              <img
-                src="img/icons/leaf-simple.svg"
-                alt="小葉片裝飾"
-                class="theme-only theme-only--default mx-auto h-12 w-12 opacity-80"
-                loading="lazy"
-              />
-              <img
-                src="img/illustrations/natural-elements/ocean-wave.webp"
-                alt="小葉片裝飾"
-                class="theme-only theme-only--coastal mx-auto h-12 w-12 opacity-80"
-                loading="lazy"
-              />
+              <img src="img/icons/leaf-simple.svg" alt="小葉片裝飾"
+                class="theme-only theme-only--default mx-auto h-12 w-12 opacity-80" loading="lazy" />
+              <img src="img/illustrations/natural-elements/ocean-wave.webp" alt="小葉片裝飾"
+                class="theme-only theme-only--coastal mx-auto h-12 w-12 opacity-80" loading="lazy" />
               <div class="theme-only theme-only--candlelit fire-icon mx-auto" aria-hidden="true">
                 <div class="fire-icon__logs logs">
-                  <div class="one"><div class="log"></div></div>
-                  <div class="two"><div class="log"></div></div>
-                  <div class="three"><div class="log"></div></div>
+                  <div class="one">
+                    <div class="log"></div>
+                  </div>
+                  <div class="two">
+                    <div class="log"></div>
+                  </div>
+                  <div class="three">
+                    <div class="log"></div>
+                  </div>
                 </div>
                 <div class="fire-icon__fire fire">
                   <div class="fire-icon__flames flames">
-                    <div class="one"><div class="flame"></div></div>
-                    <div class="two"><div class="flame"></div></div>
-                    <div class="three"><div class="flame"></div></div>
+                    <div class="one">
+                      <div class="flame"></div>
+                    </div>
+                    <div class="two">
+                      <div class="flame"></div>
+                    </div>
+                    <div class="three">
+                      <div class="flame"></div>
+                    </div>
                   </div>
                   <div class="fire-icon__flames flames inner">
-                    <div class="one"><div class="flame"></div></div>
-                    <div class="two"><div class="flame"></div></div>
-                    <div class="three"><div class="flame"></div></div>
+                    <div class="one">
+                      <div class="flame"></div>
+                    </div>
+                    <div class="two">
+                      <div class="flame"></div>
+                    </div>
+                    <div class="three">
+                      <div class="flame"></div>
+                    </div>
                   </div>
                   <div class="fire-icon__glow glow"></div>
                 </div>
               </div>
-              <img
-                src="img/illustrations/botanical/autumn/maple-leaf.webp"
-                alt="小葉片裝飾"
-                class="theme-only theme-only--garden maple-deco mx-auto h-12 w-12 opacity-60"
-                loading="lazy"
-              />
-              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-primary/70" data-config="couple.section.label">新人介紹</p>
-              <h2 class="mt-3 font-display text-3xl text-primary sm:text-4xl" data-config="couple.section.heading">把生活寫成一首溫柔的歌</h2>
+              <img src="img/illustrations/botanical/autumn/maple-leaf.webp" alt="小葉片裝飾"
+                class="theme-only theme-only--garden maple-deco mx-auto h-12 w-12 opacity-60" loading="lazy" />
+              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-primary/70" data-config="couple.section.label">新人介紹
+              </p>
+              <h2 class="mt-3 font-display text-3xl text-primary sm:text-4xl" data-config="couple.section.heading">
+                把生活寫成一首溫柔的歌</h2>
               <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="couple.section.description">
                 我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
               </p>
@@ -1246,77 +1246,64 @@
         <!-- Divider reveal animation: adjust timing/offset via Tailwind utilities -->
         <div
           class="section-divider flex justify-center py-6 opacity-0 translate-y-2 scale-[0.98] transition duration-700 ease-out sm:py-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:transition-none"
-          data-divider-reveal
-          aria-hidden="true"
-        >
-          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48" fill="none">
+          data-divider-reveal aria-hidden="true">
+          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48"
+            fill="none">
             <use data-decor-role="divider-couple" href="img/components/wedding-decorations.svg#divider-couple"></use>
           </svg>
         </div>
 
         <!-- Location and transportation details -->
-        <section id="location" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12" style="overflow: visible;">
+        <section id="location"
+          class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12"
+          style="overflow: visible;">
           <div class="decorative-layer" aria-hidden="true">
           </div>
-          <div class="decorative-tree bottom-6 right-6 w-[140px] opacity-50 mix-blend-soft-light sm:bottom-8 sm:right-8 sm:w-[180px] lg:bottom-10 lg:right-10 lg:w-[220px]" aria-hidden="true">
-            <img
-              src="img/illustrations/botanical/spring/tree-with-swing.webp"
-              alt=""
-              class="decorative-svg theme-only theme-only--forest"
-              loading="lazy"
-            />
-            <img
-              src="img/illustrations/botanical/autumn/fall-trees-group.webp"
-              alt=""
-              class="decorative-svg theme-only theme-only--warm"
-              loading="lazy"
-            />
+          <div
+            class="decorative-tree bottom-6 right-6 w-[140px] opacity-50 mix-blend-soft-light sm:bottom-8 sm:right-8 sm:w-[180px] lg:bottom-10 lg:right-10 lg:w-[220px]"
+            aria-hidden="true">
+            <img src="img/illustrations/botanical/spring/tree-with-swing.webp" alt=""
+              class="decorative-svg theme-only theme-only--forest" loading="lazy" />
+            <img src="img/illustrations/botanical/autumn/fall-trees-group.webp" alt=""
+              class="decorative-svg theme-only theme-only--warm" loading="lazy" />
           </div>
 
           <div class="content-layer content-safe">
             <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="location.section.heading">餐廳地點</p>
+              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="location.section.heading">餐廳地點
+              </p>
               <h2 class="mt-2 font-display text-3xl text-primary" data-config="location.section.title">森光花園，等你來散步</h2>
-              <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="location.section.description">
+              <p class="mt-3 text-lg font-semibold text-primary/90" data-config="venue.name">森光花園宴會廳</p>
+              <p class="mt-1 text-sm text-ink/70" data-config="venue.address">台北市信義區林蔭路 88 號</p>
+              <p class="mt-5 text-base leading-relaxed text-ink/80" data-config="location.section.description">
                 我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
               </p>
             </div>
             <div class="mt-10 grid gap-8 md:grid-cols-2">
-              <div class="rounded-3xl bg-[url('img/photography/landscapes/forest-path-sunlight.jpg')] bg-cover bg-center p-6 text-white">
-                <div class="rounded-3xl border border-white/40 bg-ink/60 p-6">
-                  <p class="text-lg font-semibold" data-config="venue.name">森光花園宴會廳</p>
-                <p class="mt-2 text-sm" data-config="venue.address">台北市信義區林蔭路 88 號</p>
-                <div class="mt-6 flex flex-col gap-3 text-sm">
-                  <a
-                    class="rounded-full bg-white/90 px-5 py-2 text-center text-ink transition hover:bg-white"
-                    href="https://maps.google.com"
-                    data-config="map.url"
-                    data-config-attr="href"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+              <div class="overflow-hidden rounded-3xl h-full shadow-inner bg-white/50">
+                <img src="img/wedding_photos/position_traffic.jpg" alt="交通位置圖"
+                  class="object-cover w-full h-full min-h-[250px]" loading="lazy" />
+              </div>
+              <div class="flex flex-col rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80">
+                <h3 class="font-display text-2xl text-primary" data-config="transport.title">交通方式</h3>
+                <ul class="mt-4 space-y-3 flex-grow">
+                  <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
+                  <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
+                  <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
+                </ul>
+                <div class="mt-6 flex flex-row gap-3 text-sm">
+                  <a class="flex-1 rounded-full bg-white/90 px-4 py-2 text-center text-ink transition hover:bg-white border border-border/40 shadow-sm"
+                    href="https://maps.google.com" data-config="map.url" data-config-attr="href" target="_blank"
+                    rel="noreferrer">
                     <span data-config="location.button.map">開啟地圖</span>
                   </a>
-                  <a
-                    class="rounded-full border border-white/60 px-5 py-2 text-center text-white transition hover:bg-white/10"
-                    href="#survey"
-                    data-config="location.button.rsvp"
-                    >填寫出席</a
-                  >
+                  <a class="flex-1 rounded-full bg-primary/90 px-4 py-2 text-center text-white transition hover:bg-primary border border-primary/20 shadow-sm"
+                    href="#survey" data-config="location.button.rsvp">填寫出席</a>
                 </div>
+                <p class="mt-4 rounded-2xl bg-white/70 p-4 text-xs text-muted/70" data-config="transport.note">
+                  若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
+                </p>
               </div>
-            </div>
-            <div class="rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80">
-              <h3 class="font-display text-2xl text-primary" data-config="transport.title">交通方式</h3>
-              <ul class="mt-4 space-y-3">
-                <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
-                <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
-                <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
-              </ul>
-              <p class="mt-6 rounded-2xl bg-white/70 p-4 text-xs text-muted/70" data-config="transport.note">
-                若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
-              </p>
-            </div>
             </div>
           </div>
         </section>
@@ -1324,116 +1311,87 @@
         <!-- Divider reveal animation: adjust timing/offset via Tailwind utilities -->
         <div
           class="section-divider flex justify-center py-6 opacity-0 translate-y-2 scale-[0.98] transition duration-700 ease-out sm:py-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:transition-none"
-          data-divider-reveal
-          aria-hidden="true"
-        >
-          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48" fill="none">
+          data-divider-reveal aria-hidden="true">
+          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48"
+            fill="none">
             <use data-decor-role="divider-survey" href="img/components/wedding-decorations.svg#divider-survey"></use>
           </svg>
         </div>
 
         <!-- RSVP / survey section -->
-        <section id="survey" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <img
-            src="img/illustrations/botanical/floral/watercolor-corner-right.webp"
-            alt=""
-            class="botanical-corner-blend decorative-svg corner-deco corner-deco--tr opacity-30"
-            loading="lazy"
-            aria-hidden="true"
-          />
+        <section id="survey"
+          class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
+          <img src="img/illustrations/botanical/floral/watercolor-corner-right.webp" alt=""
+            class="botanical-corner-blend decorative-svg corner-deco corner-deco--tr opacity-30" loading="lazy"
+            aria-hidden="true" />
 
           <div class="content-layer content-safe">
             <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="survey.section.heading">簡單問卷</p>
-              <h2 class="mt-2 font-display text-3xl text-primary" data-config="survey.section.subtitle">你的喜好，我們想好好照顧</h2>
+              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="survey.section.heading">簡單問卷
+              </p>
+              <h2 class="mt-2 font-display text-3xl text-primary" data-config="survey.section.subtitle">你的喜好，我們想好好照顧
+              </h2>
             </div>
-            <form
-              class="mx-auto mt-8 max-w-3xl space-y-6 text-sm"
-              data-rsvp-form
-            >
-            <label class="block">
-              <span class="text-muted/70" data-config="survey.label.name">你的名字</span>
-              <input
-                type="text"
-                name="name"
-                required
-                data-config="survey.placeholder.name"
-                data-config-attr="placeholder"
-                class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
-              />
-            </label>
-            <div class="grid gap-6 md:grid-cols-2">
+            <form class="mx-auto mt-8 max-w-3xl space-y-6 text-sm" data-rsvp-form>
               <label class="block">
-                <span class="text-muted/70" data-config="survey.label.guests">出席人數</span>
-                <select
-                  name="guests"
-                  required
-                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
-                >
-                  <option value="" data-config="survey.option.guests.placeholder"></option>
-                  <option value="1" data-config="survey.option.guests.1">1 人</option>
-                  <option value="2" data-config="survey.option.guests.2">2 人</option>
-                  <option value="3" data-config="survey.option.guests.3">3 人</option>
-                  <option value="4" data-config="survey.option.guests.4plus">4 人以上</option>
-                </select>
+                <span class="text-muted/70" data-config="survey.label.name">你的名字</span>
+                <input type="text" name="name" required data-config="survey.placeholder.name"
+                  data-config-attr="placeholder"
+                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none" />
               </label>
+              <div class="grid gap-6 md:grid-cols-2">
+                <label class="block">
+                  <span class="text-muted/70" data-config="survey.label.guests">出席人數</span>
+                  <select name="guests" required
+                    class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none">
+                    <option value="" data-config="survey.option.guests.placeholder"></option>
+                    <option value="1" data-config="survey.option.guests.1">1 人</option>
+                    <option value="2" data-config="survey.option.guests.2">2 人</option>
+                    <option value="3" data-config="survey.option.guests.3">3 人</option>
+                    <option value="4" data-config="survey.option.guests.4plus">4 人以上</option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span class="text-muted/70" data-config="survey.label.diet">飲食偏好</span>
+                  <select name="diet" required
+                    class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none">
+                    <option value="" data-config="survey.option.diet.placeholder"></option>
+                    <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
+                    <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素</option>
+                    <option value="vegan" data-config="survey.option.diet.vegan">全素</option>
+                    <option value="no-seafood" data-config="survey.option.diet.noSeafood">不吃海鮮</option>
+                  </select>
+                </label>
+              </div>
+              <div class="grid gap-6 md:grid-cols-2">
+                <label class="block">
+                  <span class="text-muted/70">是否有小孩</span>
+                  <select name="hasChildren"
+                    class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none">
+                    <option value="no" selected>無</option>
+                    <option value="yes">有</option>
+                  </select>
+                </label>
+                <label class="block">
+                  <span class="text-muted/70">小孩椅幾張</span>
+                  <input type="number" name="childSeats" min="0" value="0"
+                    class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none" />
+                </label>
+              </div>
               <label class="block">
-                <span class="text-muted/70" data-config="survey.label.diet">飲食偏好</span>
-                <select
-                  name="diet"
-                  required
-                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
-                >
-                  <option value="" data-config="survey.option.diet.placeholder"></option>
-                  <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
-                  <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素</option>
-                  <option value="vegan" data-config="survey.option.diet.vegan">全素</option>
-                  <option value="no-seafood" data-config="survey.option.diet.noSeafood">不吃海鮮</option>
-                </select>
+                <span class="text-muted/70" data-config="survey.label.message">想對我們說的話</span>
+                <textarea name="message" rows="4" data-config="survey.placeholder.message"
+                  data-config-attr="placeholder"
+                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"></textarea>
               </label>
-            </div>
-            <div class="grid gap-6 md:grid-cols-2">
-              <label class="block">
-                <span class="text-muted/70">是否有小孩</span>
-                <select
-                  name="hasChildren"
-                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
-                >
-                  <option value="no" selected>無</option>
-                  <option value="yes">有</option>
-                </select>
-              </label>
-              <label class="block">
-                <span class="text-muted/70">小孩椅幾張</span>
-                <input
-                  type="number"
-                  name="childSeats"
-                  min="0"
-                  value="0"
-                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
-                />
-              </label>
-            </div>
-            <label class="block">
-              <span class="text-muted/70" data-config="survey.label.message">想對我們說的話</span>
-              <textarea
-                name="message"
-                rows="4"
-                data-config="survey.placeholder.message"
-                data-config-attr="placeholder"
-                class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"
-              ></textarea>
-            </label>
-            <input type="hidden" name="locale" value="zh" data-rsvp-locale />
-            <input type="hidden" name="source" value="web" />
-            <button
-              type="submit"
-              class="w-full rounded-full bg-primary px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-primary/90"
-              data-config="survey.button"
-            >
-              送出回覆
-            </button>
-            <p class="mt-4 text-center text-sm text-muted/70 hidden" data-rsvp-status role="status"></p>
+              <input type="hidden" name="locale" value="zh" data-rsvp-locale />
+              <input type="hidden" name="source" value="web" />
+              <button type="submit"
+                class="w-full rounded-full bg-primary px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-primary/90"
+                data-config="survey.button">
+                送出回覆
+              </button>
+              <p class="mt-4 text-center text-sm text-muted/70 hidden" data-rsvp-status role="status"></p>
             </form>
             <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
           </div>
@@ -1442,20 +1400,23 @@
         <!-- Divider reveal animation: adjust timing/offset via Tailwind utilities -->
         <div
           class="section-divider flex justify-center py-6 opacity-0 translate-y-2 scale-[0.98] transition duration-700 ease-out sm:py-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:transition-none"
-          data-divider-reveal
-          aria-hidden="true"
-        >
-          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48" fill="none">
-            <use data-decor-role="divider-invitation" href="img/components/wedding-decorations.svg#divider-invitation"></use>
+          data-divider-reveal aria-hidden="true">
+          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48"
+            fill="none">
+            <use data-decor-role="divider-invitation" href="img/components/wedding-decorations.svg#divider-invitation">
+            </use>
           </svg>
         </div>
 
         <!-- Invitation card -->
-        <section id="invitation" class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
+        <section id="invitation"
+          class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
           <div class="content-layer content-safe">
             <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="invitation.section.title">喜帖</p>
-              <h2 class="mt-2 font-display text-3xl text-primary" data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
+              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="invitation.section.title">喜帖
+              </p>
+              <h2 class="mt-2 font-display text-3xl text-primary" data-config="invitation.section.heading">願這場儀式感，與你共享
+              </h2>
               <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="invitation.section.description">
                 用一封溫柔的喜帖，把我們的祝福親手遞給你。
               </p>
@@ -1469,63 +1430,68 @@
                 <dl class="mt-6 space-y-4 text-sm">
                   <div>
                     <dt class="text-muted/60" data-config="invitation.date.label">日期</dt>
-                    <dd class="font-display text-lg text-primary" data-config="invitation.date.value">2025 / 10 / 18（六）</dd>
+                    <dd class="font-display text-lg text-primary" data-config="invitation.date.value">2025 / 10 / 18（六）
+                    </dd>
                   </div>
                   <div>
                     <dt class="text-muted/60" data-config="invitation.time.label">時間</dt>
-                    <dd class="font-display text-lg text-primary" data-config="invitation.time.value">15:30 證婚 ・ 18:00 宴客</dd>
+                    <dd class="font-display text-lg text-primary" data-config="invitation.time.value">15:30 證婚 ・ 18:00
+                      宴客</dd>
                   </div>
                   <div>
                     <dt class="text-muted/60" data-config="invitation.location.label">地點</dt>
                     <dd class="font-display text-lg text-primary" data-config="invitation.location.value">森光花園宴會廳</dd>
                   </div>
                 </dl>
-                <a
-                  href="#top"
+                <a href="#top"
                   class="mt-8 inline-flex rounded-full bg-ink px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-ink/90"
-                  data-config="invitation.button"
-                  >回到頂端</a
-                >
+                  data-config="invitation.button">回到頂端</a>
               </div>
               <div class="rounded-3xl border border-border/60 bg-white/70 p-6 text-center shadow-inner">
-                <img
-                  src="img/icons/leaf-simple.svg"
-                  alt="森林小插圖"
-                  class="theme-only theme-only--default mx-auto h-20 w-20"
-                  loading="lazy"
-                />
-                <img
-                  src="img/illustrations/natural-elements/ocean-wave.webp"
-                  alt="森林小插圖"
-                  class="theme-only theme-only--coastal mx-auto h-20 w-20"
-                  loading="lazy"
-                />
+                <img src="img/icons/leaf-simple.svg" alt="森林小插圖"
+                  class="theme-only theme-only--default mx-auto h-20 w-20" loading="lazy" />
+                <img src="img/illustrations/natural-elements/ocean-wave.webp" alt="森林小插圖"
+                  class="theme-only theme-only--coastal mx-auto h-20 w-20" loading="lazy" />
                 <div class="theme-only theme-only--candlelit fire-icon fire-icon--lg mx-auto" aria-hidden="true">
                   <div class="fire-icon__logs logs">
-                    <div class="one"><div class="log"></div></div>
-                    <div class="two"><div class="log"></div></div>
-                    <div class="three"><div class="log"></div></div>
+                    <div class="one">
+                      <div class="log"></div>
+                    </div>
+                    <div class="two">
+                      <div class="log"></div>
+                    </div>
+                    <div class="three">
+                      <div class="log"></div>
+                    </div>
                   </div>
                   <div class="fire-icon__fire fire">
                     <div class="fire-icon__flames flames">
-                      <div class="one"><div class="flame"></div></div>
-                      <div class="two"><div class="flame"></div></div>
-                      <div class="three"><div class="flame"></div></div>
+                      <div class="one">
+                        <div class="flame"></div>
+                      </div>
+                      <div class="two">
+                        <div class="flame"></div>
+                      </div>
+                      <div class="three">
+                        <div class="flame"></div>
+                      </div>
                     </div>
                     <div class="fire-icon__flames flames inner">
-                      <div class="one"><div class="flame"></div></div>
-                      <div class="two"><div class="flame"></div></div>
-                      <div class="three"><div class="flame"></div></div>
+                      <div class="one">
+                        <div class="flame"></div>
+                      </div>
+                      <div class="two">
+                        <div class="flame"></div>
+                      </div>
+                      <div class="three">
+                        <div class="flame"></div>
+                      </div>
                     </div>
                     <div class="fire-icon__glow glow"></div>
                   </div>
                 </div>
-                <img
-                  src="img/illustrations/botanical/autumn/maple-leaf.webp"
-                  alt="森林小插圖"
-                  class="theme-only theme-only--garden maple-deco mx-auto h-20 w-20 opacity-60"
-                  loading="lazy"
-                />
+                <img src="img/illustrations/botanical/autumn/maple-leaf.webp" alt="森林小插圖"
+                  class="theme-only theme-only--garden maple-deco mx-auto h-20 w-20 opacity-60" loading="lazy" />
                 <p class="mt-4 font-display text-xl text-primary" data-config="invitation.card.message">願你今天也被溫柔包圍</p>
                 <p class="mt-4 text-sm leading-relaxed text-ink/80" data-config="invitation.card.note">
                   我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
@@ -1537,655 +1503,657 @@
       </div>
     </main>
 
-    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-muted/60" data-config="footer.text">
+    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-muted/60"
+      data-config="footer.text">
       可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
     </footer>
-    </div>
-    <script>
-      (function () {
-        const bodyEl = document.body;
-        const CONFIG_SOURCE_URL =
-          (bodyEl && bodyEl.dataset.configSrc) ||
-          (typeof window !== "undefined" && window.CONFIG_SOURCE_URL) ||
-          "";
-        const DEFAULT_LANG = (bodyEl && bodyEl.dataset.defaultLang) || "zh";
-        const STORAGE_KEY = "forest-wedding-lang";
-        const state = {
-          languages: [],
-          data: {},
-          currentLang: DEFAULT_LANG,
-        };
-        const rootStyle = document.documentElement.style;
-        const heroImageEl = document.querySelector("[data-hero-image]");
-        const heroOverlayEl = document.querySelector("[data-hero-overlay]");
-        let heroPositionListener = null;
-        const visualDefaults = {
-          heroImage: heroImageEl ? heroImageEl.getAttribute("src") : "",
-          heroPosition: heroImageEl ? heroImageEl.dataset.heroPosition || "50% 50%" : "",
-          heroOverlayOpacity: heroOverlayEl ? heroOverlayEl.dataset.heroOverlayDefault || "" : "",
-        };
-        const resetScrollPosition = () => {
-          window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-        };
+  </div>
+  <script>
+    (function () {
+      const bodyEl = document.body;
+      const CONFIG_SOURCE_URL =
+        (bodyEl && bodyEl.dataset.configSrc) ||
+        (typeof window !== "undefined" && window.CONFIG_SOURCE_URL) ||
+        "";
+      const DEFAULT_LANG = (bodyEl && bodyEl.dataset.defaultLang) || "zh";
+      const STORAGE_KEY = "forest-wedding-lang";
+      const state = {
+        languages: [],
+        data: {},
+        currentLang: DEFAULT_LANG,
+      };
+      const rootStyle = document.documentElement.style;
+      const heroImageEl = document.querySelector("[data-hero-image]");
+      const heroOverlayEl = document.querySelector("[data-hero-overlay]");
+      let heroPositionListener = null;
+      const visualDefaults = {
+        heroImage: heroImageEl ? heroImageEl.getAttribute("src") : "",
+        heroPosition: heroImageEl ? heroImageEl.dataset.heroPosition || "50% 50%" : "",
+        heroOverlayOpacity: heroOverlayEl ? heroOverlayEl.dataset.heroOverlayDefault || "" : "",
+      };
+      const resetScrollPosition = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      };
 
-        if ("scrollRestoration" in history) {
-          history.scrollRestoration = "manual";
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      window.addEventListener("pageshow", (event) => {
+        if (event.persisted) {
+          resetScrollPosition();
         }
+      });
 
-        window.addEventListener("pageshow", (event) => {
-          if (event.persisted) {
-            resetScrollPosition();
+      const getRSVPEndpoint = () =>
+        (bodyEl && bodyEl.dataset.rsvpEndpoint) ||
+        (typeof window !== "undefined" && window.RSVP_ENDPOINT) ||
+        "";
+
+      function parseCSVLine(line) {
+        const cells = [];
+        let current = "";
+        let inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          if (char === '"') {
+            if (inQuotes && line[i + 1] === '"') {
+              current += '"';
+              i++;
+            } else {
+              inQuotes = !inQuotes;
+            }
+          } else if (char === "," && !inQuotes) {
+            cells.push(current);
+            current = "";
+          } else {
+            current += char;
+          }
+        }
+        cells.push(current);
+        return cells;
+      }
+
+      function parseConfig(text) {
+        const cleaned = text.replace(/^\uFEFF/, "");
+        const lines = cleaned.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+        if (!lines.length) {
+          return { languages: [], data: {} };
+        }
+        const headerCells = parseCSVLine(lines.shift());
+        const langHeaders = headerCells.slice(1).map((cell) => cell.trim() || "value");
+        if (!langHeaders.length) {
+          langHeaders.push("value");
+        }
+        const data = {};
+        langHeaders.forEach((lang) => {
+          data[lang] = {};
+        });
+        lines.forEach((line) => {
+          const cells = parseCSVLine(line);
+          const key = (cells[0] || "").trim();
+          if (!key) return;
+          langHeaders.forEach((lang, idx) => {
+            const value = (cells[idx + 1] || "").trim();
+            if (!data[lang]) data[lang] = {};
+            data[lang][key] = value;
+          });
+        });
+        const languages = Array.from(new Set(langHeaders.filter(Boolean)));
+        return { languages, data };
+      }
+
+      function getStoredLang() {
+        try {
+          return window.localStorage.getItem(STORAGE_KEY);
+        } catch (err) {
+          return null;
+        }
+      }
+
+      function storeLang(lang) {
+        try {
+          window.localStorage.setItem(STORAGE_KEY, lang);
+        } catch (err) {
+          /* ignore */
+        }
+      }
+
+      function updateDocumentLang(lang) {
+        document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
+      }
+
+      function getValueForKey(key, fallback = "", lang = state.currentLang) {
+        const order = [];
+        const enqueue = (code) => {
+          if (code && !order.includes(code)) order.push(code);
+        };
+        enqueue(lang);
+        enqueue(DEFAULT_LANG);
+        state.languages.forEach(enqueue);
+        enqueue("value");
+        for (const code of order) {
+          const bucket = state.data[code];
+          if (bucket && Object.prototype.hasOwnProperty.call(bucket, key)) {
+            const value = bucket[key];
+            if (value !== "") return value;
+          }
+        }
+        return fallback;
+      }
+
+      function applyLanguage(lang) {
+        document.querySelectorAll("[data-config]").forEach((el) => {
+          const key = el.dataset.config;
+          if (!key) return;
+          const value = getValueForKey(key, "", lang);
+          if (value === "") return;
+          const attr = el.dataset.configAttr;
+          if (attr) {
+            el.setAttribute(attr, value);
+          } else {
+            el.textContent = value;
           }
         });
+      }
 
-        const getRSVPEndpoint = () =>
-          (bodyEl && bodyEl.dataset.rsvpEndpoint) ||
-          (typeof window !== "undefined" && window.RSVP_ENDPOINT) ||
-          "";
+      function applyVisualConfig(lang = state.currentLang) {
+        const heroImage = getValueForKey("hero.imageUrl", "", lang);
+        const heroPosition = getValueForKey("hero.imagePosition", "", lang);
+        const overlayOpacity = getValueForKey("hero.overlayOpacity", "", lang);
 
-        function parseCSVLine(line) {
-          const cells = [];
-          let current = "";
-          let inQuotes = false;
-          for (let i = 0; i < line.length; i++) {
-            const char = line[i];
-            if (char === '"') {
-              if (inQuotes && line[i + 1] === '"') {
-                current += '"';
-                i++;
-              } else {
-                inQuotes = !inQuotes;
-              }
-            } else if (char === "," && !inQuotes) {
-              cells.push(current);
-              current = "";
-            } else {
-              current += char;
-            }
-          }
-          cells.push(current);
-          return cells;
-        }
-
-        function parseConfig(text) {
-          const cleaned = text.replace(/^\uFEFF/, "");
-          const lines = cleaned.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-          if (!lines.length) {
-            return { languages: [], data: {} };
-          }
-          const headerCells = parseCSVLine(lines.shift());
-          const langHeaders = headerCells.slice(1).map((cell) => cell.trim() || "value");
-          if (!langHeaders.length) {
-            langHeaders.push("value");
-          }
-          const data = {};
-          langHeaders.forEach((lang) => {
-            data[lang] = {};
-          });
-          lines.forEach((line) => {
-            const cells = parseCSVLine(line);
-            const key = (cells[0] || "").trim();
-            if (!key) return;
-            langHeaders.forEach((lang, idx) => {
-              const value = (cells[idx + 1] || "").trim();
-              if (!data[lang]) data[lang] = {};
-              data[lang][key] = value;
-            });
-          });
-          const languages = Array.from(new Set(langHeaders.filter(Boolean)));
-          return { languages, data };
-        }
-
-        function getStoredLang() {
-          try {
-            return window.localStorage.getItem(STORAGE_KEY);
-          } catch (err) {
-            return null;
-          }
-        }
-
-        function storeLang(lang) {
-          try {
-            window.localStorage.setItem(STORAGE_KEY, lang);
-          } catch (err) {
-            /* ignore */
-          }
-        }
-
-        function updateDocumentLang(lang) {
-          document.documentElement.lang = lang === "zh" ? "zh-Hant" : lang;
-        }
-
-        function getValueForKey(key, fallback = "", lang = state.currentLang) {
-          const order = [];
-          const enqueue = (code) => {
-            if (code && !order.includes(code)) order.push(code);
-          };
-          enqueue(lang);
-          enqueue(DEFAULT_LANG);
-          state.languages.forEach(enqueue);
-          enqueue("value");
-          for (const code of order) {
-            const bucket = state.data[code];
-            if (bucket && Object.prototype.hasOwnProperty.call(bucket, key)) {
-              const value = bucket[key];
-              if (value !== "") return value;
-            }
-          }
-          return fallback;
-        }
-
-        function applyLanguage(lang) {
-          document.querySelectorAll("[data-config]").forEach((el) => {
-            const key = el.dataset.config;
-            if (!key) return;
-            const value = getValueForKey(key, "", lang);
-            if (value === "") return;
-            const attr = el.dataset.configAttr;
-            if (attr) {
-              el.setAttribute(attr, value);
-            } else {
-              el.textContent = value;
-            }
-          });
-        }
-
-        function applyVisualConfig(lang = state.currentLang) {
-          const heroImage = getValueForKey("hero.imageUrl", "", lang);
-          const heroPosition = getValueForKey("hero.imagePosition", "", lang);
-          const overlayOpacity = getValueForKey("hero.overlayOpacity", "", lang);
-
-          if (heroImageEl) {
-            const nextHeroImage = heroImage || visualDefaults.heroImage;
-            if (nextHeroImage && !heroImageEl.src.endsWith(nextHeroImage)) {
-              heroImageEl.src = nextHeroImage;
-              const parent = heroImageEl.parentElement;
-              if (parent && parent.tagName === 'PICTURE') {
-                const sourceTag = parent.querySelector('source');
-                if (sourceTag) {
-                  const mobileExtMatch = nextHeroImage.match(/\.(jpeg|jpg|png|webp)$/i);
-                  if (mobileExtMatch) {
-                    sourceTag.srcset = nextHeroImage.replace(mobileExtMatch[0], '_mobile' + mobileExtMatch[0]);
-                  } else {
-                    sourceTag.srcset = nextHeroImage;
-                  }
+        if (heroImageEl) {
+          const nextHeroImage = heroImage || visualDefaults.heroImage;
+          if (nextHeroImage && !heroImageEl.src.endsWith(nextHeroImage)) {
+            heroImageEl.src = nextHeroImage;
+            const parent = heroImageEl.parentElement;
+            if (parent && parent.tagName === 'PICTURE') {
+              const sourceTag = parent.querySelector('source');
+              if (sourceTag) {
+                const mobileExtMatch = nextHeroImage.match(/\.(jpeg|jpg|png|webp)$/i);
+                if (mobileExtMatch) {
+                  sourceTag.srcset = nextHeroImage.replace(mobileExtMatch[0], '_mobile' + mobileExtMatch[0]);
+                } else {
+                  sourceTag.srcset = nextHeroImage;
                 }
               }
             }
           }
-
-          const resolvedPosition = heroPosition || visualDefaults.heroPosition;
-          if (resolvedPosition) {
-            const applyPosition = () => {
-              rootStyle.setProperty("--hero-image-position", resolvedPosition);
-              heroPositionListener = null;
-            };
-            if (!heroImageEl) {
-              applyPosition();
-            } else if (heroImageEl.complete && heroImageEl.naturalWidth > 0) {
-              applyPosition();
-            } else {
-              if (heroPositionListener) {
-                heroImageEl.removeEventListener("load", heroPositionListener);
-                heroImageEl.removeEventListener("error", heroPositionListener);
-              }
-              heroPositionListener = applyPosition;
-              heroImageEl.addEventListener("load", heroPositionListener, { once: true });
-              heroImageEl.addEventListener("error", heroPositionListener, { once: true });
-            }
-          }
-
-          const resolvedOverlayOpacity =
-            overlayOpacity !== "" ? overlayOpacity : visualDefaults.heroOverlayOpacity;
-          if (resolvedOverlayOpacity !== "") {
-            rootStyle.setProperty("--hero-overlay-opacity", resolvedOverlayOpacity);
-          }
-
         }
 
-        let countdownTimer = null;
-
-        function parseCountdownDate(value) {
-          if (!value) return null;
-          const trimmed = String(value).trim();
-          if (!trimmed) return null;
-          let normalized = trimmed;
-          if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}/.test(trimmed)) {
-            normalized = trimmed.replace(" ", "T");
-          }
-          const parsed = new Date(normalized);
-          if (Number.isNaN(parsed.getTime())) return null;
-          return parsed;
-        }
-
-        function updateCountdownDisplay(targetDate) {
-          const now = new Date();
-          let remainingMs = targetDate.getTime() - now.getTime();
-          if (remainingMs < 0) remainingMs = 0;
-          const totalMinutes = Math.floor(remainingMs / 60000);
-          const days = Math.floor(totalMinutes / (60 * 24));
-          const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
-          const minutes = totalMinutes % 60;
-
-          const setValue = (name, value) => {
-            const node = document.querySelector(`[data-countdown-value="${name}"]`);
-            if (node) node.textContent = value;
+        const resolvedPosition = heroPosition || visualDefaults.heroPosition;
+        if (resolvedPosition) {
+          const applyPosition = () => {
+            rootStyle.setProperty("--hero-image-position", resolvedPosition);
+            heroPositionListener = null;
           };
-
-          setValue("days", String(days));
-          setValue("hours", String(hours).padStart(2, "0"));
-          setValue("minutes", String(minutes).padStart(2, "0"));
-        }
-
-        function refreshCountdown(lang = state.currentLang) {
-          const rawValue = getValueForKey("countdown.datetime", "", lang);
-          const targetDate = parseCountdownDate(rawValue);
-          if (!targetDate) {
-            if (countdownTimer) {
-              clearInterval(countdownTimer);
-              countdownTimer = null;
+          if (!heroImageEl) {
+            applyPosition();
+          } else if (heroImageEl.complete && heroImageEl.naturalWidth > 0) {
+            applyPosition();
+          } else {
+            if (heroPositionListener) {
+              heroImageEl.removeEventListener("load", heroPositionListener);
+              heroImageEl.removeEventListener("error", heroPositionListener);
             }
-            return;
-          }
-          const tick = () => updateCountdownDisplay(targetDate);
-          tick();
-          if (countdownTimer) clearInterval(countdownTimer);
-          countdownTimer = setInterval(tick, 1000);
-        }
-
-        function refreshLangButtons() {
-          const available = new Set(state.languages);
-          const buttons = document.querySelectorAll("[data-lang-button]");
-          buttons.forEach((btn) => {
-            const lang = btn.dataset.langButton;
-            const isActive = lang === state.currentLang;
-            const isAvailable = available.has(lang);
-            btn.classList.toggle("is-active", isActive);
-            btn.classList.toggle("bg-white/90", isActive);
-            btn.classList.toggle("text-ink", isActive);
-            btn.classList.toggle("shadow-sm", isActive);
-            btn.classList.toggle("text-white/80", !isActive);
-            btn.classList.toggle("hover:text-white", !isActive);
-            btn.setAttribute("aria-pressed", String(isActive));
-            btn.disabled = !isAvailable;
-            btn.classList.toggle("opacity-40", !isAvailable);
-          });
-          const switcher = document.querySelector("[data-lang-switch]");
-          if (switcher) {
-            switcher.classList.toggle("hidden", available.size <= 1);
+            heroPositionListener = applyPosition;
+            heroImageEl.addEventListener("load", heroPositionListener, { once: true });
+            heroImageEl.addEventListener("error", heroPositionListener, { once: true });
           }
         }
 
-        function setLanguage(lang) {
-          if (!state.languages.includes(lang)) return;
-          if (lang === state.currentLang) return;
-          state.currentLang = lang;
-          applyLanguage(lang);
-          applyVisualConfig(lang);
-          refreshCountdown(lang);
-          refreshLangButtons();
-          updateDocumentLang(lang);
-          storeLang(lang);
-          updateLocaleField();
+        const resolvedOverlayOpacity =
+          overlayOpacity !== "" ? overlayOpacity : visualDefaults.heroOverlayOpacity;
+        if (resolvedOverlayOpacity !== "") {
+          rootStyle.setProperty("--hero-overlay-opacity", resolvedOverlayOpacity);
         }
 
-        function setLoading(isLoading) {
-          if (!bodyEl) return;
-          bodyEl.classList.toggle("is-loading", isLoading);
+      }
+
+      let countdownTimer = null;
+
+      function parseCountdownDate(value) {
+        if (!value) return null;
+        const trimmed = String(value).trim();
+        if (!trimmed) return null;
+        let normalized = trimmed;
+        if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}/.test(trimmed)) {
+          normalized = trimmed.replace(" ", "T");
         }
+        const parsed = new Date(normalized);
+        if (Number.isNaN(parsed.getTime())) return null;
+        return parsed;
+      }
 
-        async function loadConfig() {
-          try {
-            if (!CONFIG_SOURCE_URL) return;
-            const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
-            if (!res.ok) throw new Error("Failed to load config");
-            const raw = await res.text();
-            let parsed = parseConfig(raw);
-            if (!parsed.languages.length) return;
-            state.languages = parsed.languages;
-            state.data = parsed.data;
-            const storedLang = getStoredLang();
-            const preferred = [storedLang, DEFAULT_LANG].find(
-              (code) => code && state.languages.includes(code)
-            );
-            state.currentLang = preferred || state.languages[0];
-            applyLanguage(state.currentLang);
-            applyVisualConfig(state.currentLang);
-            refreshCountdown(state.currentLang);
-            refreshLangButtons();
-            updateDocumentLang(state.currentLang);
-            storeLang(state.currentLang);
-            updateLocaleField();
-          } catch (err) {
-            console.error("Unable to load config", err);
-          }
-        }
+      function updateCountdownDisplay(targetDate) {
+        const now = new Date();
+        let remainingMs = targetDate.getTime() - now.getTime();
+        if (remainingMs < 0) remainingMs = 0;
+        const totalMinutes = Math.floor(remainingMs / 60000);
+        const days = Math.floor(totalMinutes / (60 * 24));
+        const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
+        const minutes = totalMinutes % 60;
 
-        function updateLocaleField() {
-          const input = document.querySelector("[data-rsvp-locale]");
-          if (input) {
-            input.value = state.currentLang || DEFAULT_LANG;
-          }
-        }
-
-        function showRSVPStatus(type, fallback = "") {
-          const statusEl = document.querySelector("[data-rsvp-status]");
-          if (!statusEl) return;
-          const message = getValueForKey(`survey.message.${type}`, fallback) || fallback;
-          if (!message) {
-            statusEl.classList.add("hidden");
-            return;
-          }
-          statusEl.textContent = message;
-          statusEl.dataset.status = type;
-          statusEl.classList.remove("hidden");
-        }
-
-        function setupRSVPForm() {
-          const form = document.querySelector("[data-rsvp-form]");
-          if (!form) return;
-          const endpoint = getRSVPEndpoint();
-          const frame = document.querySelector("[data-rsvp-frame]");
-          let isSubmitting = false;
-
-          if (frame && !frame.name) {
-            frame.name = "rsvp-frame";
-          }
-
-          if (frame) {
-            frame.addEventListener("load", () => {
-              if (!isSubmitting) return;
-              isSubmitting = false;
-              showRSVPStatus("success");
-              form.reset();
-              updateLocaleField();
-            });
-          }
-
-          form.addEventListener("submit", async (event) => {
-            event.preventDefault();
-
-            if (!endpoint) {
-              showRSVPStatus("error", "RSVP endpoint not configured");
-              return;
-            }
-
-            showRSVPStatus("sending");
-            form.action = endpoint;
-            form.method = "POST";
-
-            if (frame) {
-              form.target = frame.name;
-              isSubmitting = true;
-              form.submit();
-              return;
-            }
-
-            try {
-              const response = await fetch(endpoint, {
-                method: "POST",
-                body: new FormData(form)
-              });
-              if (!response.ok) throw new Error("Request failed");
-              showRSVPStatus("success");
-              form.reset();
-              updateLocaleField();
-            } catch (error) {
-              console.error("RSVP submission error:", error);
-              showRSVPStatus("error", "提交失敗，請稍後再試");
-            }
-          });
-        }
-
-        function setupDividerReveal() {
-          const dividers = document.querySelectorAll("[data-divider-reveal]");
-          if (!dividers.length) return;
-
-          const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          if (prefersReducedMotion) {
-            dividers.forEach((divider) => {
-              divider.classList.remove("opacity-0", "translate-y-2", "scale-[0.98]");
-              divider.classList.add("opacity-100", "translate-y-0", "scale-100");
-            });
-            return;
-          }
-
-          const observer = new IntersectionObserver(
-            (entries, obs) => {
-              entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.remove("opacity-0", "translate-y-2", "scale-[0.98]");
-                entry.target.classList.add("opacity-100", "translate-y-0", "scale-100");
-                obs.unobserve(entry.target);
-              });
-            },
-            { threshold: 0.4 }
-          );
-
-          dividers.forEach((divider) => observer.observe(divider));
-        }
-
-        function preloadImages() {
-          const images = Array.from(document.images || []);
-          images.forEach((img) => {
-            if (img.loading === "lazy") {
-              img.loading = "eager";
-            }
-          });
-          const waitForImage = (img) =>
-            new Promise((resolve) => {
-              if (img.complete && img.naturalWidth > 0) {
-                resolve();
-                return;
-              }
-              const done = () => resolve();
-              img.addEventListener("load", done, { once: true });
-              img.addEventListener("error", done, { once: true });
-            });
-          return Promise.all(images.map(waitForImage));
-        }
-
-        // Theme switching functionality - Tailwind color tokens driven by CSS variables
-        const THEME_STORAGE_KEY = "wedding-theme";
-        const THEME_PALETTES = window.THEME_PALETTES || {};
-        const DEFAULT_THEME = window.DEFAULT_THEME || "forest";
-
-        const THEME_DECORATIONS = {
-          forest: {
-            "hero-wash": "hero-wash",
-            "couple-corner-left": "couple-corner-left",
-            "couple-corner-right": "couple-corner-right",
-            "couple-breeze": "couple-breeze",
-            "divider-couple": "divider-couple",
-            "location-wash": "location-wash",
-            "location-garland": "location-garland",
-            "location-breeze": "location-breeze",
-            "divider-survey": "divider-survey",
-            "survey-corner": "survey-corner",
-            "survey-dots": "survey-dots",
-            "divider-invitation": "divider-invitation",
-            "invitation-wash": "invitation-wash",
-            "invitation-corner-tl": "invitation-corner-tl",
-            "invitation-corner-tr": "invitation-corner-tr",
-            "invitation-corner-bl": "invitation-corner-bl",
-            "invitation-corner-br": "invitation-corner-br",
-          },
-          garden: {
-            "hero-wash": "garden-hero-wash",
-            "couple-corner-left": "garden-couple-corner-left",
-            "couple-corner-right": "garden-couple-corner-right",
-            "couple-breeze": "garden-couple-breeze",
-            "divider-couple": "garden-divider-couple",
-            "location-wash": "garden-location-wash",
-            "location-garland": "garden-location-garland",
-            "location-breeze": "garden-location-breeze",
-            "divider-survey": "garden-divider-survey",
-            "survey-corner": "garden-survey-corner",
-            "survey-dots": "garden-survey-dots",
-            "divider-invitation": "garden-divider-invitation",
-            "invitation-wash": "garden-invitation-wash",
-            "invitation-corner-tl": "garden-invitation-corner-tl",
-            "invitation-corner-tr": "garden-invitation-corner-tr",
-            "invitation-corner-bl": "garden-invitation-corner-bl",
-            "invitation-corner-br": "garden-invitation-corner-br",
-          },
-          coastal: {
-            "hero-wash": "coastal-hero-wash",
-            "couple-corner-left": "coastal-couple-corner-left",
-            "couple-corner-right": "coastal-couple-corner-right",
-            "couple-breeze": "coastal-couple-breeze",
-            "divider-couple": "coastal-divider-couple",
-            "location-wash": "coastal-location-wash",
-            "location-garland": "coastal-location-garland",
-            "location-breeze": "coastal-location-breeze",
-            "divider-survey": "coastal-divider-survey",
-            "survey-corner": "coastal-survey-corner",
-            "survey-dots": "coastal-survey-dots",
-            "divider-invitation": "coastal-divider-invitation",
-            "invitation-wash": "coastal-invitation-wash",
-            "invitation-corner-tl": "coastal-invitation-corner-tl",
-            "invitation-corner-tr": "coastal-invitation-corner-tr",
-            "invitation-corner-bl": "coastal-invitation-corner-bl",
-            "invitation-corner-br": "coastal-invitation-corner-br",
-          },
-          candlelit: {
-            "hero-wash": "candlelit-hero-wash",
-            "couple-corner-left": "candlelit-couple-corner-left",
-            "couple-corner-right": "candlelit-couple-corner-right",
-            "couple-breeze": "candlelit-couple-breeze",
-            "divider-couple": "candlelit-divider-couple",
-            "location-wash": "candlelit-location-wash",
-            "location-garland": "candlelit-location-garland",
-            "location-breeze": "candlelit-location-breeze",
-            "divider-survey": "candlelit-divider-survey",
-            "survey-corner": "candlelit-survey-corner",
-            "survey-dots": "candlelit-survey-dots",
-            "divider-invitation": "candlelit-divider-invitation",
-            "invitation-wash": "candlelit-invitation-wash",
-            "invitation-corner-tl": "candlelit-invitation-corner-tl",
-            "invitation-corner-tr": "candlelit-invitation-corner-tr",
-            "invitation-corner-bl": "candlelit-invitation-corner-bl",
-            "invitation-corner-br": "candlelit-invitation-corner-br",
-          },
+        const setValue = (name, value) => {
+          const node = document.querySelector(`[data-countdown-value="${name}"]`);
+          if (node) node.textContent = value;
         };
 
-        const THEME_CSS_VARIABLES = [
-          "color-primary",
-          "color-accent",
-          "color-ink",
-          "color-muted",
-          "color-border",
-          "color-deco-1",
-          "color-deco-2",
-          "color-deco-3",
-          "color-sage",
-          "color-dusty-blue",
-          "color-wash-1",
-          "color-wash-2",
-          "color-wash-3",
-          "color-wash-4",
-          "color-page-radial-1",
-          "color-page-radial-2",
-          "color-page-gradient-1",
-          "color-page-gradient-2",
-          "color-page-gradient-3",
-          "color-page-gradient-4",
-          "color-loading-1",
-          "color-loading-2",
-          "color-invite-1",
-          "color-invite-2",
-          "color-invite-3",
-          "leaf-pattern",
-        ];
+        setValue("days", String(days));
+        setValue("hours", String(hours).padStart(2, "0"));
+        setValue("minutes", String(minutes).padStart(2, "0"));
+      }
 
-        function getStoredTheme() {
-          try {
-            return window.localStorage.getItem(THEME_STORAGE_KEY) || DEFAULT_THEME;
-          } catch (err) {
-            return DEFAULT_THEME;
+      function refreshCountdown(lang = state.currentLang) {
+        const rawValue = getValueForKey("countdown.datetime", "", lang);
+        const targetDate = parseCountdownDate(rawValue);
+        if (!targetDate) {
+          if (countdownTimer) {
+            clearInterval(countdownTimer);
+            countdownTimer = null;
           }
+          return;
+        }
+        const tick = () => updateCountdownDisplay(targetDate);
+        tick();
+        if (countdownTimer) clearInterval(countdownTimer);
+        countdownTimer = setInterval(tick, 1000);
+      }
+
+      function refreshLangButtons() {
+        const available = new Set(state.languages);
+        const buttons = document.querySelectorAll("[data-lang-button]");
+        buttons.forEach((btn) => {
+          const lang = btn.dataset.langButton;
+          const isActive = lang === state.currentLang;
+          const isAvailable = available.has(lang);
+          btn.classList.toggle("is-active", isActive);
+          btn.classList.toggle("bg-white/90", isActive);
+          btn.classList.toggle("text-ink", isActive);
+          btn.classList.toggle("shadow-sm", isActive);
+          btn.classList.toggle("text-white/80", !isActive);
+          btn.classList.toggle("hover:text-white", !isActive);
+          btn.setAttribute("aria-pressed", String(isActive));
+          btn.disabled = !isAvailable;
+          btn.classList.toggle("opacity-40", !isAvailable);
+        });
+        const switcher = document.querySelector("[data-lang-switch]");
+        if (switcher) {
+          switcher.classList.toggle("hidden", available.size <= 1);
+        }
+      }
+
+      function setLanguage(lang) {
+        if (!state.languages.includes(lang)) return;
+        if (lang === state.currentLang) return;
+        state.currentLang = lang;
+        applyLanguage(lang);
+        applyVisualConfig(lang);
+        refreshCountdown(lang);
+        refreshLangButtons();
+        updateDocumentLang(lang);
+        storeLang(lang);
+        updateLocaleField();
+      }
+
+      function setLoading(isLoading) {
+        if (!bodyEl) return;
+        bodyEl.classList.toggle("is-loading", isLoading);
+      }
+
+      async function loadConfig() {
+        try {
+          if (!CONFIG_SOURCE_URL) return;
+          const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
+          if (!res.ok) throw new Error("Failed to load config");
+          const raw = await res.text();
+          let parsed = parseConfig(raw);
+          if (!parsed.languages.length) return;
+          state.languages = parsed.languages;
+          state.data = parsed.data;
+          const storedLang = getStoredLang();
+          const preferred = [storedLang, DEFAULT_LANG].find(
+            (code) => code && state.languages.includes(code)
+          );
+          state.currentLang = preferred || state.languages[0];
+          applyLanguage(state.currentLang);
+          applyVisualConfig(state.currentLang);
+          refreshCountdown(state.currentLang);
+          refreshLangButtons();
+          updateDocumentLang(state.currentLang);
+          storeLang(state.currentLang);
+          updateLocaleField();
+        } catch (err) {
+          console.error("Unable to load config", err);
+        }
+      }
+
+      function updateLocaleField() {
+        const input = document.querySelector("[data-rsvp-locale]");
+        if (input) {
+          input.value = state.currentLang || DEFAULT_LANG;
+        }
+      }
+
+      function showRSVPStatus(type, fallback = "") {
+        const statusEl = document.querySelector("[data-rsvp-status]");
+        if (!statusEl) return;
+        const message = getValueForKey(`survey.message.${type}`, fallback) || fallback;
+        if (!message) {
+          statusEl.classList.add("hidden");
+          return;
+        }
+        statusEl.textContent = message;
+        statusEl.dataset.status = type;
+        statusEl.classList.remove("hidden");
+      }
+
+      function setupRSVPForm() {
+        const form = document.querySelector("[data-rsvp-form]");
+        if (!form) return;
+        const endpoint = getRSVPEndpoint();
+        const frame = document.querySelector("[data-rsvp-frame]");
+        let isSubmitting = false;
+
+        if (frame && !frame.name) {
+          frame.name = "rsvp-frame";
         }
 
-        function storeTheme(theme) {
-          try {
-            window.localStorage.setItem(THEME_STORAGE_KEY, theme);
-          } catch (err) {
-            /* ignore */
-          }
-        }
-
-        function applyTheme(themeName) {
-          if (!themeName) return;
-
-          const palette = THEME_PALETTES[themeName] || THEME_PALETTES[DEFAULT_THEME];
-          if (palette) {
-            THEME_CSS_VARIABLES.forEach((key) => {
-              const value = palette[key];
-              if (value) {
-                document.documentElement.style.setProperty(`--${key}`, value);
-              }
-            });
-          }
-
-          updateDecorations(themeName);
-          if (bodyEl) {
-            bodyEl.dataset.theme = themeName;
-          }
-
-          // Update active button state
-          document.querySelectorAll("[data-theme-button]").forEach(btn => {
-            const isActive = btn.dataset.themeButton === themeName;
-            btn.classList.toggle("is-active", isActive);
-            btn.classList.toggle("bg-white/90", isActive);
-            btn.classList.toggle("text-ink", isActive);
-            btn.classList.toggle("shadow-sm", isActive);
-            btn.classList.toggle("text-white/80", !isActive);
-            btn.classList.toggle("hover:text-white", !isActive);
+        if (frame) {
+          frame.addEventListener("load", () => {
+            if (!isSubmitting) return;
+            isSubmitting = false;
+            showRSVPStatus("success");
+            form.reset();
+            updateLocaleField();
           });
-
-          storeTheme(themeName);
         }
 
-        function updateDecorations(themeName) {
-          const map = THEME_DECORATIONS[themeName] || THEME_DECORATIONS[DEFAULT_THEME];
-          document.querySelectorAll("[data-decor-role]").forEach((node) => {
-            const role = node.dataset.decorRole;
-            const symbol = map[role] || THEME_DECORATIONS[DEFAULT_THEME][role];
-            if (symbol) {
-              node.setAttribute("href", `img/components/wedding-decorations.svg#${symbol}`);
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          if (!endpoint) {
+            showRSVPStatus("error", "RSVP endpoint not configured");
+            return;
+          }
+
+          showRSVPStatus("sending");
+          form.action = endpoint;
+          form.method = "POST";
+
+          if (frame) {
+            form.target = frame.name;
+            isSubmitting = true;
+            form.submit();
+            return;
+          }
+
+          try {
+            const response = await fetch(endpoint, {
+              method: "POST",
+              body: new FormData(form)
+            });
+            if (!response.ok) throw new Error("Request failed");
+            showRSVPStatus("success");
+            form.reset();
+            updateLocaleField();
+          } catch (error) {
+            console.error("RSVP submission error:", error);
+            showRSVPStatus("error", "提交失敗，請稍後再試");
+          }
+        });
+      }
+
+      function setupDividerReveal() {
+        const dividers = document.querySelectorAll("[data-divider-reveal]");
+        if (!dividers.length) return;
+
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReducedMotion) {
+          dividers.forEach((divider) => {
+            divider.classList.remove("opacity-0", "translate-y-2", "scale-[0.98]");
+            divider.classList.add("opacity-100", "translate-y-0", "scale-100");
+          });
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.remove("opacity-0", "translate-y-2", "scale-[0.98]");
+              entry.target.classList.add("opacity-100", "translate-y-0", "scale-100");
+              obs.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.4 }
+        );
+
+        dividers.forEach((divider) => observer.observe(divider));
+      }
+
+      function preloadImages() {
+        const images = Array.from(document.images || []);
+        images.forEach((img) => {
+          if (img.loading === "lazy") {
+            img.loading = "eager";
+          }
+        });
+        const waitForImage = (img) =>
+          new Promise((resolve) => {
+            if (img.complete && img.naturalWidth > 0) {
+              resolve();
+              return;
+            }
+            const done = () => resolve();
+            img.addEventListener("load", done, { once: true });
+            img.addEventListener("error", done, { once: true });
+          });
+        return Promise.all(images.map(waitForImage));
+      }
+
+      // Theme switching functionality - Tailwind color tokens driven by CSS variables
+      const THEME_STORAGE_KEY = "wedding-theme";
+      const THEME_PALETTES = window.THEME_PALETTES || {};
+      const DEFAULT_THEME = window.DEFAULT_THEME || "forest";
+
+      const THEME_DECORATIONS = {
+        forest: {
+          "hero-wash": "hero-wash",
+          "couple-corner-left": "couple-corner-left",
+          "couple-corner-right": "couple-corner-right",
+          "couple-breeze": "couple-breeze",
+          "divider-couple": "divider-couple",
+          "location-wash": "location-wash",
+          "location-garland": "location-garland",
+          "location-breeze": "location-breeze",
+          "divider-survey": "divider-survey",
+          "survey-corner": "survey-corner",
+          "survey-dots": "survey-dots",
+          "divider-invitation": "divider-invitation",
+          "invitation-wash": "invitation-wash",
+          "invitation-corner-tl": "invitation-corner-tl",
+          "invitation-corner-tr": "invitation-corner-tr",
+          "invitation-corner-bl": "invitation-corner-bl",
+          "invitation-corner-br": "invitation-corner-br",
+        },
+        garden: {
+          "hero-wash": "garden-hero-wash",
+          "couple-corner-left": "garden-couple-corner-left",
+          "couple-corner-right": "garden-couple-corner-right",
+          "couple-breeze": "garden-couple-breeze",
+          "divider-couple": "garden-divider-couple",
+          "location-wash": "garden-location-wash",
+          "location-garland": "garden-location-garland",
+          "location-breeze": "garden-location-breeze",
+          "divider-survey": "garden-divider-survey",
+          "survey-corner": "garden-survey-corner",
+          "survey-dots": "garden-survey-dots",
+          "divider-invitation": "garden-divider-invitation",
+          "invitation-wash": "garden-invitation-wash",
+          "invitation-corner-tl": "garden-invitation-corner-tl",
+          "invitation-corner-tr": "garden-invitation-corner-tr",
+          "invitation-corner-bl": "garden-invitation-corner-bl",
+          "invitation-corner-br": "garden-invitation-corner-br",
+        },
+        coastal: {
+          "hero-wash": "coastal-hero-wash",
+          "couple-corner-left": "coastal-couple-corner-left",
+          "couple-corner-right": "coastal-couple-corner-right",
+          "couple-breeze": "coastal-couple-breeze",
+          "divider-couple": "coastal-divider-couple",
+          "location-wash": "coastal-location-wash",
+          "location-garland": "coastal-location-garland",
+          "location-breeze": "coastal-location-breeze",
+          "divider-survey": "coastal-divider-survey",
+          "survey-corner": "coastal-survey-corner",
+          "survey-dots": "coastal-survey-dots",
+          "divider-invitation": "coastal-divider-invitation",
+          "invitation-wash": "coastal-invitation-wash",
+          "invitation-corner-tl": "coastal-invitation-corner-tl",
+          "invitation-corner-tr": "coastal-invitation-corner-tr",
+          "invitation-corner-bl": "coastal-invitation-corner-bl",
+          "invitation-corner-br": "coastal-invitation-corner-br",
+        },
+        candlelit: {
+          "hero-wash": "candlelit-hero-wash",
+          "couple-corner-left": "candlelit-couple-corner-left",
+          "couple-corner-right": "candlelit-couple-corner-right",
+          "couple-breeze": "candlelit-couple-breeze",
+          "divider-couple": "candlelit-divider-couple",
+          "location-wash": "candlelit-location-wash",
+          "location-garland": "candlelit-location-garland",
+          "location-breeze": "candlelit-location-breeze",
+          "divider-survey": "candlelit-divider-survey",
+          "survey-corner": "candlelit-survey-corner",
+          "survey-dots": "candlelit-survey-dots",
+          "divider-invitation": "candlelit-divider-invitation",
+          "invitation-wash": "candlelit-invitation-wash",
+          "invitation-corner-tl": "candlelit-invitation-corner-tl",
+          "invitation-corner-tr": "candlelit-invitation-corner-tr",
+          "invitation-corner-bl": "candlelit-invitation-corner-bl",
+          "invitation-corner-br": "candlelit-invitation-corner-br",
+        },
+      };
+
+      const THEME_CSS_VARIABLES = [
+        "color-primary",
+        "color-accent",
+        "color-ink",
+        "color-muted",
+        "color-border",
+        "color-deco-1",
+        "color-deco-2",
+        "color-deco-3",
+        "color-sage",
+        "color-dusty-blue",
+        "color-wash-1",
+        "color-wash-2",
+        "color-wash-3",
+        "color-wash-4",
+        "color-page-radial-1",
+        "color-page-radial-2",
+        "color-page-gradient-1",
+        "color-page-gradient-2",
+        "color-page-gradient-3",
+        "color-page-gradient-4",
+        "color-loading-1",
+        "color-loading-2",
+        "color-invite-1",
+        "color-invite-2",
+        "color-invite-3",
+        "leaf-pattern",
+      ];
+
+      function getStoredTheme() {
+        try {
+          return window.localStorage.getItem(THEME_STORAGE_KEY) || DEFAULT_THEME;
+        } catch (err) {
+          return DEFAULT_THEME;
+        }
+      }
+
+      function storeTheme(theme) {
+        try {
+          window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+        } catch (err) {
+          /* ignore */
+        }
+      }
+
+      function applyTheme(themeName) {
+        if (!themeName) return;
+
+        const palette = THEME_PALETTES[themeName] || THEME_PALETTES[DEFAULT_THEME];
+        if (palette) {
+          THEME_CSS_VARIABLES.forEach((key) => {
+            const value = palette[key];
+            if (value) {
+              document.documentElement.style.setProperty(`--${key}`, value);
             }
           });
         }
 
-        function initializeTheme() {
-          const savedTheme = getStoredTheme();
-          applyTheme(savedTheme);
+        updateDecorations(themeName);
+        if (bodyEl) {
+          bodyEl.dataset.theme = themeName;
         }
 
-        async function init() {
-          resetScrollPosition();
-          document.querySelectorAll("[data-lang-button]").forEach((btn) => {
-            btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
-          });
-          document.querySelectorAll("[data-theme-button]").forEach((btn) => {
-            btn.addEventListener("click", () => applyTheme(btn.dataset.themeButton));
-          });
-          initializeTheme();
-          setupDividerReveal();
-          setupRSVPForm();
-          await loadConfig();
-          await preloadImages();
-          setLoading(false);
-        }
+        // Update active button state
+        document.querySelectorAll("[data-theme-button]").forEach(btn => {
+          const isActive = btn.dataset.themeButton === themeName;
+          btn.classList.toggle("is-active", isActive);
+          btn.classList.toggle("bg-white/90", isActive);
+          btn.classList.toggle("text-ink", isActive);
+          btn.classList.toggle("shadow-sm", isActive);
+          btn.classList.toggle("text-white/80", !isActive);
+          btn.classList.toggle("hover:text-white", !isActive);
+        });
 
-        if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", init);
-        } else {
-          init();
-        }
+        storeTheme(themeName);
+      }
 
-        window.addEventListener("load", resetScrollPosition);
-      })();
-    </script>
-  </body>
+      function updateDecorations(themeName) {
+        const map = THEME_DECORATIONS[themeName] || THEME_DECORATIONS[DEFAULT_THEME];
+        document.querySelectorAll("[data-decor-role]").forEach((node) => {
+          const role = node.dataset.decorRole;
+          const symbol = map[role] || THEME_DECORATIONS[DEFAULT_THEME][role];
+          if (symbol) {
+            node.setAttribute("href", `img/components/wedding-decorations.svg#${symbol}`);
+          }
+        });
+      }
+
+      function initializeTheme() {
+        const savedTheme = getStoredTheme();
+        applyTheme(savedTheme);
+      }
+
+      async function init() {
+        resetScrollPosition();
+        document.querySelectorAll("[data-lang-button]").forEach((btn) => {
+          btn.addEventListener("click", () => setLanguage(btn.dataset.langButton));
+        });
+        document.querySelectorAll("[data-theme-button]").forEach((btn) => {
+          btn.addEventListener("click", () => applyTheme(btn.dataset.themeButton));
+        });
+        initializeTheme();
+        setupDividerReveal();
+        setupRSVPForm();
+        await loadConfig();
+        await preloadImages();
+        setLoading(false);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+
+      window.addEventListener("load", resetScrollPosition);
+    })();
+  </script>
+</body>
+
 </html>
