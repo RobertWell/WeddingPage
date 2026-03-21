@@ -9,194 +9,84 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
-      safelist: ["opacity-100", "translate-y-0", "scale-100"],
+      darkMode: "class",
       theme: {
         extend: {
-          fontFamily: {
-            display: ['"Noto Serif TC"', 'serif'],
-            body: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
-          },
-          boxShadow: {
-            card: "0 30px 60px rgba(33, 48, 33, 0.18)",
-          },
           colors: {
-            primary: "rgb(var(--color-primary) / <alpha-value>)",
-            accent: "rgb(var(--color-accent) / <alpha-value>)",
-            ink: "rgb(var(--color-ink) / <alpha-value>)",
-            muted: "rgb(var(--color-muted) / <alpha-value>)",
-            border: "rgb(var(--color-border) / <alpha-value>)",
+            "surface-container": "#fbecd9",
+            "inverse-primary": "#ffb3ac",
+            "primary": "#ba1a20",
+            "tertiary-fixed": "#ffdad6",
+            "surface-variant": "#efe0cd",
+            "on-surface": "#221a0f",
+            "on-tertiary-container": "#c82628",
+            "surface-container-highest": "#efe0cd",
+            "on-primary-fixed": "#410003",
+            "surface": "#fff8f3",
+            "tertiary-fixed-dim": "#ffb3ac",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#930010",
+            "background": "#fff8f3",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#f5e6d3",
+            "outline": "#7d766d",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#eebd8e",
+            "secondary-container": "#fdcb9b",
+            "inverse-on-surface": "#feefdb",
+            "primary-fixed": "#ffdad6",
+            "on-secondary-fixed": "#2c1600",
+            "on-primary": "#ffffff",
+            "on-background": "#221a0f",
+            "surface-bright": "#fff8f3",
+            "tertiary": "#ba1a20",
+            "on-secondary-fixed-variant": "#61401b",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#ffdcbd",
+            "error": "#ba1a1a",
+            "surface-tint": "#ba1a20",
+            "on-tertiary-fixed": "#410003",
+            "tertiary-container": "#ffe2df",
+            "on-surface-variant": "#4c463e",
+            "on-primary-container": "#c82628",
+            "surface-dim": "#e6d8c5",
+            "surface-container-low": "#fff2e2",
+            "on-error": "#ffffff",
+            "secondary": "#7c5730",
+            "outline-variant": "#cec5bb",
+            "primary-fixed-dim": "#ffb3ac",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#372f22",
+            "primary-container": "#ffe2de",
+            "on-secondary-container": "#79542d",
+            "on-tertiary-fixed-variant": "#930010"
           },
+          fontFamily: {
+            "headline": ['"Noto Serif TC"', '"Noto Serif"', 'serif'],
+            "body": ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
+            "label": ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif']
+          },
+          borderRadius: { "DEFAULT": "12px", "lg": "24px", "xl": "32px", "full": "9999px" },
         },
       },
     };
   </script>
-  <script>
-    window.DEFAULT_THEME = "forest";
-    window.THEME_PALETTES = {
-      forest: {
-        "color-primary": "34 139 92",
-        "color-accent": "214 180 138",
-        "color-ink": "68 74 60",
-        "color-muted": "120 130 110",
-        "color-border": "207 222 208",
-        "color-deco-1": "120 196 140",
-        "color-deco-2": "196 219 184",
-        "color-deco-3": "214 180 138",
-        "color-sage": "156 188 168",
-        "color-dusty-blue": "168 190 205",
-        "color-wash-1": "230 246 231",
-        "color-wash-2": "242 226 200",
-        "color-wash-3": "207 238 213",
-        "color-wash-4": "232 244 221",
-        "color-page-radial-1": "255 255 255",
-        "color-page-radial-2": "227 248 230",
-        "color-page-gradient-1": "234 248 233",
-        "color-page-gradient-2": "255 255 254",
-        "color-page-gradient-3": "245 235 221",
-        "color-page-gradient-4": "216 242 214",
-        "color-loading-1": "232 248 233",
-        "color-loading-2": "245 235 221",
-        "color-invite-1": "230 246 231",
-        "color-invite-2": "243 228 204",
-        "color-invite-3": "207 235 200",
-        "leaf-pattern": "url(\"img/patterns/themed/forest-pattern.svg\")",
-      },
-      garden: {
-        "color-primary": "138 94 114",
-        "color-accent": "215 163 178",
-        "color-ink": "74 70 72",
-        "color-muted": "120 110 118",
-        "color-border": "230 210 218",
-        "color-deco-1": "214 163 178",
-        "color-deco-2": "246 214 229",
-        "color-deco-3": "156 186 150",
-        "color-sage": "176 196 186",
-        "color-dusty-blue": "186 198 214",
-        "color-wash-1": "255 244 248",
-        "color-wash-2": "247 235 240",
-        "color-wash-3": "237 221 229",
-        "color-wash-4": "251 240 246",
-        "color-page-radial-1": "255 255 255",
-        "color-page-radial-2": "255 240 246",
-        "color-page-gradient-1": "255 247 249",
-        "color-page-gradient-2": "255 252 252",
-        "color-page-gradient-3": "245 230 236",
-        "color-page-gradient-4": "238 221 230",
-        "color-loading-1": "255 247 249",
-        "color-loading-2": "245 230 236",
-        "color-invite-1": "255 242 246",
-        "color-invite-2": "245 229 238",
-        "color-invite-3": "236 221 230",
-        "leaf-pattern": "url(\"img/patterns/themed/garden-pattern.svg\")",
-      },
-      coastal: {
-        "color-primary": "52 120 206",
-        "color-accent": "145 184 197",
-        "color-ink": "65 78 96",
-        "color-muted": "104 122 140",
-        "color-border": "198 220 232",
-        "color-deco-1": "145 184 197",
-        "color-deco-2": "184 214 224",
-        "color-deco-3": "215 230 235",
-        "color-sage": "170 200 200",
-        "color-dusty-blue": "164 190 212",
-        "color-wash-1": "234 246 250",
-        "color-wash-2": "230 240 246",
-        "color-wash-3": "224 236 242",
-        "color-wash-4": "240 248 252",
-        "color-page-radial-1": "255 255 255",
-        "color-page-radial-2": "230 245 250",
-        "color-page-gradient-1": "240 250 253",
-        "color-page-gradient-2": "255 255 255",
-        "color-page-gradient-3": "224 239 246",
-        "color-page-gradient-4": "232 244 248",
-        "color-loading-1": "240 250 253",
-        "color-loading-2": "232 244 248",
-        "color-invite-1": "236 247 251",
-        "color-invite-2": "224 238 244",
-        "color-invite-3": "214 232 240",
-        "leaf-pattern": "url(\"img/patterns/themed/coastal-pattern.svg\")",
-      },
-      candlelit: {
-        "color-primary": "167 94 52",
-        "color-accent": "184 137 98",
-        "color-ink": "92 66 52",
-        "color-muted": "138 104 86",
-        "color-border": "232 205 182",
-        "color-deco-1": "184 137 98",
-        "color-deco-2": "255 214 178",
-        "color-deco-3": "216 170 130",
-        "color-sage": "187 186 166",
-        "color-dusty-blue": "184 190 200",
-        "color-wash-1": "255 242 232",
-        "color-wash-2": "250 232 218",
-        "color-wash-3": "242 220 204",
-        "color-wash-4": "255 246 238",
-        "color-page-radial-1": "255 255 255",
-        "color-page-radial-2": "255 236 224",
-        "color-page-gradient-1": "255 248 240",
-        "color-page-gradient-2": "255 242 234",
-        "color-page-gradient-3": "248 226 210",
-        "color-page-gradient-4": "244 232 220",
-        "color-loading-1": "255 248 240",
-        "color-loading-2": "250 232 218",
-        "color-invite-1": "255 238 226",
-        "color-invite-2": "248 224 206",
-        "color-invite-3": "238 210 190",
-        "leaf-pattern": "url(\"img/patterns/themed/candlelit-pattern.svg\")",
-      },
-    };
-    (function initThemeVariables() {
-      let preferredTheme = window.DEFAULT_THEME;
-      try {
-        const stored = window.localStorage.getItem("wedding-theme");
-        if (stored && window.THEME_PALETTES[stored]) {
-          preferredTheme = stored;
-        }
-      } catch (error) {
-        preferredTheme = window.DEFAULT_THEME;
-      }
-      const palette = window.THEME_PALETTES[preferredTheme];
-      if (!palette) return;
-      const root = document.documentElement;
-      Object.entries(palette).forEach(([key, value]) => {
-        root.style.setProperty(`--${key}`, value);
-      });
-    })();
-  </script>
   <style>
-    :root {
-      /* Shadows */
-      --shadow-soft: 0 20px 50px rgba(168, 211, 255, 0.15);
-      --shadow-medium: 0 30px 60px rgba(194, 224, 255, 0.2);
-      --shadow-card: 0 25px 55px rgba(168, 211, 255, 0.25);
-
-      /* Typography */
-      --font-display: "Noto Serif TC", serif;
-      --font-body: "Noto Sans TC", system-ui, sans-serif;
-      --letter-spacing-wide: 0.3em;
-      --letter-spacing-wider: 0.4em;
-
-      /* Misc */
-      --hero-image-position: 50% 50%;
-      --hero-overlay-opacity: 1;
-      --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * {
-      box-sizing: border-box;
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
 
     body {
-      font-family: var(--font-body);
-      background-attachment: fixed;
-      line-height: 1.7;
-      letter-spacing: 0.01em;
+      font-family: theme('fontFamily.body');
+      background-color: #fff2e2;
+      /* Warm milk tea / latte beige flat background */
     }
 
     /* Grain texture for premium feel */
@@ -1021,500 +911,371 @@
     </div>
   </div>
   <div class="page-content">
-    <!-- Hero section with forest background and soft overlay -->
-    <header id="top" class="leaf-pattern relative isolate min-h-[80vh] overflow-hidden">
-      <div class="absolute inset-0">
-        <picture>
-          <source media="(max-width: 640px)" srcset="img/wedding_photos/heros_background_mobile.jpeg">
-          <img src="img/wedding_photos/heros_background.jpeg" alt="陽光灑落的森林背景"
-            class="hero-image h-full w-full object-cover" loading="lazy" data-hero-image data-hero-position="30% 70%" />
-        </picture>
-        <div class="hero-overlay absolute inset-0" data-hero-overlay data-hero-overlay-default="1"></div>
-      </div>
-      <nav
-        class="relative z-10 flex flex-col gap-4 px-6 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16">
-        <div class="font-display text-xl tracking-[0.3em] uppercase" data-config="nav.brand">森語誓約</div>
-        <div class="flex flex-col items-start gap-4 text-sm sm:flex-row sm:items-center">
-          <div class="flex flex-wrap gap-4">
-            <a href="#couple" class="uppercase tracking-[0.3em] text-white/80 hover:text-white"
-              data-config="nav.link.couple">新人介紹</a>
-            <a href="#location" class="uppercase tracking-[0.3em] text-white/80 hover:text-white"
-              data-config="nav.link.location">地點交通</a>
-            <a href="#survey" class="uppercase tracking-[0.3em] text-white/80 hover:text-white"
-              data-config="nav.link.survey">飲食問卷</a>
-            <a href="#invitation" class="uppercase tracking-[0.3em] text-white/80 hover:text-white"
-              data-config="nav.link.invitation">喜帖</a>
-          </div>
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#F5E6D3]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(124,87,48,0.06)]">
+      <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        <span class="text-2xl font-headline font-bold text-secondary" data-config="nav.brand">森語誓約</span>
+        <div class="hidden lg:flex gap-8 items-center">
+          <a class="font-headline font-medium text-lg text-secondary/70 hover:text-primary transition-colors"
+            href="#couple" data-config="nav.link.couple">新人介紹</a>
+          <a class="font-headline font-medium text-lg text-secondary/70 hover:text-primary transition-colors"
+            href="#location" data-config="nav.link.location">地點交通</a>
+          <a class="font-headline font-medium text-lg text-secondary/70 hover:text-primary transition-colors"
+            href="#survey" data-config="nav.link.survey">飲食問卷</a>
+          <a class="font-headline font-medium text-lg text-primary font-bold border-b-2 border-primary pb-1"
+            href="#invitation" data-config="nav.link.invitation">喜帖</a>
+        </div>
+        <div class="flex items-center gap-4">
           <div
-            class="lang-switch inline-flex rounded-full border border-white/40 bg-white/10 text-xs uppercase tracking-[0.4em]"
+            class="lang-switch inline-flex rounded-full border border-secondary/20 bg-surface-container-highest text-xs uppercase tracking-[0.2em]"
             data-lang-switch>
-            <button type="button" class="px-3 py-1 text-white/80 transition" data-lang-button="zh"
-              data-config="lang.zhLabel" aria-pressed="true">
-              中文
-            </button>
-            <button type="button" class="px-3 py-1 text-white/80 transition" data-lang-button="en"
-              data-config="lang.enLabel" aria-pressed="false">
-              English
-            </button>
+            <button type="button" class="px-3 py-1 text-secondary/70 transition hover:text-primary"
+              data-lang-button="zh" data-config="lang.zhLabel" aria-pressed="true">中文</button>
+            <button type="button" class="px-3 py-1 text-secondary/70 transition hover:text-primary"
+              data-lang-button="en" data-config="lang.enLabel" aria-pressed="false">English</button>
           </div>
+          <span class="material-symbols-outlined text-primary hidden md:inline-block"
+            data-icon="favorite">favorite</span>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-24 md:pt-32">
+      <!-- HERO SECTION -->
+      <header id="top" class="max-w-6xl mx-auto px-4 md:px-6 mb-24 md:mb-32 text-center">
+        <div class="relative inline-block mb-12 group w-[85%] md:w-auto">
+          <!-- Polaroid Style Image -->
           <div
-            class="theme-switch inline-flex rounded-full border border-white/40 bg-white/10 text-xs uppercase tracking-[0.4em]"
-            data-theme-switch>
-            <button type="button" class="px-3 py-1 text-white/80 transition hover:text-white is-active"
-              data-theme-button="forest" title="Forest">
-              森林
-            </button>
-            <button type="button" class="px-3 py-1 text-white/80 transition hover:text-white" data-theme-button="garden"
-              title="Garden">
-              花園
-            </button>
-            <button type="button" class="px-3 py-1 text-white/80 transition hover:text-white"
-              data-theme-button="coastal" title="Coastal">
-              海岸
-            </button>
-            <button type="button" class="px-3 py-1 text-white/80 transition hover:text-white"
-              data-theme-button="candlelit" title="Candlelit">
-              燭光
-            </button>
+            class="bg-surface-container-lowest p-3 pb-10 md:p-6 md:pb-20 shadow-[0_30px_60px_rgba(124,87,48,0.1)] border border-outline-variant/10 rounded-sm">
+            <picture>
+              <source media="(max-width: 640px)" srcset="img/wedding_photos/heros_background_mobile.jpeg">
+              <img src="img/wedding_photos/heros_background.jpeg" alt="新人合照Polaroid"
+                class="w-full max-w-2xl aspect-[4/5] object-cover rounded-sm mx-auto" loading="lazy" />
+            </picture>
+          </div>
+          <!-- Red 囍 Accent -->
+          <div
+            class="absolute -top-4 -right-4 md:-top-8 md:-right-8 w-12 h-12 md:w-20 md:h-20 bg-primary rounded-full flex items-center justify-center text-on-primary text-xl md:text-4xl font-headline shadow-lg z-10">
+            囍
           </div>
         </div>
-      </nav>
-      <div
-        class="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-10 text-center text-white sm:px-10">
-        <p class="text-xs uppercase tracking-[0.5em] text-primary/70" data-config="hero.tagline">Warm &amp; Fresh
+        <p class="text-xs uppercase tracking-[0.5em] text-secondary/70 mb-4" data-config="hero.tagline">Warm &amp; Fresh
           Wedding</p>
-        <h1 class="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl" data-config="hero.names">昊然 &amp; 予晴</h1>
-        <p class="mt-6 text-base leading-relaxed text-white/85 sm:text-lg" data-config="hero.description">
-          我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
-        </p>
-        <p class="mt-6 text-sm uppercase tracking-[0.4em] text-white/70" data-config="hero.datetime">
-          2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區林蔭路 88 號
-        </p>
-        <div class="mt-8 flex items-center justify-center gap-4 text-sm tracking-[0.2em] text-white/90">
+        <h1 class="font-headline text-5xl md:text-8xl text-secondary mb-4 tracking-tight" data-config="hero.names">昊然
+          &amp; 予晴</h1>
+        <p class="font-headline text-lg md:text-2xl text-primary mb-2" data-config="hero.datetime">2025.10.18 · 15:30 ·
+          森光花園宴會廳</p>
+        <p class="font-body text-base md:text-lg text-secondary/60 mt-4 max-w-2xl mx-auto leading-relaxed"
+          data-config="hero.description">我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。</p>
+
+        <div class="mt-8 flex items-center justify-center gap-4 text-sm tracking-[0.2em] text-secondary/90">
           <span data-config="hero.badge1">溫馨證婚</span>
-          <span class="text-white/40">·</span>
+          <span class="text-secondary/40">·</span>
           <span data-config="hero.badge2">清新溫柔風</span>
-          <span class="text-white/40">·</span>
+          <span class="text-secondary/40">·</span>
           <span data-config="hero.badge3">歡迎新人</span>
         </div>
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row justify-center">
           <a href="#invitation"
-            class="rounded-full bg-white/90 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-ink transition hover:bg-white"
+            class="rounded-full bg-secondary px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-on-secondary transition hover:bg-secondary/90"
             data-config="hero.ctaPrimary">查看喜帖</a>
           <a href="#survey"
-            class="rounded-full border border-white/60 px-10 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-white/15"
+            class="rounded-full border border-secondary/60 px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-secondary transition hover:bg-secondary/10"
             data-config="hero.ctaSecondary">填寫問卷</a>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main class="relative z-10 -mt-16 px-4 pb-16 sm:px-6 lg:px-8">
-      <div class="gold-speckle pointer-events-none animate-none sm:animate-pulse motion-reduce:animate-none"
-        aria-hidden="true"></div>
-      <div class="relative z-10 mx-auto flex max-w-5xl flex-col gap-10">
-        <!-- Countdown section -->
-        <section id="countdown"
-          class="leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 text-center shadow-card backdrop-blur-sm sm:p-12">
-          <div class="content-layer content-safe">
-            <p class="font-display text-2xl text-accent/80 sm:text-3xl" data-config="countdown.section.heading">Counting
-              down the days...</p>
-            <div class="mx-auto mt-8 grid w-full max-w-3xl grid-cols-1 gap-6 sm:grid-cols-3">
-              <div
-                class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
-                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.days"
-                  data-countdown-value="days">142</p>
-                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.days">Days
-                </p>
-              </div>
-              <div
-                class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
-                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.hours"
-                  data-countdown-value="hours">08</p>
-                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.hours">
-                  Hours</p>
-              </div>
-              <div
-                class="mx-auto flex h-32 w-32 flex-col items-center justify-center rounded-full border border-accent/40 bg-white/90 shadow-[0_18px_40px_rgba(33,48,33,0.08)] sm:h-36 sm:w-36">
-                <p class="font-display text-4xl text-ink sm:text-5xl" data-config="countdown.minutes"
-                  data-countdown-value="minutes">30</p>
-                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-muted/70" data-config="countdown.label.minutes">
-                  Minutes</p>
-              </div>
-            </div>
+      <!-- COUNTDOWN & INVITATION SECTION -->
+      <section id="countdown" class="max-w-3xl mx-auto px-6 mb-24 md:mb-32 text-center">
+        <!-- Minimal Countdown -->
+        <div class="flex justify-center gap-8 md:gap-16 mb-20 text-secondary">
+          <div>
+            <span class="block text-4xl md:text-5xl font-headline mb-1" data-config="countdown.days"
+              data-countdown-value="days">142</span>
+            <span class="text-xs uppercase tracking-widest opacity-60" data-config="countdown.label.days">Days</span>
           </div>
-        </section>
-
-        <div class="section-divider flex justify-center py-6 sm:py-8" aria-hidden="true">
-          <svg class="h-10 w-64" viewBox="0 0 260 48" fill="none">
-            <use data-decor-role="divider-couple" href="img/components/wedding-decorations.svg#divider-couple"></use>
-          </svg>
+          <div>
+            <span class="block text-4xl md:text-5xl font-headline mb-1" data-config="countdown.hours"
+              data-countdown-value="hours">08</span>
+            <span class="text-xs uppercase tracking-widest opacity-60" data-config="countdown.label.hours">Hours</span>
+          </div>
+          <div>
+            <span class="block text-4xl md:text-5xl font-headline mb-1" data-config="countdown.minutes"
+              data-countdown-value="minutes">30</span>
+            <span class="text-xs uppercase tracking-widest opacity-60"
+              data-config="countdown.label.minutes">Minutes</span>
+          </div>
         </div>
-
-        <!-- New couple introduction card -->
-        <section id="couple"
-          class="grain leaf-pattern card-elevated relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <img src="img/illustrations/botanical/floral/watercolor-corner-right.webp" alt=""
-            class="botanical-corner-blend decorative-svg corner-deco corner-deco--tr opacity-30" loading="lazy"
-            aria-hidden="true" />
-          <img src="img/illustrations/botanical/floral/watercolor-corner-left.webp" alt=""
-            class="botanical-corner-blend decorative-svg corner-deco corner-deco--bl opacity-30" loading="lazy"
-            aria-hidden="true" />
-
-          <div class="content-layer content-safe">
-            <div class="text-center">
-              <img src="img/icons/leaf-simple.svg" alt="小葉片裝飾"
-                class="theme-only theme-only--default mx-auto h-12 w-12 opacity-80" loading="lazy" />
-              <img src="img/illustrations/natural-elements/ocean-wave.webp" alt="小葉片裝飾"
-                class="theme-only theme-only--coastal mx-auto h-12 w-12 opacity-80" loading="lazy" />
-              <div class="theme-only theme-only--candlelit fire-icon mx-auto" aria-hidden="true">
-                <div class="fire-icon__logs logs">
-                  <div class="one">
-                    <div class="log"></div>
-                  </div>
-                  <div class="two">
-                    <div class="log"></div>
-                  </div>
-                  <div class="three">
-                    <div class="log"></div>
-                  </div>
-                </div>
-                <div class="fire-icon__fire fire">
-                  <div class="fire-icon__flames flames">
-                    <div class="one">
-                      <div class="flame"></div>
-                    </div>
-                    <div class="two">
-                      <div class="flame"></div>
-                    </div>
-                    <div class="three">
-                      <div class="flame"></div>
-                    </div>
-                  </div>
-                  <div class="fire-icon__flames flames inner">
-                    <div class="one">
-                      <div class="flame"></div>
-                    </div>
-                    <div class="two">
-                      <div class="flame"></div>
-                    </div>
-                    <div class="three">
-                      <div class="flame"></div>
-                    </div>
-                  </div>
-                  <div class="fire-icon__glow glow"></div>
-                </div>
-              </div>
-              <img src="img/illustrations/botanical/autumn/maple-leaf.webp" alt="小葉片裝飾"
-                class="theme-only theme-only--garden maple-deco mx-auto h-12 w-12 opacity-60" loading="lazy" />
-              <p class="mt-4 text-sm uppercase tracking-[0.4em] text-primary/70" data-config="couple.section.label">新人介紹
-              </p>
-              <h2 class="mt-3 font-display text-3xl text-primary sm:text-4xl" data-config="couple.section.heading">
-                把生活寫成一首溫柔的歌</h2>
-              <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="couple.section.description">
-                我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
-              </p>
+        <!-- Invitation Text placeholder with logic hook (although most text comes from config) -->
+        <div class="space-y-6 text-secondary font-headline text-lg leading-relaxed">
+          <p>謹訂於 2025 年 10 月 18 日</p>
+          <p>下午 15:30</p>
+          <p>於 森光花園宴會廳</p>
+          <p>舉行結婚喜宴 敬邀蒞臨</p>
+          <div class="pt-10 flex flex-col md:flex-row justify-center gap-6 md:gap-12 opacity-80">
+            <div>
+              <span class="block text-xs mb-1 opacity-60">GROOM'S PARENTS</span>
+              <p>男方家長</p>
             </div>
-            <div class="mt-10 grid gap-6 md:grid-cols-3">
-              <article class="rounded-3xl bg-primary/10 p-6">
-                <p class="font-display text-xl text-primary" data-config="groom.title">新郎｜昊然</p>
-                <p class="mt-3 text-sm leading-relaxed text-ink/80" data-config="groom.description">
-                  喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。
-                </p>
-                <ul class="mt-4 space-y-2 text-sm text-ink/80">
-                  <li data-config="groom.detail1"></li>
-                  <li data-config="groom.detail2"></li>
-                </ul>
-              </article>
-              <article class="rounded-3xl bg-primary/10 p-6">
-                <p class="font-display text-xl text-primary" data-config="bride.title">新娘｜予晴</p>
-                <p class="mt-3 text-sm leading-relaxed text-ink/80" data-config="bride.description">
-                  熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。
-                </p>
-                <ul class="mt-4 space-y-2 text-sm text-ink/80">
-                  <li data-config="bride.detail1"></li>
-                  <li data-config="bride.detail2"></li>
-                </ul>
-              </article>
-              <article class="rounded-3xl bg-white/80 p-6 shadow-inner">
-                <p class="font-display text-xl text-primary" data-config="story.title">我們的故事</p>
-                <p class="mt-3 text-sm leading-relaxed text-ink/80" data-config="story.description">
-                  第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。
-                </p>
-              </article>
+            <div>
+              <span class="block text-xs mb-1 opacity-60">BRIDE'S PARENTS</span>
+              <p>女方家長</p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Divider reveal animation: adjust timing/offset via Tailwind utilities -->
+      <!-- OUR STORY (COUPLE) -->
+      <section class="max-w-6xl mx-auto px-6 mb-24 md:mb-32" id="couple">
+        <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-12 md:mb-20 text-center"
+          data-config="couple.section.label">新人介紹</h2>
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <!-- Polaroid 1 -->
+          <div class="relative group rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+            <div
+              class="bg-surface-container-lowest p-3 pb-12 md:p-5 md:pb-16 shadow-[0_20px_40px_rgba(124,87,48,0.08)]">
+              <img alt="The day we met" class="w-full aspect-square object-cover"
+                src="img/wedding_photos/heros_background_mobile.jpeg" />
+              <p class="font-headline text-center mt-6 text-secondary/80 text-lg" data-config="couple.section.heading">
+                把生活寫成一首溫柔的歌</p>
+            </div>
+          </div>
+          <div class="space-y-6 relative z-10">
+            <p class="font-body text-secondary/70 leading-relaxed text-lg" data-config="couple.section.description">
+              我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
+            </p>
+
+            <div class="pt-6 border-t border-outline-variant/30">
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline">H</span>
+                <h3 class="font-headline text-xl text-secondary font-bold" data-config="groom.title">新郎｜昊然</h3>
+              </div>
+              <p class="font-body text-secondary/70 leading-relaxed pl-14" data-config="groom.description">
+                喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。</p>
+              <ul class="mt-4 space-y-2 text-sm text-secondary/70 pl-14 hidden">
+                <li data-config="groom.detail1"></li>
+                <li data-config="groom.detail2"></li>
+              </ul>
+            </div>
+
+            <div class="pt-6 border-t border-outline-variant/30">
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline">Y</span>
+                <h3 class="font-headline text-xl text-secondary font-bold" data-config="bride.title">新娘｜予晴</h3>
+              </div>
+              <p class="font-body text-secondary/70 leading-relaxed pl-14" data-config="bride.description">
+                熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。</p>
+              <ul class="mt-4 space-y-2 text-sm text-secondary/70 pl-14 hidden">
+                <li data-config="bride.detail1"></li>
+                <li data-config="bride.detail2"></li>
+              </ul>
+            </div>
+
+            <div class="pt-6 border-t border-outline-variant/30">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="material-symbols-outlined text-primary">favorite</span>
+                <h3 class="font-headline text-xl text-secondary font-bold" data-config="story.title">我們的故事</h3>
+              </div>
+              <p class="font-body text-secondary/70 leading-relaxed pl-10" data-config="story.description">
+                第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENT INFO (VENUE) -->
+      <section id="location" class="max-w-5xl mx-auto px-6 mb-24 md:mb-32">
+        <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-12 md:mb-16 text-center"
+          data-config="location.section.heading">餐廳地點</h2>
+
+        <div class="bg-surface-container-highest rounded-2xl p-8 md:p-12 shadow-sm border border-outline-variant/20">
+          <div class="grid md:grid-cols-2 gap-12">
+
+            <div class="space-y-8">
+              <!-- Venue Details -->
+              <div>
+                <p class="text-sm font-headline tracking-widest text-primary mb-2 uppercase"
+                  data-config="location.section.title">餐廳位置</p>
+                <p class="font-body text-secondary text-lg font-bold" data-config="venue.name">森光花園宴會廳</p>
+                <p class="font-body text-secondary/70 mt-1" data-config="venue.address">台北市信義區林蔭路 88 號</p>
+                <p class="font-body text-secondary/60 text-sm mt-3" data-config="location.section.description">
+                  我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。</p>
+              </div>
+
+              <!-- Transport Details -->
+              <div>
+                <p class="text-sm font-headline tracking-widest text-primary mb-2 uppercase"
+                  data-config="transport.title">交通方式</p>
+                <ul class="space-y-2 font-body text-secondary/70 text-sm">
+                  <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
+                  <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
+                  <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
+                </ul>
+                <p class="mt-4 text-xs text-secondary/50" data-config="transport.note">若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
+                </p>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <a class="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 px-6 py-2.5 text-sm font-bold uppercase tracking-widest text-primary transition hover:bg-primary/5"
+                  href="https://maps.google.com" data-config="map.url" data-config-attr="href" target="_blank"
+                  rel="noreferrer">
+                  <span class="material-symbols-outlined text-lg">map</span>
+                  <span data-config="location.button.map">開啟地圖</span>
+                </a>
+                <a class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-2.5 text-sm font-bold uppercase tracking-widest text-on-primary transition hover:bg-primary/90 shadow-sm"
+                  href="#survey">
+                  <span class="material-symbols-outlined text-lg">edit_document</span>
+                  <span data-config="location.button.rsvp">填寫出席</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Map Graphic -->
+            <div
+              class="bg-surface-container-lowest rounded-xl aspect-[4/3] md:aspect-auto h-full w-full shadow-inner overflow-hidden border border-outline-variant/10">
+              <img alt="交通位置圖" class="w-full h-full object-cover" src="img/wedding_photos/position_traffic.jpg"
+                loading="lazy" />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section id="survey" class="max-w-3xl mx-auto px-6 mb-24 md:mb-32">
+        <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-4 text-center"
+          data-config="survey.section.heading">簡單問卷</h2>
+        <p class="text-center text-primary font-headline tracking-widest uppercase mb-12 md:mb-16"
+          data-config="survey.section.subtitle">你的喜好，我們想好好照顧</p>
+
         <div
-          class="section-divider flex justify-center py-6 opacity-0 translate-y-2 scale-[0.98] transition duration-700 ease-out sm:py-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:transition-none"
-          data-divider-reveal aria-hidden="true">
-          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48"
-            fill="none">
-            <use data-decor-role="divider-couple" href="img/components/wedding-decorations.svg#divider-couple"></use>
-          </svg>
-        </div>
+          class="bg-surface-container-highest rounded-2xl p-8 md:p-12 shadow-[0_10px_30px_rgba(124,87,48,0.05)] border border-outline-variant/20">
+          <form class="space-y-6" data-rsvp-form>
 
-        <!-- Location and transportation details -->
-        <section id="location"
-          class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12"
-          style="overflow: visible;">
-          <div class="decorative-layer" aria-hidden="true">
-          </div>
+            <label class="block">
+              <span class="block font-headline text-secondary mb-2" data-config="survey.label.name">你的名字</span>
+              <input type="text" name="name" required data-config="survey.placeholder.name"
+                data-config-attr="placeholder"
+                class="w-full bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
+            </label>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <label class="block">
+                <span class="block font-headline text-secondary mb-2" data-config="survey.label.guests">出席人數</span>
+                <!-- Custom SVG arrow for Safari -->
+                <select name="guests" required
+                  class="w-full appearance-none bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
+                  <option value="" data-config="survey.option.guests.placeholder"></option>
+                  <option value="1" data-config="survey.option.guests.1">1 人</option>
+                  <option value="2" data-config="survey.option.guests.2">2 人</option>
+                  <option value="3" data-config="survey.option.guests.3">3 人</option>
+                  <option value="4" data-config="survey.option.guests.4plus">4 人以上</option>
+                </select>
+              </label>
+
+              <label class="block">
+                <span class="block font-headline text-secondary mb-2" data-config="survey.label.diet">飲食偏好</span>
+                <select name="diet" required
+                  class="w-full appearance-none bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
+                  <option value="" data-config="survey.option.diet.placeholder"></option>
+                  <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
+                  <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素</option>
+                  <option value="vegan" data-config="survey.option.diet.vegan">全素</option>
+                  <option value="no-seafood" data-config="survey.option.diet.noSeafood">不吃海鮮</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <label class="block">
+                <span class="block font-headline text-secondary mb-2">是否有小孩</span>
+                <select name="hasChildren"
+                  class="w-full appearance-none bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
+                  <option value="no" selected>無</option>
+                  <option value="yes">有</option>
+                </select>
+              </label>
+              <label class="block">
+                <span class="block font-headline text-secondary mb-2">小孩椅幾張</span>
+                <input type="number" name="childSeats" min="0" value="0"
+                  class="w-full bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
+              </label>
+            </div>
+
+            <label class="block">
+              <span class="block font-headline text-secondary mb-2" data-config="survey.label.message">想對我們說的話</span>
+              <textarea name="message" rows="4" data-config="survey.placeholder.message" data-config-attr="placeholder"
+                class="w-full bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors min-h-[120px]"></textarea>
+            </label>
+
+            <input type="hidden" name="locale" value="zh" data-rsvp-locale />
+            <input type="hidden" name="source" value="web" />
+
+            <button type="submit"
+              class="w-full bg-primary hover:bg-primary/90 text-on-primary font-headline font-bold text-lg py-4 rounded-lg transition-colors shadow-sm mt-8"
+              data-config="survey.button">
+              送出回覆
+            </button>
+            <p class="mt-4 text-center text-sm text-secondary/70 hidden" data-rsvp-status role="status"></p>
+          </form>
+          <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
+        </div>
+      </section>
+
+      <!-- INVITATION CARD -->
+      <section id="invitation" class="max-w-4xl mx-auto px-6 mb-24 md:mb-32">
+        <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-4 text-center"
+          data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
+        <p class="text-center text-primary font-headline tracking-widest uppercase mb-12 md:mb-16"
+          data-config="invitation.section.title">喜帖</p>
+
+        <div
+          class="bg-surface-container-lowest rounded-2xl p-8 md:p-14 shadow-[0_10px_30px_rgba(124,87,48,0.05)] border border-outline-variant/20 text-center relative overflow-hidden">
+          <p class="font-headline font-bold text-2xl text-primary mb-6" data-config="invitation.letter.salutation">Dear
+            You,</p>
+          <p class="font-body text-secondary/80 leading-loose text-lg max-w-2xl mx-auto mb-10"
+            data-config="invitation.letter.body">
+            我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
+          </p>
+
           <div
-            class="decorative-tree bottom-6 right-6 w-[140px] opacity-50 mix-blend-soft-light sm:bottom-8 sm:right-8 sm:w-[180px] lg:bottom-10 lg:right-10 lg:w-[220px]"
-            aria-hidden="true">
-            <img src="img/illustrations/botanical/spring/tree-with-swing.webp" alt=""
-              class="decorative-svg theme-only theme-only--forest" loading="lazy" />
-            <img src="img/illustrations/botanical/autumn/fall-trees-group.webp" alt=""
-              class="decorative-svg theme-only theme-only--warm" loading="lazy" />
-          </div>
-
-          <div class="content-layer content-safe">
-            <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="location.section.heading">餐廳地點
-              </p>
-              <h2 class="mt-2 font-display text-3xl text-primary" data-config="location.section.title">森光花園，等你來散步</h2>
-              <p class="mt-5 text-base leading-relaxed text-ink/80" data-config="location.section.description">
-                我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。
-              </p>
+            class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto border-t border-b border-outline-variant/20 py-8 mb-10 text-secondary">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.date.label">日期</p>
+              <p class="font-headline font-bold text-lg" data-config="invitation.date.value">2025 / 10 / 18</p>
             </div>
-            <div class="mt-10 grid gap-8 md:grid-cols-2">
-              <div class="overflow-hidden rounded-3xl h-full shadow-inner bg-white/50">
-                <img src="img/wedding_photos/position_traffic.jpg" alt="交通位置圖"
-                  class="object-cover w-full h-full min-h-[250px]" loading="lazy" />
-              </div>
-              <div class="flex flex-col gap-6">
-                <!-- Upper Panel: Venue Info -->
-                <div class="flex flex-col rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80">
-                  <h3 class="font-display text-2xl text-primary mb-4">餐廳位置</h3>
-                  <p class="text-lg font-semibold text-primary/90" data-config="venue.name">森光花園宴會廳</p>
-                  <p class="mt-1 text-sm text-ink/70" data-config="venue.address">台北市信義區林蔭路 88 號</p>
-                </div>
-                <!-- Lower Panel: Traffic Info -->
-                <div class="flex flex-col rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80 flex-grow">
-                  <h3 class="font-display text-2xl text-primary" data-config="transport.title">交通方式</h3>
-                  <ul class="mt-4 space-y-3 flex-grow">
-                    <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
-                    <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
-                    <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
-                  </ul>
-                  <div class="mt-6 flex flex-row gap-3 text-sm">
-                    <a class="flex-1 rounded-full bg-white/90 px-4 py-2 text-center text-ink transition hover:bg-white border border-border/40 shadow-sm"
-                      href="https://maps.google.com" data-config="map.url" data-config-attr="href" target="_blank"
-                      rel="noreferrer">
-                      <span data-config="location.button.map">開啟地圖</span>
-                    </a>
-                    <a class="flex-1 rounded-full bg-primary/90 px-4 py-2 text-center text-white transition hover:bg-primary border border-primary/20 shadow-sm"
-                      href="#survey" data-config="location.button.rsvp">填寫出席</a>
-                  </div>
-                  <p class="mt-4 rounded-2xl bg-white/70 p-4 text-xs text-muted/70" data-config="transport.note">
-                    若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。
-                  </p>
-                </div>
-              </div>
+            <div class="md:border-l md:border-r border-outline-variant/20 px-4">
+              <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.time.label">時間</p>
+              <p class="font-headline font-bold text-lg" data-config="invitation.time.value">15:30 證婚</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.location.label">地點
+              </p>
+              <p class="font-headline font-bold text-lg" data-config="invitation.location.value">森光花園</p>
             </div>
           </div>
-        </section>
 
-        <!-- Divider reveal animation: adjust timing/offset via Tailwind utilities -->
-        <div
-          class="section-divider flex justify-center py-6 opacity-0 translate-y-2 scale-[0.98] transition duration-700 ease-out sm:py-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:transition-none"
-          data-divider-reveal aria-hidden="true">
-          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48"
-            fill="none">
-            <use data-decor-role="divider-survey" href="img/components/wedding-decorations.svg#divider-survey"></use>
-          </svg>
+          <p class="font-headline font-bold text-2xl text-primary mb-4" data-config="invitation.card.message">願你今天也被溫柔包圍
+          </p>
+          <p class="text-sm leading-relaxed text-secondary/60 max-w-md mx-auto mb-10"
+            data-config="invitation.card.note">
+            我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
+          </p>
+
+          <a href="#top"
+            class="inline-block rounded-full border border-primary/40 text-primary px-8 py-3 text-sm font-bold uppercase tracking-widest transition hover:bg-primary/5"
+            data-config="invitation.button">回到頂端</a>
         </div>
-
-        <!-- RSVP / survey section -->
-        <section id="survey"
-          class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/80 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <img src="img/illustrations/botanical/floral/watercolor-corner-right.webp" alt=""
-            class="botanical-corner-blend decorative-svg corner-deco corner-deco--tr opacity-30" loading="lazy"
-            aria-hidden="true" />
-
-          <div class="content-layer content-safe">
-            <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="survey.section.heading">簡單問卷
-              </p>
-              <h2 class="mt-2 font-display text-3xl text-primary" data-config="survey.section.subtitle">你的喜好，我們想好好照顧
-              </h2>
-            </div>
-            <form class="mx-auto mt-8 max-w-3xl space-y-6 text-sm" data-rsvp-form>
-              <label class="block">
-                <span class="text-muted/70" data-config="survey.label.name">你的名字</span>
-                <input type="text" name="name" required data-config="survey.placeholder.name"
-                  data-config-attr="placeholder"
-                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none" />
-              </label>
-              <div class="grid gap-6 md:grid-cols-2">
-                <label class="block">
-                  <span class="text-muted/70" data-config="survey.label.guests">出席人數</span>
-                  <select name="guests" required
-                    class="mt-2 w-full appearance-none rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
-                    <option value="" data-config="survey.option.guests.placeholder"></option>
-                    <option value="1" data-config="survey.option.guests.1">1 人</option>
-                    <option value="2" data-config="survey.option.guests.2">2 人</option>
-                    <option value="3" data-config="survey.option.guests.3">3 人</option>
-                    <option value="4" data-config="survey.option.guests.4plus">4 人以上</option>
-                  </select>
-                </label>
-                <label class="block">
-                  <span class="text-muted/70" data-config="survey.label.diet">飲食偏好</span>
-                  <select name="diet" required
-                    class="mt-2 w-full appearance-none rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
-                    <option value="" data-config="survey.option.diet.placeholder"></option>
-                    <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
-                    <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素</option>
-                    <option value="vegan" data-config="survey.option.diet.vegan">全素</option>
-                    <option value="no-seafood" data-config="survey.option.diet.noSeafood">不吃海鮮</option>
-                  </select>
-                </label>
-              </div>
-              <div class="grid gap-6 md:grid-cols-2">
-                <label class="block">
-                  <span class="text-muted/70">是否有小孩</span>
-                  <select name="hasChildren"
-                    class="mt-2 w-full appearance-none rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
-                    <option value="no" selected>無</option>
-                    <option value="yes">有</option>
-                  </select>
-                </label>
-                <label class="block">
-                  <span class="text-muted/70">小孩椅幾張</span>
-                  <input type="number" name="childSeats" min="0" value="0"
-                    class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none" />
-                </label>
-              </div>
-              <label class="block">
-                <span class="text-muted/70" data-config="survey.label.message">想對我們說的話</span>
-                <textarea name="message" rows="4" data-config="survey.placeholder.message"
-                  data-config-attr="placeholder"
-                  class="mt-2 w-full rounded-2xl border border-border/60 bg-white/70 px-4 py-3 focus:border-primary focus:outline-none"></textarea>
-              </label>
-              <input type="hidden" name="locale" value="zh" data-rsvp-locale />
-              <input type="hidden" name="source" value="web" />
-              <button type="submit"
-                class="w-full rounded-full bg-primary px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-primary/90"
-                data-config="survey.button">
-                送出回覆
-              </button>
-              <p class="mt-4 text-center text-sm text-muted/70 hidden" data-rsvp-status role="status"></p>
-            </form>
-            <iframe class="hidden" name="rsvp-frame" title="RSVP submission" data-rsvp-frame></iframe>
-          </div>
-        </section>
-
-        <!-- Divider reveal animation: adjust timing/offset via Tailwind utilities -->
-        <div
-          class="section-divider flex justify-center py-6 opacity-0 translate-y-2 scale-[0.98] transition duration-700 ease-out sm:py-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:scale-100 motion-reduce:transition-none"
-          data-divider-reveal aria-hidden="true">
-          <svg class="h-10 w-64 animate-none sm:animate-pulse motion-reduce:animate-none" viewBox="0 0 260 48"
-            fill="none">
-            <use data-decor-role="divider-invitation" href="img/components/wedding-decorations.svg#divider-invitation">
-            </use>
-          </svg>
-        </div>
-
-        <!-- Invitation card -->
-        <section id="invitation"
-          class="leaf-pattern card-elevated relative rounded-[2.5rem] border border-white/70 bg-white/90 p-8 shadow-card backdrop-blur-sm sm:p-12">
-          <div class="content-layer content-safe">
-            <div class="text-center">
-              <p class="text-sm uppercase tracking-[0.4em] text-primary/70" data-config="invitation.section.title">喜帖
-              </p>
-              <h2 class="mt-2 font-display text-3xl text-primary" data-config="invitation.section.heading">願這場儀式感，與你共享
-              </h2>
-              <p class="mt-4 text-base leading-relaxed text-ink/80" data-config="invitation.section.description">
-                用一封溫柔的喜帖，把我們的祝福親手遞給你。
-              </p>
-            </div>
-            <div class="mt-10 grid gap-8 md:grid-cols-2">
-              <div class="rounded-3xl bg-primary/10 p-6 text-sm leading-relaxed text-ink/80">
-                <p class="font-display text-xl text-primary" data-config="invitation.letter.salutation">Dear You,</p>
-                <p class="mt-4" data-config="invitation.letter.body">
-                  我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
-                </p>
-                <dl class="mt-6 space-y-4 text-sm">
-                  <div>
-                    <dt class="text-muted/60" data-config="invitation.date.label">日期</dt>
-                    <dd class="font-display text-lg text-primary" data-config="invitation.date.value">2025 / 10 / 18（六）
-                    </dd>
-                  </div>
-                  <div>
-                    <dt class="text-muted/60" data-config="invitation.time.label">時間</dt>
-                    <dd class="font-display text-lg text-primary" data-config="invitation.time.value">15:30 證婚 ・ 18:00
-                      宴客</dd>
-                  </div>
-                  <div>
-                    <dt class="text-muted/60" data-config="invitation.location.label">地點</dt>
-                    <dd class="font-display text-lg text-primary" data-config="invitation.location.value">森光花園宴會廳</dd>
-                  </div>
-                </dl>
-                <a href="#top"
-                  class="mt-8 inline-flex rounded-full bg-ink px-8 py-3 text-sm font-semibold uppercase tracking-[0.4em] text-white transition hover:bg-ink/90"
-                  data-config="invitation.button">回到頂端</a>
-              </div>
-              <div class="rounded-3xl border border-border/60 bg-white/70 p-6 text-center shadow-inner">
-                <img src="img/icons/leaf-simple.svg" alt="森林小插圖"
-                  class="theme-only theme-only--default mx-auto h-20 w-20" loading="lazy" />
-                <img src="img/illustrations/natural-elements/ocean-wave.webp" alt="森林小插圖"
-                  class="theme-only theme-only--coastal mx-auto h-20 w-20" loading="lazy" />
-                <div class="theme-only theme-only--candlelit fire-icon fire-icon--lg mx-auto" aria-hidden="true">
-                  <div class="fire-icon__logs logs">
-                    <div class="one">
-                      <div class="log"></div>
-                    </div>
-                    <div class="two">
-                      <div class="log"></div>
-                    </div>
-                    <div class="three">
-                      <div class="log"></div>
-                    </div>
-                  </div>
-                  <div class="fire-icon__fire fire">
-                    <div class="fire-icon__flames flames">
-                      <div class="one">
-                        <div class="flame"></div>
-                      </div>
-                      <div class="two">
-                        <div class="flame"></div>
-                      </div>
-                      <div class="three">
-                        <div class="flame"></div>
-                      </div>
-                    </div>
-                    <div class="fire-icon__flames flames inner">
-                      <div class="one">
-                        <div class="flame"></div>
-                      </div>
-                      <div class="two">
-                        <div class="flame"></div>
-                      </div>
-                      <div class="three">
-                        <div class="flame"></div>
-                      </div>
-                    </div>
-                    <div class="fire-icon__glow glow"></div>
-                  </div>
-                </div>
-                <img src="img/illustrations/botanical/autumn/maple-leaf.webp" alt="森林小插圖"
-                  class="theme-only theme-only--garden maple-deco mx-auto h-20 w-20 opacity-60" loading="lazy" />
-                <p class="mt-4 font-display text-xl text-primary" data-config="invitation.card.message">願你今天也被溫柔包圍</p>
-                <p class="mt-4 text-sm leading-relaxed text-ink/80" data-config="invitation.card.note">
-                  我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+      </section>
     </main>
 
-    <footer class="px-6 pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-muted/60"
-      data-config="footer.text">
-      可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福
+    <!-- FOOTER -->
+    <footer class="bg-surface-container-highest py-16 text-center border-t border-outline-variant/20">
+      <p class="font-headline text-secondary text-2xl font-bold tracking-widest mb-4" data-config="nav.brand">森語誓約</p>
+      <p class="font-body text-secondary/60 text-sm max-w-md mx-auto px-6 leading-relaxed" data-config="footer.text">
+        可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福</p>
     </footer>
   </div>
   <script>
