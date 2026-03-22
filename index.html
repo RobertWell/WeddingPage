@@ -941,6 +941,7 @@
     <nav class="fixed top-0 w-full z-50 bg-[#F5E6D3]/80 backdrop-blur-xl">
       <div class="flex justify-between items-center px-4 md:px-6 py-3.5 md:py-4 max-w-7xl mx-auto gap-4">
         <div class="flex items-center gap-3 min-w-0">
+          <span class="material-symbols-outlined text-primary/70 text-[18px] md:text-[20px]">favorite</span>
           <span class="text-lg md:text-2xl font-headline font-bold text-secondary truncate"
             data-config="nav.brand">森語誓約</span>
         </div>
@@ -1013,8 +1014,10 @@
         </div>
 
         <div class="absolute bottom-12 sm:bottom-14 md:bottom-16 w-full flex justify-center z-20 px-6">
-          <div class="hero-signoff">
+          <div class="hero-signoff flex items-center gap-2 sm:gap-3">
+            <span class="material-symbols-outlined text-white/80 text-[18px] sm:text-[20px] md:text-[24px]">favorite</span>
             <p class="hero-signoff__text text-[1.8rem] sm:text-[2.4rem] md:text-[4.2rem] leading-none text-center">好久不見 婚禮見</p>
+            <span class="material-symbols-outlined text-white/80 text-[18px] sm:text-[20px] md:text-[24px]">favorite</span>
           </div>
         </div>
       </header>
@@ -1041,11 +1044,17 @@
           </div>
         </div>
         <!-- Invitation Text placeholder with logic hook (although most text comes from config) -->
-        <div class="space-y-6 text-secondary font-headline text-lg leading-relaxed">
-          <p>謹訂於 <span data-config="invitation.date.value">2026 年 06 月 14 日</span></p>
-          <p><span data-config="invitation.time.value">中午 12:00</span></p>
-          <p>於 <span data-config="invitation.location.value">大直典華</span></p>
-          <p>舉行結婚喜宴 敬邀蒞臨</p>
+        <div class="space-y-5 text-secondary font-headline text-lg leading-[1.9]">
+          <p class="flex flex-col items-center gap-1">
+            <span class="text-sm tracking-[0.22em] text-secondary/60">謹訂於</span>
+            <span class="text-xl md:text-2xl tracking-[0.08em]" data-config="invitation.date.value">2026 年 06 月 14 日</span>
+          </p>
+          <p class="text-lg md:text-xl tracking-[0.08em]"><span data-config="invitation.time.value">中午 12:00</span></p>
+          <p class="flex flex-col items-center gap-1">
+            <span class="text-sm tracking-[0.22em] text-secondary/60">於</span>
+            <span class="text-xl md:text-2xl tracking-[0.08em]" data-config="invitation.location.value">大直典華</span>
+          </p>
+          <p class="tracking-[0.12em]">舉行結婚喜宴 敬邀蒞臨</p>
           <div class="pt-10 flex flex-col md:flex-row justify-center gap-6 md:gap-12 opacity-80">
             <div>
               <span class="block text-xs mb-1 opacity-60">GROOM'S PARENTS</span>
@@ -1083,7 +1092,7 @@
 
           <!-- Story Text -->
           <div class="text-center px-4 max-w-2xl mx-auto">
-            <p class="font-body text-secondary/80 leading-loose text-lg whitespace-pre-line"
+            <p class="font-body text-secondary/80 leading-[2.1] text-[1.05rem] whitespace-pre-line"
               data-config="story.content"></p>
           </div>
 
@@ -1131,7 +1140,7 @@
               <div>
                 <p class="text-sm font-headline tracking-widest text-primary mb-2 uppercase">餐廳位置</p>
                 <p class="font-body text-secondary text-lg font-bold" data-config="venue.name"></p>
-                <p class="font-body text-secondary/70 mt-1" data-config="venue.address"></p>
+              <p class="font-body text-secondary/70 mt-1 leading-relaxed" data-config="venue.address"></p>
                 <p class="font-body text-secondary/60 text-sm mt-3" data-config="location.section.description">
                 </p>
               </div>
@@ -1140,7 +1149,7 @@
               <div>
                 <p class="text-sm font-headline tracking-widest text-primary mb-2 uppercase"
                   data-config="transport.title">交通方式</p>
-                <ul class="space-y-2 font-body text-secondary/70 text-sm">
+                <ul class="space-y-2.5 font-body text-secondary/70 text-sm leading-relaxed">
                   <li data-config="transport.item1">捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。</li>
                   <li data-config="transport.item2">公車｜88、208、藍 10 於「林蔭路口」下車。</li>
                   <li data-config="transport.item3">開車｜場地下方設有停車場，可直達宴會廳。</li>
@@ -1180,7 +1189,7 @@
       <section id="survey" class="max-w-3xl mx-auto px-6 mb-24 md:mb-32">
         <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-4 text-center"
           data-config="survey.section.heading">簡單問卷</h2>
-        <p class="text-center text-primary font-headline tracking-widest uppercase mb-12 md:mb-16"
+        <p class="text-center text-primary font-headline tracking-[0.28em] mb-12 md:mb-16"
           data-config="survey.section.subtitle">你的喜好，我們想好好照顧</p>
 
         <div class="bg-surface-container-highest rounded-2xl p-8 md:p-12 border border-outline-variant/20">
@@ -1264,15 +1273,19 @@
 
       <!-- INVITATION CARD -->
       <section id="invitation" class="max-w-4xl mx-auto px-6 mb-24 md:mb-32">
-        <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-4 text-center"
-          data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
+        <div class="flex items-center justify-center gap-3 mb-4 text-primary/75">
+          <span class="material-symbols-outlined text-[20px] md:text-[24px]">favorite</span>
+          <h2 class="font-headline text-3xl md:text-5xl text-secondary text-center"
+            data-config="invitation.section.heading">願這場儀式感，與你共享</h2>
+          <span class="material-symbols-outlined text-[20px] md:text-[24px]">favorite</span>
+        </div>
         <p class="text-center text-primary font-headline tracking-widest uppercase mb-12 md:mb-16"
           data-config="invitation.section.title">喜帖</p>
 
         <div class="bg-surface-container-lowest rounded-2xl p-8 md:p-14 border border-outline-variant/20 text-center relative overflow-hidden">
           <p class="font-headline font-bold text-2xl text-primary mb-6" data-config="invitation.letter.salutation">Dear
             You,</p>
-          <p class="font-body text-secondary/80 leading-loose text-lg max-w-2xl mx-auto mb-10"
+          <p class="font-body text-secondary/80 leading-[2] text-lg max-w-2xl mx-auto mb-10"
             data-config="invitation.letter.body">
             我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。
           </p>
@@ -1281,16 +1294,16 @@
             class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto border-t border-b border-outline-variant/20 py-8 mb-10 text-secondary">
             <div>
               <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.date.label">日期</p>
-              <p class="font-headline font-bold text-lg" data-config="invitation.date.value">2025 / 10 / 18</p>
+              <p class="font-headline font-bold text-lg tracking-[0.08em]" data-config="invitation.date.value">2025 / 10 / 18</p>
             </div>
             <div class="md:border-l md:border-r border-outline-variant/20 px-4">
               <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.time.label">時間</p>
-              <p class="font-headline font-bold text-lg" data-config="invitation.time.value">15:30 證婚</p>
+              <p class="font-headline font-bold text-lg tracking-[0.08em]" data-config="invitation.time.value">15:30 證婚</p>
             </div>
             <div>
               <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.location.label">地點
               </p>
-              <p class="font-headline font-bold text-lg" data-config="invitation.location.value">森光花園</p>
+              <p class="font-headline font-bold text-lg tracking-[0.08em]" data-config="invitation.location.value">森光花園</p>
             </div>
           </div>
 
