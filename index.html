@@ -79,7 +79,7 @@
   <style>
     @font-face {
       font-family: 'ChenYuluoyan';
-      src: url('https://cdn.jsdelivr.net/gh/Chenyu-otf/chenyuluoyan_thin@master/ChenYuluoyan-Thin.ttf') format('truetype');
+      src: url('assets/fonts/ChenYuluoyan-2.0-Thin.ttf') format('truetype');
       font-display: swap;
     }
 
@@ -91,6 +91,19 @@
       font-family: theme('fontFamily.body');
       background-color: #fff2e2;
       /* Warm milk tea / latte beige flat background */
+    }
+
+    .hero-signoff {
+      position: relative;
+      display: inline-block;
+      padding: 0.2rem 0.35rem;
+    }
+
+    .hero-signoff__text {
+      font-family: "ChenYuluoyan", "LXGW WenKai TC", cursive;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: rgba(255, 247, 238, 0.96);
     }
 
     /* Grain texture for premium feel */
@@ -830,6 +843,14 @@
 
 
     @media (max-width: 640px) {
+      .hero-signoff {
+        padding: 0.12rem 0.2rem;
+      }
+
+      .hero-signoff__text {
+        letter-spacing: 0.04em;
+      }
+
       .corner-deco {
         width: clamp(64px, 22vw, 96px);
       }
@@ -858,6 +879,7 @@
         right: 10px;
         bottom: 10px;
       }
+
     }
 
     .card-elevated {
@@ -916,10 +938,13 @@
   </div>
   <div class="page-content">
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-[#F5E6D3]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(124,87,48,0.06)]">
-      <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        <span class="text-2xl font-headline font-bold text-secondary" data-config="nav.brand">森語誓約</span>
-        <div class="hidden lg:flex gap-8 items-center">
+    <nav class="fixed top-0 w-full z-50 bg-[#F5E6D3]/80 backdrop-blur-xl">
+      <div class="flex justify-between items-center px-4 md:px-6 py-3.5 md:py-4 max-w-7xl mx-auto gap-4">
+        <div class="flex items-center gap-3 min-w-0">
+          <span class="text-lg md:text-2xl font-headline font-bold text-secondary truncate"
+            data-config="nav.brand">森語誓約</span>
+        </div>
+        <div class="hidden md:flex gap-6 lg:gap-8 items-center">
           <a class="font-headline text-lg text-secondary/80 hover:text-secondary hover:font-bold transition-all"
             href="#couple" data-config="nav.link.couple">新人介紹</a>
           <a class="font-headline text-lg text-secondary/80 hover:text-secondary hover:font-bold transition-all"
@@ -929,25 +954,14 @@
           <a class="font-headline text-lg text-secondary/80 hover:text-secondary hover:font-bold transition-all"
             href="#invitation" data-config="nav.link.invitation">喜帖</a>
         </div>
-        <div class="flex items-center gap-4">
-          <div
-            class="lang-switch inline-flex rounded-full border border-secondary/20 bg-surface-container-highest text-xs uppercase tracking-[0.2em]"
-            data-lang-switch>
-            <button type="button" class="px-3 py-1 text-secondary/70 transition hover:text-secondary hover:font-bold"
-              data-lang-button="zh" data-config="lang.zhLabel" aria-pressed="true">中文</button>
-            <button type="button" class="px-3 py-1 text-secondary/70 transition hover:text-secondary hover:font-bold"
-              data-lang-button="en" data-config="lang.enLabel" aria-pressed="false">English</button>
-          </div>
-          <span class="material-symbols-outlined text-primary hidden md:inline-block"
-            data-icon="favorite">favorite</span>
-        </div>
+        <div class="shrink-0"></div>
       </div>
     </nav>
     <!-- Full Bleed main -->
     <main>
       <!-- FULL BLEED HERO SECTION -->
       <header id="top"
-        class="relative w-full h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden mb-24 md:mb-32">
+        class="relative w-full h-[100svh] min-h-[640px] sm:min-h-[700px] flex items-center justify-center overflow-hidden mb-24 md:mb-32 pt-16 sm:pt-20">
         <!-- Background Image -->
         <div class="absolute inset-0 w-full h-full z-0">
           <picture>
@@ -963,62 +977,63 @@
 
         <!-- Float Content -->
         <div
-          class="relative z-10 mx-6 mt-16 mt-20 w-full max-w-4xl bg-white/70 backdrop-blur-md p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-white/60 text-center">
+          class="relative z-10 mx-auto w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] md:w-full max-w-4xl bg-white/70 backdrop-blur-md px-4 py-6 sm:p-8 md:p-16 rounded-[1.6rem] sm:rounded-[2rem] md:rounded-[3rem] border border-white/60 text-center">
           <div
-            class="absolute -top-6 -right-4 md:-top-8 md:-right-8 w-16 h-16 md:w-20 md:h-20 bg-primary/90 text-on-primary rounded-full flex items-center justify-center text-3xl md:text-4xl font-headline shadow-lg">
+            class="absolute -top-4 right-3 sm:-top-5 sm:right-4 md:-top-8 md:-right-8 w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 bg-primary/90 text-on-primary rounded-full flex items-center justify-center text-xl sm:text-2xl md:text-4xl font-headline">
             囍</div>
 
-          <p class="text-xs uppercase tracking-[0.5em] text-secondary/80 mb-4" data-config="hero.tagline">Warm &amp;
+          <p class="text-[10px] sm:text-[11px] md:text-xs tracking-[0.22em] sm:tracking-[0.42em] text-secondary/70 mb-3 md:mb-5" data-config="hero.tagline">Warm &amp;
             Fresh Wedding</p>
-          <h1 class="font-headline font-bold text-5xl md:text-7xl text-secondary mb-4 tracking-tight"
+          <h1 class="font-headline font-bold text-[2.25rem] sm:text-[2.7rem] leading-[0.98] md:text-7xl text-secondary mb-3 sm:mb-4 tracking-tight"
             data-config="hero.names"></h1>
-          <p class="font-headline text-lg md:text-2xl text-primary mb-6" data-config="hero.datetime"></p>
-          <p class="font-body text-base md:text-lg text-secondary/80 max-w-2xl mx-auto leading-relaxed whitespace-pre-line"
+          <p class="font-headline text-sm sm:text-base md:text-2xl text-primary mb-4 sm:mb-5 md:mb-6 tracking-[0.04em] md:tracking-[0.08em] leading-relaxed max-w-[18rem] sm:max-w-[28rem] md:max-w-none mx-auto break-words"
+            data-config="hero.datetime"></p>
+          <p class="font-body text-[14px] sm:text-[15px] md:text-lg text-secondary/80 max-w-[18rem] sm:max-w-2xl mx-auto leading-relaxed whitespace-pre-line"
             data-config="hero.description">
           </p>
 
           <div
-            class="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm tracking-[0.2em] text-secondary/90 font-bold">
-            <span data-config="hero.badge1">溫馨證婚</span>
-            <span class="text-secondary/40 font-normal">·</span>
-            <span data-config="hero.badge2">清新溫柔風</span>
-            <span class="text-secondary/40 font-normal">·</span>
-            <span data-config="hero.badge3">歡迎新人</span>
+            class="mt-6 sm:mt-7 md:mt-8 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 gap-y-2 text-[11px] sm:text-xs md:text-sm tracking-[0.14em] sm:tracking-[0.22em] text-secondary/90 font-bold">
+            <span class="rounded-full bg-white/60 px-3 sm:px-4 py-1.5 sm:py-2" data-config="hero.badge1">溫馨證婚</span>
+            <span class="hidden sm:inline text-secondary/40 font-normal">·</span>
+            <span class="rounded-full bg-white/60 px-3 sm:px-4 py-1.5 sm:py-2" data-config="hero.badge2">清新溫柔風</span>
+            <span class="hidden sm:inline text-secondary/40 font-normal">·</span>
+            <span class="rounded-full bg-white/60 px-3 sm:px-4 py-1.5 sm:py-2" data-config="hero.badge3">歡迎新人</span>
           </div>
 
-          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <div class="mt-7 md:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a href="#invitation"
-              class="rounded-full bg-secondary px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-on-secondary transition hover:bg-secondary/90 shadow-sm"
+              class="w-full sm:w-auto rounded-full bg-secondary px-6 sm:px-10 py-3.5 text-sm font-bold tracking-[0.12em] sm:tracking-[0.3em] text-on-secondary transition hover:bg-secondary/90"
               data-config="hero.ctaPrimary"></a>
             <a href="#survey"
-              class="rounded-full border border-secondary/60 px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-secondary transition hover:bg-secondary/10"
+              class="w-full sm:w-auto rounded-full border border-secondary/40 bg-white/25 px-6 sm:px-10 py-3.5 text-sm font-bold tracking-[0.12em] sm:tracking-[0.3em] text-secondary transition hover:bg-secondary/10"
               data-config="hero.ctaSecondary"></a>
           </div>
 
         </div>
 
-        <div
-          class="absolute bottom-8 md:bottom-12 w-full flex justify-center z-20 px-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]">
-          <p class="text-4xl md:text-5xl text-white tracking-widest leading-relaxed"
-            style="font-family: 'ChenYuluoyan', 'LXGW WenKai TC', cursive; font-weight: normal;">好久不見 婚禮見</p>
+        <div class="absolute bottom-12 sm:bottom-14 md:bottom-16 w-full flex justify-center z-20 px-6">
+          <div class="hero-signoff">
+            <p class="hero-signoff__text text-[1.8rem] sm:text-[2.4rem] md:text-[4.2rem] leading-none text-center">好久不見 婚禮見</p>
+          </div>
         </div>
       </header>
 
       <!-- COUNTDOWN & INVITATION SECTION -->
-      <section id="countdown" class="max-w-3xl mx-auto px-6 mb-24 md:mb-32 text-center">
+      <section id="countdown" class="max-w-4xl mx-auto px-6 mb-24 md:mb-32 text-center">
         <!-- Minimal Countdown -->
-        <div class="flex justify-center gap-8 md:gap-16 mb-20 text-secondary">
-          <div>
+        <div class="flex justify-center gap-3 md:gap-6 mb-14 md:mb-20 text-secondary">
+          <div class="rounded-2xl bg-[#f3e7d8] px-4 py-4 md:px-5 md:py-5">
             <span class="block text-4xl md:text-5xl font-headline mb-1" data-config="countdown.days"
               data-countdown-value="days">142</span>
             <span class="text-xs uppercase tracking-widest opacity-60" data-config="countdown.label.days">Days</span>
           </div>
-          <div>
+          <div class="rounded-2xl bg-[#f3e7d8] px-4 py-4 md:px-5 md:py-5">
             <span class="block text-4xl md:text-5xl font-headline mb-1" data-config="countdown.hours"
               data-countdown-value="hours">08</span>
             <span class="text-xs uppercase tracking-widest opacity-60" data-config="countdown.label.hours">Hours</span>
           </div>
-          <div>
+          <div class="rounded-2xl bg-[#f3e7d8] px-4 py-4 md:px-5 md:py-5">
             <span class="block text-4xl md:text-5xl font-headline mb-1" data-config="countdown.minutes"
               data-countdown-value="minutes">30</span>
             <span class="text-xs uppercase tracking-widest opacity-60"
@@ -1034,11 +1049,15 @@
           <div class="pt-10 flex flex-col md:flex-row justify-center gap-6 md:gap-12 opacity-80">
             <div>
               <span class="block text-xs mb-1 opacity-60">GROOM'S PARENTS</span>
-              <p>男方家長: <span data-config="hosts.groom"></span></p>
+              <span class="block text-sm mt-1">男方家長</span>
+              <span class="block w-20 h-px bg-secondary/25 mx-auto my-3"></span>
+              <p><span data-config="hosts.groom"></span></p>
             </div>
             <div>
               <span class="block text-xs mb-1 opacity-60">BRIDE'S PARENTS</span>
-              <p>女方家長: <span data-config="hosts.bride"></span></p>
+              <span class="block text-sm mt-1">女方家長</span>
+              <span class="block w-20 h-px bg-secondary/25 mx-auto my-3"></span>
+              <p><span data-config="hosts.bride"></span></p>
             </div>
           </div>
         </div>
@@ -1104,7 +1123,7 @@
             餐廳地點</p>
         </div>
 
-        <div class="bg-surface-container-highest rounded-2xl p-8 md:p-12 shadow-sm border border-outline-variant/20">
+        <div class="bg-surface-container-highest rounded-2xl p-8 md:p-12 border border-outline-variant/20">
           <div class="grid md:grid-cols-2 gap-12">
 
             <div class="space-y-8">
@@ -1148,7 +1167,7 @@
 
             <!-- Map Graphic -->
             <div
-              class="bg-surface-container-lowest rounded-xl aspect-[4/3] md:aspect-auto h-full w-full shadow-inner overflow-hidden border border-outline-variant/10">
+              class="bg-surface-container-lowest rounded-xl aspect-[4/3] md:aspect-auto h-full w-full overflow-hidden border border-outline-variant/10">
               <img alt="交通位置圖" class="w-full h-full object-cover" src="img/wedding_photos/position_traffic.jpg"
                 loading="lazy" />
             </div>
@@ -1164,8 +1183,7 @@
         <p class="text-center text-primary font-headline tracking-widest uppercase mb-12 md:mb-16"
           data-config="survey.section.subtitle">你的喜好，我們想好好照顧</p>
 
-        <div
-          class="bg-surface-container-highest rounded-2xl p-8 md:p-12 shadow-[0_10px_30px_rgba(124,87,48,0.05)] border border-outline-variant/20">
+        <div class="bg-surface-container-highest rounded-2xl p-8 md:p-12 border border-outline-variant/20">
           <form class="space-y-6" data-rsvp-form>
 
             <label class="block">
@@ -1251,8 +1269,7 @@
         <p class="text-center text-primary font-headline tracking-widest uppercase mb-12 md:mb-16"
           data-config="invitation.section.title">喜帖</p>
 
-        <div
-          class="bg-surface-container-lowest rounded-2xl p-8 md:p-14 shadow-[0_10px_30px_rgba(124,87,48,0.05)] border border-outline-variant/20 text-center relative overflow-hidden">
+        <div class="bg-surface-container-lowest rounded-2xl p-8 md:p-14 border border-outline-variant/20 text-center relative overflow-hidden">
           <p class="font-headline font-bold text-2xl text-primary mb-6" data-config="invitation.letter.salutation">Dear
             You,</p>
           <p class="font-body text-secondary/80 leading-loose text-lg max-w-2xl mx-auto mb-10"
