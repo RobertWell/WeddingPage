@@ -8,9 +8,7 @@
   <meta name="description" content="以 GitHub Pages 佈署的溫暖森林系電子喜帖，包含新人介紹、地點資訊、飲食問卷與儀式感邀請。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -69,9 +67,9 @@
             "on-tertiary-fixed-variant": "#930010"
           },
           fontFamily: {
-            "headline": ['"Noto Serif TC"', '"Noto Serif"', 'serif'],
-            "body": ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
-            "label": ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif']
+            "headline": ['"LXGW WenKai TC"', 'cursive', 'serif'],
+            "body": ['"LXGW WenKai TC"', 'cursive', 'sans-serif'],
+            "label": ['"LXGW WenKai TC"', 'cursive', 'sans-serif']
           },
           borderRadius: { "DEFAULT": "12px", "lg": "24px", "xl": "32px", "full": "9999px" },
         },
@@ -916,11 +914,11 @@
       <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         <span class="text-2xl font-headline font-bold text-secondary" data-config="nav.brand">森語誓約</span>
         <div class="hidden lg:flex gap-8 items-center">
-          <a class="font-headline font-medium text-lg text-secondary/70 hover:text-primary transition-colors"
+          <a class="font-headline text-lg text-secondary/80 hover:text-secondary hover:font-bold transition-all"
             href="#couple" data-config="nav.link.couple">新人介紹</a>
-          <a class="font-headline font-medium text-lg text-secondary/70 hover:text-primary transition-colors"
+          <a class="font-headline text-lg text-secondary/80 hover:text-secondary hover:font-bold transition-all"
             href="#location" data-config="nav.link.location">地點交通</a>
-          <a class="font-headline font-medium text-lg text-secondary/70 hover:text-primary transition-colors"
+          <a class="font-headline text-lg text-secondary/80 hover:text-secondary hover:font-bold transition-all"
             href="#survey" data-config="nav.link.survey">飲食問卷</a>
           <a class="font-headline font-medium text-lg text-primary font-bold border-b-2 border-primary pb-1"
             href="#invitation" data-config="nav.link.invitation">喜帖</a>
@@ -929,9 +927,9 @@
           <div
             class="lang-switch inline-flex rounded-full border border-secondary/20 bg-surface-container-highest text-xs uppercase tracking-[0.2em]"
             data-lang-switch>
-            <button type="button" class="px-3 py-1 text-secondary/70 transition hover:text-primary"
+            <button type="button" class="px-3 py-1 text-secondary/70 transition hover:text-secondary hover:font-bold"
               data-lang-button="zh" data-config="lang.zhLabel" aria-pressed="true">中文</button>
-            <button type="button" class="px-3 py-1 text-secondary/70 transition hover:text-primary"
+            <button type="button" class="px-3 py-1 text-secondary/70 transition hover:text-secondary hover:font-bold"
               data-lang-button="en" data-config="lang.enLabel" aria-pressed="false">English</button>
           </div>
           <span class="material-symbols-outlined text-primary hidden md:inline-block"
@@ -939,48 +937,59 @@
         </div>
       </div>
     </nav>
-    <main class="pt-24 md:pt-32">
-      <!-- HERO SECTION -->
-      <header id="top" class="max-w-6xl mx-auto px-4 md:px-6 mb-24 md:mb-32 text-center">
-        <div class="relative inline-block mb-12 group w-[85%] md:w-auto">
-          <!-- Polaroid Style Image -->
-          <div
-            class="bg-surface-container-lowest p-3 pb-10 md:p-6 md:pb-20 shadow-[0_30px_60px_rgba(124,87,48,0.1)] border border-outline-variant/10 rounded-sm">
-            <picture>
-              <source media="(max-width: 640px)" srcset="img/wedding_photos/heros_background_mobile.jpeg">
-              <img src="img/wedding_photos/heros_background.jpeg" alt="新人合照Polaroid"
-                class="w-full max-w-2xl aspect-[4/5] object-cover rounded-sm mx-auto" loading="lazy" />
-            </picture>
-          </div>
-          <!-- Red 囍 Accent -->
-          <div
-            class="absolute -top-4 -right-4 md:-top-8 md:-right-8 w-12 h-12 md:w-20 md:h-20 bg-primary rounded-full flex items-center justify-center text-on-primary text-xl md:text-4xl font-headline shadow-lg z-10">
-            囍
-          </div>
+    <!-- Full Bleed main -->
+    <main>
+      <!-- FULL BLEED HERO SECTION -->
+      <header id="top"
+        class="relative w-full h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden mb-24 md:mb-32">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full z-0">
+          <picture>
+            <source media="(max-width: 640px)" srcset="img/wedding_photos/heros_background_mobile.jpeg">
+            <img src="img/wedding_photos/heros_background.jpeg" alt="新人合照"
+              class="w-full h-full object-cover object-[50%_30%]" loading="eager" />
+          </picture>
+          <!-- Elegant overlay for text readability -->
+          <div class="absolute inset-0 bg-white/30 backdrop-blur-[4px]"></div>
+          <!-- Gradient fade to bottom so it blends into the page correctly -->
+          <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-[#fff2e2] to-transparent"></div>
         </div>
-        <p class="text-xs uppercase tracking-[0.5em] text-secondary/70 mb-4" data-config="hero.tagline">Warm &amp; Fresh
-          Wedding</p>
-        <h1 class="font-headline text-5xl md:text-8xl text-secondary mb-4 tracking-tight" data-config="hero.names">昊然
-          &amp; 予晴</h1>
-        <p class="font-headline text-lg md:text-2xl text-primary mb-2" data-config="hero.datetime">2025.10.18 · 15:30 ·
-          森光花園宴會廳</p>
-        <p class="font-body text-base md:text-lg text-secondary/60 mt-4 max-w-2xl mx-auto leading-relaxed"
-          data-config="hero.description">我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。</p>
 
-        <div class="mt-8 flex items-center justify-center gap-4 text-sm tracking-[0.2em] text-secondary/90">
-          <span data-config="hero.badge1">溫馨證婚</span>
-          <span class="text-secondary/40">·</span>
-          <span data-config="hero.badge2">清新溫柔風</span>
-          <span class="text-secondary/40">·</span>
-          <span data-config="hero.badge3">歡迎新人</span>
-        </div>
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row justify-center">
-          <a href="#invitation"
-            class="rounded-full bg-secondary px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-on-secondary transition hover:bg-secondary/90"
-            data-config="hero.ctaPrimary">查看喜帖</a>
-          <a href="#survey"
-            class="rounded-full border border-secondary/60 px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-secondary transition hover:bg-secondary/10"
-            data-config="hero.ctaSecondary">填寫問卷</a>
+        <!-- Float Content -->
+        <div
+          class="relative z-10 mx-6 mt-16 mt-20 w-full max-w-4xl bg-white/70 backdrop-blur-md p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-white/60 text-center">
+          <div
+            class="absolute -top-6 -right-4 md:-top-8 md:-right-8 w-16 h-16 md:w-20 md:h-20 bg-primary/90 text-on-primary rounded-full flex items-center justify-center text-3xl md:text-4xl font-headline shadow-lg">
+            囍</div>
+
+          <p class="text-xs uppercase tracking-[0.5em] text-secondary/80 mb-4" data-config="hero.tagline">Warm &amp;
+            Fresh Wedding</p>
+          <h1 class="font-headline font-bold text-5xl md:text-7xl text-secondary mb-4 tracking-tight"
+            data-config="hero.names">昊然 &amp; 予晴</h1>
+          <p class="font-headline text-lg md:text-2xl text-primary mb-6" data-config="hero.datetime">2025.10.18 · 15:30
+            · 森光花園宴會廳</p>
+          <p class="font-body text-base md:text-lg text-secondary/80 max-w-2xl mx-auto leading-relaxed"
+            data-config="hero.description">
+            我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
+          </p>
+
+          <div
+            class="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm tracking-[0.2em] text-secondary/90 font-bold">
+            <span data-config="hero.badge1">溫馨證婚</span>
+            <span class="text-secondary/40 font-normal">·</span>
+            <span data-config="hero.badge2">清新溫柔風</span>
+            <span class="text-secondary/40 font-normal">·</span>
+            <span data-config="hero.badge3">歡迎新人</span>
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#invitation"
+              class="rounded-full bg-secondary px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-on-secondary transition hover:bg-secondary/90"
+              data-config="hero.ctaPrimary">查看喜帖</a>
+            <a href="#survey"
+              class="rounded-full border border-secondary/60 px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-secondary transition hover:bg-secondary/10"
+              data-config="hero.ctaSecondary">填寫問卷</a>
+          </div>
         </div>
       </header>
 
@@ -1539,10 +1548,12 @@
           const isAvailable = available.has(lang);
           btn.classList.toggle("is-active", isActive);
           btn.classList.toggle("bg-white/90", isActive);
-          btn.classList.toggle("text-ink", isActive);
+          btn.classList.toggle("text-secondary", isActive);
+          btn.classList.toggle("font-bold", isActive);
           btn.classList.toggle("shadow-sm", isActive);
-          btn.classList.toggle("text-white/80", !isActive);
-          btn.classList.toggle("hover:text-white", !isActive);
+          btn.classList.toggle("text-secondary/70", !isActive);
+          btn.classList.toggle("hover:text-secondary", !isActive);
+          btn.classList.toggle("hover:font-bold", !isActive);
           btn.setAttribute("aria-pressed", String(isActive));
           btn.disabled = !isAvailable;
           btn.classList.toggle("opacity-40", !isAvailable);
@@ -1874,10 +1885,12 @@
           const isActive = btn.dataset.themeButton === themeName;
           btn.classList.toggle("is-active", isActive);
           btn.classList.toggle("bg-white/90", isActive);
-          btn.classList.toggle("text-ink", isActive);
+          btn.classList.toggle("text-secondary", isActive);
+          btn.classList.toggle("font-bold", isActive);
           btn.classList.toggle("shadow-sm", isActive);
-          btn.classList.toggle("text-white/80", !isActive);
-          btn.classList.toggle("hover:text-white", !isActive);
+          btn.classList.toggle("text-secondary/70", !isActive);
+          btn.classList.toggle("hover:text-secondary", !isActive);
+          btn.classList.toggle("hover:font-bold", !isActive);
         });
 
         storeTheme(themeName);
