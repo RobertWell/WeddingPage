@@ -104,6 +104,7 @@
       font-weight: 400;
       letter-spacing: 0.08em;
       color: rgba(255, 247, 238, 0.96);
+      text-shadow: 0 4px 12px rgba(34, 26, 15, 0.4);
     }
 
     /* Grain texture for premium feel */
@@ -962,7 +963,7 @@
     <main>
       <!-- FULL BLEED HERO SECTION -->
       <header id="top"
-        class="relative w-full min-h-[100svh] flex flex-col items-center justify-center overflow-hidden mb-24 md:mb-32 pt-28 sm:pt-32 pb-16 sm:pb-20">
+        class="relative w-full min-h-[100svh] flex flex-col items-center justify-center overflow-hidden mb-24 md:mb-32 pt-[10vh] pb-[6vh] lg:pt-[12vh] lg:pb-[8vh]">
         <!-- Background Image -->
         <div class="absolute inset-0 w-full h-full z-0">
           <picture>
@@ -973,7 +974,7 @@
           <!-- Elegant overlay for text readability -->
           <div class="absolute inset-0 bg-white/30 backdrop-blur-[4px]" data-hero-overlay data-hero-overlay-default="1"></div>
           <!-- Gradient fade to bottom so it blends into the page correctly -->
-          <div class="absolute bottom-0 w-full h-32 z-10 bg-gradient-to-t from-[#fff2e2] to-transparent"></div>
+          <div class="absolute bottom-0 w-full h-24 sm:h-32 z-10 bg-gradient-to-t from-[#fff2e2] to-transparent"></div>
         </div>
 
         <!-- Float Content -->
@@ -1013,11 +1014,11 @@
 
         </div>
 
-        <div class="relative w-full flex justify-center z-20 px-6 mt-auto pt-12 sm:pt-16">
+        <div class="relative w-full flex justify-center z-20 px-6 mt-auto pt-8 sm:pt-12 drop-shadow-md">
           <div class="hero-signoff flex items-center justify-center gap-2 sm:gap-3 flex-nowrap whitespace-nowrap">
-            <span class="material-symbols-outlined shrink-0 text-white/80 text-[18px] sm:text-[20px] md:text-[24px]">favorite</span>
+            <span class="material-symbols-outlined shrink-0 text-white/90 text-[18px] sm:text-[20px] md:text-[24px]">favorite</span>
             <p class="hero-signoff__text shrink-0 text-[1.8rem] sm:text-[2.4rem] md:text-[4.2rem] leading-none text-center">好久不見 婚禮見</p>
-            <span class="material-symbols-outlined shrink-0 text-white/80 text-[18px] sm:text-[20px] md:text-[24px]">favorite</span>
+            <span class="material-symbols-outlined shrink-0 text-white/90 text-[18px] sm:text-[20px] md:text-[24px]">favorite</span>
           </div>
         </div>
       </header>
