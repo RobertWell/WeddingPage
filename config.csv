@@ -1,82 +1,126 @@
 key,zh,en
-nav.brand,森語誓約,Forest Promise
-nav.link.couple,新人介紹,Couple
+nav.brand,恒又之喜,Forest Promise
+nav.link.couple,我們的故事,Our Story
 nav.link.location,地點交通,Location
-nav.link.survey,飲食問卷,RSVP
+nav.link.survey,出席問卷,RSVP
 nav.link.invitation,喜帖,Invitation
 hero.tagline,Warm & Fresh Wedding,Warm & Fresh Wedding
-hero.names,昊然 & 予晴,Haoran & Yu-Ching
-hero.description,"我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。","We chose a garden afternoon with breeze and laughter to place our vows inside each other's names. Join us in this gentle forest ceremony."
-hero.datetime,2025.10.18 · 15:30 · 森光花園宴會廳｜台北市信義區林蔭路 88 號,"Oct 18, 2025 · 3:30 PM · Forestlight Conservatory · 88 Linyin Rd, Taipei"
-hero.badge1,溫馨證婚,"Warm ceremony"
-hero.badge2,清新溫柔風,"Soft forest styling"
-hero.badge3,歡迎新人,"Welcome new couple"
-hero.imageUrl,img/wedding_photos/heros_background.jpeg,img/wedding_photos/heros_background.jpeg
-hero.imagePosition,30% 70%,30% 70%
-hero.overlayOpacity,1,1
-body.background,"radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%), radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%), linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)","radial-gradient(circle at 10% 20%, #ffffff 0, transparent 55%), radial-gradient(circle at 80% 0%, #f0ebdf 0, transparent 50%), linear-gradient(135deg, #fdfaf5, #f3f5ee 60%, #e9efdc)"
-hero.ctaPrimary,查看喜帖,"View Invitation"
-hero.ctaSecondary,填寫問卷,"RSVP Form"
+hero.names,書恒 & 又瑄,Ryan & Lillian
+hero.description,一段旅程，因相遇而開始；一個約定，因相伴而成為永恆。,"A journey begins with a simple encounter, a promise grows as we walk side by side into forever."
+hero.datetime,2026.06.14 · 12:00 · 大直典華 · 臺北市中山區植福路8號,"Jun 14, 2026 · 12:00 PM · Da Zhi Denwell · No. 8, Zhifu Road, Zhongshan District, Taipei City, Taiwan"
+hero.badge1,相遇相知,Warm ceremony
+hero.badge2,相伴同行,Soft forest styling
+hero.badge3,共赴未來,"Welcome, Our Guests"
+hero.ctaPrimary,查看喜帖,View Invitation
+hero.ctaSecondary,填寫問卷,RSVP Form
+couple.section.label,我們的故事,Our Story
+couple.section.heading,一生兩人 三餐四季,"One life, two people, three meals a day, four seasons"
+couple.section.description,我們喜歡在旅途中發現新的風景，也在日常裡收藏平凡卻珍貴的片刻。那些一起走過的日子，就像一張張手繪的明信片，記錄著我們的笑聲、陪伴與小小的冒險。希望當你來到這裡，也能感受到這份清新又溫暖的氛圍，和我們一起分享屬於這一天的喜悅。,"We love to slow down and truly see the days we share,
+turning each moment into something like a hand-drawn postcard.
+We hope you feel the same gentle, fresh warmth here."
+groom.title,新郎｜書恒 / Ryan,Groom · Ryan
+groom.description,"興趣:睡覺、健身、吃貨
+喜歡的食物:無肉、無酒不歡
+討厭的東西:新娘愛囉嗦
+怎麼稱呼新娘:寶貝
+喜歡在家裡邊寫code邊看電視、進健身房運動，陪著又瑄爬爬小山，假日一起準備三餐","He enjoys coding at home with the TV softly playing,
+staying active at the gym,
+hiking gentle trails with Lillian,
+and spending weekends cooking simple meals together —
+finding comfort in a well-balanced, everyday life."
+groom.detail1,,
+groom.detail2,,
+bride.title,新娘｜又瑄 / 又又,Bride · Lillian
+bride.description,"興趣:戶外運動、吃貨
+喜歡的食物:芋頭、地瓜球
+討厭的東西:新郎的一塊腹肌
+怎麼稱呼新郎:豬豬
+熱愛大自然與旅行，也喜歡到健身房運動。更享受的是，為兩個人安排一場說走就走的小旅行。","Loves plants, travel, and decorating cozy corners with family. She says the wedding is for collecting their first promises."
+bride.detail1,,
+bride.detail2,,
+story.title,我們的故事,Our Story
+story.content,"在一起的第一年，
+我們只有週末兩天可以見面。
+
+那時的又瑄開始愛上爬山，
+假日不是在山上，
+就是在通往山上的路上。
+
+與書恒相伴的日子，
+總帶著細雨與溫柔。
+
+兩年半的時光裡，
+又瑄總是拉著書恒四處旅行，
+讓原本喜歡待在家的他，
+從皮膚白皙，慢慢曬成了現在的健康膚色。
+
+他從未埋怨，
+總是靜靜地在那裡。
+
+讓回頭變得安心，
+也讓未來變得清晰。
+
+於是，我們決定——
+把彼此寫進接下來的每一個季節。","In our first year together, Lillian began to fall in love with hiking,and the days shared with Ryan were often wrapped in gentle rain and quiet tenderness. Over the past two and a half years,Ryan has always been there, turning every glance back into reassurance, and every step forward into clarity. And so, we chose to write each other into every season yet to come."
+location.section.heading,餐廳地點,Venue
+location.section.title,大直典華,Da Zhi Denwell
+location.section.description,我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。,We chose a convenient venue wrapped in nature—feel free to stroll the neighborhood beforehand.
+venue.name,大地宴會廳,Terra Ceremony
+venue.address,臺北市中山區植福路8號,"No. 8, Zhifu Road, Zhongshan District, Taipei City, Taiwan"
+map.url,https://maps.app.goo.gl/BpgLTnNQzAr4tXm17,https://maps.app.goo.gl/BpgLTnNQzAr4tXm17
+location.button.map,開啟地圖,Open map
+location.button.rsvp,填寫出席,RSVP here
+transport.title,交通方式,How to get there
+transport.item1,捷運｜搭乘文湖線至「劍南路站2號出口」步行約 5 分鐘。,"Metro · Wenhu Line to Jiannan Road Station 2 Exit, 5 min walk."
+transport.item2,公車｜「捷運劍南路站」(步行3分鐘) 28、33、72、208、222、287、247、256、267、268、286、620、646、902、55、683、681、957、955、1801、1573、紅2、紅3、棕20、藍7、藍20(區)、藍26、綠16、內湖幹線,"Bus· Jiannan Road Station, 3 min walk 28、33、72、208、222、287、247、256、267、268、286、620、646、902、55、683、681、957、955、1801、1573、紅2、紅3、棕20、藍7、藍20(區)、藍26、綠16、內湖幹線"
+transport.item3,開車｜場地下方設有停車場可直達宴會廳。,Driving · Underground parking leads straight to the hall.
+transport.note,若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。,Need a shuttle or assistance? Leave a note in the RSVP and we'll have a helper contact you.
+survey.section.heading,出席問卷,RSVP Form
+survey.section.subtitle,你的喜好,We want to take good care of you
+survey.section.description,此表單之後會串接 Google Sheets，現在先用簡易版本收集需求。,We'll later connect this form to Google Sheets; for now it gathers your needs simply.
+survey.label.name,你的名字,Your name
+survey.placeholder.name,請輸入姓名,Please enter your name
+survey.label.guests,出席人數,Number of guests
+survey.label.diet,飲食偏好,Dietary preference
+survey.label.message,想對我們說的話,Message for us
+survey.placeholder.message,寫下你的祝福或提醒,Write your wishes or reminders
+survey.option.guests.placeholder,請選擇,Select
+survey.option.guests.1,1 人,1 guest
+survey.option.guests.2,2 人,2 guests
+survey.option.guests.3,3 人,3 guests
+survey.option.guests.4plus,4 人以上,4+ guests
+survey.option.diet.placeholder,請選擇,Select
+survey.option.diet.standard,一般餐,Standard meal
+survey.option.diet.vegetarian,蛋奶素,Lacto-ovo vegetarian
+survey.option.diet.vegan,全素,Vegan
+survey.option.diet.noSeafood,不吃海鮮,No seafood
+survey.button,送出回覆,Send RSVP
+survey.note,表單送出後會跳出感謝訊息正式串接 Google Sheets 時會再通知。,You'll see a thank-you message after sending; we'll update you when Google Sheets integration is live.
+survey.message.sending,正在傳送請稍候。,Sending your reply…
+survey.message.success,收到你的回覆了謝謝你！,We received your RSVP—thank you!
+survey.message.error,送出時發生問題請稍後再試。,Something went wrong—please try again soon.
+survey.message.offline,目前無法連線請檢查網路後重試。,We can't reach the RSVP server right now. Check your connection and try again.
+invitation.section.title,喜帖,Invitation
+invitation.section.heading,願這份喜悅與你分享,May this ceremony be shared with you
+invitation.section.description,把我們的祝福寫進一封喜帖，誠摯邀請你一起見證這一天。,A gentle card to hand our blessings to you.
+hosts.groom,林平 王豔琳,
+hosts.bride,郭煬信 簡麗雪,
+invitation.letter.salutation,Dear You,Dear You
+invitation.letter.body,誠摯邀請你，與我們一起見證，一段關於兩個人、三餐與四季的開始。在這一天，我們將許下攜手一生的承諾，把平凡的日常，慢慢過成彼此的未來。期待與你相聚，一起留下最溫暖的回憶。,"With grateful hearts, we invite you to witness a promise gently growing in the forest. On a sunlit afternoon surrounded by greenery, we will exchange vows, light a candle,and share this warm moment together. We look forward to creating the sweetest memories with you."
+invitation.date.label,日期,Date
+invitation.date.value,2026 / 06 / 14（日）,"Jun 14, 2026 (Sun)"
+invitation.time.label,時間,Time
+invitation.time.value,11:30 入席 ・ 12:00 開席,3:30 PM Ceremony · 6:00 PM Dinner
+invitation.location.label,地點,Venue
+invitation.location.value,大直典華3F 大地廳,Da Zhi Denwell 3F Terra Ceremony
+invitation.button,回到頂端,Back to top
+invitation.card.message,願你今天也被幸福包圍,May today wrap you in gentleness
+invitation.card.note,,"We hid little phrases in every place card and light, waiting for you to find them. Can't wait to toast with you under the trees."
+footer.text,可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福,Single-page invite ready for GitHub Pages · Thank you for your love
+lang.zhLabel,中文,中文
+lang.enLabel,English,English
 countdown.section.heading,倒數這一天...,Counting down the days...
 countdown.label.days,天,Days
 countdown.label.hours,小時,Hours
 countdown.label.minutes,分鐘,Minutes
-countdown.datetime,2025-10-18T15:30:00+08:00,2025-10-18T15:30:00+08:00
-couple.section.label,新人介紹,"Couple"
-couple.section.heading,把生活寫成一首溫柔的歌,"Turning daily life into a gentle song"
-couple.section.description,"我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。","We like to walk slowly, sketching each day like a postcard. We hope you feel the same soft, fresh warmth here."
-groom.title,新郎｜昊然,"Groom · Haoran"
-groom.description,"喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。","Enjoys pour-over coffee, sketching doodles, and editing photos with Yu-Ching while honoring little rituals."
-bride.title,新娘｜予晴,"Bride · Yu-Ching"
-bride.description,"熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。","Loves plants, travel, and decorating cozy corners with family. She says the wedding is for collecting their first promises."
-story.title,我們的故事,"Our Story"
-story.description,"第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。","After a rain-washed walk we decided to write one another into the future. For the wedding we prepared greenery, handwritten cards, and a corner to keep your blessings."
-location.section.heading,餐廳地點,"Venue"
-location.section.title,森光花園，等你來散步,"Forestlight Garden · Come wander with us"
-location.section.description,"我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。","We chose a convenient venue wrapped in nature—feel free to stroll the neighborhood beforehand."
-venue.name,森光花園宴會廳,"Forestlight Conservatory"
-venue.address,台北市信義區林蔭路 88 號,"88 Linyin Rd, Xinyi District, Taipei"
-map.url,https://maps.google.com,"https://maps.google.com"
-location.button.map,開啟地圖,"Open map"
-location.button.rsvp,填寫出席,"RSVP here"
-transport.title,交通方式,"How to get there"
-transport.item1,捷運｜搭乘信義線至「松山站」，步行約 6 分鐘。,"Metro · Xinyi Line to Songshan Station, 6 min walk."
-transport.item2,公車｜88、208、藍 10 於「林蔭路口」下車。,"Bus · 88/208/Blue 10 to Linyin Rd stop."
-transport.item3,開車｜場地下方設有停車場，可直達宴會廳。,"Driving · Underground parking leads straight to the hall."
-transport.note,"若你需要接駁或協助，請在問卷中留言，我們會安排小幫手與你聯繫。","Need a shuttle or assistance? Leave a note in the RSVP and we'll have a helper contact you."
-survey.section.heading,簡單問卷,"RSVP Form"
-survey.section.subtitle,你的喜好，我們想好好照顧,"We want to take good care of you"
-survey.label.name,你的名字,"Your name"
-survey.label.guests,出席人數,"Number of guests"
-survey.label.diet,飲食偏好,"Dietary preference"
-survey.label.message,想對我們說的話,"Message for us"
-survey.option.guests.1,1 人,"1 guest"
-survey.option.guests.2,2 人,"2 guests"
-survey.option.guests.3,3 人,"3 guests"
-survey.option.guests.4plus,4 人以上,"4+ guests"
-survey.option.diet.standard,一般餐,"Standard meal"
-survey.option.diet.vegetarian,蛋奶素,"Lacto-ovo vegetarian"
-survey.option.diet.vegan,全素,"Vegan"
-survey.option.diet.noSeafood,不吃海鮮,"No seafood"
-survey.button,送出回覆,"Send RSVP"
-survey.message.sending,正在傳送，請稍候。,Sending your reply…
-survey.message.success,✅ 我們已收到你的回覆，謝謝你！,"✅ We've received your RSVP. Thank you!"
-survey.message.error,送出時發生問題，請稍後再試。,"Something went wrong—please try again soon."
-survey.message.offline,目前無法連線，請檢查網路後重試。,"We can't reach the RSVP server right now. Check your connection and try again."
-invitation.section.title,喜帖,"Invitation"
-invitation.section.heading,願這場儀式感，與你共享,"May this ceremony be shared with you"
-invitation.section.description,用一封溫柔的喜帖，把我們的祝福親手遞給你。,"A gentle card to hand our blessings to you."
-invitation.letter.salutation,Dear You,"Dear You"
-invitation.letter.body,"我們誠摯邀請你，見證這份森林裡的承諾。在滿是綠意的午後，我們會交換誓言、點亮蠟燭，也為每一位遠道而來的朋友準備小禮物。期待和你一起留下最溫暖的合照。","We warmly invite you to witness this forest promise. We'll trade vows, light candles, and prepare gifts for every friend who travels to us. Let's capture a heartfelt photo together."
-invitation.date.label,日期,"Date"
-invitation.date.value,2025 / 10 / 18（六）,"Oct 18, 2025 (Sat)"
-invitation.time.label,時間,"Time"
-invitation.time.value,15:30 證婚 ・ 18:00 宴客,"3:30 PM Ceremony · 6:00 PM Dinner"
-invitation.location.label,地點,"Venue"
-invitation.location.value,森光花園宴會廳,"Forestlight Conservatory"
-invitation.button,回到頂端,"Back to top"
-invitation.card.message,願你今天也被溫柔包圍,"May today wrap you in gentleness"
-invitation.card.note,"我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。","We hid little phrases in every place card and light, waiting for you to find them. Can't wait to toast with you under the trees."
-footer.text,可直接部署於 GitHub Pages 的單頁喜帖網站｜感謝你的祝福,"Single-page invite ready for GitHub Pages · Thank you for your love"
-lang.zhLabel,中文,"中文"
-lang.enLabel,English,"English"
+countdown.datetime,2026-06-14T12:00:00+08:00,2026-06-14T12:00:00+08:00
