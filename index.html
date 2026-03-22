@@ -77,6 +77,12 @@
     };
   </script>
   <style>
+    @font-face {
+      font-family: 'ChenYuluoyan';
+      src: url('https://cdn.jsdelivr.net/gh/Chenyu-otf/chenyuluoyan_thin@master/ChenYuluoyan-Thin.ttf') format('truetype');
+      font-display: swap;
+    }
+
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
@@ -982,12 +988,19 @@
 
           <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#invitation"
-              class="rounded-full bg-secondary px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-on-secondary transition hover:bg-secondary/90"
-              data-config="hero.ctaPrimary">查看喜帖</a>
+              class="rounded-full bg-secondary px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-on-secondary transition hover:bg-secondary/90 shadow-sm"
+              data-config="hero.ctaPrimary"></a>
             <a href="#survey"
               class="rounded-full border border-secondary/60 px-10 py-3 text-sm font-bold uppercase tracking-[0.4em] text-secondary transition hover:bg-secondary/10"
-              data-config="hero.ctaSecondary">填寫問卷</a>
+              data-config="hero.ctaSecondary"></a>
           </div>
+
+        </div>
+
+        <div
+          class="absolute bottom-8 md:bottom-12 w-full flex justify-center z-20 px-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]">
+          <p class="text-4xl md:text-5xl text-white tracking-widest leading-relaxed"
+            style="font-family: 'ChenYuluoyan', 'LXGW WenKai TC', cursive; font-weight: normal;">好久不見 婚禮見</p>
         </div>
       </header>
 
@@ -1033,58 +1046,53 @@
 
       <!-- OUR STORY (COUPLE) -->
       <section class="max-w-6xl mx-auto px-6 mb-24 md:mb-32" id="couple">
-        <div class="text-center mb-12 md:mb-20">
-          <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-4" data-config="couple.section.label">新人介紹
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-4" data-config="couple.section.label">
           </h2>
-          <h3 class="font-headline text-2xl text-primary md:text-3xl tracking-widest"
-            data-config="couple.section.heading">一生兩人 三餐四季</h3>
+          <h3 class="font-headline text-xl md:text-2xl text-primary tracking-widest"
+            data-config="couple.section.heading"></h3>
         </div>
-        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-          <!-- Polaroid 1 -->
-          <div class="relative group rotate-[-2deg] hover:rotate-0 transition-all duration-500">
+        <div class="max-w-4xl mx-auto flex flex-col gap-10 md:gap-14">
+          <!-- Full Width Large Photo -->
+          <div class="relative group transition-all duration-500 w-full max-w-2xl mx-auto">
             <div
-              class="bg-surface-container-lowest p-3 pb-12 md:p-5 md:pb-16 shadow-[0_20px_40px_rgba(124,87,48,0.08)]">
-              <img alt="The day we met" class="w-full aspect-square object-cover"
+              class="bg-surface-container-lowest p-3 pb-8 md:p-5 md:pb-12 shadow-[0_20px_40px_rgba(124,87,48,0.08)] transform -rotate-1 hover:rotate-0 transition-transform">
+              <img alt="The day we met" class="w-full aspect-[4/3] md:aspect-video object-cover"
                 src="img/wedding_photos/heros_background_mobile.jpeg" />
-              <p class="font-headline text-center mt-6 text-secondary/80 text-lg" data-config="couple.section.heading">
-                把生活寫成一首溫柔的歌</p>
             </div>
           </div>
-          <div class="space-y-6 relative z-10">
-            <p class="font-body text-secondary/70 leading-relaxed text-lg" data-config="couple.section.description">
-              我們喜歡慢慢走、慢慢看，紀錄每一個像手繪明信片一樣的日子。期待你們在這裡感受到清新又溫暖的氛圍。
-            </p>
 
-            <div class="pt-6 border-t border-outline-variant/30">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="w-10 h-10 rounded-full flex items-center justify-center"><span
-                    class="material-symbols-outlined text-secondary text-3xl">man</span></span>
-                <h3 class="font-headline text-xl text-secondary font-bold" data-config="groom.title"></h3>
+          <!-- Story Text -->
+          <div class="text-center px-4 max-w-2xl mx-auto">
+            <p class="font-body text-secondary/80 leading-loose text-lg whitespace-pre-line"
+              data-config="story.content"></p>
+          </div>
+
+          <!-- Groom & Bride side by side -->
+          <div class="grid md:grid-cols-2 gap-8 w-full mt-4">
+            <!-- Groom -->
+            <div
+              class="bg-surface-container-highest/20 p-8 rounded-2xl border border-outline-variant/30 text-center shadow-lg">
+              <div class="flex flex-col items-center gap-3 mb-4">
+                <span
+                  class="w-12 h-12 rounded-full flex items-center justify-center bg-secondary/10 text-primary text-3xl"><span
+                    class="material-symbols-outlined">man</span></span>
+                <h3 class="font-headline text-2xl text-secondary font-bold" data-config="groom.title"></h3>
               </div>
-              <p class="font-body text-secondary/70 leading-relaxed whitespace-pre-line pl-14"
-                data-config="groom.description">
-              </p>
+              <p class="font-body text-secondary/70 leading-relaxed whitespace-pre-line text-sm"
+                data-config="groom.description"></p>
             </div>
-
-            <div class="pt-6 border-t border-outline-variant/30">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="w-10 h-10 rounded-full flex items-center justify-center"><span
-                    class="material-symbols-outlined text-secondary text-3xl">woman</span></span>
-                <h3 class="font-headline text-xl text-secondary font-bold" data-config="bride.title"></h3>
+            <!-- Bride -->
+            <div
+              class="bg-surface-container-highest/20 p-8 rounded-2xl border border-outline-variant/30 text-center shadow-lg">
+              <div class="flex flex-col items-center gap-3 mb-4">
+                <span
+                  class="w-12 h-12 rounded-full flex items-center justify-center bg-secondary/10 text-primary text-3xl"><span
+                    class="material-symbols-outlined">woman</span></span>
+                <h3 class="font-headline text-2xl text-secondary font-bold" data-config="bride.title"></h3>
               </div>
-              <p class="font-body text-secondary/70 leading-relaxed whitespace-pre-line pl-14"
-                data-config="bride.description">
-              </p>
-            </div>
-
-            <div class="pt-6 border-t border-outline-variant/30">
-              <div class="flex items-center gap-4 mb-4">
-                <span class="material-symbols-outlined text-secondary">favorite</span>
-                <h3 class="font-headline text-xl text-secondary font-bold" data-config="story.title">我們的故事</h3>
-              </div>
-              <p class="font-body text-secondary/70 leading-relaxed whitespace-pre-line pl-10"
-                data-config="story.content">
-              </p>
+              <p class="font-body text-secondary/70 leading-relaxed whitespace-pre-line text-sm"
+                data-config="bride.description"></p>
             </div>
           </div>
         </div>
@@ -1190,27 +1198,33 @@
                 <select name="diet" required
                   class="w-full appearance-none bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
                   <option value="" data-config="survey.option.diet.placeholder"></option>
-                  <option value="normal" data-config="survey.option.diet.standard">一般餐</option>
-                  <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素</option>
-                  <option value="vegan" data-config="survey.option.diet.vegan">全素</option>
-                  <option value="no-seafood" data-config="survey.option.diet.noSeafood">不吃海鮮</option>
+                  <option value="standard" data-config="survey.option.diet.standard">一般餐 (Standard)</option>
+                  <option value="vegetarian" data-config="survey.option.diet.vegetarian">蛋奶素 (Vegetarian)</option>
+                  <option value="vegan" data-config="survey.option.diet.vegan">全素 (Vegan)</option>
                 </select>
               </label>
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
               <label class="block">
-                <span class="block font-headline text-secondary mb-2">是否有小孩</span>
-                <select name="hasChildren"
+                <span class="block font-headline text-secondary mb-2">是否有帶小孩</span>
+                <select name="has_children" id="has_children" required
                   class="w-full appearance-none bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
-                  <option value="no" selected>無</option>
+                  <option value="none">無</option>
                   <option value="yes">有</option>
                 </select>
               </label>
+
               <label class="block">
-                <span class="block font-headline text-secondary mb-2">小孩椅幾張</span>
-                <input type="number" name="childSeats" min="0" value="0"
-                  class="w-full bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors" />
+                <span class="block font-headline text-secondary/60 mb-2 transition-colors duration-300"
+                  id="baby_chair_label">需要幾張嬰兒椅</span>
+                <select name="baby_chairs" id="baby_chairs" disabled
+                  class="w-full appearance-none bg-surface-container-highest cursor-not-allowed border-outline-variant/30 rounded-lg px-4 py-3 text-secondary/50 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
+                  <option value="0">0 張</option>
+                  <option value="1">1 張</option>
+                  <option value="2">2 張</option>
+                  <option value="3">3 張</option>
+                </select>
               </label>
             </div>
 
@@ -1278,11 +1292,6 @@
             <a href="#top"
               class="inline-block rounded-full border border-primary/40 text-primary px-8 py-3 text-sm font-bold uppercase tracking-widest transition hover:bg-primary/5"
               data-config="invitation.button">回到頂端</a>
-          </div>
-
-          <div class="mt-24 text-center">
-            <p class="text-4xl md:text-5xl text-primary/80 tracking-widest"
-              style="font-family: 'QingSongHand', 'Zhi Mang Xing', cursive;">好久不見 婚禮見</p>
           </div>
         </div>
       </section>
@@ -1655,6 +1664,30 @@
       function setupRSVPForm() {
         const form = document.querySelector("[data-rsvp-form]");
         if (!form) return;
+
+        // Setup baby chair logic
+        const hasChildrenSelect = document.getElementById("has_children");
+        const babyChairsSelect = document.getElementById("baby_chairs");
+        const babyChairLabel = document.getElementById("baby_chair_label");
+        if (hasChildrenSelect && babyChairsSelect && babyChairLabel) {
+          hasChildrenSelect.addEventListener("change", function () {
+            if (this.value === "yes") {
+              babyChairsSelect.disabled = false;
+              babyChairsSelect.classList.remove("bg-surface-container-highest", "cursor-not-allowed", "text-secondary/50");
+              babyChairsSelect.classList.add("bg-surface-container-lowest", "text-secondary");
+              babyChairLabel.classList.remove("text-secondary/60");
+              babyChairLabel.classList.add("text-secondary");
+            } else {
+              babyChairsSelect.disabled = true;
+              babyChairsSelect.value = "0";
+              babyChairsSelect.classList.add("bg-surface-container-highest", "cursor-not-allowed", "text-secondary/50");
+              babyChairsSelect.classList.remove("bg-surface-container-lowest", "text-secondary");
+              babyChairLabel.classList.remove("text-secondary");
+              babyChairLabel.classList.add("text-secondary/60");
+            }
+          });
+        }
+
         const endpoint = getRSVPEndpoint();
         const frame = document.querySelector("[data-rsvp-frame]");
         let isSubmitting = false;

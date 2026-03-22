@@ -1,6 +1,6 @@
 key,zh,en
 nav.brand,恒又之喜,Forest Promise
-nav.link.couple,新人介紹,Couple
+nav.link.couple,我們的故事,Our Story
 nav.link.location,地點交通,Location
 nav.link.survey,出席問卷,RSVP
 nav.link.invitation,喜帖,Invitation
@@ -13,15 +13,13 @@ hero.badge2,相伴同行,Soft forest styling
 hero.badge3,共赴未來,"Welcome, Our Guests"
 hero.ctaPrimary,查看喜帖,View Invitation
 hero.ctaSecondary,填寫問卷,RSVP Form
-couple.section.label,新人介紹,Couple
+couple.section.label,我們的故事,Our Story
 couple.section.heading,一生兩人 三餐四季,"One life, two people, three meals a day, four seasons"
 couple.section.description,我們喜歡在旅途中發現新的風景，也在日常裡收藏平凡卻珍貴的片刻。那些一起走過的日子，就像一張張手繪的明信片，記錄著我們的笑聲、陪伴與小小的冒險。希望當你來到這裡，也能感受到這份清新又溫暖的氛圍，和我們一起分享屬於這一天的喜悅。,"We love to slow down and truly see the days we share,
 turning each moment into something like a hand-drawn postcard.
 We hope you feel the same gentle, fresh warmth here."
 groom.title,新郎｜書恒 / Ryan,Groom · Ryan
-groom.description,"生日:6/28
-星座:巨蟹座
-興趣:睡覺、健身、吃貨
+groom.description,"興趣:睡覺、健身、吃貨
 喜歡的食物:無肉、無酒不歡
 討厭的東西:新娘愛囉嗦
 怎麼稱呼新娘:寶貝
@@ -33,9 +31,7 @@ finding comfort in a well-balanced, everyday life."
 groom.detail1,,
 groom.detail2,,
 bride.title,新娘｜又瑄 / 又又,Bride · Lillian
-bride.description,"生日:7/13
-星座:巨蟹座
-興趣:戶外運動、吃貨
+bride.description,"興趣:戶外運動、吃貨
 喜歡的食物:芋頭、地瓜球
 討厭的東西:新郎的一塊腹肌
 怎麼稱呼新郎:豬豬
