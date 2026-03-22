@@ -920,7 +920,7 @@
             href="#location" data-config="nav.link.location">地點交通</a>
           <a class="font-headline text-lg text-secondary/80 hover:text-secondary hover:font-bold transition-all"
             href="#survey" data-config="nav.link.survey">飲食問卷</a>
-          <a class="font-headline font-medium text-lg text-primary font-bold border-b-2 border-primary pb-1"
+          <a class="font-headline text-lg text-secondary/80 hover:text-secondary hover:font-bold transition-all"
             href="#invitation" data-config="nav.link.invitation">喜帖</a>
         </div>
         <div class="flex items-center gap-4">
@@ -965,12 +965,10 @@
           <p class="text-xs uppercase tracking-[0.5em] text-secondary/80 mb-4" data-config="hero.tagline">Warm &amp;
             Fresh Wedding</p>
           <h1 class="font-headline font-bold text-5xl md:text-7xl text-secondary mb-4 tracking-tight"
-            data-config="hero.names">昊然 &amp; 予晴</h1>
-          <p class="font-headline text-lg md:text-2xl text-primary mb-6" data-config="hero.datetime">2025.10.18 · 15:30
-            · 森光花園宴會廳</p>
-          <p class="font-body text-base md:text-lg text-secondary/80 max-w-2xl mx-auto leading-relaxed"
+            data-config="hero.names"></h1>
+          <p class="font-headline text-lg md:text-2xl text-primary mb-6" data-config="hero.datetime"></p>
+          <p class="font-body text-base md:text-lg text-secondary/80 max-w-2xl mx-auto leading-relaxed whitespace-pre-line"
             data-config="hero.description">
-            我們決定在一個有光、有風、有笑聲的午後，把心意好好放進彼此的名字裡。邀請你一起走進這場溫馨清新的森林儀式。
           </p>
 
           <div
@@ -1016,18 +1014,18 @@
         </div>
         <!-- Invitation Text placeholder with logic hook (although most text comes from config) -->
         <div class="space-y-6 text-secondary font-headline text-lg leading-relaxed">
-          <p>謹訂於 2025 年 10 月 18 日</p>
-          <p>下午 15:30</p>
-          <p>於 森光花園宴會廳</p>
+          <p>謹訂於 <span data-config="invitation.date.value">2026 年 06 月 14 日</span></p>
+          <p><span data-config="invitation.time.value">中午 12:00</span></p>
+          <p>於 <span data-config="invitation.location.value">大直典華</span></p>
           <p>舉行結婚喜宴 敬邀蒞臨</p>
           <div class="pt-10 flex flex-col md:flex-row justify-center gap-6 md:gap-12 opacity-80">
             <div>
               <span class="block text-xs mb-1 opacity-60">GROOM'S PARENTS</span>
-              <p>男方家長</p>
+              <p>男方家長: <span data-config="hosts.groom"></span></p>
             </div>
             <div>
               <span class="block text-xs mb-1 opacity-60">BRIDE'S PARENTS</span>
-              <p>女方家長</p>
+              <p>女方家長: <span data-config="hosts.bride"></span></p>
             </div>
           </div>
         </div>
@@ -1035,8 +1033,12 @@
 
       <!-- OUR STORY (COUPLE) -->
       <section class="max-w-6xl mx-auto px-6 mb-24 md:mb-32" id="couple">
-        <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-12 md:mb-20 text-center"
-          data-config="couple.section.label">新人介紹</h2>
+        <div class="text-center mb-12 md:mb-20">
+          <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-4" data-config="couple.section.label">新人介紹
+          </h2>
+          <h3 class="font-headline text-2xl text-primary md:text-3xl tracking-widest"
+            data-config="couple.section.heading">一生兩人 三餐四季</h3>
+        </div>
         <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <!-- Polaroid 1 -->
           <div class="relative group rotate-[-2deg] hover:rotate-0 transition-all duration-500">
@@ -1055,39 +1057,34 @@
 
             <div class="pt-6 border-t border-outline-variant/30">
               <div class="flex items-center gap-4 mb-4">
-                <span
-                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline">H</span>
-                <h3 class="font-headline text-xl text-secondary font-bold" data-config="groom.title">新郎｜昊然</h3>
+                <span class="w-10 h-10 rounded-full flex items-center justify-center"><span
+                    class="material-symbols-outlined text-secondary text-3xl">man</span></span>
+                <h3 class="font-headline text-xl text-secondary font-bold" data-config="groom.title"></h3>
               </div>
-              <p class="font-body text-secondary/70 leading-relaxed pl-14" data-config="groom.description">
-                喜歡手沖咖啡、畫小插畫，陪著予晴後製相片、學習日常的小儀式。</p>
-              <ul class="mt-4 space-y-2 text-sm text-secondary/70 pl-14 hidden">
-                <li data-config="groom.detail1"></li>
-                <li data-config="groom.detail2"></li>
-              </ul>
+              <p class="font-body text-secondary/70 leading-relaxed whitespace-pre-line pl-14"
+                data-config="groom.description">
+              </p>
             </div>
 
             <div class="pt-6 border-t border-outline-variant/30">
               <div class="flex items-center gap-4 mb-4">
-                <span
-                  class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-headline">Y</span>
-                <h3 class="font-headline text-xl text-secondary font-bold" data-config="bride.title">新娘｜予晴</h3>
+                <span class="w-10 h-10 rounded-full flex items-center justify-center"><span
+                    class="material-symbols-outlined text-secondary text-3xl">woman</span></span>
+                <h3 class="font-headline text-xl text-secondary font-bold" data-config="bride.title"></h3>
               </div>
-              <p class="font-body text-secondary/70 leading-relaxed pl-14" data-config="bride.description">
-                熱愛植物、旅行，也喜歡和家人一起佈置小角落。她說婚禮是一場把初心好好收藏的過程。</p>
-              <ul class="mt-4 space-y-2 text-sm text-secondary/70 pl-14 hidden">
-                <li data-config="bride.detail1"></li>
-                <li data-config="bride.detail2"></li>
-              </ul>
+              <p class="font-body text-secondary/70 leading-relaxed whitespace-pre-line pl-14"
+                data-config="bride.description">
+              </p>
             </div>
 
             <div class="pt-6 border-t border-outline-variant/30">
               <div class="flex items-center gap-4 mb-4">
-                <span class="material-symbols-outlined text-primary">favorite</span>
+                <span class="material-symbols-outlined text-secondary">favorite</span>
                 <h3 class="font-headline text-xl text-secondary font-bold" data-config="story.title">我們的故事</h3>
               </div>
-              <p class="font-body text-secondary/70 leading-relaxed pl-10" data-config="story.description">
-                第一次雨後散步回家，就決定把彼此寫進未來。婚禮這天，我們準備了滿滿綠意、手寫卡片，以及專為你收藏祝福的角落。</p>
+              <p class="font-body text-secondary/70 leading-relaxed whitespace-pre-line pl-10"
+                data-config="story.content">
+              </p>
             </div>
           </div>
         </div>
@@ -1095,8 +1092,13 @@
 
       <!-- EVENT INFO (VENUE) -->
       <section id="location" class="max-w-5xl mx-auto px-6 mb-24 md:mb-32">
-        <h2 class="font-headline text-3xl md:text-5xl text-secondary mb-12 md:mb-16 text-center"
-          data-config="location.section.heading">餐廳地點</h2>
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="font-headline text-4xl md:text-6xl text-secondary mb-4" data-config="location.section.title">
+            大直典華</h2>
+          <p class="font-headline text-2xl text-primary tracking-widest uppercase"
+            data-config="location.section.heading">
+            餐廳地點</p>
+        </div>
 
         <div class="bg-surface-container-highest rounded-2xl p-8 md:p-12 shadow-sm border border-outline-variant/20">
           <div class="grid md:grid-cols-2 gap-12">
@@ -1104,12 +1106,11 @@
             <div class="space-y-8">
               <!-- Venue Details -->
               <div>
-                <p class="text-sm font-headline tracking-widest text-primary mb-2 uppercase"
-                  data-config="location.section.title">餐廳位置</p>
-                <p class="font-body text-secondary text-lg font-bold" data-config="venue.name">森光花園宴會廳</p>
-                <p class="font-body text-secondary/70 mt-1" data-config="venue.address">台北市信義區林蔭路 88 號</p>
+                <p class="text-sm font-headline tracking-widest text-primary mb-2 uppercase">餐廳位置</p>
+                <p class="font-body text-secondary text-lg font-bold" data-config="venue.name"></p>
+                <p class="font-body text-secondary/70 mt-1" data-config="venue.address"></p>
                 <p class="font-body text-secondary/60 text-sm mt-3" data-config="location.section.description">
-                  我們選了交通方便、充滿自然氣息的地點，歡迎提前到附近散散步。</p>
+                </p>
               </div>
 
               <!-- Transport Details -->
@@ -1127,7 +1128,7 @@
 
               <!-- Action Buttons -->
               <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                <a class="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 px-6 py-2.5 text-sm font-bold uppercase tracking-widest text-primary transition hover:bg-primary/5"
+                <a class="inline-flex items-center justify-center gap-2 rounded-full border border-secondary/30 px-6 py-2.5 text-sm font-bold uppercase tracking-widest text-secondary transition hover:bg-secondary/5"
                   href="https://maps.google.com" data-config="map.url" data-config-attr="href" target="_blank"
                   rel="noreferrer">
                   <span class="material-symbols-outlined text-lg">map</span>
@@ -1273,9 +1274,16 @@
             我們在每張桌卡、每盞燈光裡藏了一句話，等著你來發現。期待在林間的微光裡與你乾杯。
           </p>
 
-          <a href="#top"
-            class="inline-block rounded-full border border-primary/40 text-primary px-8 py-3 text-sm font-bold uppercase tracking-widest transition hover:bg-primary/5"
-            data-config="invitation.button">回到頂端</a>
+          <div class="mt-12">
+            <a href="#top"
+              class="inline-block rounded-full border border-primary/40 text-primary px-8 py-3 text-sm font-bold uppercase tracking-widest transition hover:bg-primary/5"
+              data-config="invitation.button">回到頂端</a>
+          </div>
+
+          <div class="mt-24 text-center">
+            <p class="text-4xl md:text-5xl text-primary/80 tracking-widest"
+              style="font-family: 'QingSongHand', 'Zhi Mang Xing', cursive;">好久不見 婚禮見</p>
+          </div>
         </div>
       </section>
     </main>
@@ -1329,14 +1337,19 @@
         (typeof window !== "undefined" && window.RSVP_ENDPOINT) ||
         "";
 
-      function parseCSVLine(line) {
-        const cells = [];
+      function parseCSVFull(text) {
+        const rows = [];
+        let cells = [];
         let current = "";
         let inQuotes = false;
-        for (let i = 0; i < line.length; i++) {
-          const char = line[i];
+        const len = text.length;
+
+        for (let i = 0; i < len; i++) {
+          const char = text[i];
+          const nextChar = i < len - 1 ? text[i + 1] : "";
+
           if (char === '"') {
-            if (inQuotes && line[i + 1] === '"') {
+            if (inQuotes && nextChar === '"') {
               current += '"';
               i++;
             } else {
@@ -1345,21 +1358,32 @@
           } else if (char === "," && !inQuotes) {
             cells.push(current);
             current = "";
+          } else if ((char === "\n" || char === "\r") && !inQuotes) {
+            if (char === "\r" && nextChar === "\n") {
+              i++;
+            }
+            cells.push(current);
+            rows.push(cells);
+            cells = [];
+            current = "";
           } else {
             current += char;
           }
         }
-        cells.push(current);
-        return cells;
+        if (current || cells.length > 0) {
+          cells.push(current);
+          rows.push(cells);
+        }
+        return rows;
       }
 
       function parseConfig(text) {
-        const cleaned = text.replace(/^\uFEFF/, "");
-        const lines = cleaned.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-        if (!lines.length) {
+        const cleaned = text.replace(/^\uFEFF/, "").trim();
+        const rows = parseCSVFull(cleaned);
+        if (!rows.length) {
           return { languages: [], data: {} };
         }
-        const headerCells = parseCSVLine(lines.shift());
+        const headerCells = rows.shift();
         const langHeaders = headerCells.slice(1).map((cell) => cell.trim() || "value");
         if (!langHeaders.length) {
           langHeaders.push("value");
@@ -1368,8 +1392,7 @@
         langHeaders.forEach((lang) => {
           data[lang] = {};
         });
-        lines.forEach((line) => {
-          const cells = parseCSVLine(line);
+        rows.forEach((cells) => {
           const key = (cells[0] || "").trim();
           if (!key) return;
           langHeaders.forEach((lang, idx) => {
