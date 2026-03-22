@@ -1049,7 +1049,10 @@
             <span class="text-sm tracking-[0.22em] text-secondary/60">謹訂於</span>
             <span class="text-xl md:text-2xl tracking-[0.08em]" data-config="invitation.date.value">2026 年 06 月 14 日</span>
           </p>
-          <p class="text-lg md:text-xl tracking-[0.08em]"><span data-config="invitation.time.value">中午 12:00</span></p>
+          <div class="flex flex-col items-center gap-1">
+            <p class="text-lg md:text-xl tracking-[0.08em]"><span data-config="invitation.time.value">中午 12:00</span></p>
+            <p class="text-lg md:text-xl tracking-[0.08em]"><span data-config="invitation.time.value2"></span></p>
+          </div>
           <p class="flex flex-col items-center gap-1">
             <span class="text-sm tracking-[0.22em] text-secondary/60">於</span>
             <span class="text-xl md:text-2xl tracking-[0.08em]" data-config="invitation.location.value">大直典華</span>
@@ -1294,16 +1297,19 @@
             class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto border-t border-b border-outline-variant/20 py-8 mb-10 text-secondary">
             <div>
               <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.date.label">日期</p>
-              <p class="font-headline font-bold text-lg tracking-[0.08em]" data-config="invitation.date.value">2025 / 10 / 18</p>
+              <p class="font-headline font-bold text-lg tracking-[0.02em] leading-snug" data-config="invitation.date.value">2025 / 10 / 18</p>
             </div>
             <div class="md:border-l md:border-r border-outline-variant/20 px-4">
               <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.time.label">時間</p>
-              <p class="font-headline font-bold text-lg tracking-[0.08em]" data-config="invitation.time.value">15:30 證婚</p>
+              <div class="min-h-[3.8rem] flex flex-col items-center justify-center leading-[1.7]">
+                <p class="font-headline font-bold text-[1.02rem] md:text-lg tracking-[0.01em] text-center" data-config="invitation.time.value">15:30 證婚</p>
+                <p class="font-headline font-bold text-[1.02rem] md:text-lg tracking-[0.01em] text-center" data-config="invitation.time.value2"></p>
+              </div>
             </div>
             <div>
               <p class="text-xs uppercase tracking-widest text-primary mb-2" data-config="invitation.location.label">地點
               </p>
-              <p class="font-headline font-bold text-lg tracking-[0.08em]" data-config="invitation.location.value">森光花園</p>
+              <p class="font-headline font-bold text-lg tracking-[0.02em] leading-snug" data-config="invitation.location.value">森光花園</p>
             </div>
           </div>
 
