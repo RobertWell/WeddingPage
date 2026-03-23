@@ -1660,31 +1660,38 @@
         bodyEl.classList.toggle("is-loading", isLoading);
       }
 
-      async function loadConfig() {
-        try {
-          if (!CONFIG_SOURCE_URL) return;
-          const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
-          if (!res.ok) throw new Error("Failed to load config");
-          const raw = await res.text();
-          let parsed = parseConfig(raw);
-          if (!parsed.languages.length) return;
-          state.languages = parsed.languages;
-          state.data = parsed.data;
-          const storedLang = getStoredLang();
-          const preferred = [storedLang, DEFAULT_LANG].find(
-            (code) => code && state.languages.includes(code)
-          );
-          state.currentLang = preferred || state.languages[0];
-          applyLanguage(state.currentLang);
-          applyVisualConfig(state.currentLang);
-          refreshCountdown(state.currentLang);
-          refreshLangButtons();
-          updateDocumentLang(state.currentLang);
-          storeLang(state.currentLang);
-          updateLocaleField();
-        } catch (err) {
-          console.error("Unable to load config", err);
+      async function loadConfig(retries = 3) {
+        for (let i = 0; i < retries; i++) {
+          try {
+            if (!CONFIG_SOURCE_URL) return true;
+            const res = await fetch(CONFIG_SOURCE_URL, { cache: "no-store" });
+            if (!res.ok) throw new Error("Failed to load config");
+            const raw = await res.text();
+            let parsed = parseConfig(raw);
+            if (!parsed.languages.length) return false;
+            state.languages = parsed.languages;
+            state.data = parsed.data;
+            const storedLang = getStoredLang();
+            const preferred = [storedLang, DEFAULT_LANG].find(
+              (code) => code && state.languages.includes(code)
+            );
+            state.currentLang = preferred || state.languages[0];
+            applyLanguage(state.currentLang);
+            applyVisualConfig(state.currentLang);
+            refreshCountdown(state.currentLang);
+            refreshLangButtons();
+            updateDocumentLang(state.currentLang);
+            storeLang(state.currentLang);
+            updateLocaleField();
+            return true;
+          } catch (err) {
+            console.error(`Config load attempt ${i + 1} failed:`, err);
+            if (i === retries - 1) return false;
+            // Wait 1 second before retry
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
         }
+        return false;
       }
 
       function updateLocaleField() {
@@ -2085,10 +2092,26 @@
         initializeTheme();
         setupDividerReveal();
         setupRSVPForm();
-        await loadConfig();
-        await preloadHeroImage();
-        setLoading(false);
-        preloadRemainingImages();
+        
+        const configLoaded = await loadConfig();
+        if (configLoaded) {
+          await preloadHeroImage();
+          setLoading(false);
+          preloadRemainingImages();
+        } else {
+          // Replace loading animation with an error message instead of showing broken layout
+          const loadingScreen = document.querySelector('.loading-screen');
+          if (loadingScreen) {
+            loadingScreen.innerHTML = `
+              <div class="text-center text-white/90">
+                <span class="material-symbols-outlined text-4xl mb-4 opacity-80">wifi_off</span>
+                <p class="font-headline text-lg tracking-widest leading-relaxed">網路連線不穩<br>或是設定載入失敗</p>
+                <button onclick="window.location.reload()" class="mt-8 font-headline text-sm tracking-widest px-6 py-2.5 rounded-full border border-white/40 hover:bg-white/10 transition-colors">點擊重新載入</button>
+              </div>
+            `;
+            loadingScreen.style.pointerEvents = 'auto'; // allow clicking the reload button
+          }
+        }
       }
 
       if (document.readyState === "loading") {
