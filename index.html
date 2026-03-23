@@ -1220,15 +1220,17 @@
             <div class="grid md:grid-cols-2 gap-6">
               <label class="block">
                 <span class="block font-headline text-secondary mb-2" data-config="survey.label.guests">出席人數</span>
-                <!-- Custom SVG arrow for Safari -->
-                <select name="guests" required
-                  class="w-full appearance-none bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
-                  <option value="" data-config="survey.option.guests.placeholder"></option>
-                  <option value="1" data-config="survey.option.guests.1">1 人</option>
-                  <option value="2" data-config="survey.option.guests.2">2 人</option>
-                  <option value="3" data-config="survey.option.guests.3">3 人</option>
-                  <option value="4" data-config="survey.option.guests.4plus">4 人以上</option>
-                </select>
+                <div class="flex items-center rounded-lg border border-outline-variant/30 bg-surface-container-lowest overflow-hidden" data-integer-counter>
+                  <button type="button"
+                    class="flex h-12 w-12 items-center justify-center text-2xl text-secondary transition-colors hover:bg-surface-container-high disabled:cursor-not-allowed disabled:opacity-40"
+                    data-counter-action="decrement" aria-label="減少出席人數">−</button>
+                  <input type="number" name="guests" min="0" step="1" value="1" required inputmode="numeric"
+                    class="h-12 w-full border-0 bg-transparent px-4 text-center text-lg text-secondary focus:ring-0"
+                    data-counter-input />
+                  <button type="button"
+                    class="flex h-12 w-12 items-center justify-center text-2xl text-secondary transition-colors hover:bg-surface-container-high"
+                    data-counter-action="increment" aria-label="增加出席人數">+</button>
+                </div>
               </label>
 
               <label class="block">
@@ -1709,6 +1711,42 @@
         const form = document.querySelector("[data-rsvp-form]");
         if (!form) return;
 
+        const syncIntegerCounterState = (counter) => {
+          const input = counter.querySelector("[data-counter-input]");
+          const decrementButton = counter.querySelector('[data-counter-action="decrement"]');
+          if (!input || !decrementButton) return;
+
+          const min = Number.parseInt(input.min || "0", 10);
+          const value = Number.parseInt(input.value || `${min}`, 10);
+          decrementButton.disabled = value <= min;
+        };
+
+        form.querySelectorAll("[data-integer-counter]").forEach((counter) => {
+          const input = counter.querySelector("[data-counter-input]");
+          if (!input) return;
+
+          const min = Number.parseInt(input.min || "0", 10);
+          const sanitizeValue = (rawValue) => {
+            const parsed = Number.parseInt(rawValue, 10);
+            input.value = String(Number.isNaN(parsed) ? min : Math.max(min, parsed));
+            syncIntegerCounterState(counter);
+          };
+
+          counter.querySelectorAll("[data-counter-action]").forEach((button) => {
+            button.addEventListener("click", () => {
+              const currentValue = Number.parseInt(input.value || `${min}`, 10);
+              const delta = button.dataset.counterAction === "increment" ? 1 : -1;
+              sanitizeValue(String(currentValue + delta));
+            });
+          });
+
+          input.addEventListener("input", () => {
+            input.value = input.value.replace(/\D/g, "");
+          });
+          input.addEventListener("change", () => sanitizeValue(input.value));
+          sanitizeValue(input.value);
+        });
+
         // Setup baby chair logic
         const hasChildrenSelect = document.getElementById("has_children");
         const babyChairsSelect = document.getElementById("baby_chairs");
@@ -1746,6 +1784,7 @@
             isSubmitting = false;
             showRSVPStatus("success");
             form.reset();
+            form.querySelectorAll("[data-integer-counter]").forEach(syncIntegerCounterState);
             updateLocaleField();
           });
         }
@@ -1777,6 +1816,7 @@
             if (!response.ok) throw new Error("Request failed");
             showRSVPStatus("success");
             form.reset();
+            form.querySelectorAll("[data-integer-counter]").forEach(syncIntegerCounterState);
             updateLocaleField();
           } catch (error) {
             console.error("RSVP submission error:", error);
