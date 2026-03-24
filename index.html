@@ -1248,7 +1248,7 @@
             <div class="grid md:grid-cols-2 gap-6">
               <label class="block">
                 <span class="block font-headline text-secondary mb-2">是否有帶小孩</span>
-                <select name="has_children" id="has_children" required
+                <select name="hasChildren" id="has_children" required
                   class="w-full appearance-none bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-3 text-secondary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
                   <option value="none">無</option>
                   <option value="yes">有</option>
@@ -1258,7 +1258,7 @@
               <label class="block">
                 <span class="block font-headline text-secondary/60 mb-2 transition-colors duration-300"
                   id="baby_chair_label">需要幾張嬰兒椅</span>
-                <select name="baby_chairs" id="baby_chairs" disabled
+                <select name="childSeats" id="baby_chairs" disabled
                   class="w-full appearance-none bg-surface-container-highest cursor-not-allowed border-outline-variant/30 rounded-lg px-4 py-3 text-secondary/50 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23444A3C%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.75rem_auto] bg-no-repeat bg-[position:right_1rem_center] pr-10">
                   <option value="0">0 張</option>
                   <option value="1">1 張</option>
@@ -1758,23 +1758,27 @@
         const hasChildrenSelect = document.getElementById("has_children");
         const babyChairsSelect = document.getElementById("baby_chairs");
         const babyChairLabel = document.getElementById("baby_chair_label");
+        const syncBabyChairState = () => {
+          if (hasChildrenSelect.value === "yes") {
+            babyChairsSelect.disabled = false;
+            babyChairsSelect.classList.remove("bg-surface-container-highest", "cursor-not-allowed", "text-secondary/50");
+            babyChairsSelect.classList.add("bg-surface-container-lowest", "text-secondary");
+            babyChairLabel.classList.remove("text-secondary/60");
+            babyChairLabel.classList.add("text-secondary");
+            return;
+          }
+
+          babyChairsSelect.disabled = true;
+          babyChairsSelect.value = "0";
+          babyChairsSelect.classList.add("bg-surface-container-highest", "cursor-not-allowed", "text-secondary/50");
+          babyChairsSelect.classList.remove("bg-surface-container-lowest", "text-secondary");
+          babyChairLabel.classList.remove("text-secondary");
+          babyChairLabel.classList.add("text-secondary/60");
+        };
+
         if (hasChildrenSelect && babyChairsSelect && babyChairLabel) {
-          hasChildrenSelect.addEventListener("change", function () {
-            if (this.value === "yes") {
-              babyChairsSelect.disabled = false;
-              babyChairsSelect.classList.remove("bg-surface-container-highest", "cursor-not-allowed", "text-secondary/50");
-              babyChairsSelect.classList.add("bg-surface-container-lowest", "text-secondary");
-              babyChairLabel.classList.remove("text-secondary/60");
-              babyChairLabel.classList.add("text-secondary");
-            } else {
-              babyChairsSelect.disabled = true;
-              babyChairsSelect.value = "0";
-              babyChairsSelect.classList.add("bg-surface-container-highest", "cursor-not-allowed", "text-secondary/50");
-              babyChairsSelect.classList.remove("bg-surface-container-lowest", "text-secondary");
-              babyChairLabel.classList.remove("text-secondary");
-              babyChairLabel.classList.add("text-secondary/60");
-            }
-          });
+          hasChildrenSelect.addEventListener("change", syncBabyChairState);
+          syncBabyChairState();
         }
 
         const endpoint = getRSVPEndpoint();
@@ -1792,6 +1796,7 @@
             showRSVPStatus("success");
             form.reset();
             form.querySelectorAll("[data-integer-counter]").forEach(syncIntegerCounterState);
+            if (hasChildrenSelect && babyChairsSelect && babyChairLabel) syncBabyChairState();
             updateLocaleField();
           });
         }
@@ -1824,6 +1829,7 @@
             showRSVPStatus("success");
             form.reset();
             form.querySelectorAll("[data-integer-counter]").forEach(syncIntegerCounterState);
+            if (hasChildrenSelect && babyChairsSelect && babyChairLabel) syncBabyChairState();
             updateLocaleField();
           } catch (error) {
             console.error("RSVP submission error:", error);
